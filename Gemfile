@@ -53,3 +53,13 @@ group :production do
 end
 
 # Application-specific gems
+# DB population
+gem 'faker'
+# User authentication
+gem 'devise'
+# Sensitive info
+gem 'figaro', '1.0'
+# Authorization / roles
+gem 'pundit'
+# Styling
+gem 'bootstrap-sass', '~> 3.2.0.2'
