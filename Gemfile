@@ -70,3 +70,5 @@ gem 'figaro', '1.0'
 gem 'pundit'
 # Styling
 gem 'bootstrap-sass', '~> 3.2.0.2'
+# HAML for views
+gem 'haml-rails'

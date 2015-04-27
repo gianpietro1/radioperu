@@ -1,0 +1,147 @@
+@import 'bootstrap';
+
+.margin-top-05 { margin-top: 0.5em; }
+.margin-top-10 { margin-top: 1.0em; }
+.margin-top-15 { margin-top: 1.5em; }
+.margin-top-20 { margin-top: 2.0em; }
+.margin-top-25 { margin-top: 2.5em; }
+.margin-top-30 { margin-top: 3.0em; }
+.margin-top-40 { margin-top: 4.0em; }
+.margin-top-50 { margin-top: 5.0em; }
+
+.container-fluid {
+  background-color: #3c3c33;
+}
+
+.landing {
+  background-color: white;
+  padding: 1px 24px;
+  margin: 17px 0px;
+  min-height: 700px
+}
+
+.blackbtn {
+  color: white;
+  background: #3c3c33;
+}
+
+.blackbtn:hover,.blackbtn:focus {
+  color: #3c3c33;
+  background-color: orange;
+}
+
+.logo {
+  margin-top: 0px;
+  font-size: 4.4em;
+  margin-bottom: 20px;
+  color: #3c3c33;
+}
+
+.slogan {
+  font-size: 2.0em;
+  float: left;
+  color: #3c3c33;
+}
+
+.search {
+  font-size: 1.0em;
+  float: right;
+  padding-top: 6px;
+}
+
+.radios {
+  width: 83%;
+  margin: 0 auto;
+}
+
+.estacion1,.estacion2,.estacion3,.estacion4,.estacion5 {
+  display: block;
+  width: 180px;
+  height: 340px;
+  float: left;
+  margin: 2px;
+}
+
+.estacion1:hover,.estacion2:hover,.estacion3:hover,.estacion4:hover,.estacion5:hover {
+  box-shadow: 0 5px 3px -3px #777;
+  opacity: 0.9;
+}
+
+.estacion1 {
+    background: image-url('estacion1.png') no-repeat;
+}
+
+.estacion2 {
+    background: image-url('estacion2.png') no-repeat;
+}
+
+.estacion3 {
+    background: image-url('estacion3.png') no-repeat;
+}  
+
+.estacion4 {
+    background: image-url('estacion4.png') no-repeat;
+}  
+
+.estacion5 {
+    background: image-url('estacion5.png') no-repeat;
+}
+
+.catalogue {
+  display: block;
+  width: 400px;
+  height: 100px;
+  background-color: #f6f3e4;
+  border-radius: 10px;
+  border: 1px solid #ececec;
+  color: #3c3c33;
+  text-transform: lowercase;
+  line-height: 85px;
+  background: image-url('catalogue.png') no-repeat left;
+  text-align: left;
+  padding-left: 250px;
+  float: left;
+}
+
+.catalogue:hover {
+  opacity: 0.9;
+  box-shadow: 0 10px 6px -6px #777;
+}
+
+.catalogue h3 {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.musician {
+  background: image-url('musician.png') no-repeat left;
+}
+
+.listener {
+  background: image-url('listener.png') no-repeat left;
+}
+
+.listener, .musician {
+  display: block;
+  background-size: 75px 75px;
+  background-position: 10px;
+  float: left;
+  padding-left: 90px;
+  color: #3c3c33;
+  height: 100px;
+  width: 200px;
+  line-height: 85px;
+  border-radius: 10px;
+  border: 1px solid #ececec;
+}
+
+.listener:hover, .musician:hover {
+  opacity: 0.9;
+  box-shadow: 0 10px 6px -6px #777;
+}
+
+.listener h5, .musician h5 {
+    vertical-align: middle;
+    display: inline-block;
+}
+

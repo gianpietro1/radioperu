@@ -1,0 +1,59 @@
+.landing
+  %p
+  .row
+    .pull-left
+      = link_to "ESP", root_path
+      |
+      = link_to "ENG", '#'
+    .pull-right
+      = link_to "Ingresa", '#', class: 'btn blackbtn'
+
+  .row
+    .col-md-12
+      %h1.text-center.logo
+        radioperu.pe
+
+  .row
+    .col-md-1
+    .col-md-10
+      .slogan
+        Descubre toda la música del Perú.
+      .search
+        = text_field_tag :search, params[:search], placeholder: "Artistas, Álbumes o Canciones", size: 50
+        = submit_tag "Search", :name => nil
+    .col-md-1
+
+  .row.margin-top-15
+    .col-md-1
+    .col-md-10
+      .radios
+        %a.estacion1{ href: '#', data_description: 'estación 1' }
+        %a.estacion2{ href: '#', data_description: 'estación 2' }
+        %a.estacion3{ href: '#', data_description: 'estación 3' }
+        %a.estacion4{ href: '#', data_description: 'estación 4' }
+        %a.estacion5{ href: '#', data_description: 'estación 5' }
+    .col-md-1
+
+  .row.margin-top-10
+    .col-md-2
+    .col-md-4
+      %a.catalogue{ href: '#', data_description: 'catálogo musical' }
+        %h3
+          Catálogo
+          %br
+          musical
+    .col-md-2
+      %a.listener{ href: '#', data_description: 'regístrate como oyente' }
+        %h5
+          Regístrate
+          %br
+          como oyente
+    .col-md-2
+      %a.musician{ href: '#', data_description: 'regístrate como músico' }
+        %h5
+          Regístrate
+          %br
+          como músico
+    .col-md-2
+
+<!-- %script{:type=>"text/javascript", :src=>"http://player.radiocdn.com/iframe.js?hash=5e6ead35300119bc5234f1800b455a948ddedf3d-450-135"}
