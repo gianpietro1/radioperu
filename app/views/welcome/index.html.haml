@@ -6,7 +6,7 @@
       |
       = link_to "ENG", '#'
     .pull-right
-      = link_to "Ingresa", '#', class: 'btn blackbtn'
+      = link_to "Ingresa", new_user_session_path, class: 'btn blackbtn'
 
   .row
     .col-md-12
@@ -43,7 +43,7 @@
           %br
           musical
     .col-md-2
-      %a.listener{ href: '#', data_description: 'regístrate como oyente' }
+      %a.listener{ href: new_user_registration_path, data_description: 'regístrate como oyente' }
         %h5
           Regístrate
           %br
