@@ -1,3 +1,4 @@
+@import "bootstrap-sprockets";
 @import 'bootstrap';
 
 .margin-top-05 { margin-top: 0.5em; }
@@ -11,22 +12,33 @@
 
 .container-fluid {
   background-color: #3c3c33;
+  padding: 8px 25px;
 }
 
 .container-fluid>form>.field,.container-fluid>h2 {
   color: #f6f3e4;
+  padding: 5px 25px;
+}
+
+.container-top {
+}
+
+.language a, .language, .user-info {
+  color: white;
 }
 
 .landing {
   background-color: white;
   padding: 1px 24px;
-  margin: 17px 0px;
-  min-height: 700px
+  margin: 8px 0px;
+  min-height: 680px
 }
 
 .blackbtn {
-  color: white;
-  background: #3c3c33;
+  color: #3c3c33;
+  background: #fff;
+  height: 25px;
+  padding-top: 2px;
 }
 
 .blackbtn:hover,.blackbtn:focus {

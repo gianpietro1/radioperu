@@ -9,6 +9,26 @@
 <body>
   <div class="container-fluid">
 
+    <div class="row container-top">
+      <div class="pull-left language">
+        <%= link_to "ESP", root_path %>
+        |
+        <%= link_to "ENG", root_path %>
+      </div>
+
+      <div class="pull-right user-info">
+        <%if current_user %>
+           Hola <%= (current_user.name || current_user.email) %>!
+          <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm' do %>
+            <span class="glyphicon glyphicon-log-out"></span>
+          <% end %>
+        <% else %>
+          <%= link_to "Ingresa", new_user_session_path, class: 'btn blackbtn' %>
+        <% end %>
+
+      </div>
+    </div>
+
     <% if flash[:notice] %>
     <div class="msg alert alert-success">
       <button type="button" class="close" data-dismiss="alert">&times;</button>
