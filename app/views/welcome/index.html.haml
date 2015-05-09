@@ -10,21 +10,21 @@
     .col-md-1
     .col-md-10
       .slogan
-        Descubre toda la música del Perú.
+        = t :discover
       .search
-        = text_field_tag :search, params[:search], placeholder: "Artistas, Álbumes o Canciones", size: 50
-        = submit_tag "Search", :name => nil
+        = text_field_tag :search, params[:search], placeholder: "#{t :search_text}", size: 50
+        = submit_tag t :search, :name => nil
     .col-md-1
 
   .row.margin-top-15
     .col-md-1
     .col-md-10
       .radios
-        = link_to '', "radios/1", class: "estacion1"
-        = link_to '', "radios/2", class: "estacion2"
-        = link_to '', "radios/3", class: "estacion3"
-        = link_to '', "radios/4", class: "estacion4"
-        = link_to '', "radios/5", class: "estacion5"
+        = link_to '', radio_path(id: 1), class: "estacion1"
+        = link_to '', radio_path(id: 2), class: "estacion2"
+        = link_to '', radio_path(id: 3), class: "estacion3"
+        = link_to '', radio_path(id: 4), class: "estacion4"
+        = link_to '', radio_path(id: 5), class: "estacion5"
     .col-md-1
 
   .row.margin-top-10
@@ -32,21 +32,15 @@
     .col-md-4
       %a.catalogue{ href: '#', data_description: 'catálogo musical' }
         %h3
-          Catálogo
-          %br
-          musical
+          = t :catalogue
     .col-md-2
       %a.listener{ href: new_user_registration_path, data_description: 'regístrate como oyente' }
         %h5
-          Regístrate
-          %br
-          como oyente
+          = t :register_as_listener
     .col-md-2
       %a.musician{ href: '#', data_description: 'regístrate como músico' }
         %h5
-          Regístrate
-          %br
-          como músico
+          = t :register_as_musician
     .col-md-2
 
 <!-- %script{:type=>"text/javascript", :src=>"http://player.radiocdn.com/iframe.js?hash=5e6ead35300119bc5234f1800b455a948ddedf3d-450-135"}

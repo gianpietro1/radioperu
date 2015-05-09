@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/svenfuchs/rails-i18n.git
+  revision: 3e6997ec8bc2e409880a3182a5e7fb9e5dc49ef4
+  branch: master
+  specs:
+    rails-i18n (4.0.4)
+      i18n (~> 0.6)
+      railties (~> 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -229,6 +238,7 @@ DEPENDENCIES
   pry-rails
   pundit
   rails (= 4.2.0)
+  rails-i18n!
   rails_12factor
   rspec-rails (~> 3.1.0)
   sass-rails (~> 5.0)

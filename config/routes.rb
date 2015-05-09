@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
+scope "(:locale)", locale: /es|en/ do
   resources :radios, only: [:show]
-
   devise_for :users
-  root to: 'welcome#index'
+end
+
+get '/:locale' => 'welcome#index'
+root to: 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -19,13 +19,13 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
-  discover: "Discover all the music from Peru."
-  catalogue: "Music catalogue"
-  register_as_listener: "Register as a listener"
-  register_as_musician: "Register as a musician"
-  search_text: "Artists, Albums and Songs"
-  search: "Search"
-  login: "Login"
-  greetings: "Hi"
+es:
+  hello: "Hola mundo"
+  discover: "Descubre toda la música del Perú."
+  catalogue: "Catálogo musical"
+  register_as_listener: "Regístrate como oyente"
+  register_as_musician: "Regístrate como músico"
+  search_text: "Artistas, Álbumes y Canciones"
+  search: "Buscar"
+  login: "Ingresa"
+  greetings: "Hola"
