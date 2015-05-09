@@ -1,0 +1,7 @@
+.radio_container
+  %h1 
+    = @radio.name
+  %p
+    = @radio.description
+
+%script{:type=>"text/javascript", :src=>@radio.player}

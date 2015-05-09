@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :radios, only: [:show]
+
   devise_for :users
   root to: 'welcome#index'
 

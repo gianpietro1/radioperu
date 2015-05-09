@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150427225853) do
+ActiveRecord::Schema.define(version: 20150429135138) do
+
+  create_table "radios", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "host"
+    t.integer  "port"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "player"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
