@@ -74,3 +74,5 @@ gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'haml-rails'
 # Multi-language
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master'
+# Jquery turbolinks
+gem 'jquery-turbolinks'
