@@ -1,7 +1,29 @@
 .radio_container
-  %h1 
-    = @radio.name
-  %p
-    = @radio.description
+  - if @radio.id == 1
+    %h1 
+      = t(:station1)
+    %p
+      = t(:description1) 
+  - elsif @radio.id == 2
+    %h1 
+      = t(:station2)
+    %p
+      = t(:description2) 
+  - elsif @radio.id == 3
+    %h1 
+      = t(:station3)
+    %p
+      = t(:description3) 
+  - elsif @radio.id == 4
+    %h1 
+      = t(:station4)
+    %p
+      = t(:description4) 
+  - elsif @radio.id == 5
+    %h1 
+      = t(:station5)
+    %p
+      = t(:description5) 
+
 
 %script{:type=>"text/javascript", :src=>@radio.player}

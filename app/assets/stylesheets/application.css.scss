@@ -29,9 +29,10 @@
 
 .landing {
   background-color: white;
-  padding: 1px 24px;
-  margin: 8px 0px;
-  min-height: 680px
+  padding: 5px 24px;
+  margin: 8px 0px 15px 0px;
+  min-height: 685px;
+  border-radius: 10px;
 }
 
 .blackbtn {
@@ -70,37 +71,64 @@
   margin: 0 auto;
 }
 
-.estacion1,.estacion2,.estacion3,.estacion4,.estacion5 {
+.station1,.station2,.station3,.station4,.station5 {
   display: block;
   width: 180px;
   height: 340px;
   float: left;
   margin: 2px;
+  text-align: center;
 }
 
-.estacion1:hover,.estacion2:hover,.estacion3:hover,.estacion4:hover,.estacion5:hover {
+.stationlink {
+  width: 70%;
+  height: 25%;
+  background-color: rgba(255,255,255,0.6);
+  margin: auto;
+  color: #3c3c33;
+  margin-top: 220px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.station1:hover,.station2:hover,.station3:hover,.station4:hover,.station5:hover {
   box-shadow: 0 5px 3px -3px #777;
   opacity: 0.9;
+  text-decoration: none  
 }
 
-.estacion1 {
-    background: image-url('estacion1.png') no-repeat;
+.station1 {
+    background: image-url('station1b.jpg') no-repeat;
+    background-size: 180px 340px;
 }
 
-.estacion2 {
-    background: image-url('estacion2.png') no-repeat;
+.station2 {
+    background: image-url('station2b.jpg') no-repeat;
+    background-size: 180px 340px;
 }
 
-.estacion3 {
-    background: image-url('estacion3.png') no-repeat;
+.station3 {
+    background: image-url('station3b.jpg') no-repeat;
+    background-size: 180px 340px;
 }  
 
-.estacion4 {
-    background: image-url('estacion4.png') no-repeat;
+.station4 {
+    background: image-url('station4b.jpg') no-repeat;
+    background-size: 180px 340px;
 }  
 
-.estacion5 {
-    background: image-url('estacion5.png') no-repeat;
+.station5 {
+    background: image-url('station5b.jpg') no-repeat;
+    background-size: 180px 340px;
+}
+
+.radiotitle {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.radiodescription {
+  font-size: 1.0em;
 }
 
 .catalogue {
@@ -114,8 +142,10 @@
   text-transform: lowercase;
   line-height: 85px;
   background: image-url('catalogue.png') no-repeat left;
+  background-size: 75px 75px;
+  background-position: 10px;
   text-align: left;
-  padding-left: 250px;
+  padding-left: 160px;
   float: left;
 }
 
@@ -142,7 +172,7 @@
   background-size: 75px 75px;
   background-position: 10px;
   float: left;
-  padding-left: 90px;
+  padding-left: 50%;
   color: #3c3c33;
   height: 100px;
   width: 200px;

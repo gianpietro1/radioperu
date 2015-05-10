@@ -20,27 +20,55 @@
     .col-md-1
     .col-md-10
       .radios
-        = link_to '', radio_path(id: 1), class: "estacion1"
-        = link_to '', radio_path(id: 2), class: "estacion2"
-        = link_to '', radio_path(id: 3), class: "estacion3"
-        = link_to '', radio_path(id: 4), class: "estacion4"
-        = link_to '', radio_path(id: 5), class: "estacion5"
+        %a.station1{ href: radio_path(id: 1)  }
+          .stationlink
+            %span.radiotitle
+              =t(:station1)
+            %br
+            %span.radiodescription
+              =t(:description1)
+        %a.station2{ href: radio_path(id: 2)  }
+          .stationlink
+            %span.radiotitle
+              =t(:station2)
+            %br
+            %span.radiodescription
+              =t(:description2)
+        %a.station3{ href: radio_path(id: 3)  }
+          .stationlink
+            %span.radiotitle
+              =t(:station3)
+            %br
+            %span.radiodescription
+              =t(:description3)
+        %a.station4{ href: radio_path(id: 4)  }
+          .stationlink
+            %span.radiotitle
+              =t(:station4)
+            %br
+            %span.radiodescription
+              =t(:description4)
+        %a.station5{ href: radio_path(id: 5)  }
+          .stationlink
+            %span.radiotitle
+              =t(:station5)
+            %br
+            %span.radiodescription
+              =t(:description5)
     .col-md-1
 
   .row.margin-top-10
     .col-md-2
-    .col-md-4
-      %a.catalogue{ href: '#', data_description: 'catálogo musical' }
+    .col-md-4 
+      %a.catalogue{ href: '#', data_description: t(:catalogue) }
         %h3
           = t :catalogue
     .col-md-2
-      %a.listener{ href: new_user_registration_path, data_description: 'regístrate como oyente' }
+      %a.listener{ href: new_user_registration_path, data_description: t(:register_as_listener) }
         %h5
           = t :register_as_listener
     .col-md-2
-      %a.musician{ href: '#', data_description: 'regístrate como músico' }
+      %a.musician{ href: '#', data_description: t(:register_as_musician) }
         %h5
           = t :register_as_musician
     .col-md-2
-
-<!-- %script{:type=>"text/javascript", :src=>"http://player.radiocdn.com/iframe.js?hash=5e6ead35300119bc5234f1800b455a948ddedf3d-450-135"}

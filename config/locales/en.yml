@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  # Welcome page
   hello: "Hello world"
   discover: "Discover all the music from Peru."
   catalogue: "Music catalogue"
@@ -29,3 +30,13 @@ en:
   search: "Search"
   login: "Login"
   greetings: "Hi"
+  station1: "station 1" 
+  description1: "coast & folk"
+  station2: "station 2" 
+  description2: "andean"
+  station3: "station 3" 
+  description3: "tropical"
+  station4: "station 4" 
+  description4: "rock, pop & related"
+  station5: "station 5" 
+  description5: "instrumental"
