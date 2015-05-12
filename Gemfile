@@ -72,7 +72,9 @@ gem 'pundit'
 gem 'bootstrap-sass', '~> 3.2.0.2'
 # HAML for views
 gem 'haml-rails'
-# Multi-language
+# Multi-language static text
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master'
 # Jquery turbolinks
 gem 'jquery-turbolinks'
+# Multi-language models
+gem 'globalize', '~> 5.0.0'

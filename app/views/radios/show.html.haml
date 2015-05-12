@@ -1,7 +1,7 @@
 .radio_container
   %h1 
-    = t(:"station#{@radio.id}")
+    = @radio.name
   %p
-    = t(:"description#{@radio.id}") 
+    = @radio.description
 
 %script{:type=>"text/javascript", :src=>@radio.player}

@@ -11,16 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150429135138) do
+ActiveRecord::Schema.define(version: 20150512182404) do
 
-  create_table "radios", force: :cascade do |t|
-    t.string   "name"
-    t.string   "description"
-    t.string   "host"
-    t.integer  "port"
+  create_table "radio_translations", force: :cascade do |t|
+    t.integer  "radio_id",    null: false
+    t.string   "locale",      null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "name"
+    t.string   "description"
+  end
+
+  add_index "radio_translations", ["locale"], name: "index_radio_translations_on_locale"
+  add_index "radio_translations", ["radio_id"], name: "index_radio_translations_on_radio_id"
+
+  create_table "radios", force: :cascade do |t|
     t.string   "player"
+    t.string   "host"
+    t.integer  "port"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
