@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# Radios
+
 Radio.create(name: 'Estación 1', description: 'costeña y canción', player: "http://player.radiocdn.com/iframe.js?hash=5e6ead35300119bc5234f1800b455a948ddedf3d-450-135", host: "eclipse.wavestreaming.com", port: 3771)
 Radio.create(name: 'Estación 2', description: 'andina', player: "http://player.radiocdn.com/iframe.js?hash=5e6ead35300119bc5234f1800b455a948ddedf3d-450-135", host: "eclipse.wavestreaming.com", port: 3771)
 Radio.create(name: 'Estación 3', description: 'tropical', player: "http://player.radiocdn.com/iframe.js?hash=5e6ead35300119bc5234f1800b455a948ddedf3d-450-135", host: "eclipse.wavestreaming.com", port: 3771)
@@ -18,3 +20,13 @@ Radio.find_by(id: 3),update_attributes(name: 'station 3', description: 'tropical
 Radio.find_by(id: 4),update_attributes(name: 'station 4', description: 'rock, pop & related', locale: :en)
 Radio.find_by(id: 5),update_attributes(name: 'station 5', description: 'instrumental', locale: :en)
 
+# Admin user
+
+admin = User.new(
+  name: 'Admin User',
+  email: 'admin@example.com',
+  password: 'helloworld',
+  role: 'admin'
+)
+admin.skip_confirmation!
+admin.save!
