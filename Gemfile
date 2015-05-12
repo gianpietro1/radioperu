@@ -73,7 +73,7 @@ gem 'bootstrap-sass', '~> 3.2.0.2'
 # HAML for views
 gem 'haml-rails'
 # Multi-language static text
-gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master'
+gem 'rails-i18n', '~> 4.0.4'
 # Jquery turbolinks
 gem 'jquery-turbolinks'
 # Multi-language models
