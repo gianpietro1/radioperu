@@ -20,41 +20,14 @@
     .col-md-1
     .col-md-10
       .radios
-        %a.station1{ href: radio_path(id: 1)  }
-          .stationlink
-            %span.radiotitle
-              =t(:station1)
-            %br
-            %span.radiodescription
-              =t(:description1)
-        %a.station2{ href: radio_path(id: 2)  }
-          .stationlink
-            %span.radiotitle
-              =t(:station2)
-            %br
-            %span.radiodescription
-              =t(:description2)
-        %a.station3{ href: radio_path(id: 3)  }
-          .stationlink
-            %span.radiotitle
-              =t(:station3)
-            %br
-            %span.radiodescription
-              =t(:description3)
-        %a.station4{ href: radio_path(id: 4)  }
-          .stationlink
-            %span.radiotitle
-              =t(:station4)
-            %br
-            %span.radiodescription
-              =t(:description4)
-        %a.station5{ href: radio_path(id: 5)  }
-          .stationlink
-            %span.radiotitle
-              =t(:station5)
-            %br
-            %span.radiodescription
-              =t(:description5)
+        - (1..@radios.count).each do |i|
+          %a{ href: radio_path(id: i), class: "station#{i}" }
+            .stationlink
+              %span.radiotitle
+                =t(:"station#{i}")
+              %br
+              %span.radiodescription
+                =t(:"description#{i}")
     .col-md-1
 
   .row.margin-top-10
