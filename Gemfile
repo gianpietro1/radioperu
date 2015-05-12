@@ -78,3 +78,5 @@ gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master'
 gem 'jquery-turbolinks'
 # Multi-language models
 gem 'globalize', '~> 5.0.0'
+# DB tools
+gem 'yaml_db'

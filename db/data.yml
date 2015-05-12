@@ -1,0 +1,166 @@
+
+---
+users:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - confirmation_token
+  - confirmed_at
+  - confirmation_sent_at
+  - unconfirmed_email
+  - name
+  - username
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - gianpietro1@gmail.com
+    - "$2a$10$RTKQpVc8HTD2CS4jEfx0lepQr9TXTFslG40m3VCsjjSE8Ucaymcoq"
+    - 
+    - 
+    - 
+    - 0
+    - 
+    - 
+    - 
+    - 
+    - a45ebb7b75ca89e508eb4daf4f8faff138eeed35e5e3d56680186cd7ea4ad18f
+    - 
+    - '2015-05-12 18:13:27.360686'
+    - 
+    - 
+    - 
+    - '2015-05-12 18:13:27.088690'
+    - '2015-05-12 18:13:27.088690'
+
+---
+radios:
+  columns:
+  - id
+  - player
+  - host
+  - port
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - http://player.radiocdn.com/iframe.js?hash=5e6ead35300119bc5234f1800b455a948ddedf3d-450-135
+    - eclipse.wavestreaming.com
+    - 3771
+    - '2015-04-29 13:46:38.000000'
+    - '2015-05-12 18:35:27.865436'
+  - - 2
+    - http://player.radiocdn.com/iframe.js?hash=5e6ead35300119bc5234f1800b455a948ddedf3d-450-135
+    - eclipse.wavestreaming.com
+    - 3771
+    - '2015-05-12 18:36:39.626778'
+    - '2015-05-12 18:47:40.562719'
+  - - 3
+    - http://player.radiocdn.com/iframe.js?hash=5e6ead35300119bc5234f1800b455a948ddedf3d-450-135
+    - eclipse.wavestreaming.com
+    - 3771
+    - '2015-05-12 18:36:45.226252'
+    - '2015-05-12 18:47:22.851232'
+  - - 4
+    - http://player.radiocdn.com/iframe.js?hash=5e6ead35300119bc5234f1800b455a948ddedf3d-450-135
+    - eclipse.wavestreaming.com
+    - 3771
+    - '2015-05-12 18:36:50.483702'
+    - '2015-05-12 18:47:06.853734'
+  - - 5
+    - http://player.radiocdn.com/iframe.js?hash=5e6ead35300119bc5234f1800b455a948ddedf3d-450-135
+    - eclipse.wavestreaming.com
+    - 3771
+    - '2015-05-12 18:36:55.937350'
+    - '2015-05-12 18:46:46.444851'
+
+---
+radio_translations:
+  columns:
+  - id
+  - radio_id
+  - locale
+  - created_at
+  - updated_at
+  - name
+  - description
+  records: 
+  - - 1
+    - 1
+    - en
+    - '2015-05-12 18:31:25.342819'
+    - '2015-05-12 18:35:27.870053'
+    - station 1
+    - coast & folk
+  - - 2
+    - 1
+    - es
+    - '2015-05-12 18:32:47.310330'
+    - '2015-05-12 18:35:17.768326'
+    - estación 1
+    - costeña y canción
+  - - 3
+    - 2
+    - en
+    - '2015-05-12 18:36:39.630679'
+    - '2015-05-12 18:47:40.566737'
+    - station 2
+    - andean
+  - - 4
+    - 2
+    - es
+    - '2015-05-12 18:36:39.633005'
+    - '2015-05-12 18:45:59.869344'
+    - estación 2
+    - andina
+  - - 5
+    - 3
+    - en
+    - '2015-05-12 18:36:45.230277'
+    - '2015-05-12 18:47:22.854009'
+    - station 3
+    - tropical
+  - - 6
+    - 3
+    - es
+    - '2015-05-12 18:36:45.232710'
+    - '2015-05-12 18:46:12.258797'
+    - estación 3
+    - tropical
+  - - 7
+    - 4
+    - en
+    - '2015-05-12 18:36:50.487308'
+    - '2015-05-12 18:47:06.857654'
+    - station 4
+    - rock, pop & related
+  - - 8
+    - 4
+    - es
+    - '2015-05-12 18:36:50.490621'
+    - '2015-05-12 18:46:26.435723'
+    - estación 4
+    - rock, pop y afines
+  - - 9
+    - 5
+    - en
+    - '2015-05-12 18:36:55.940985'
+    - '2015-05-12 18:46:46.448747'
+    - station 5
+    - instrumental
+  - - 10
+    - 5
+    - es
+    - '2015-05-12 18:36:55.943198'
+    - '2015-05-12 18:46:39.891315'
+    - estación 5
+    - instrumental
