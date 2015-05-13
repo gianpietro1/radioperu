@@ -51,13 +51,30 @@
   margin-top: 0px;
   font-size: 4.4em;
   margin-bottom: 20px;
+}
+
+.logo a {
   color: #3c3c33;
+}
+
+.logo a:hover {
+  color: #428bca;
+  text-decoration: none;
 }
 
 .slogan {
   font-size: 2.0em;
   float: left;
   color: #3c3c33;
+}
+
+.slogan a {
+  color: #3c3c33;
+}
+
+.slogan a:hover {
+  color: #428bca;
+  text-decoration: none;
 }
 
 .search {
@@ -191,6 +208,69 @@
     display: inline-block;
 }
 
-.radio_container {
-  color: #f6f3e4 ;
+// Radios
+
+.radionav li {
+    float: left;
 }
+
+.radionav a {
+    display: block;
+    width: 200px;
+    border: 1px solid #ececec;
+    text-align: center;
+    background-color: #3c3c33;
+    color:#f6f3e4;
+    font-size: 1.2em;
+}
+
+.radionav a:hover,  {
+  text-decoration: none;
+  color: #3c3c33;
+  background-color: #f6f3e4;
+}
+
+.highlighted {
+  background-color: #8B0000 ! important;
+  color: #f6f3e4;
+}
+
+.radionav {
+    list-style-type: none;
+    width: 79%;
+    margin: 0 auto;
+    padding: 5px 40px;
+
+}
+
+.radio_container {
+  margin-top: 10px;
+  background-color: #f6f3e4;
+  min-height: 500px;
+  padding: 20px;  
+  border-radius: 10px;
+}
+
+.station_title h2 {
+  color: #3c3c33;
+  padding: 0;
+  margin: 0;
+}
+
+.station_player {
+  margin-top: 10px;
+}
+
+.artist-thumb {
+  padding: 10px;
+  background-color: #f6f3e4;
+  border-radius: 10px;
+  width: 200px;
+  margin: 10px;
+}
+
+.artist_bio {
+  font-size: 0.7em;
+  font-weight: normal;
+  color: #428bca;
+} 

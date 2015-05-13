@@ -1,0 +1,45 @@
+.landing
+  %p
+
+  .row
+    .col-md-12
+      %h1.text-center.logo
+        =link_to 'radioperu.pe', root_path
+
+  .row
+    .col-md-1
+    .col-md-10
+      .slogan
+        =link_to t(:catalogue).titleize, artists_path
+      .search
+        = text_field_tag :search, params[:search], placeholder: "#{t :search_text}", size: 50
+        = submit_tag t :search, :name => nil
+    .col-md-1
+
+  .row
+    .col-md-1
+    .col-md-10
+      %h3 
+        = t(:new_artist)
+      = form_for @artist do |f|  
+        .form_group
+          = f.label t(:artist_name)
+          = f.text_field :name, class: 'form-control'
+        .form_group
+          = f.label t(:artist_bio)
+          = f.text_area :bio, class: 'form-control'
+        .form_group
+          = f.label t(:artist_city)
+          = f.text_field :city, class: 'form-control'
+        .form_group
+          = f.label t(:artist_url)
+          = f.text_field :url, class: 'form-control'
+        .form_group
+          = f.label t(:artist_active), class: 'checkbox'
+          = f.check_box :active
+        .form_group
+          = f.label t(:artist_image)
+          = f.file_field :image
+          = f.hidden_field :image_cache
+        .form_group
+          = f.submit t(:form_save), class: 'btn btn-success'

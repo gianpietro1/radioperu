@@ -1,7 +1,29 @@
-.radio_container
-  %h1 
-    = @radio.name
+.landing
   %p
-    = @radio.description
 
-%script{:type=>"text/javascript", :src=>@radio.player}
+  .row
+    .col-md-12
+      %h1.text-center.logo
+        =link_to 'radioperu.pe', root_path
+
+  .row
+    %ul.radionav
+      - (1..@radios.count).each do |i|
+        %li
+          - if @radio.id == i
+            =link_to @radios.find_by(id:i).name, radio_path(id: i), class: 'highlighted'
+          - else
+            =link_to @radios.find_by(id:i).name, radio_path(id: i)
+
+  .row
+    .col-md-1
+    .col-md-10
+      .radio_container
+        .station_title
+          %h2
+            = @radio.name.titleize + ' - ' + @radio.description.camelize
+        .station_player
+          %script{:type=>"text/javascript", :src=>@radio.player}
+    .col-md-1    
+ 
+

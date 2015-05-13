@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150512182404) do
+ActiveRecord::Schema.define(version: 20150513121511) do
+
+  create_table "artist_translations", force: :cascade do |t|
+    t.integer  "artist_id",  null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text     "bio"
+  end
+
+  add_index "artist_translations", ["artist_id"], name: "index_artist_translations_on_artist_id"
+  add_index "artist_translations", ["locale"], name: "index_artist_translations_on_locale"
+
+  create_table "artists", force: :cascade do |t|
+    t.string   "name"
+    t.string   "image"
+    t.string   "city"
+    t.string   "url"
+    t.boolean  "active",     default: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
 
   create_table "radio_translations", force: :cascade do |t|
     t.integer  "radio_id",    null: false

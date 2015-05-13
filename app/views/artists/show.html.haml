@@ -1,0 +1,38 @@
+.landing
+  %p
+
+  .row
+    .col-md-12
+      %h1.text-center.logo
+        =link_to 'radioperu.pe', root_path
+
+  .row
+    .col-md-1
+    .col-md-10
+      .slogan
+        =link_to t(:catalogue).titleize, artists_path
+      .search
+        = text_field_tag :search, params[:search], placeholder: "#{t :search_text}", size: 50
+        = submit_tag t :search, :name => nil
+    .col-md-1
+
+  .row
+    .col-md-1
+    .col-md-10
+      .pull-right
+        =link_to t(:edit_artist), edit_artist_path(@artist), class: 'btn btn-success'
+      
+  .row
+    .col-md-1
+    .col-md-3
+      %h3
+        = @artist.name
+      - if @artist.image?
+        = image_tag( @artist.image )
+    .col-md-7 
+      %h3
+        = t(:artist_bio)
+        .artist_bio
+          %p
+          = @artist.bio
+    .col-md-1

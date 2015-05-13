@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 scope "(:locale)", locale: /es|en/ do
   resources :radios, only: [:show]
   devise_for :users
+  resources :artists
 end
 
 get '/:locale' => 'welcome#index'

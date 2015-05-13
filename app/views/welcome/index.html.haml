@@ -4,7 +4,7 @@
   .row
     .col-md-12
       %h1.text-center.logo
-        radioperu.pe
+        =link_to 'radioperu.pe', root_path
 
   .row
     .col-md-1
@@ -33,7 +33,7 @@
   .row.margin-top-10
     .col-md-2
     .col-md-4 
-      %a.catalogue{ href: '#', data_description: t(:catalogue) }
+      %a.catalogue{ href: artists_path, data_description: t(:catalogue) }
         %h3
           = t :catalogue
     .col-md-2
