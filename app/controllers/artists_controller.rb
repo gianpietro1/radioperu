@@ -40,6 +40,17 @@ class ArtistsController < ApplicationController
     end    
   end
 
+  def destroy
+    @artist = Artist.find(params[:id])
+    name = @artist.name
+    if @artist.destroy
+      flash[:notice] = t(:artist_destroyed)
+      redirect_to artists_path
+    else
+      flash[:error] = t(:artist_destroy_error)
+      render :show
+    end
+  end
 
 private
 

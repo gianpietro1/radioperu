@@ -1,2 +1,27 @@
-%h1 Songs#show
-%p Find me in app/views/songs/show.html.haml
+= render partial: 'artists/artists_header'
+
+.row
+  .col-md-1
+  .col-md-10
+    .pull-right
+      =link_to t(:edit_song), edit_artist_album_song_path(@artist,@album,@song), class: 'btn btn-warning'
+      =link_to t(:delete_song), [@artist,@album,@song], method: :delete, class: 'btn btn-danger', data: { confirm: t(:delete_song_confirm) }
+    
+.row
+  .col-md-1
+  .col-md-10
+    %h3
+      = (link_to @artist.name, @artist) + ' - ' + (link_to @album.name, [@artist,@album]) + ' - ' + @song.name
+  .col-md-1
+
+.row
+  .col-md-1
+  .col-md-2
+    = @song.discnum
+    = @song.track
+    = @song.name
+    = @song.review
+    = @song.filename
+    = @song.length
+    = @song.video
+    = @song.lyrics

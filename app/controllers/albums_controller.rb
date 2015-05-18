@@ -9,7 +9,6 @@ class AlbumsController < ApplicationController
   def new
     @artist = Artist.find(params[:artist_id])
     @album = Album.new  
-    @album.songs.build
   end
 
   def create
@@ -39,6 +38,19 @@ class AlbumsController < ApplicationController
       flash[:error] = t(:album_update_error)
       render :edit
     end    
+  end
+
+  def destroy
+   @album = Album.find(params[:id])
+   @artist = @album.artist
+   name = @album.name
+    if @album.destroy
+      flash[:notice] = t(:album_destroyed)
+      redirect_to @artist
+    else
+      flash[:error] = t(:album_destroy_error)
+      render :show
+    end
   end
 
   private

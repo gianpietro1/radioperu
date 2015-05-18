@@ -6,4 +6,6 @@
     %h3 
       = t(:new_album)
     = render partial: 'albums_form', locals: { artist: @artist, album: @album } 
+    = link_to t(:cancel), @artist, class: "btn btn-danger pull-right"
+    
 

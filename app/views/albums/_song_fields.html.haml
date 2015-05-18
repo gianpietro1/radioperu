@@ -1,4 +1,4 @@
-.nested-fields
+.row.nested-fields.margin-top-05
   .col-md-1
     .form_group
       = f.text_field :discnum, class: 'form-control'
@@ -8,10 +8,11 @@
   .col-md-4
     .form_group
       = f.text_field :name, class: 'form-control'
-  .col-md-4
+  .col-md-3
     .form_group
       = f.file_field :filename, class: 'form-control'
   .col-md-2
     .form_group
       = f.text_field :length, class: 'form-control'
-  = link_to_remove_association "remove song", f
+  .col-md-1
+    = link_to_remove_association "", f, class: "btn btn-sm btn-danger glyphicon glyphicon-minus-sign"

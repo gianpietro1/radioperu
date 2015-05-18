@@ -40,6 +40,8 @@ es:
   form_save: "Guardar"
   new_artist: "Nuevo Artista"
   edit_artist: "Editar Artista"
+  delete_artist: "Borrar Artista"
+  delete_artist_confirm: "Estás seguro que deseas borrar este artista?"
   artist_isactive: "Activo a la fecha"
   artist_isnotactive: "Inactivo"
   # Albums
@@ -50,10 +52,22 @@ es:
   album_cover: "Carátula"
   add_album: "Nuevo Álbum"
   edit_album: "Editar Álbum"
+  delete_album: "Borrar Álbum"
+  delete_album_confirm: "Estás seguro que deseas borrar este álbum?"
   # Songs
+  add_song: "Añadir canción"
+  remove_song: "Borrar canción"
+  songs_title: "Canciones del disco"
   song_discnum: "Disco#"
   song_track: "Canción#"
   song_name: "Nombre de la canción"
   song_filename: "Archivo MP3"
   song_length: "Duración"
-  
+  edit_song: "Editar Canción"
+  delete_song: "Borrar Canción"
+  delete_song_confirm: "Estás seguro que deseas borrar esta canción?"
+  song_review: "Reseña"
+  song_video: "Video en Youtube"
+  song_lyrics: "Letra"
+  # General
+  cancel: "Cancelar"

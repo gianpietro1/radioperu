@@ -2,8 +2,8 @@ class Artist < ActiveRecord::Base
 
   translates :bio
   belongs_to :user
-  has_many :albums
-  has_many :songs, :through => :albums
+  has_many :albums, dependent: :destroy
+  has_many :songs, :through => :albums, dependent: :destroy
 
   mount_uploader :image, ImageUploader
 

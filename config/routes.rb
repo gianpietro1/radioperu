@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'songs/show'
-
-  get 'songs/new'
-
-  get 'songs/edit'
-
   scope "(:locale)", locale: /es|en/ do
     resources :radios, only: [:show]
     devise_for :users

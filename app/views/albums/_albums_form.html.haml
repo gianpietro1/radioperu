@@ -15,10 +15,25 @@
     = f.label t(:album_cover)
     = f.file_field :cover
     = f.hidden_field :cover_cache
+  .row
+    .col-md-4
+      %h4 
+        = t(:songs_title)
+  .row.text-center
+    .col-md-1
+      = t(:song_discnum)
+    .col-md-1
+      = t(:song_track)
+    .col-md-4
+      = t(:song_name)
+    .col-md-3
+      = t(:song_filename)
+    .col-md-2
+      = t(:song_length)
   = f.fields_for :songs do |song|
     = render 'song_fields', :f => song
-  .links
-    = link_to_add_association 'add song', f, :songs
+  .links.margin-top-05
+    = link_to_add_association t(:add_song), f, :songs, class: 'btn btn-primary btn-sm'
   .row.margin-top-05
     .col-md-12
       .form_group.pull-right
