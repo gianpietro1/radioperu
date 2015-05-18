@@ -1,34 +1,20 @@
-.landing
-  %p
+= render partial: 'artists_header'
 
-  .row
-    .col-md-12
-      %h1.text-center.logo
-        =link_to 'radioperu.pe', root_path
-
-  .row
-    .col-md-1
-    .col-md-10
-      .slogan
-        =link_to t(:catalogue).titleize, artists_path
-      .search
-        = text_field_tag :search, params[:search], placeholder: "#{t :search_text}", size: 50
-        = submit_tag t :search, :name => nil
-    .col-md-1
-
-  .row
-    .col-md-1
-    .col-md-10
-      .pull-right
-        =link_to t(:new_artist), new_artist_path, class: 'btn btn-success'
-      
-  .row
-    .col-md-1
-    .col-md-10
-      .artists-container
-        - @artists.each do |artist|
-          .artist-thumb
-            - if artist.image?
-              = image_tag( artist.image.thumb )
-            = link_to artist.name, artist
-    .col-md-1
+.row
+  .col-md-1
+  .col-md-10
+    .pull-right
+      =link_to t(:new_artist), new_artist_path, class: 'btn btn-success'
+    
+.row
+  .col-md-1
+  .col-md-10
+    .artists-container
+      - @artists.each do |artist|
+        .artist_thumb
+          - if artist.image?
+            = image_tag( artist.image.thumb )
+          - else
+            = image_tag( 'default_artist_thumb.jpg' )          
+          = link_to artist.name, artist
+  .col-md-1

@@ -47,7 +47,18 @@
     </div>
     <% end %>
 
-<%= yield %>
+    <div class="landing">
+      <p></p>
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-center logo">
+            <%= link_to 'radioperu.pe', root_path %>
+          </h1>
+        </div>
+      </div>
+      <%= yield %>
+    </div>
+
 </div>
 </body>
 </html>

@@ -1,0 +1,9 @@
+.row
+  .col-md-1
+  .col-md-10
+    .slogan
+      =link_to t(:catalogue).titleize, artists_path
+    .search
+      = text_field_tag :search, params[:search], placeholder: "#{t :search_text}", size: 50
+      = submit_tag t :search, :name => nil
+  .col-md-1

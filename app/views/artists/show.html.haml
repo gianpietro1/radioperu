@@ -1,38 +1,66 @@
-.landing
-  %p
+= render partial: 'artists_header'
 
-  .row
-    .col-md-12
-      %h1.text-center.logo
-        =link_to 'radioperu.pe', root_path
+.row
+  .col-md-1
+  .col-md-10
+    .pull-right
+      =link_to t(:edit_artist), edit_artist_path(@artist), class: 'btn btn-warning'
+      =link_to t(:add_album), new_artist_album_path(@artist), class: 'btn btn-success'
+    
+.row
+  .col-md-1
+  .col-md-10
+    %h3
+      = @artist.name
+  .col-md-1
 
-  .row
-    .col-md-1
-    .col-md-10
-      .slogan
-        =link_to t(:catalogue).titleize, artists_path
-      .search
-        = text_field_tag :search, params[:search], placeholder: "#{t :search_text}", size: 50
-        = submit_tag t :search, :name => nil
-    .col-md-1
-
-  .row
-    .col-md-1
-    .col-md-10
-      .pull-right
-        =link_to t(:edit_artist), edit_artist_path(@artist), class: 'btn btn-success'
-      
-  .row
-    .col-md-1
-    .col-md-3
-      %h3
-        = @artist.name
-      - if @artist.image?
-        = image_tag( @artist.image )
-    .col-md-7 
-      %h3
-        = t(:artist_bio)
+.row
+  .col-md-1
+  .col-md-8
+    .artist_div
+      .artist_divleft
+        .artist_imageinfo
+          - if @artist.image?
+            = image_tag( @artist.image )
+          - else
+            = image_tag( 'default_artist.jpg' ) 
+          %strong
+            = t(:artist_city) + ": "
+          = @artist.city
+          %br
+          %strong
+            = t(:artist_url) + ": "
+          = @artist.url
+          %br
+          %strong
+            = t(:artist_active) + ": "
+          = ( @artist.active ? t(:artist_isactive) : (:artist_isnotactive) )         
+      .artist_divright
         .artist_bio
+          %h4
+            = t(:artist_bio)
           %p
-          = @artist.bio
-    .col-md-1
+            = @artist.bio    
+  .col-md-1
+
+.row.margin-top-10
+  .col-md-1
+  .col-md-4 
+    .artist_albums
+      - @albums.each do |album|
+        .row
+          .artist_album_thumb
+            -if album.cover?
+              = image_tag( album.cover.thumb )
+            -else
+              = image_tag( 'default_album_thumb.jpg')
+          .artist_album_info
+            = link_to album.name, artist_album_path(@artist,album.id)
+            %p
+            = album.year
+  .col-md-4 
+    .artist_songs
+      - @songs.each do |song|
+        .row.artist_songs_each
+          = song.name
+          = song.length

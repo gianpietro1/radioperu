@@ -1,47 +1,39 @@
-.landing
-  %p
+.row
+  .col-md-1
+  .col-md-10
+    .slogan
+      = t :discover
+    .search
+      = text_field_tag :search, params[:search], placeholder: "#{t :search_text}", size: 50
+      = submit_tag t :search, :name => nil
+  .col-md-1
 
-  .row
-    .col-md-12
-      %h1.text-center.logo
-        =link_to 'radioperu.pe', root_path
+.row.margin-top-15
+  .col-md-1
+  .col-md-10
+    .radios
+      - (1..@radios.count).each do |i|
+        %a{ href: radio_path(id: i), class: "station#{i}" }
+          .stationlink
+            %span.radiotitle
+              =@radios.find_by(id:i).name
+            %br
+            %span.radiodescription
+              =@radios.find_by(id:i).description
+  .col-md-1
 
-  .row
-    .col-md-1
-    .col-md-10
-      .slogan
-        = t :discover
-      .search
-        = text_field_tag :search, params[:search], placeholder: "#{t :search_text}", size: 50
-        = submit_tag t :search, :name => nil
-    .col-md-1
-
-  .row.margin-top-15
-    .col-md-1
-    .col-md-10
-      .radios
-        - (1..@radios.count).each do |i|
-          %a{ href: radio_path(id: i), class: "station#{i}" }
-            .stationlink
-              %span.radiotitle
-                =@radios.find_by(id:i).name
-              %br
-              %span.radiodescription
-                =@radios.find_by(id:i).description
-    .col-md-1
-
-  .row.margin-top-10
-    .col-md-2
-    .col-md-4 
-      %a.catalogue{ href: artists_path, data_description: t(:catalogue) }
-        %h3
-          = t :catalogue
-    .col-md-2
-      %a.listener{ href: new_user_registration_path, data_description: t(:register_as_listener) }
-        %h5
-          = t :register_as_listener
-    .col-md-2
-      %a.musician{ href: '#', data_description: t(:register_as_musician) }
-        %h5
-          = t :register_as_musician
-    .col-md-2
+.row.margin-top-10
+  .col-md-2
+  .col-md-4 
+    %a.catalogue{ href: artists_path, data_description: t(:catalogue) }
+      %h3
+        = t :catalogue
+  .col-md-2
+    %a.listener{ href: new_user_registration_path, data_description: t(:register_as_listener) }
+      %h5
+        = t :register_as_listener
+  .col-md-2
+    %a.musician{ href: '#', data_description: t(:register_as_musician) }
+      %h5
+        = t :register_as_musician
+  .col-md-2

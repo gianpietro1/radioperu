@@ -51,6 +51,7 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    cocoon (1.2.6)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -327,6 +328,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.2.0.2)
   byebug
   carrierwave
+  cocoon
   coffee-rails (~> 4.1.0)
   devise
   factory_girl_rails (~> 4.0)

@@ -1,0 +1,46 @@
+= render partial: 'artists/artists_header'
+
+.row
+  .col-md-1
+  .col-md-10
+    .pull-right
+      =link_to t(:edit_album), edit_artist_album_path(@artist,@album), class: 'btn btn-warning'
+    
+.row
+  .col-md-1
+  .col-md-10
+    %h3
+      = (link_to @artist.name, @artist) + ' - ' + @album.name
+  .col-md-1
+
+.row
+  .col-md-1
+  .col-md-3
+    - if @album.cover?
+      = image_tag( @album.cover )
+    - else
+      = image_tag( 'default_album.jpg' )
+  .col-md-7 
+    .artist_biotitle
+      %h4
+        = t(:album_review)
+    .artist_bio
+      = @album_review
+  .col-md-1
+
+.row.margin-top-10
+  .col-md-1
+  .col-md-3
+    .artist_info
+      %strong
+        = t(:album_year) + ": "
+      = @album.year
+      %br
+      %strong
+        = t(:album_format) + ": "
+      = @album.format
+  .col-md-4 
+    .album_songs
+      - @songs.each do |song|
+        = link_to song.name, artist_album_song_path(@artist,@album,song.id)
+  .col-md-1

@@ -84,3 +84,5 @@ gem 'yaml_db'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
+# JQuery songs load
+gem 'cocoon'

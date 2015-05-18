@@ -1,0 +1,25 @@
+= form_for [artist,album] do |f|  
+  .form_group
+    = f.label t(:album_name)
+    = f.text_field :name, class: 'form-control'
+  .form_group
+    = f.label t(:album_review)
+    = f.text_area :review, class: 'form-control'
+  .form_group
+    = f.label t(:album_year)
+    = f.text_field :year, class: 'form-control'
+  .form_group
+    = f.label t(:album_format)
+    = f.text_field :format, class: 'form-control'
+  .form_group
+    = f.label t(:album_cover)
+    = f.file_field :cover
+    = f.hidden_field :cover_cache
+  = f.fields_for :songs do |song|
+    = render 'song_fields', :f => song
+  .links
+    = link_to_add_association 'add song', f, :songs
+  .row.margin-top-05
+    .col-md-12
+      .form_group.pull-right
+        = f.submit t(:form_save), class: 'btn btn-success'

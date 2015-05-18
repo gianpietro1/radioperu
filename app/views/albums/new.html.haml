@@ -1,0 +1,9 @@
+= render partial: 'artists/artists_header'
+
+.row
+  .col-md-1
+  .col-md-10
+    %h3 
+      = t(:new_album)
+    = render partial: 'albums_form', locals: { artist: @artist, album: @album } 
+

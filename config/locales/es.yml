@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 es:
+  # Welcome page
   hello: "Hola mundo"
   discover: "Descubre toda la música del Perú."
   catalogue: "catálogo musical"
@@ -29,6 +30,7 @@ es:
   search: "Buscar"
   login: "Ingresa"
   greetings: "Hola"
+  # Artists
   artist_name: "Nombre del Artista"
   artist_city: "Ciudad de origen"
   artist_url: "Enlace web"
@@ -38,3 +40,20 @@ es:
   form_save: "Guardar"
   new_artist: "Nuevo Artista"
   edit_artist: "Editar Artista"
+  artist_isactive: "Activo a la fecha"
+  artist_isnotactive: "Inactivo"
+  # Albums
+  album_name: "Nombre del Álbum"
+  album_review: "Reseña"
+  album_year: "Año de edición"
+  album_format: "Formato"
+  album_cover: "Carátula"
+  add_album: "Nuevo Álbum"
+  edit_album: "Editar Álbum"
+  # Songs
+  song_discnum: "Disco#"
+  song_track: "Canción#"
+  song_name: "Nombre de la canción"
+  song_filename: "Archivo MP3"
+  song_length: "Duración"
+  

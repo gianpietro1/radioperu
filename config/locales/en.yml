@@ -30,6 +30,7 @@ en:
   search: "Search"
   login: "Login"
   greetings: "Hi"
+  # Artists
   artist_name: "Artist Name"
   artist_city: "City"
   artist_url: "Web site"
@@ -39,3 +40,19 @@ en:
   form_save: "Save"
   new_artist: "New Artist"
   edit_artist: "Edit Artist"
+  artist_isactive: "Active today"
+  artist_isnotactive: "Not active today"
+  # Albums
+  album_name: "Album name"
+  album_review: "Review"
+  album_year: "Edition year"
+  album_format: "Format"
+  album_cover: "Cover image"
+  new_album: "New Album"
+  edit_album: "Edit Album"
+  # Songs
+  song_discnum: "Disc#"
+  song_track: "Track#"
+  song_name: "Song name"
+  song_filename: "MP3 File"
+  song_length: "Length"

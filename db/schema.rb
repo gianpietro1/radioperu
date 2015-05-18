@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150513121511) do
+ActiveRecord::Schema.define(version: 20150513195640) do
+
+  create_table "album_translations", force: :cascade do |t|
+    t.integer  "album_id",   null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text     "review"
+    t.string   "format"
+  end
+
+  add_index "album_translations", ["album_id"], name: "index_album_translations_on_album_id"
+  add_index "album_translations", ["locale"], name: "index_album_translations_on_locale"
+
+  create_table "albums", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "year"
+    t.string   "cover"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "artist_id"
+  end
 
   create_table "artist_translations", force: :cascade do |t|
     t.integer  "artist_id",  null: false
@@ -50,6 +71,30 @@ ActiveRecord::Schema.define(version: 20150513121511) do
     t.string   "player"
     t.string   "host"
     t.integer  "port"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "song_translations", force: :cascade do |t|
+    t.integer  "song_id",    null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text     "review"
+  end
+
+  add_index "song_translations", ["locale"], name: "index_song_translations_on_locale"
+  add_index "song_translations", ["song_id"], name: "index_song_translations_on_song_id"
+
+  create_table "songs", force: :cascade do |t|
+    t.integer  "album_id"
+    t.integer  "discnum"
+    t.integer  "track"
+    t.string   "name"
+    t.string   "filename"
+    t.string   "length"
+    t.text     "lyrics"
+    t.string   "video"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
