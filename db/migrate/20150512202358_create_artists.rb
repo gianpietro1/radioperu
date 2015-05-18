@@ -7,7 +7,7 @@ class CreateArtists < ActiveRecord::Migration
         t.integer :year
         t.string :city
         t.string :url
-        t.boolean :active, default: 1
+        t.boolean :active, default: true
         t.timestamps null: false
     end
       Artist.create_translation_table! :bio => :text
