@@ -1,5 +1,5 @@
 User.create!([
-  {email: "admin@example.com", encrypted_password: "$2a$10$5k2I8dEz.oqw/aIrnx4UBOeSgLE0REvQ1328W48lo2A9kro2Y8g6i", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-05-29 17:13:57", last_sign_in_at: "2015-05-29 17:13:57", current_sign_in_ip: "::1", last_sign_in_ip: "::1", confirmation_token: nil, confirmed_at: "2015-05-29 17:13:31", confirmation_sent_at: nil, unconfirmed_email: nil, name: "Admin User", username: nil}
+  {email: "admin@example.com", password: "helloworld", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-05-29 17:13:57", last_sign_in_at: "2015-05-29 17:13:57", current_sign_in_ip: "::1", last_sign_in_ip: "::1", confirmation_token: nil, confirmed_at: "2015-05-29 17:13:31", confirmation_sent_at: nil, unconfirmed_email: nil, name: "Admin User", username: nil}
 ])
 Album.create!([
   {name: "Reconocer", year: 2012, cover: "reconocer.jpeg", artist_id: 1, review: "\"Reconocer\" fue un disco nominado al Grammy Latino 2012 como \"Mejor Álbum Pop Contemporaneo\", mérito obtenido hace unos años atras con otro disco. Pamela nos pinta un ambiente melódico fresco con temas como \"Mantra\", \"Ligera Love\", entre otros.", format: "CD"},
