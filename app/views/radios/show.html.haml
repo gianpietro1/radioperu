@@ -16,6 +16,10 @@
           = @radio.name.titleize + ' - ' + @radio.description.camelize
       .station_player
         %script{:type=>"text/javascript", :src=>@radio.player}
+        #songtitle
   .col-md-1    
 
-
+%script{:type=>"text/javascript", :src=>"//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"}
+= javascript_include_tag 'jquery.shoutcast.min.js'
+%script{:type=>"text/javascript"}
+  $.SHOUTcast({host : 'eclipse.wavestreamer.com',port:3771}).stats(function(){$('#songtitle').text(this.get('songtitle'));});
