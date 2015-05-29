@@ -20,4 +20,4 @@
 /config/application.yml
 
 # Ignore uploads caching
-/public/uploads/tmp/
+/public/uploads/
