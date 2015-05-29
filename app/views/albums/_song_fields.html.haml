@@ -11,6 +11,10 @@
   .col-md-3
     .form_group
       = f.file_field :filename, class: 'form-control'
+      - if f.object.filename
+        .current_file
+          - file = URI(f.object.filename.to_s).path.split('/').last.to_s
+          = t(:current_file) + ': ' + (file.length > 0 ? file : "-").to_s
   .col-md-2
     .form_group
       = f.text_field :length, class: 'form-control'

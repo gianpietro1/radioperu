@@ -35,33 +35,33 @@
           %br
           %strong
             = t(:artist_active) + ": "
-          = ( @artist.active ? t(:artist_isactive) : (:artist_isnotactive) )         
+          = ( @artist.active ? t(:artist_isactive) : t(:artist_isnotactive) )         
       .artist_divright
         .artist_bio
-          %h4
-            = t(:artist_bio)
           %p
             = @artist.bio    
   .col-md-1
 
 .row.margin-top-10
   .col-md-1
-  .col-md-4 
+  .col-md-3 
     .artist_albums
       - @albums.each do |album|
         .row
-          .artist_album_thumb
-            -if album.cover?
-              = image_tag( album.cover.thumb )
-            -else
-              = image_tag( 'default_album_thumb.jpg')
-          .artist_album_info
-            = link_to album.name, artist_album_path(@artist,album.id)
-            %p
-            = album.year
+          .artist_album
+            .artist_album_thumb
+              -if album.cover?
+                = image_tag( album.cover.thumb )
+              -else
+                = image_tag( 'default_album_thumb.jpg')
+            .artist_album_info
+              = link_to album.name, artist_album_path(@artist,album.id)
+              %p
+              = album.year
   .col-md-4 
     .artist_songs
-      - @songs.each do |song|
-        .row.artist_songs_each
-          = song.name
-          = song.length
+      %ul.playlist
+        - @songs.each do |song|
+          %li
+            %a{ href: song.filename }
+              = format('%02d', song.track).to_s + ' ' + song.name

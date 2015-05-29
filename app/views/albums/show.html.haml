@@ -21,13 +21,13 @@
       = image_tag( @album.cover )
     - else
       = image_tag( 'default_album.jpg' )
-  .col-md-7 
-    .artist_biotitle
-      %h4
-        = t(:album_review)
-    .artist_bio
-      = @album_review
-  .col-md-1
+  .col-md-4 
+    %ul.playlist
+      - @songs.each do |song|
+        %li
+          %a{ href: song.filename }
+            = format('%02d', song.track).to_s + ' ' + song.name
+  .col-md-4
 
 .row.margin-top-10
   .col-md-1
@@ -40,8 +40,6 @@
       %strong
         = t(:album_format) + ": "
       = @album.format
-  .col-md-4 
-    .album_songs
-      - @songs.each do |song|
-        = link_to song.name, artist_album_song_path(@artist,@album,song.id)
-  .col-md-1
+    .artist_bio
+      = @album.review
+    

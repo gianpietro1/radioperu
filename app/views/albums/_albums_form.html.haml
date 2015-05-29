@@ -13,8 +13,12 @@
     = f.text_field :format, class: 'form-control'
   .form_group
     = f.label t(:album_cover)
-    = f.file_field :cover
+    = f.file_field :cover, class: 'form-control'
     = f.hidden_field :cover_cache
+    - if f.object.cover
+      .current_file
+        - file = URI(f.object.cover.to_s).path.split('/').last.to_s
+        = t(:current_file) + ': ' + (file.length > 0 ? file : "-").to_s
   .row
     .col-md-4
       %h4 
@@ -37,4 +41,5 @@
   .row.margin-top-05
     .col-md-12
       .form_group.pull-right
+        = link_to t(:cancel), [@artist,@album], class: "btn btn-danger"
         = f.submit t(:form_save), class: 'btn btn-success'

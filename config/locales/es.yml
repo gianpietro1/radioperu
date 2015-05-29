@@ -44,17 +44,20 @@ es:
   delete_artist_confirm: "Estás seguro que deseas borrar este artista?"
   artist_isactive: "Activo a la fecha"
   artist_isnotactive: "Inactivo"
-  # Albums
+  artist_updated: "El artista fue actualizado satisfactoriamente."
+ # Albums
   album_name: "Nombre del Álbum"
   album_review: "Reseña"
   album_year: "Año de edición"
   album_format: "Formato"
   album_cover: "Carátula"
-  add_album: "Nuevo Álbum"
+  new_album: "Nuevo Álbum"
   edit_album: "Editar Álbum"
   delete_album: "Borrar Álbum"
   delete_album_confirm: "Estás seguro que deseas borrar este álbum?"
-  # Songs
+  album_updated: "El álbum fue actualizado satisfactoriamente."
+  album_saved: "El álbum fue creado satisfactoriamente."
+ # Songs
   add_song: "Añadir canción"
   remove_song: "Borrar canción"
   songs_title: "Canciones del disco"
@@ -71,3 +74,4 @@ es:
   song_lyrics: "Letra"
   # General
   cancel: "Cancelar"
+  current_file: "Archivo actual"
