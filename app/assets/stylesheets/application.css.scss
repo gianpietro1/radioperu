@@ -227,7 +227,7 @@
     width: 200px;
     border: 1px solid #ececec;
     text-align: center;
-    background-color: #3c3c33;
+    background-color: #428bca;
     color:#f6f3e4;
     font-size: 1.2em;
 }
@@ -239,7 +239,7 @@
 }
 
 .highlighted {
-  background-color: #8B0000 ! important;
+  background-color: #3c3c33 ! important;
   color: #f6f3e4;
 }
 
@@ -253,18 +253,88 @@
 
 .radio_container {
   margin-top: 10px;
-  min-height: 500px;
+  min-height: 425px;
   padding: 20px;  
+  height: 200px;    
   border-radius: 10px;
+  border: 1px solid #ececec;
+  color: #3c3c33;  
 }
 
-.station_title h2 {
+.station_title h3 {
   color: #3c3c33;
   padding: 0;
   margin: 0;
 }
 
 .station_player {
+  margin-top: 10px;
+  padding: 5px;
+  padding-left: 10px;
+  height: 80px;    
+  border-radius: 10px;
+  border: 1px solid #ececec;
+  color: #3c3c33;
+}
+
+#player {
+  float:left;
+  margin-top: 15px;
+}
+
+#songtitle {
+
+}
+
+#artist {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-top: 8px;
+}
+
+#song {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.artist-info {
+  height: 150px;    
+  border-radius: 10px;
+  border: 1px solid #ececec;
+  color: #3c3c33;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+#artist-image {
+  float:left;
+  margin: 10px;
+}
+
+#artist-bio {
+  height: 120px;
+  overflow: auto;
+  margin-top: 10px;
+}
+
+.album-info {
+  height: 100px;    
+  border-radius: 10px;
+  border: 1px solid #ececec;
+  color: #3c3c33;
+  padding: 5px;
+  margin-top: 10px;
+  width: 50%;
+  font-weight: bold;
+}
+
+#album-cover {
+  float:left;
+  margin: 10px;
+}
+
+#album-name {
+  overflow: auto;
   margin-top: 10px;
 }
 

@@ -81,7 +81,7 @@ gem 'jquery-turbolinks'
 gem 'globalize', '~> 5.0.0'
 # DB tools
 gem 'yaml_db'
-# Image managing
+# Upload managing
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
