@@ -49,7 +49,6 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-  gem 'taglib-heroku', '~> 1.7'
 end
 
 group :test do
@@ -89,4 +88,4 @@ gem 'cocoon'
 # Seed file from current DB
 gem 'seed_dump'
 # MP3 ID3 read/write, needs a local installation of 'taglib' library
-gem 'id3_tags'
+gem 'id3tag'

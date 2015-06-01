@@ -26,6 +26,17 @@
     = @song.lyrics
 .row 
   %p
-    "ID3 tags"
+    ID3 tags testing
   %p
-    = @id3tags
+    %p 
+      Canción:
+      =@id3tags.title
+    %p 
+      Track: 
+      = @id3tags.track_nr.first
+    %p
+      Disc:
+      - if @id3tags.get_frames(:TPOS).first
+        = @id3tags.get_frames(:TPOS).first.content.first
+      - else
+        empty
