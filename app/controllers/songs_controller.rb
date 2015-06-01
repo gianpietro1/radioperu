@@ -4,7 +4,11 @@ class SongsController < ApplicationController
     @song = Song.find(params[:id])
     @album = Album.find(params[:album_id])
     @artist = Artist.find(params[:artist_id])
-    mp3_path = File.open("#{Rails.root}/public/#{@song.filename.to_s}")
+    if Rails.env.development?
+      mp3_path = File.open("#{Rails.root}/public/#{@song.filename.to_s}")
+    elsif Rails.env.production?
+      mp3_path = URI(@song.filename.to_s)
+    end
     @id3tags = ID3Tag.read(mp3_path)
   end
 
