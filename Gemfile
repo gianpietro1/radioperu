@@ -51,8 +51,6 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-  # taglib for heroku
-  gem 'taglib-heroku'
 end
 
 group :test do
