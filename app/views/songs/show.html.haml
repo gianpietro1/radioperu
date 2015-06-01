@@ -39,4 +39,4 @@
       - if @id3tags.get_frames(:TPOS).first
         = @id3tags.get_frames(:TPOS).first.content.first
       - else
-        empty
+        not present
