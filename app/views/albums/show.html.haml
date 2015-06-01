@@ -21,12 +21,15 @@
       = image_tag( @album.cover )
     - else
       = image_tag( 'default_album.jpg' )
-  .col-md-4 
-    %ul.playlist
+  %ul.playlist
+    .col-md-4
       - @songs.each do |song|
         %li
+          .pointer
+            =link_to raw("&#8599;"), artist_album_song_path(@artist,@album,song)
           %a{ href: song.filename }
             = format('%02d', song.track).to_s + ' ' + song.name
+          
   .col-md-4
 
 .row.margin-top-10
@@ -42,4 +45,4 @@
       = @album.format
     .artist_bio
       = @album.review
-    
+

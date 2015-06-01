@@ -24,3 +24,4 @@
         = t(:current_file) + ': ' + (file.length > 0 ? file : "-").to_s
   .form_group
     = f.submit t(:form_save), class: 'btn btn-success'
+    = link_to t(:cancel), @artist, class: "btn btn-danger"

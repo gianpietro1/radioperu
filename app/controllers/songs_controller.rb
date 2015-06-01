@@ -1,8 +1,11 @@
 class SongsController < ApplicationController
+ 
   def show
     @song = Song.find(params[:id])
     @album = Album.find(params[:album_id])
     @artist = Artist.find(params[:artist_id])
+    path = @song.filename.to_s
+    @id3tags = Id3Tags.read_tags_from("#{Rails.root}/public/#{path}")
   end
 
   def edit

@@ -6,4 +6,8 @@ class Song < ActiveRecord::Base
 
   mount_uploader :filename, FilenameUploader
 
+  def id3
+    
+  end
+
 end

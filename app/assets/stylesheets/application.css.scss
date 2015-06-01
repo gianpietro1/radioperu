@@ -16,6 +16,8 @@
 .margin-top-40 { margin-top: 4.0em; }
 .margin-top-50 { margin-top: 5.0em; }
 
+.bold { font-weight: bold }
+
 .container-fluid {
   background-color: #3c3c33;
   padding: 8px 25px;
@@ -422,6 +424,11 @@
   color: #428bca;
 }
 
+.id3 {
+  font-size: 0.7em;
+  padding: 0;
+}
+
 
 // SoundManager
 
@@ -646,7 +653,7 @@ ul.playlist li .timing {
  position:absolute;
  display:none;
  text-align:right;
- right:1em;
+ right:5em;
  top:1em;
  width:auto;
  height:2em;
@@ -738,6 +745,25 @@ ul.playlist li .peak .r {
  display:none;
 }
 
+div.pointer a {
+ float: right;
+ background-color: #f0ad4e;
+ width: 25px;
+ height: 25px;
+ padding: 0;
+ text-align: center;
+ border-radius: 5px;
+ border: 2px solid black;
+ color: black !important;  
+ font-weight: bold !important;
+ z-index: 100 !important;
+ display: block !important;
+ font-weight: bold !important;
+}
+
+div.pointer a:hover {
+  color:white !important;
+}
 
 // SoundManager FlashBlock
 

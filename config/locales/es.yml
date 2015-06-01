@@ -57,6 +57,7 @@ es:
   delete_album_confirm: "Estás seguro que deseas borrar este álbum?"
   album_updated: "El álbum fue actualizado satisfactoriamente."
   album_saved: "El álbum fue creado satisfactoriamente."
+  id3: "Importar otros campos de etiquetas ID3?"
  # Songs
   add_song: "Añadir canción"
   remove_song: "Borrar canción"

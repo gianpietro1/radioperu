@@ -57,6 +57,7 @@ en:
   delete_album_confirm: "Are you sure you want to delete this album?"
   album_updated: "The album was updated successfully."
   album_saved: "The album was created successfully."
+  id3: "Import other fields from ID3 tags?"
   # Songs
   add_song: "Add song"
   remove_song: "Delete song"

@@ -22,6 +22,10 @@
     = @song.name
     = @song.review
     = @song.filename
-    = @song.length
     = @song.video
     = @song.lyrics
+.row 
+  %p
+    "ID3 tags"
+  %p
+    = @id3tags
