@@ -90,4 +90,5 @@ gem 'cocoon'
 # Seed file from current DB
 gem 'seed_dump'
 # MP3 ID3 read/write, needs a local installation of 'taglib' library
+gem 'taglib-ruby', github: 'robinst/taglib-ruby', ref: '1ba214424c063d82e87bf0b85667c2525a8e43bd'
 gem 'id3_tags'
