@@ -7,7 +7,7 @@ class SongsController < ApplicationController
     if Rails.env.development?
       mp3_path = File.open("#{Rails.root}/public/#{@song.filename.to_s}")
     elsif Rails.env.production?
-      mp3_path = URI(@song.filename.to_s)
+      mp3_path = open(@song.filename.to_s, "rb")
     end
     @id3tags = ID3Tag.read(mp3_path)
   end
