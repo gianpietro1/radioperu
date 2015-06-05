@@ -28,8 +28,7 @@
           .pointer
             =link_to raw("&#8599;"), artist_album_song_path(@artist,@album,song)
           %a{ href: song.filename }
-            = format('%02d', song.track).to_s + ' ' + song.name
-          
+            = format('%02d', song.track).to_s + ' ' + song.name          
   .col-md-4
 
 .row.margin-top-10

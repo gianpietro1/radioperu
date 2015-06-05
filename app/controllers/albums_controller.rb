@@ -1,9 +1,20 @@
 class AlbumsController < ApplicationController
 
+  respond_to :html, :js
+
   def show
     @artist = Artist.find(params[:artist_id])
     @album = Album.find(params[:id])  
     @songs = @album.songs
+  end
+
+  def album_summary
+    @album = Artist.find_by(name: params[:artist_name]).songs.find_by(name: params[:song_name]).album
+
+    respond_with(@album) do |format|
+    format.html {render :partial => "album_summary" }
+    end
+  
   end
 
   def new

@@ -1,5 +1,7 @@
 class ArtistsController < ApplicationController
 
+  respond_to :html, :js
+
   def index
     @artists = Artist.all
   end
@@ -8,6 +10,15 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
     @albums = @artist.albums
     @songs = @artist.songs
+  end
+
+  def artist_summary
+    @artist = Artist.find_by(name: params[:artist_name])
+
+    respond_with(@artist) do |format|
+    format.html {render :partial => "artist_summary" }
+    end
+  
   end
 
   def new
