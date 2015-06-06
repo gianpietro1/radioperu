@@ -75,16 +75,21 @@ class AlbumsController < ApplicationController
     def update_id3
       params[:album][:songs_attributes].each do |song|
         if song[1][:id3] == '1'
-          mp3_path = open(@album.songs.last.filename.path.to_s, "rb")
+          if Song.find_by_id(song[1][:id])
+            song_stored = Song.find_by_id(song[1][:id])
+          else
+            song_stored = Song.find_by(filename: (song[1][:filename].original_filename.to_s.gsub( /[^a-zA-Z0-9_\-\.]/, '_')) )
+          end
+          mp3_path = open(song_stored.filename.path.to_s, "rb")
           @id3tags = ID3Tag.read(mp3_path)
           if @id3tags.title
-            @album.songs.last.update_attributes(name: @id3tags.title)
+            song_stored.update_attributes(name: @id3tags.title)
           end
           if @id3tags.track_nr.first
-            @album.songs.last.update_attributes(track: @id3tags.track_nr.first)
+            song_stored.update_attributes(track: @id3tags.track_nr.first)
           end
           if @id3tags.get_frames(:TPOS).first
-            @album.songs.last.update_attributes(discnum: @id3tags.get_frames(:TPOS).first.content.first)
+            song_stored.update_attributes(discnum: @id3tags.get_frames(:TPOS).first.content.first)
           end
         end
       end

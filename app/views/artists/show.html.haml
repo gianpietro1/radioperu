@@ -64,4 +64,5 @@
         - @songs.each do |song|
           %li
             %a{ href: song.filename }
-              = format('%02d', song.track).to_s + ' ' + song.name
+              - if song.track
+                = format('%02d', song.track).to_s + ' ' + song.name
