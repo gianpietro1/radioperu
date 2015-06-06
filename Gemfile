@@ -89,3 +89,5 @@ gem 'cocoon'
 gem 'seed_dump'
 # MP3 ID3 read/write
 gem 'id3tag'
+# UTF-8 cleaner
+gem 'utf8-cleaner'
