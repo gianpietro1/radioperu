@@ -27,7 +27,8 @@ class AlbumsController < ApplicationController
     @album = @artist.albums.build(album_params)
     if @album.save
       flash[:notice] = t(:album_saved)
-      redirect_to [@artist,@album]
+      update_id3
+      redirect_to [@artist,@album]      
     else
       flash[:error] = t(:album_create_error)
       render :new
@@ -44,6 +45,7 @@ class AlbumsController < ApplicationController
     @artist = @album.artist
     if @album.update_attributes(album_params)
       flash[:notice] = t(:album_updated)
+      update_id3
       redirect_to [@artist,@album]
     else
       flash[:error] = t(:album_update_error)
@@ -67,7 +69,26 @@ class AlbumsController < ApplicationController
   private
 
     def album_params
-      params.require(:album).permit(:name, :year, :cover, :review, :format, songs_attributes: [ :id, :discnum, :track, :name, :filename, :length, :_destroy ] )
+      params.require(:album).permit(:name, :year, :cover, :review, :format, songs_attributes: [ :id, :discnum, :track, :name, :filename, :id3, :_destroy ] )
+    end
+
+    def update_id3
+      params[:album][:songs_attributes].each do |song|
+        if song[1][:id3] == '1'
+          song_stored = Song.find_by_name(song[1][:name])
+          mp3_path = open(song_stored.filename.path.to_s, "rb")
+          @id3tags = ID3Tag.read(mp3_path)
+          if @id3tags.title
+            song_stored.update_attributes(name: @id3tags.title)
+          end
+          if @id3tags.track_nr.first
+            song_stored.update_attributes(track: @id3tags.track_nr.first)
+          end
+          if @id3tags.get_frames(:TPOS).first
+            song_stored.update_attributes(discnum: @id3tags.get_frames(:TPOS).first.content.first)
+          end
+        end
+      end
     end
 
 end

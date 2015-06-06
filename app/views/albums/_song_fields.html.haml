@@ -8,15 +8,29 @@
           = t(:current_file) + ': ' + (file.length > 0 ? file : "-").to_s
   .col-md-1
     .form_group.text-center
-      = f.check_box :id3
-  .col-md-1
-    .form_group
-      = f.text_field :discnum, class: 'form-control'
-  .col-md-1
-    .form_group
-      = f.text_field :track, class: 'form-control'
-  .col-md-5
-    .form_group
-      = f.text_field :name, class: 'form-control'
+      #checkbox
+        = f.check_box :id3
+  #blockable
+    .col-md-1
+      .form_group
+        = f.text_field :discnum, class: 'form-control'
+    .col-md-1
+      .form_group
+        = f.text_field :track, class: 'form-control'
+    .col-md-5
+      .form_group
+        = f.text_field :name, class: 'form-control'
   .col-md-1
     = link_to_remove_association "", f, class: "btn btn-sm btn-danger glyphicon glyphicon-minus-sign"
+
+%script{:type=>"text/javascript"}
+  jQuery(function($) {
+  $("#checkbox [id^='album_songs_attributes_']").click(function() {
+  var a = $(this).attr('id').indexOf("id3");
+  var num = $(this).attr('id').substring(23, a-1);
+  console.log(a)
+  console.log(num)
+  var cb1 = $("#album_songs_attributes_" + num + "_id3").prop('checked');
+  $("#blockable [id*='songs_attributes_" + num + "']").prop('disabled', cb1);    
+  });
+  });
