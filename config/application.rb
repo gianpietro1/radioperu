@@ -14,6 +14,9 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# Allow special characters when both uploading and seeding files.
+CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:][áéíóúü_()ñ]\s\.\-\+]/ 
+
 module Radioperu
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

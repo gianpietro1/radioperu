@@ -24,19 +24,3 @@
     = @song.filename
     = @song.video
     = @song.lyrics
-.row 
-  %p
-    ID3 tags testing
-  %p
-    %p 
-      Canción:
-      =@id3tags.title
-    %p 
-      Track: 
-      = @id3tags.track_nr.first
-    %p
-      Disc:
-      - if @id3tags.get_frames(:TPOS).first
-        = @id3tags.get_frames(:TPOS).first.content.first
-      - else
-        not present

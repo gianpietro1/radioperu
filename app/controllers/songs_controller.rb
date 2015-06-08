@@ -4,12 +4,6 @@ class SongsController < ApplicationController
     @song = Song.find(params[:id])
     @album = Album.find(params[:album_id])
     @artist = Artist.find(params[:artist_id])
-    if Rails.env.development?
-      mp3_path = File.open("#{Rails.root}/public/#{@song.filename.to_s}")
-    elsif Rails.env.production?
-      mp3_path = open(@song.filename.to_s, "rb")
-    end
-    @id3tags = ID3Tag.read(mp3_path)
   end
 
   def edit
@@ -34,7 +28,7 @@ class SongsController < ApplicationController
   private
 
   def song_params
-    params.require(:song).permit(:discnum, :track, :name, :review, :filename, :length, :video, :lyrics)
+    params.require(:song).permit(:discnum, :track, :name, :review, :filename, :id3, :video, :lyrics)
   end
 
 end

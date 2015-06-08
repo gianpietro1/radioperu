@@ -30,7 +30,11 @@
               =link_to raw("&#8599;"), artist_album_song_path(@artist,@album,song)
           %a{ href: song.filename }
             - if song.track
-              = format('%02d', song.track).to_s + ' ' + song.name          
+              = format('%02d', song.track).to_s + ' ' + song.name
+            - elsif song.name
+              = '00' + ' ' + song.name
+            - else
+              = ''
   .col-md-4
 
 .row.margin-top-10
