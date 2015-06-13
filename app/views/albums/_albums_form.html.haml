@@ -17,7 +17,7 @@
     = f.hidden_field :cover_cache
     - if f.object.cover
       .current_file
-        - file = URI(f.object.cover.to_s).path.split('/').last.to_s
+        - file = URI.unescape(URI(f.object.cover.to_s).path.split('/').last.to_s)
         = t(:current_file) + ': ' + (file.length > 0 ? file : "-").to_s
   .row
     .col-md-4

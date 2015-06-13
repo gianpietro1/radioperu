@@ -36,5 +36,8 @@ module Radioperu
 
     config.i18n.default_locale = :es
 
+    # Autoload lib/ folder including all subdirectories
+    config.autoload_paths += Dir["#{Rails.root}/lib/**/"]
+
   end
 end

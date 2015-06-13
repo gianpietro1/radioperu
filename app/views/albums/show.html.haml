@@ -21,6 +21,17 @@
       = image_tag( @album.cover )
     - else
       = image_tag( 'default_album.jpg' )
+    %p
+    .artist_info
+      %strong
+        = t(:album_year) + ": "
+      = @album.year
+      %br
+      %strong
+        = t(:album_format) + ": "
+      = @album.format
+    .artist_bio
+      = @album.review
   %ul.playlist
     .col-md-4
       - @songs.each do |song|
@@ -36,18 +47,3 @@
             - else
               = ''
   .col-md-4
-
-.row.margin-top-10
-  .col-md-1
-  .col-md-3
-    .artist_info
-      %strong
-        = t(:album_year) + ": "
-      = @album.year
-      %br
-      %strong
-        = t(:album_format) + ": "
-      = @album.format
-    .artist_bio
-      = @album.review
-
