@@ -9,12 +9,22 @@ class AlbumsController < ApplicationController
   end
 
   def album_summary
-    @album = Artist.find_by(name: params[:artist_name]).songs.find_by(name: params[:song_name]).album
+    @artist = Artist.find_by(name: params[:artist_name])
+    if @artist
+      @song = @artist.songs.find_by(name: params[:song_name])
+      if @song
+        @album = @song.album
+      else
+        @album = nil
+      end
+    else
+      @album = nil
+    end
 
     respond_with(@album) do |format|
     format.html {render :partial => "album_summary" }
     end
-  
+
   end
 
   def new

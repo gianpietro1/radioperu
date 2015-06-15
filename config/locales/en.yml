@@ -73,6 +73,9 @@ en:
   song_review: "Review"
   song_video: "Youtube video"
   song_lyrics: "Lyrics"
+  # Station page
+  artist_notfound: "Artist not found"
+  album_notfound: "Album not found"
   # General
   cancel: "Cancel"
   current_file: "Current file"

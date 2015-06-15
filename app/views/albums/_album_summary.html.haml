@@ -1,7 +1,14 @@
 .album-info
-  #album-cover
-    = image_tag( @album.cover.thumb )
-  #album-name
-    = @album.name
-  #album-year
-    = @album.year
+  - if @album
+    #album-cover
+      = image_tag( @album.cover.thumb )
+    #album-name
+      = @album.name
+    #album-year
+      = @album.year
+  - else
+    #album-cover
+      = image_tag( 'default_album_thumb.jpg' )
+    #album-name
+      %em
+        = t(:album_notfound)

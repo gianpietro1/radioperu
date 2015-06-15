@@ -1,5 +1,12 @@
 .artist-info
-  #artist-image
-    = image_tag( @artist.image.midsize )
-  #artist-bio
-    = @artist.bio
+  -if @artist
+    #artist-image
+      = image_tag( @artist.image.midsize )
+    #artist-bio
+      = @artist.bio
+  - else
+    #artist-image
+      = image_tag( 'default_artist_midsize.jpg' )
+    #artist-bio 
+      %em
+        = t(:artist_notfound)
