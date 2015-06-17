@@ -1,0 +1,8 @@
+- if @current_program_ajax
+  - if @current_program_ajax.banner?
+    = image_tag( @current_program_ajax.banner )
+  - else
+    - if params[:locale] == 'es'
+      = image_tag ('default_banner_es.jpg')
+    - elsif params[:locale] == 'en'
+      = image_tag ('default_banner_en.jpg')

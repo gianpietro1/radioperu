@@ -9,7 +9,7 @@
 
 .row
   .col-md-1
-  .col-md-5
+  .col-md-5.margin-top-10
     .radio_container
       .station_title
         %h3
@@ -22,33 +22,60 @@
           #song
       #artist_summary
       #album_summary
-
-  .col-md-1    
+  .col-md-3.margin-top-10
+    .station_schedule
+      %h5.text-center
+        = t(:station_schedule)
+      #station_schedule
+        = render partial: 'programs/programs_index'
+  .col-md-2.margin-top-10
+    .station_sponsor
+      %h5.text-center
+        = t(:current_program_sponsor)
+      #station_sponsor
+        = render partial: 'programs/program_sponsor'
+  .col-md-1
 
 = javascript_include_tag 'jquery.shoutcast.min.js'
 
 %script{:type=>"text/javascript"}
 
-  setInterval(function(){
+  // Set variables
+  var locale = "#{I18n.locale}";
+  var radio_id = "#{@radio.id}";
+
+  function update_artist(){
 
   $.SHOUTcast({host : 'eclipse.wavestreamer.com',port:3771}).stats(function(){
-  
-  // Capture artist and song from Shoutcast server
+ 
+  // Shoutcast variables
   var artist = this.get('songtitle').substring(0, this.get('songtitle').indexOf(" - "));
   var song = this.get('songtitle').substring(this.get('songtitle').indexOf(" - ") + 3);
-  var locale = "#{I18n.locale}";
-  
+ 
   // Append artist and song to player
   $('#artist').text(artist);
   $('#song').text(song);
 
   // Ajax call artist summary partial based on artist variable
-  ($.ajax({data: { artist_name: artist }, type: 'get', url: "/" + locale + "/artist_summary", success: function(r) { $('#artist_summary').html(r); } }));
+  $.ajax({data: { artist_name: artist }, type: 'get', url: "/" + locale + "/artist_summary", success: function(r) { $('#artist_summary').html(r); } });
 
   // Ajax call album summary partial based on artist and song variable
-  ($.ajax({data: { song_name: song, artist_name: artist }, type: 'get', url: "/" + locale + "/album_summary", success: function(r) { $('#album_summary').html(r); } }));
+  $.ajax({data: { song_name: song, artist_name: artist }, type: 'get', url: "/" + locale + "/album_summary", success: function(r) { $('#album_summary').html(r); } });
 
   });
+  }
 
-  // Do all of this periodically
-  },4000);
+  function update_programs() {
+
+  // Ajax call program index partial
+  $.ajax({data: { radio_id: radio_id },type: 'get', url: "/" + locale + "/program_index", success: function(r) { $('#station_schedule').html(r); } });
+
+  }
+
+  // Do updates of this periodically
+  
+  update_artist();
+  setInterval(update_artist,5000);
+  
+  update_programs();
+  programInterval = setInterval(update_programs,10000);

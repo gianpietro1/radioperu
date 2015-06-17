@@ -1,0 +1,72 @@
+%table.table.table-striped.table-bordered.table-condensed.text-center
+  - if @programs.any?
+    %thead
+      %tr
+        %th.text-center{:colspan => 2}
+          - case Time.now.wday
+            - when 1
+              = t(:monday) + ", " + Time.now.strftime("%d/%m")
+            - when 2
+              = t(:tuesday) + ", " + Time.now.strftime("%d/%m")
+            - when 3
+              = t(:wednesday) + ", " + Time.now.strftime("%d/%m")
+            - when 4
+              = t(:thursday) + ", " + Time.now.strftime("%d/%m")
+            - when 5
+              = t(:friday) + ", " + Time.now.strftime("%d/%m")
+            - when 6
+              = t(:saturday) + ", " + Time.now.strftime("%d/%m")
+            - when 7
+              = t(:sunday) + ", " + Time.now.strftime("%d/%m")
+      %tr
+        %th.text-center
+          = t(:program_time)
+        %th.text-center
+          = t(:program_name)
+    %tbody
+      - @programs.each do |program|
+        - if program.days_array.include? Time.now.strftime('%w')
+          - @time_start = program.program_start.getlocal.strftime( "%H" ).to_i * 3600 + program.program_start.getlocal.strftime( "%M" ).to_i * 60
+          - @time_end = program.program_end.getlocal.strftime( "%H" ).to_i * 3600 + program.program_end.getlocal.strftime( "%M" ).to_i * 60
+          - @time_current = Time.now.strftime( "%H").to_i * 3600 + Time.now.strftime( "%M").to_i * 60
+          %tr.trhover
+          - if @time_start <= @time_current && @time_current <= @time_end
+            %td
+              = program.program_start.getlocal.strftime("%H:%M") + ' - ' + program.program_end.getlocal.strftime("%H:%M")
+            %td.active_program.tdhover{:id => "#{program.id}"}
+              %a{ href: '#', class: "programtable" }
+                = program.name
+                = link_to '[edit]', edit_radio_program_path(@radio,program), class: 'small'
+          - else
+            %td
+              = program.program_start.getlocal.strftime("%H:%M") + ' - ' + program.program_end.getlocal.strftime("%H:%M")
+            %td.tdhover{:id => "#{program.id}"}
+              %a{ href: '#', class: "programtable" }
+                = program.name
+                = link_to '[edit]', edit_radio_program_path(@radio,program), class: 'small'
+.pull-right
+  =link_to t(:new_program), new_radio_program_path(@radio), class: 'btn btn-success'
+
+%script{:type=>"text/javascript"}
+
+  var locale = "#{I18n.locale}";
+  var radio_id = "#{@radio.id}";
+
+  function update_sponsor() {
+
+  var current_program_id = $('.active_program').attr('id');
+
+  $.ajax({data: { current_program_id: current_program_id },type: 'get', url: "/" + locale + "/program_sponsor", success: function(r) { $('#station_sponsor').html(r); } });
+  
+  }
+
+  update_sponsor();
+
+  $("td").click(function() {
+
+  var program_id = $(this).attr('id');
+
+  $.ajax({data: { radio_id: radio_id, program_id: program_id }, type: 'get', url: "/" + locale + "/program_show", success: function(r) { $('#station_schedule').html(r); } });
+  
+  });
+

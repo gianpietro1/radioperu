@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150606040513) do
+ActiveRecord::Schema.define(version: 20150615054031) do
 
   create_table "album_translations", force: :cascade do |t|
     t.integer  "album_id",   null: false
@@ -54,6 +54,33 @@ ActiveRecord::Schema.define(version: 20150606040513) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
+
+  create_table "program_translations", force: :cascade do |t|
+    t.integer  "program_id",  null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "name"
+    t.text     "description"
+    t.string   "banner"
+  end
+
+  add_index "program_translations", ["locale"], name: "index_program_translations_on_locale"
+  add_index "program_translations", ["program_id"], name: "index_program_translations_on_program_id"
+
+  create_table "programs", force: :cascade do |t|
+    t.string  "name"
+    t.text    "description"
+    t.integer "user_id"
+    t.string  "image"
+    t.integer "radio_id"
+    t.time    "program_start"
+    t.time    "program_end"
+    t.string  "banner"
+    t.text    "days_array"
+  end
+
+  add_index "programs", ["radio_id"], name: "index_programs_on_radio_id"
 
   create_table "radio_translations", force: :cascade do |t|
     t.integer  "radio_id",    null: false

@@ -1,0 +1,30 @@
+= form_for [radio,program] do |f|  
+  .form_group
+    = f.label t(:program_name)
+    = f.text_field :name, class: 'form-control'
+  .form_group
+    = f.label t(:program_description)
+    = f.text_area :description, class: 'form-control'
+  .form_group
+    = f.label t(:program_image)
+    = f.file_field :image, class: 'form-control'
+    = f.hidden_field :image_cache
+  .form_group
+    = f.label t(:program_banner)
+    = f.file_field :banner, class: 'form-control'
+    = f.hidden_field :banner_cache
+  .form_group
+    = f.label t(:program_start)
+    = f.time_field :program_start, class: 'form-control'
+  .form_group
+    = f.label t(:program_end)
+    = f.time_field :program_end, class: 'form-control'
+  .form_group
+    = f.label t(:program_days)
+    = f.text_field :days_array, class: 'form-control'
+  .row.margin-top-05
+    .col-md-12
+      .form_group.pull-right
+        = link_to t(:cancel), @radio, class: "btn btn-danger"
+        = f.submit t(:form_save), class: 'btn btn-success'
+

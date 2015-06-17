@@ -5,6 +5,10 @@
 
 // General styles
 
+.float {
+  float: left;
+}
+
 .margin-bottom-01 { margin-bottom: 0.1em; }
 
 .margin-left-00 { margin-left: 0em; }
@@ -256,7 +260,6 @@
 }
 
 .radio_container {
-  margin-top: 10px;
   min-height: 425px;
   padding: 20px;  
   height: 200px;    
@@ -340,6 +343,38 @@
 #album-name {
   overflow: auto;
   margin-top: 10px;
+}
+
+.station_schedule, .station_sponsor {
+  min-height: 425px;  
+  border-radius: 10px;
+  border: 1px solid #ececec;
+  color: #3c3c33;
+  margin-left: -15px;
+  padding:0;
+  text-align: center
+}
+
+.active_program {
+  background-color: #ececec;
+  color: #f6f3e4;
+}
+
+.tdhover:hover {
+  background-color: black;
+  color: white !important;
+}
+
+.programtable {
+  display: block;
+  float: left;
+  text-align: center;
+  padding: 0;
+}
+
+.programtable:hover {
+  text-decoration: none;
+  color:white;
 }
 
 // Artist

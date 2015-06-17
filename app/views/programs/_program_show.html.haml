@@ -1,0 +1,24 @@
+#backbutton
+  %button.btn.btn-sm.btn-info
+    = t(:back_to_schedule)
+%h5
+  = t(:name_of_the_program)
+%p
+  = '"' + @program.name + '"' 
+%p
+  = image_tag( @program.image )
+%p
+  = @program.description
+
+
+%script{:type=>"text/javascript"}
+
+  clearInterval(programInterval);
+
+  $("#backbutton").click(function() {
+  
+  programInterval = setInterval(update_programs,10000);
+
+  $.ajax({data: { radio_id: radio_id },type: 'get', url: "/" + locale + "/program_index", success: function(r) { $('#station_schedule').html(r); } });
+  
+  });
