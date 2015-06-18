@@ -3,4 +3,6 @@
   .col-md-10
     %h3 
       = t(:edit_program)
+    .pull-right
+      = link_to t(:delete_program), radio_program_path(@radio, @program), method: :delete, class: 'btn btn-danger'
     = render partial: 'programs_form', locals: { radio: @radio, program: @program } 

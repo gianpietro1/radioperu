@@ -1,23 +1,10 @@
+// Time could be monkey patched to include some useful functions.
 %table.table.table-striped.table-bordered.table-condensed.text-center
   - if @programs.any?
     %thead
       %tr
         %th.text-center{:colspan => 2}
-          - case Time.now.wday
-            - when 1
-              = t(:monday) + ", " + Time.now.strftime("%d/%m")
-            - when 2
-              = t(:tuesday) + ", " + Time.now.strftime("%d/%m")
-            - when 3
-              = t(:wednesday) + ", " + Time.now.strftime("%d/%m")
-            - when 4
-              = t(:thursday) + ", " + Time.now.strftime("%d/%m")
-            - when 5
-              = t(:friday) + ", " + Time.now.strftime("%d/%m")
-            - when 6
-              = t(:saturday) + ", " + Time.now.strftime("%d/%m")
-            - when 7
-              = t(:sunday) + ", " + Time.now.strftime("%d/%m")
+          = l Time.now, format: :short
       %tr
         %th.text-center
           = t(:program_time)
@@ -25,7 +12,7 @@
           = t(:program_name)
     %tbody
       - @programs.each do |program|
-        - if program.days_array.include? Time.now.strftime('%w')
+        - if program.days_array.include? Time.now.wday.to_s
           - @time_start = program.program_start.getlocal.strftime( "%H" ).to_i * 3600 + program.program_start.getlocal.strftime( "%M" ).to_i * 60
           - @time_end = program.program_end.getlocal.strftime( "%H" ).to_i * 3600 + program.program_end.getlocal.strftime( "%M" ).to_i * 60
           - @time_current = Time.now.strftime( "%H").to_i * 3600 + Time.now.strftime( "%M").to_i * 60

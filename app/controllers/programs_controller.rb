@@ -1,7 +1,5 @@
 class ProgramsController < ApplicationController
 
-  respond_to :html, :js
-
   def new
     @radio = Radio.find(params[:radio_id])
     @program = Program.new
@@ -34,6 +32,18 @@ class ProgramsController < ApplicationController
       flash[:error] = t(:program_update_error)
       render :new
     end  
+  end
+
+  def destroy
+    @program = Program.find(params[:id])
+    @radio = Radio.find(params[:radio_id])
+    if @program.destroy
+      flash[:notice] = t(:program_deleted)
+      redirect_to @radio
+    else
+      flash[:error] = t(:program_delete_error)
+      render :edit
+    end
   end
 
   private
