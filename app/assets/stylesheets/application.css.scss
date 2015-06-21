@@ -355,13 +355,18 @@
   text-align: center
 }
 
-.active_program {
-  background-color: #ececec;
+.admin_program {
+  background-color: #c0c0c0;
   color: #f6f3e4;
 }
 
+.active_program {
+  background-color: lightblue;
+  color: white;
+}
+
 .tdhover:hover {
-  background-color: black;
+  background-color: black !important;
   color: white !important;
 }
 

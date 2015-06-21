@@ -1,5 +1,5 @@
 // Time could be monkey patched to include some useful functions.
-%table.table.table-striped.table-bordered.table-condensed.text-center
+%table.table.table-bordered.table-condensed.text-center
   - if @programs.any?
     %thead
       %tr
@@ -16,21 +16,30 @@
           - @time_start = program.program_start.getlocal.strftime( "%H" ).to_i * 3600 + program.program_start.getlocal.strftime( "%M" ).to_i * 60
           - @time_end = program.program_end.getlocal.strftime( "%H" ).to_i * 3600 + program.program_end.getlocal.strftime( "%M" ).to_i * 60
           - @time_current = Time.now.strftime( "%H").to_i * 3600 + Time.now.strftime( "%M").to_i * 60
-          %tr.trhover
+          %tr
           - if @time_start <= @time_current && @time_current <= @time_end
             %td
               = program.program_start.getlocal.strftime("%H:%M") + ' - ' + program.program_end.getlocal.strftime("%H:%M")
             %td.active_program.tdhover{:id => "#{program.id}"}
               %a{ href: '#', class: "programtable" }
                 = program.name
-                = link_to '[edit]', edit_radio_program_path(@radio,program), class: 'small'
+                = link_to t(:edit), edit_radio_program_path(@radio,program), class: 'small'
           - else
             %td
               = program.program_start.getlocal.strftime("%H:%M") + ' - ' + program.program_end.getlocal.strftime("%H:%M")
             %td.tdhover{:id => "#{program.id}"}
               %a{ href: '#', class: "programtable" }
                 = program.name
-                = link_to '[edit]', edit_radio_program_path(@radio,program), class: 'small'
+                = link_to t(:edit), edit_radio_program_path(@radio,program), class: 'small'
+        - elsif current_user
+          %tr
+            %td
+              = program.program_start.getlocal.strftime("%H:%M") + ' - ' + program.program_end.getlocal.strftime("%H:%M")
+            %td.admin_program.tdhover
+              %a{ href: '#', class: "programtable" }
+                %em
+                  = program.name
+                = link_to t(:adminedit), edit_radio_program_path(@radio,program), class: 'small'
 .pull-right
   =link_to t(:new_program), new_radio_program_path(@radio), class: 'btn btn-success'
 
