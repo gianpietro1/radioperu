@@ -1,5 +1,9 @@
 // Check in Rails Assests Pipeline, how to include "require tree"
 
+/*
+ *= require jquery-ui
+ */
+
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
@@ -470,6 +474,18 @@
 .id3 {
   font-size: 0.7em;
   padding: 0;
+}
+
+// Search
+
+.ui-autocomplete-category {
+  font-weight: bold;
+  font-size: 0.8em;
+  background-color: #e0e0e0;
+}
+
+.ui-menu-item {
+  font-size: 0.8em;
 }
 
 

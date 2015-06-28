@@ -211,6 +211,8 @@ GEM
     jquery-turbolinks (2.1.0)
       railties (>= 3.1.0)
       turbolinks
+    jquery-ui-rails (5.0.3)
+      railties (>= 3.2.16)
     json (1.8.2)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
@@ -274,6 +276,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    redis (3.2.1)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     rspec-core (3.1.7)
@@ -309,6 +312,11 @@ GEM
       activesupport (~> 4)
     sexp_processor (4.6.0)
     slop (3.6.0)
+    soulmate_rails (0.3.2)
+      activesupport
+      json (>= 1.7.7)
+      multi_json (>= 1.0)
+      redis (>= 2.0)
     spring (1.3.6)
     sprockets (3.1.0)
       rack (~> 1.0)
@@ -358,6 +366,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
+  jquery-ui-rails
   mini_magick
   pg
   pry-rails
@@ -365,10 +374,12 @@ DEPENDENCIES
   rails (= 4.2.0)
   rails-i18n (~> 4.0.4)
   rails_12factor
+  redis
   rspec-rails (~> 3.1.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   seed_dump
+  soulmate_rails
   spring (~> 1.3.6)
   sqlite3
   turbolinks

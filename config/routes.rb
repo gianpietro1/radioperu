@@ -19,6 +19,10 @@ Rails.application.routes.draw do
     get 'program_index' => 'radios#program_index'
     get 'program_sponsor' => 'radios#program_sponsor'
     get 'program_show' => 'radios#program_show'
+    match '/search_suggestions', to: 'search_suggestions#index', via: :get
+    match '/search_suggestions_artists', to: 'search_suggestions#index_artists', via: :get
+    match '/search_suggestions_albums', to: 'search_suggestions#index_albums', via: :get
+    match '/search_suggestions_songs', to: 'search_suggestions#index_songs', via: :get
   end
 
   get '/:locale' => 'welcome#index'

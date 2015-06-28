@@ -1,5 +1,7 @@
 class Artist < ActiveRecord::Base
 
+  autocomplete :name, :score => :id
+  
   translates :bio
   belongs_to :user
   has_many :albums, dependent: :destroy

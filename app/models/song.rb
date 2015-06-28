@@ -1,5 +1,7 @@
 class Song < ActiveRecord::Base
 
+  autocomplete :name, :score => :id
+
   translates :review
   belongs_to :album
   belongs_to :artist

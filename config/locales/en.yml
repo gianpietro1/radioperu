@@ -26,7 +26,7 @@ en:
   catalogue: "music catalogue"
   register_as_listener: "Register as a listener"
   register_as_musician: "Register as a musician"
-  search_text: "Artists, Albums and Songs"
+  search_text: "Search Artists, Albums and Songs"
   search: "Search"
   login: "Login"
   greetings: "Hi"
@@ -97,6 +97,10 @@ en:
   program_delete_error: "Error deleting the program"
   edit: "[edit]"
   adminedit: "[edit admin]"
+  #Search Categories
+  artists: "Artists"
+  albums: "Albums"
+  songs: "Songs"
   # General
   cancel: "Cancel"
   current_file: "Current file"

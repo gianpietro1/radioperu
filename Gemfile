@@ -89,3 +89,9 @@ gem 'cocoon'
 gem 'seed_dump'
 # MP3 ID3 read/write
 gem 'id3tag'
+# Redis DB
+gem 'redis'
+# Soulmate Autocomplete & Search
+gem 'soulmate_rails'
+# Jquery UI for Autocomplete
+gem 'jquery-ui-rails'
