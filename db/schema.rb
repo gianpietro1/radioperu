@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150615054031) do
+ActiveRecord::Schema.define(version: 20150628173614) do
 
   create_table "album_translations", force: :cascade do |t|
     t.integer  "album_id",   null: false
@@ -34,6 +34,11 @@ ActiveRecord::Schema.define(version: 20150615054031) do
     t.integer  "artist_id"
   end
 
+  create_table "albums_genres", id: false, force: :cascade do |t|
+    t.integer "genre_id"
+    t.integer "album_id"
+  end
+
   create_table "artist_translations", force: :cascade do |t|
     t.integer  "artist_id",  null: false
     t.string   "locale",     null: false
@@ -53,6 +58,22 @@ ActiveRecord::Schema.define(version: 20150615054031) do
     t.boolean  "active",     default: true
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "artists_genres", id: false, force: :cascade do |t|
+    t.integer "genre_id"
+    t.integer "artist_id"
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "genres_songs", id: false, force: :cascade do |t|
+    t.integer "genre_id"
+    t.integer "song_id"
   end
 
   create_table "program_translations", force: :cascade do |t|

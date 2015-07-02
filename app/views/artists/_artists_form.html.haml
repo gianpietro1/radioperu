@@ -1,27 +1,35 @@
 = form_for artist do |f|  
-  .form_group
-    = f.label t(:artist_name)
-    = f.text_field :name, class: 'form-control'
-  .form_group
-    = f.label t(:artist_bio)
-    = f.text_area :bio, class: 'form-control'
-  .form_group
-    = f.label t(:artist_city)
-    = f.text_field :city, class: 'form-control'
-  .form_group
-    = f.label t(:artist_url)
-    = f.text_field :url, class: 'form-control'
-  .form_group
-    = f.label t(:artist_active), class: 'checkbox'
-    = f.check_box :active
-  .form_group
-    = f.label t(:artist_image)
-    = f.file_field :image
-    = f.hidden_field :image_cache
-    - if f.object.image
-      .current_file
-        - file = URI(f.object.image.to_s).path.split('/').last.to_s
-        = t(:current_file) + ': ' + (file.length > 0 ? file : "-").to_s
-  .form_group
-    = f.submit t(:form_save), class: 'btn btn-success'
-    = link_to t(:cancel), @artist, class: "btn btn-danger"
+  .row
+    .col-md-6
+      .form_group
+        = f.label t(:artist_name)
+        = f.text_field :name, class: 'form-control'
+      .form_group
+        = f.label t(:artist_bio)
+        = f.text_area :bio, class: 'form-control'
+      .form_group
+        = f.label t(:artist_city)
+        = f.text_field :city, class: 'form-control'
+      .form_group
+        = f.label t(:artist_url)
+        = f.text_field :url, class: 'form-control'
+      .form_group
+        = f.label t(:artist_active), class: 'checkbox'
+        = f.check_box :active
+      .form_group
+        = f.label t(:artist_image)
+        = f.file_field :image
+        = f.hidden_field :image_cache
+        - if f.object.image
+          .current_file
+            - file = URI(f.object.image.to_s).path.split('/').last.to_s
+            = t(:current_file) + ': ' + (file.length > 0 ? file : "-").to_s
+    .col-md-4
+      .form_group
+        = f.label t(:genres)
+        - genres_array = Genre.all.map { |genre| genre.name }
+        = select_tag(:genres, options_for_select(genres_array), {:multiple => true, :size => 20})
+  .row
+    .form_group
+      = f.submit t(:form_save), class: 'btn btn-success'
+      = link_to t(:cancel), @artist, class: "btn btn-danger"
