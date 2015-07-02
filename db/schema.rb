@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150628173614) do
+ActiveRecord::Schema.define(version: 20150702025758) do
 
   create_table "album_translations", force: :cascade do |t|
     t.integer  "album_id",   null: false
@@ -32,11 +32,7 @@ ActiveRecord::Schema.define(version: 20150628173614) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "artist_id"
-  end
-
-  create_table "albums_genres", id: false, force: :cascade do |t|
-    t.integer "genre_id"
-    t.integer "album_id"
+    t.string   "genre"
   end
 
   create_table "artist_translations", force: :cascade do |t|
@@ -58,22 +54,13 @@ ActiveRecord::Schema.define(version: 20150628173614) do
     t.boolean  "active",     default: true
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
-  end
-
-  create_table "artists_genres", id: false, force: :cascade do |t|
-    t.integer "genre_id"
-    t.integer "artist_id"
+    t.string   "genre"
   end
 
   create_table "genres", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "genres_songs", id: false, force: :cascade do |t|
-    t.integer "genre_id"
-    t.integer "song_id"
   end
 
   create_table "program_translations", force: :cascade do |t|
@@ -145,6 +132,7 @@ ActiveRecord::Schema.define(version: 20150628173614) do
     t.string   "video"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.string   "genre"
   end
 
   create_table "users", force: :cascade do |t|

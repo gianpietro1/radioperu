@@ -1,24 +1,30 @@
 = form_for [artist,album] do |f|  
-  .form_group
-    = f.label t(:album_name)
-    = f.text_field :name, class: 'form-control'
-  .form_group
-    = f.label t(:album_review)
-    = f.text_area :review, class: 'form-control'
-  .form_group
-    = f.label t(:album_year)
-    = f.text_field :year, class: 'form-control'
-  .form_group
-    = f.label t(:album_format)
-    = f.text_field :format, class: 'form-control'
-  .form_group
-    = f.label t(:album_cover)
-    = f.file_field :cover, class: 'form-control'
-    = f.hidden_field :cover_cache
-    - if f.object.cover
-      .current_file
-        - file = URI.unescape(URI(f.object.cover.to_s).path.split('/').last.to_s)
-        = t(:current_file) + ': ' + (file.length > 0 ? file : "-").to_s
+  .row
+    .col-md-6
+      .form_group
+        = f.label t(:album_name)
+        = f.text_field :name, class: 'form-control'
+      .form_group
+        = f.label t(:album_review)
+        = f.text_area :review, class: 'form-control'
+      .form_group
+        = f.label t(:album_year)
+        = f.text_field :year, class: 'form-control'
+      .form_group
+        = f.label t(:album_format)
+        = f.text_field :format, class: 'form-control'
+      .form_group
+        = f.label t(:genre)
+        - genres_array = Genre.all.map { |genre| genre.name }
+        = f.select(:genre, options_for_select(genres_array, f.object.genre), {:size => 15, :class => 'form-control half-width'})
+      .form_group
+        = f.label t(:album_cover)
+        = f.file_field :cover, class: 'form-control'
+        = f.hidden_field :cover_cache
+        - if f.object.cover
+          .current_file
+            - file = URI.unescape(URI(f.object.cover.to_s).path.split('/').last.to_s)
+            = t(:current_file) + ': ' + (file.length > 0 ? file : "-").to_s
   .row
     .col-md-4
       %h4 

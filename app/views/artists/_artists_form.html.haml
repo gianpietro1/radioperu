@@ -14,8 +14,12 @@
         = f.label t(:artist_url)
         = f.text_field :url, class: 'form-control'
       .form_group
-        = f.label t(:artist_active), class: 'checkbox'
-        = f.check_box :active
+        = f.label t(:genre)
+        - genres_array = Genre.all.map { |genre| genre.name }
+        = f.select(:genre, options_for_select(genres_array, f.object.genre), {:class => 'form-control half-width'})
+      .form_group
+        = f.label t(:artist_active)
+        = f.check_box :active, class: 'checkbox'
       .form_group
         = f.label t(:artist_image)
         = f.file_field :image
@@ -24,12 +28,7 @@
           .current_file
             - file = URI(f.object.image.to_s).path.split('/').last.to_s
             = t(:current_file) + ': ' + (file.length > 0 ? file : "-").to_s
-    .col-md-4
-      .form_group
-        = f.label t(:genres)
-        - genres_array = Genre.all.map { |genre| genre.name }
-        = select_tag(:genres, options_for_select(genres_array), {:multiple => true, :size => 20})
-  .row
+  .row.margin-top-10
     .form_group
       = f.submit t(:form_save), class: 'btn btn-success'
       = link_to t(:cancel), @artist, class: "btn btn-danger"

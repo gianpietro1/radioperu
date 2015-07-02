@@ -34,6 +34,10 @@
           = @artist.url
           %br
           %strong
+            = t(:genre) + ": "
+          = @artist.genre
+          %br
+          %strong
             = t(:artist_active) + ": "
           = ( @artist.active ? t(:artist_isactive) : t(:artist_isnotactive) )         
       .artist_divright

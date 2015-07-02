@@ -6,27 +6,33 @@
     %h3 
       = t(:edit_song)
     = form_for [@artist,@album,@song] do |f|
-      .form_group
-        = f.label t(:song_discnum)
-        = f.text_field :discnum, class: 'form-control'
-      .form_group
-        = f.label t(:song_track)
-        = f.text_field :track, class: 'form-control'
-      .form_group
-        = f.label t(:song_name)
-        = f.text_field :name, class: 'form-control'
-      .form_group
-        = f.label t(:song_review)
-        = f.text_area :review, class: 'form-control'
-      .form_group
-        = f.label t(:song_filename)
-        = f.file_field :filename, class: 'form-control'
-      .form_group
-        = f.label t(:song_video)
-        = f.text_field :video, class: 'form-control'
-      .form_group
-        = f.label t(:song_lyrics)
-        = f.text_area :lyrics, class: 'form-control'
-      .form_group
+      .row
+        .col-md-6
+          .form_group
+            = f.label t(:song_discnum)
+            = f.text_field :discnum, class: 'form-control'
+          .form_group
+            = f.label t(:song_track)
+            = f.text_field :track, class: 'form-control'
+          .form_group
+            = f.label t(:song_name)
+            = f.text_field :name, class: 'form-control'
+          .form_group
+            = f.label t(:song_review)
+            = f.text_area :review, class: 'form-control'
+          .form_group
+            = f.label t(:genre)
+            - genres_array = Genre.all.map { |genre| genre.name }
+            = f.select(:genre, options_for_select(genres_array, f.object.genre), {:size => 15, :class => 'form-control half-width'})
+          .form_group
+            = f.label t(:song_filename)
+            = f.file_field :filename, class: 'form-control'
+          .form_group
+            = f.label t(:song_video)
+            = f.text_field :video, class: 'form-control'
+          .form_group
+            = f.label t(:song_lyrics)
+            = f.text_area :lyrics, class: 'form-control'      
+      .row.margin-top-10
         = f.submit t(:form_save), class: 'btn btn-success'
         = link_to t(:cancel), [@artist,@album,@song], class: "btn btn-danger"

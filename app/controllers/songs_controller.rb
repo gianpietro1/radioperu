@@ -17,6 +17,9 @@ class SongsController < ApplicationController
     @album = Album.find(params[:album_id])
     @artist = Artist.find(params[:artist_id])
     if @song.update_attributes(song_params)
+      if @song.genre == nil
+        @song.genre = @album.genre
+      end
       flash[:notice] = t(:song_updated)
       redirect_to [@artist,@album,@song]
     else
@@ -28,7 +31,7 @@ class SongsController < ApplicationController
   private
 
   def song_params
-    params.require(:song).permit(:discnum, :track, :name, :review, :filename, :id3, :video, :lyrics)
+    params.require(:song).permit(:discnum, :track, :name, :review, :filename, :id3, :video, :lyrics, :genre)
   end
 
 end

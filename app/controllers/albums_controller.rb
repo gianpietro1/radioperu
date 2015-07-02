@@ -36,6 +36,9 @@ class AlbumsController < ApplicationController
     @artist = Artist.find(params[:artist_id])
     @album = @artist.albums.build(album_params)
     if @album.save
+      if @album.genre == nil
+        @album.genre = @artist.genre
+      end
       flash[:notice] = t(:album_saved)
       update_id3
       redirect_to [@artist,@album]      
@@ -53,7 +56,7 @@ class AlbumsController < ApplicationController
   def update
     @album = Album.find(params[:id])
     @artist = @album.artist
-    if @album.update_attributes(album_params)
+    if @album.update_attributes(album_params)      
       flash[:notice] = t(:album_updated)
       update_id3
       redirect_to [@artist,@album]
@@ -79,7 +82,7 @@ class AlbumsController < ApplicationController
   private
 
     def album_params
-      params.require(:album).permit(:name, :year, :cover, :review, :format, songs_attributes: [ :id, :discnum, :track, :name, :filename, :id3, :_destroy ] )
+      params.require(:album).permit(:name, :year, :cover, :review, :format, :genre, songs_attributes: [ :id, :discnum, :track, :name, :filename, :id3, :_destroy ] )
     end
 
     def update_id3
