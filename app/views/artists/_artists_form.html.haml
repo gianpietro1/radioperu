@@ -15,8 +15,8 @@
         = f.text_field :url, class: 'form-control'
       .form_group
         = f.label t(:genre)
-        - genres_array = Genre.all.map { |genre| genre.name }
-        = f.select(:genre, options_for_select(genres_array, f.object.genre), {:class => 'form-control half-width'})
+        - genres_array = Genre.all.map { |genre| [genre.name, genre.id] }
+        = f.select(:genre_id, options_for_select(genres_array, f.object.genre_id), {:class => 'form-control half-width'})
       .form_group
         = f.label t(:artist_active)
         = f.check_box :active, class: 'checkbox'

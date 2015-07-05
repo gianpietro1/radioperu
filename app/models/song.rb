@@ -5,7 +5,8 @@ class Song < ActiveRecord::Base
   translates :review
   belongs_to :album
   belongs_to :artist
-
+  belongs_to :genre
+  
   mount_uploader :filename, FilenameUploader
 
   after_create :inherit_genre

@@ -82,7 +82,7 @@ class AlbumsController < ApplicationController
   private
 
     def album_params
-      params.require(:album).permit(:name, :year, :cover, :review, :format, :genre, songs_attributes: [ :id, :discnum, :track, :name, :filename, :id3, :_destroy ] )
+      params.require(:album).permit(:name, :year, :cover, :review, :format, :genre_id, songs_attributes: [ :id, :discnum, :track, :name, :filename, :id3, :_destroy ] )
     end
 
     def update_id3

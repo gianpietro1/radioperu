@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150702025758) do
+ActiveRecord::Schema.define(version: 20150705121609) do
 
   create_table "album_translations", force: :cascade do |t|
     t.integer  "album_id",   null: false
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20150702025758) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "artist_id"
-    t.string   "genre"
+    t.integer  "genre_id"
   end
 
   create_table "artist_translations", force: :cascade do |t|
@@ -54,13 +54,22 @@ ActiveRecord::Schema.define(version: 20150702025758) do
     t.boolean  "active",     default: true
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
-    t.string   "genre"
+    t.integer  "genre_id"
   end
 
-  create_table "genres", force: :cascade do |t|
+  create_table "genre_translations", force: :cascade do |t|
+    t.integer  "genre_id",   null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  end
+
+  add_index "genre_translations", ["genre_id"], name: "index_genre_translations_on_genre_id"
+  add_index "genre_translations", ["locale"], name: "index_genre_translations_on_locale"
+
+  create_table "genres", force: :cascade do |t|
+    t.integer "radio_id"
   end
 
   create_table "program_translations", force: :cascade do |t|
@@ -132,7 +141,7 @@ ActiveRecord::Schema.define(version: 20150702025758) do
     t.string   "video"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.string   "genre"
+    t.integer  "genre_id"
   end
 
   create_table "users", force: :cascade do |t|
