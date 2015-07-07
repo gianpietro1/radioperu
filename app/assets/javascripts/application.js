@@ -19,3 +19,37 @@
 //= require bootstrap
 //= require soundmanager2/soundmanager2-nodebug-jsmin
 //= require_tree .
+
+window.PA = window.PA || {};
+
+PA.common = {
+ init: function() {
+   $('html').removeClass('no-js');
+ }
+};
+
+UTIL = {
+ exec: function( feature ) {
+   var ns = PA,
+     method = 'init';
+
+   if ( feature !== "" && ns[feature] && typeof ns[feature][method] == 'function' ) {
+     ns[feature][method]();
+   }
+ },
+
+ init: function() {
+   var features = document.body.getAttribute('data-features').split(' ');
+   if (features) {
+     for(var i = 0; i < features.length; i++) {
+       UTIL.exec(features[i]);
+     };
+   } 
+
+   UTIL.exec('common');
+
+   $(document).trigger('finalized');
+ }
+};
+
+$(document).ready( UTIL.init );

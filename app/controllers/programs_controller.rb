@@ -3,13 +3,15 @@ class ProgramsController < ApplicationController
   def new
     @radio = Radio.find(params[:radio_id])
     @program = Program.new
+    authorize @program
   end
 
   def create
     @radio = Radio.find(params[:radio_id])
     @program = @radio.programs.build(program_params)
+    authorize @program
     if @program.save
-      flash[:notice] = t(:program_saved)
+      flash[:notice] = t(:program_created)
       redirect_to @radio
     else
       flash[:error] = t(:program_create_error)
@@ -20,11 +22,13 @@ class ProgramsController < ApplicationController
   def edit
     @radio = Radio.find(params[:radio_id])
     @program = Program.find(params[:id])
+    authorize @program
   end
 
   def update
     @radio = Radio.find(params[:radio_id])
     @program = Program.find(params[:id])
+    authorize @program
     if @program.update_attributes(program_params)
       flash[:notice] = t(:program_updated)
       redirect_to @radio
@@ -36,6 +40,7 @@ class ProgramsController < ApplicationController
 
   def destroy
     @program = Program.find(params[:id])
+    authorize @program
     @radio = Radio.find(params[:radio_id])
     if @program.destroy
       flash[:notice] = t(:program_deleted)

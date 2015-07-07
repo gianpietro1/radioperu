@@ -6,4 +6,16 @@ class User < ActiveRecord::Base
 
   has_many :artists
 
+  def admin?
+    role == 'admin'
+  end
+  
+  def musician?
+    role == 'musician'
+  end
+
+  def listener?
+    role == 'listener'
+  end
+
 end

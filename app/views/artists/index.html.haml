@@ -4,7 +4,8 @@
   .col-md-1
   .col-md-10
     .pull-right
-      =link_to t(:new_artist), new_artist_path, class: 'btn btn-success'
+      - if policy(Artist.new).create?
+        =link_to t(:new_artist), new_artist_path, class: 'btn btn-success'
     
 .row
   .col-md-1
@@ -18,8 +19,6 @@
             = image_tag( 'default_artist_thumb.jpg' )          
           = link_to artist.name, artist
   .col-md-1
-
-
 
 
 

@@ -46,6 +46,7 @@ en:
   artist_isnotactive: "Not active today"
   artist_updated: "The artist was updated successfully."
   # Albums
+  add_album: "Add Album"
   album_name: "Album name"
   album_review: "Review"
   album_year: "Edition year"

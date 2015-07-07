@@ -46,6 +46,7 @@ es:
   artist_isnotactive: "Inactivo"
   artist_updated: "El artista fue actualizado satisfactoriamente."
   # Albums
+  add_album: "Añadir Álbum"
   album_name: "Nombre del Álbum"
   album_review: "Reseña"
   album_year: "Año de edición"

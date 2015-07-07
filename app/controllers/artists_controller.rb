@@ -4,17 +4,18 @@ class ArtistsController < ApplicationController
 
   def index
     @artists = Artist.all
+    authorize @artists
   end
 
   def show
     @artist = Artist.find(params[:id])
+    authorize @artist
     @albums = @artist.albums
     @songs = @artist.songs
   end
 
   def artist_summary
     @artist = Artist.find_by(name: params[:artist_name])
-
     respond_with(@artist) do |format|
     format.html {render :partial => "artist_summary" }
     end
@@ -23,10 +24,12 @@ class ArtistsController < ApplicationController
 
   def new
     @artist = Artist.new
+    authorize @artist
   end
 
   def create
     @artist = Artist.create(artist_params)
+    authorize @artist
     if @artist.save
       flash[:notice] = t(:artist_saved)
       redirect_to @artist
@@ -37,11 +40,13 @@ class ArtistsController < ApplicationController
   end
 
   def edit
-    @artist = Artist.find(params[:id])    
+    @artist = Artist.find(params[:id])  
+    authorize @artist  
   end
 
   def update
     @artist = Artist.find(params[:id])
+    authorize @artist
     if @artist.update_attributes(artist_params)
       flash[:notice] = t(:artist_updated)
       redirect_to @artist
@@ -53,6 +58,7 @@ class ArtistsController < ApplicationController
 
   def destroy
     @artist = Artist.find(params[:id])
+    authorize @artist
     name = @artist.name
     if @artist.destroy
       flash[:notice] = t(:artist_destroyed)

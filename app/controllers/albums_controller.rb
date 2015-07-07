@@ -5,6 +5,7 @@ class AlbumsController < ApplicationController
   def show
     @artist = Artist.find(params[:artist_id])
     @album = Album.find(params[:id])  
+    authorize @album
     @songs = @album.songs
   end
 
@@ -30,11 +31,13 @@ class AlbumsController < ApplicationController
   def new
     @artist = Artist.find(params[:artist_id])
     @album = Album.new  
+    authorize @album
   end
 
   def create
     @artist = Artist.find(params[:artist_id])
     @album = @artist.albums.build(album_params)
+    authorize @album
     if @album.save
       if @album.genre == nil
         @album.genre = @artist.genre
@@ -51,10 +54,12 @@ class AlbumsController < ApplicationController
   def edit
     @artist = Artist.find(params[:artist_id])
     @album = Album.find(params[:id])
+    authorize @album
   end
 
   def update
     @album = Album.find(params[:id])
+    authorize @album
     @artist = @album.artist
     if @album.update_attributes(album_params)      
       flash[:notice] = t(:album_updated)
@@ -68,6 +73,7 @@ class AlbumsController < ApplicationController
 
   def destroy
    @album = Album.find(params[:id])
+   authorize @album
    @artist = @album.artist
    name = @album.name
     if @album.destroy

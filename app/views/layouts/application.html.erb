@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body data-no-turbolink>
+<body data-no-turbolink data-features="<%= yield :features %>">
   <div class="container-fluid">
 
     <div class="row container-top">

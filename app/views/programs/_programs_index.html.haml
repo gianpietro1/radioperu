@@ -12,7 +12,7 @@
           = t(:program_name)
     %tbody
       - @programs.each do |program|
-        - if program.days_array.include? Time.now.wday.to_s
+        - if program.days_array.include? (Time.now.wday + 1).to_s
           - @time_start = program.program_start.getlocal.strftime( "%H" ).to_i * 3600 + program.program_start.getlocal.strftime( "%M" ).to_i * 60
           - @time_end = program.program_end.getlocal.strftime( "%H" ).to_i * 3600 + program.program_end.getlocal.strftime( "%M" ).to_i * 60
           - @time_current = Time.now.strftime( "%H").to_i * 3600 + Time.now.strftime( "%M").to_i * 60
@@ -31,7 +31,7 @@
               %a{ href: '#', class: "programtable" }
                 = program.name
                 = link_to t(:edit), edit_radio_program_path(@radio,program), class: 'small'
-        - elsif current_user
+        - elsif policy(program).destroy?
           %tr
             %td
               = program.program_start.getlocal.strftime("%H:%M") + ' - ' + program.program_end.getlocal.strftime("%H:%M")
@@ -41,7 +41,8 @@
                   = program.name
                 = link_to t(:adminedit), edit_radio_program_path(@radio,program), class: 'small'
 .pull-right
-  =link_to t(:new_program), new_radio_program_path(@radio), class: 'btn btn-success'
+  - if policy(Program.new).create?
+    =link_to t(:new_program), new_radio_program_path(@radio), class: 'btn btn-success'
 
 %script{:type=>"text/javascript"}
 

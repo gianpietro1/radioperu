@@ -4,8 +4,10 @@
   .col-md-1
   .col-md-10
     .pull-right
-      =link_to t(:edit_song), edit_artist_album_song_path(@artist,@album,@song), class: 'btn btn-warning'
-      =link_to t(:delete_song), [@artist,@album,@song], method: :delete, class: 'btn btn-danger', data: { confirm: t(:delete_song_confirm) }
+      - if policy(@song).edit?
+        =link_to t(:edit_song), edit_artist_album_song_path(@artist,@album,@song), class: 'btn btn-warning'
+      - if policy(@song).destroy?   
+        =link_to t(:delete_song), [@artist,@album,@song], method: :delete, class: 'btn btn-danger', data: { confirm: t(:delete_song_confirm) }
     
 .row
   .col-md-1
