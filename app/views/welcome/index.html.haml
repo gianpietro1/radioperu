@@ -23,14 +23,17 @@
 
 .row.margin-top-10
   .col-md-2
-  .col-md-4 
+  .col-md-6 
     %a.catalogue{ href: artists_path, data_description: t(:catalogue) }
       %h3
-        = t :catalogue
-  .col-md-2
-    %a.listener{ href: new_user_registration_path, data_description: t(:register_as_listener) }
-      %h5
-        = t :register_as_listener
+        = t(:catalogue)
+        %br
+        %span.small
+          = t(:catalogue_description)
+  /.col-md-2
+  /  %a.listener{ href: new_user_registration_path, data_description: t(:register_as_listener) }
+  /    %h5
+  /      = t :register_as_listener
   .col-md-2
     %a.musician{ href: '#', data_description: t(:register_as_musician) }
       %h5

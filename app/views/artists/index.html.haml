@@ -11,10 +11,10 @@
   .col-md-1
   .col-md-10
     - Radio.all.shuffle.each do |radio|
-      .row.artists_container
+      .row.artists_container{:id => "artist_container#{radio.id}"}
         %h5
           =t(:random_artists_station) + " " + radio.id.to_s + " (#{radio.description})"
-        - radio.artists.shuffle[0..9].each do |artist|
+        - radio.artists.shuffle[0..7].each do |artist|
           .artist_thumb.text-center
             - if artist.image?
               = image_tag( artist.image.thumb )

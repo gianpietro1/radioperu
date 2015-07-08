@@ -61,8 +61,7 @@ class Bulk
     if File.exists?(image_file)
       @artist_db = Artist.create(name: @artist_name_id3, image: File.open(image_file, 'rb'), bio: @bios_array[@artist_name_id3][:es], genre_id: Genre.find_by(name:@genre_id3).id)    
     else
-      default_image_file = File.join(Rails.root, 'app/assets/images', 'default_artist.jpg')
-      @artist_db = Artist.create(name: @artist_name_id3, image: File.open(default_image_file, 'rb'), bio: @bios_array[@artist_name_id3][:es], genre_id: Genre.find_by(name:@genre_id3).id)          
+      @artist_db = Artist.create(name: @artist_name_id3, bio: @bios_array[@artist_name_id3][:es], genre_id: Genre.find_by(name:@genre_id3).id)          
     end
     I18n.locale = :en
     @artist_db.update_attributes(bio: @bios_array[@artist_name_id3][:en])
@@ -73,8 +72,7 @@ class Bulk
     if File.exists?(cover_file)
       @album_db = @artist_db.albums.create(name: @album_name_id3, cover: File.open(cover_file, 'rb'), year: @song_year_id3, genre_id: Genre.find_by(name:@genre_id3).id)
     else
-      default_cover_file = File.join(Rails.root, 'app/assets/images', 'default_album.jpg')
-      @album_db = @artist_db.albums.create(name: @album_name_id3, cover: File.open(default_cover_file, 'rb'), year: @song_year_id3, genre_id: Genre.find_by(name:@genre_id3).id)
+      @album_db = @artist_db.albums.create(name: @album_name_id3, year: @song_year_id3, genre_id: Genre.find_by(name:@genre_id3).id)
     end
   end
 

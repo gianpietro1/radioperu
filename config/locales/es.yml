@@ -24,6 +24,7 @@ es:
   hello: "Hola mundo"
   discover: "Descubre toda la música del Perú."
   catalogue: "catálogo musical"
+  catalogue_description: "una colección de música de todos los géneros y épocas"
   register_as_listener: "Regístrate como oyente"
   register_as_musician: "Regístrate como músico"
   search_text: "Buscar Artistas, Álbumes y Canciones"
@@ -107,3 +108,10 @@ es:
   cancel: "Cancelar"
   current_file: "Archivo actual"
   genre: "Género principal"
+  # Devise
+  login: "Ingresar"
+  email: "Correo electrónico"
+  remember_me: "Recordarme"
+  sign_up: "Inscribirse"
+  password: "Contraseña"
+  forgot_password: "Olvidé mi contraseña"

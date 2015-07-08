@@ -8,6 +8,8 @@ class Song < ActiveRecord::Base
 
   mount_uploader :filename, FilenameUploader
 
+  default_scope { order('discnum ASC', 'track ASC') }
+
   after_create :inherit_genre
   
   def id3
@@ -16,10 +18,10 @@ class Song < ActiveRecord::Base
   private
 
     def inherit_genre
-      if self.album.genre
-        self.genre = self.album.genre
-      elsif self.artist.genre
-        self.genre = self.artist.genre
+      if self.album.genre_id
+        self.genre_id = self.album.genre_id
+      elsif self.album.artist.genre_id
+        self.genre_id = self.album_artist.genre_id
       end
     end
 

@@ -11,4 +11,6 @@ class Album < ActiveRecord::Base
 
   mount_uploader :cover, CoverUploader
 
+  default_scope { order('year ASC') }
+
 end

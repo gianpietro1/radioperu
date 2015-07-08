@@ -62,15 +62,16 @@
                 = image_tag( 'default_album_thumb.jpg')
             .artist_album_info
               = link_to album.name, artist_album_path(@artist,album.id)
-              %p
+              %br
               = album.year
   .col-md-4 
     .artist_songs
       %ul.playlist
-        - @songs.each do |song|
-          %li
-            %a{ href: song.filename }
-              - if song.track
-                = format('%02d', song.track).to_s + ' ' + song.name
-              - else
-                = format('%02d', 0).to_s + ' ' + song.name
+        - @albums.each do |album|
+          - album.songs.each do |song|
+            %li
+              %a{ href: song.filename }
+                - if song.track
+                  = format('%02d', song.track).to_s + ' ' + song.name
+                - else
+                  = format('%02d', 0).to_s + ' ' + song.name

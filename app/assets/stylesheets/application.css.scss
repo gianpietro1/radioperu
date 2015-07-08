@@ -174,7 +174,7 @@
 
 .catalogue {
   display: block;
-  width: 400px;
+  width: 660px;
   height: 100px;
   background-color: #f6f3e4;
   border-radius: 10px;
@@ -400,6 +400,26 @@
   padding: 0 10px;
 }
 
+#artist_container1 {
+  border-top: 4px solid #ECB85B;
+}
+
+#artist_container2 {
+  border-top: 4px solid #C05B69;
+}
+
+#artist_container3 {
+  border-top: 4px solid #81BB7E;
+}
+
+#artist_container4 {
+  border-top: 4px solid #F7764D;
+}
+
+#artist_container5 {
+  border-top: 4px solid #93D3D7;
+}
+
 .artist_thumb {
   padding: 0 10px;
   float: left;
@@ -457,7 +477,7 @@
 .artist_album_info {
   padding: 10px;
   float: left;
-  width: 60%;
+  width: 69%;
 }
 
 .artist_songs {

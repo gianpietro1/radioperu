@@ -44,7 +44,7 @@
         %li
           .pointer
             - if song.name != ''
-              =link_to raw("&#8599;"), artist_album_song_path(@artist,@album,song)
+              =link_to raw("&#10138;"), artist_album_song_path(@artist,@album,song)
           %a{ href: song.filename }
             - if song.track
               = format('%02d', song.track).to_s + ' ' + song.name
