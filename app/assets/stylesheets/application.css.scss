@@ -392,12 +392,17 @@
 
 // Artist
 
-.artist_thumb {
-  padding: 10px;
-  background-color: #f6f3e4;
+.artists_container {
+  height: 125px;
   border-radius: 10px;
-  width: 200px;
-  margin: 10px;
+  border: 1px solid #ececec;
+  margin-top: 5px;
+  padding: 0 10px;
+}
+
+.artist_thumb {
+  padding: 0 10px;
+  float: left;
 }
 
 .artist_div {

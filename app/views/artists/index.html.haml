@@ -10,14 +10,18 @@
 .row
   .col-md-1
   .col-md-10
-    .artists-container
-      - @artists.each do |artist|
-        .artist_thumb
-          - if artist.image?
-            = image_tag( artist.image.thumb )
-          - else
-            = image_tag( 'default_artist_thumb.jpg' )          
-          = link_to artist.name, artist
+    - Radio.all.shuffle.each do |radio|
+      .row.artists_container
+        %h5
+          =t(:random_artists_station) + " " + radio.id.to_s + " (#{radio.description})"
+        - radio.artists.shuffle[0..9].each do |artist|
+          .artist_thumb.text-center
+            - if artist.image?
+              = image_tag( artist.image.thumb )
+            - else
+              = image_tag( 'default_artist_thumb.jpg' )    
+            %p      
+            = link_to artist.name, artist
   .col-md-1
 
 

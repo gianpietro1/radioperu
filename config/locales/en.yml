@@ -45,6 +45,7 @@ en:
   artist_isactive: "Active today"
   artist_isnotactive: "Not active today"
   artist_updated: "The artist was updated successfully."
+  random_artists_station: "Random Artists from Station"
   # Albums
   add_album: "Add Album"
   album_name: "Album name"

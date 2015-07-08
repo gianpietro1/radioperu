@@ -45,6 +45,7 @@ es:
   artist_isactive: "Activo a la fecha"
   artist_isnotactive: "Inactivo"
   artist_updated: "El artista fue actualizado satisfactoriamente."
+  random_artists_station: "Artistas varios de la Estación"
   # Albums
   add_album: "Añadir Álbum"
   album_name: "Nombre del Álbum"
