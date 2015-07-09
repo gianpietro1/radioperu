@@ -40,6 +40,8 @@
       = @album.review
   %ul.playlist
     .col-md-4
+      %h5 
+        =t(:click_to_play_arrow_for_details)
       - @songs.each do |song|
         %li
           .pointer

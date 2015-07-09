@@ -61,6 +61,7 @@ es:
   album_updated: "El álbum fue actualizado satisfactoriamente."
   album_saved: "El álbum fue creado satisfactoriamente."
   id3: "Importar otros campos de etiquetas ID3?"
+  click_to_play_arrow_for_details: "Clic para reproducir / Flecha para detalles de la canción"
   # Songs
   add_song: "Añadir canción"
   remove_song: "Borrar canción"
@@ -76,6 +77,8 @@ es:
   song_review: "Reseña"
   song_video: "Video en Youtube"
   song_lyrics: "Letra"
+  lyrics_not_available: "Letra no disponible"
+  video_not_available: "Video no disponible"
   # Station page
   artist_notfound: "Artista no encontrado"
   album_notfound: "Álbum no encontrado"

@@ -95,3 +95,5 @@ gem 'redis'
 gem 'soulmate_rails'
 # Jquery UI for Autocomplete
 gem 'jquery-ui-rails'
+# Video info
+gem 'video_info', github: 'thibaudgg/video_info'

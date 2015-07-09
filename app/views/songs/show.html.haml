@@ -18,11 +18,35 @@
 
 .row
   .col-md-1
-  .col-md-2
-    = @song.discnum
-    = @song.track
-    = @song.name
-    = @song.review
-    = @song.filename
-    = @song.video
-    = @song.lyrics
+  .col-md-6
+    %ul.playlist
+      %h5 
+        =t(:click_to_play_arrow_for_details)
+      %li
+        %a{ href: @song.filename }
+          - if @song.track
+            = format('%02d', @song.track).to_s + ' ' + @song.name
+          - elsif @song.name
+            = '00' + ' ' + @song.name
+          - else
+            = ''
+    %h5
+      =t(:song_video)
+    %p.margin-top-05
+      - if @song.video == nil
+        = t(:video_not_available)
+      - else
+        - @video_id = VideoInfo.new(@song.video).video_id
+        %iframe{:allowscriptaccess => "always", :allowFullScreen => "true", :frameborder => "0", :height => "430", :src => "http://www.youtube.com/embed/#{@video_id}", :title => "YouTube video player", :width => "640"}
+    
+  .col-md-4
+    %h5
+      =t(:song_lyrics)
+    %p.margin-top-05
+      - if @song.lyrics == nil
+        = t(:lyrics_not_available)
+      - else
+        = h(@song.lyrics).gsub("\n", "<br>").html_safe 
+
+
+

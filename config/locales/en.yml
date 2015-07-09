@@ -61,6 +61,7 @@ en:
   album_updated: "The album was updated successfully."
   album_saved: "The album was created successfully."
   id3: "Import other fields from ID3 tags?"
+  click_to_play_arrow_for_details: "Click to play / Arrow for song details"
   # Songs
   add_song: "Add song"
   remove_song: "Delete song"
@@ -76,6 +77,8 @@ en:
   song_review: "Review"
   song_video: "Youtube video"
   song_lyrics: "Lyrics"
+  lyrics_not_available: "Lyrics not available"
+  video_not_available: "Video not available"
   # Station page
   artist_notfound: "Artist not found"
   album_notfound: "Album not found"
