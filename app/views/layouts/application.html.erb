@@ -11,9 +11,13 @@
 
     <div class="row container-top">
       <div class="pull-left language">
-        <%= link_to "ESP", params.merge(:locale => 'es') %>
-        |
-        <%= link_to "ENG", params.merge(:locale => 'en') %>
+        <% if I18n.locale == :es %>
+          <%= link_to "ESP", params.merge(:locale => 'es'), class: "orange" %> |
+          <%= link_to "ENG", params.merge(:locale => 'en') %>
+        <% elsif I18n.locale == :en %>
+          <%= link_to "ESP", params.merge(:locale => 'es') %> |
+          <%= link_to "ENG", params.merge(:locale => 'en'), class: "orange" %>
+        <% end %>          
       </div>
 
       <div class="pull-right user-info">

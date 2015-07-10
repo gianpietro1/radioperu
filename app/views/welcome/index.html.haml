@@ -1,7 +1,7 @@
 .row
   .col-md-1
   .col-md-10
-    .slogan
+    .slogan-animation
       = t(:discover)
     .search
       = text_field_tag :search, params[:search], placeholder: "#{t(:search_text)}", size: 50, class: 'search-field'
@@ -90,3 +90,7 @@
   });
 
   });
+
+  $(".slogan-animation").animate({opacity: "1.0"}, "slow");
+
+
