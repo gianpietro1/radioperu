@@ -12,7 +12,8 @@
         = f.text_field :year, class: 'form-control'
       .form_group
         = f.label t(:album_format)
-        = f.text_field :format, class: 'form-control'
+        - formats_array = Format.all.map { |format| [format.name, format.id]}
+        = f.select(:format_id, options_for_select(formats_array, f.object.format_id), {:size => 15, :class => 'form-control half-width'})
       .form_group
         = f.label t(:genre)
         - genres_array = Genre.all.map { |genre| [genre.name, genre.id] }

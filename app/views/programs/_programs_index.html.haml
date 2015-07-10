@@ -23,14 +23,16 @@
             %td.active_program.tdhover{:id => "#{program.id}"}
               %a{ href: '#', class: "programtable" }
                 = program.name
-                = link_to t(:edit), edit_radio_program_path(@radio,program), class: 'small'
+                - if policy(program).edit?
+                  = link_to t(:edit), edit_radio_program_path(@radio,program), class: 'small'
           - else
             %td
               = program.program_start.getlocal.strftime("%H:%M") + ' - ' + program.program_end.getlocal.strftime("%H:%M")
             %td.tdhover{:id => "#{program.id}"}
               %a{ href: '#', class: "programtable" }
                 = program.name
-                = link_to t(:edit), edit_radio_program_path(@radio,program), class: 'small'
+                - if policy(program).edit?  
+                  = link_to t(:edit), edit_radio_program_path(@radio,program), class: 'small'
         - elsif policy(program).destroy?
           %tr
             %td

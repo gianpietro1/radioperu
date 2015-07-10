@@ -48,23 +48,23 @@
 .row
   .col-md-1
   .col-md-3 
-    %h5
+    %h4
       = t(:albums)
     .artist_albums
       - @albums.each do |album|
         .row
-          .artist_album
+          %a{ href: artist_album_path(@artist,album.id), class: "artist_album"}
             .artist_album_thumb
               -if album.cover?
                 = image_tag( album.cover.thumb )
               -else
                 = image_tag( 'default_album_thumb.jpg')
             .artist_album_info
-              = link_to album.name, artist_album_path(@artist,album.id)
+              = album.name
               %br
               = album.year
   .col-md-4 
-    %h5
+    %h4
       = t(:songs)
     .artist_songs
       %ul.playlist

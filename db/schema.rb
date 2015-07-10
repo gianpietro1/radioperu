@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707025152) do
+ActiveRecord::Schema.define(version: 20150709150945) do
 
   create_table "album_translations", force: :cascade do |t|
     t.integer  "album_id",   null: false
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20150707025152) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text     "review"
-    t.string   "format"
   end
 
   add_index "album_translations", ["album_id"], name: "index_album_translations_on_album_id"
@@ -33,6 +32,7 @@ ActiveRecord::Schema.define(version: 20150707025152) do
     t.datetime "updated_at", null: false
     t.integer  "artist_id"
     t.integer  "genre_id"
+    t.integer  "format_id"
   end
 
   create_table "artist_translations", force: :cascade do |t|
@@ -56,6 +56,20 @@ ActiveRecord::Schema.define(version: 20150707025152) do
     t.datetime "updated_at",                null: false
     t.integer  "genre_id"
     t.integer  "user_id"
+  end
+
+  create_table "format_translations", force: :cascade do |t|
+    t.integer  "format_id",  null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+  end
+
+  add_index "format_translations", ["format_id"], name: "index_format_translations_on_format_id"
+  add_index "format_translations", ["locale"], name: "index_format_translations_on_locale"
+
+  create_table "formats", force: :cascade do |t|
   end
 
   create_table "genre_translations", force: :cascade do |t|

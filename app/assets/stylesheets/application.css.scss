@@ -9,6 +9,11 @@
 
 // General styles
 
+body {
+  font-family: 'Myriad Pro Regular', Helvetica;
+  font-size: 16px;
+}
+
 .float {
   float: left;
 }
@@ -216,7 +221,7 @@
   padding-left: 100px;
   color: #3c3c33;
   height: 100px;
-  width: 200px;
+  width: 195px;
   line-height: 85px;
   border-radius: 10px;
   border: 1px solid #ececec;
@@ -393,7 +398,7 @@
 // Artist
 
 .artists_container {
-  height: 125px;
+  height: 132px;
   border-radius: 10px;
   border: 1px solid #ececec;
   margin-top: 5px;
@@ -401,26 +406,32 @@
 }
 
 #artist_container1 {
-  border-top: 4px solid #ECB85B;
+  border: 1px solid #ECB85B;
+  border-top: 7px solid #ECB85B;
 }
 
 #artist_container2 {
-  border-top: 4px solid #C05B69;
+  border: 1px solid #C05B69;
+  border-top: 7px solid #C05B69;
 }
 
 #artist_container3 {
-  border-top: 4px solid #81BB7E;
+  border: 1px solid #81BB7E;
+  border-top: 7px solid #81BB7E;
 }
 
 #artist_container4 {
-  border-top: 4px solid #F7764D;
+  border: 1px solid #F7764D;
+  border-top: 7px solid #F7764D;
 }
 
 #artist_container5 {
-  border-top: 4px solid #93D3D7;
+  border: 1px solid #93D3D7;
+  border-top: 7px solid #93D3D7;
 }
 
 .artist_thumb {
+  display: block;
   padding: 0 10px;
   float: left;
 }
@@ -463,10 +474,15 @@
 }
 
 .artist_album {
+  display: block;
   background-color: #fff;
   color: #3c3c33;
   border-bottom: 1px solid #3c3c33;
-  height: 80px;
+  height: 86px;
+}
+
+.artist_album:hover {
+  background-color: #eee;
 }
 
 .artist_album_thumb {
@@ -580,13 +596,13 @@ ul.playlist li {
  position:relative;
  display:block;
  width:auto;
- font-size:1em;
- color:#f6f3e4;
+ font-size:1.1em;
+ color:#3c3c33;
  padding:0.25em 0.5em 0.25em 0.5em;
  border:none;
  letter-spacing:-1px; /* ZOMG WEB X.0. ;) */
- background-color:#3c3c33;
- border-bottom: 1px solid #f6f3e4;
+ background-color: transparent; /* f6f3e4 */
+ border-bottom: 1px solid #3c3c33;
  -webkit-transition-property: hover;
  -webkit-transition: background-color 0.15s ease-in-out;
  -moz-transition: background-color 0.15s linear 0s; /* firefox 4 */
@@ -598,8 +614,7 @@ ul.playlist li a {
  display:block;
  text-decoration:none;
  font-weight:normal;
- color:#f6f3e4;
- font-size:120%;
+ color:#3c3c33;
  outline:none;
  position:relative;
  z-index:2;
@@ -835,7 +850,7 @@ ul.playlist li .peak .r {
 
 div.pointer a {
  float: right;
- background-color: #f0ad4e;
+ background-color: transparent;
  width: 25px;
  height: 25px;
  padding: 0;
@@ -986,3 +1001,76 @@ div.pointer a:hover {
  z-index: 99; /* try to stay on top */
 }
 
+// Fonts
+
+
+@font-face {
+font-family: 'Myriad Pro Regular';
+font-style: normal;
+font-weight: normal;
+src: local('Myriad Pro Regular'), url('MYRIADPRO-REGULAR.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Myriad Pro Condensed';
+font-style: normal;
+font-weight: normal;
+src: local('Myriad Pro Condensed'), url('MYRIADPRO-COND.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Myriad Pro Semibold Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Myriad Pro Semibold Italic'), url('MYRIADPRO-SEMIBOLDIT.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Myriad Pro Semibold';
+font-style: normal;
+font-weight: normal;
+src: local('Myriad Pro Semibold'), url('MYRIADPRO-SEMIBOLD.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Myriad Pro Condensed Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Myriad Pro Condensed Italic'), url('MYRIADPRO-CONDIT.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Myriad Pro Bold Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Myriad Pro Bold Italic'), url('MYRIADPRO-BOLDIT.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Myriad Pro Bold Condensed Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Myriad Pro Bold Condensed Italic'), url('MYRIADPRO-BOLDCONDIT.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Myriad Pro Bold Condensed';
+font-style: normal;
+font-weight: normal;
+src: local('Myriad Pro Bold Condensed'), url('MYRIADPRO-BOLDCOND.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Myriad Pro Bold';
+font-style: normal;
+font-weight: normal;
+src: local('Myriad Pro Bold'), url('MYRIADPRO-BOLD.woff') format('woff');
+}
