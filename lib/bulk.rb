@@ -26,10 +26,17 @@ class Bulk
       if @id3tags.track_nr.first
         @song_track_id3 = @id3tags.track_nr.first
       end
+
       if @id3tags.get_frames(:TPOS).first
         @song_discnum_id3 = @id3tags.get_frames(:TPOS).first.content.first
       else
         @song_discnum_id3 = 1
+      end
+
+      if @id3tags.get_frames(:COMM)
+        @extras = @id3tags.get_frames(:COMM).last.content.split('%')
+      else
+        @extras = [1, '-', '-']
       end
 
       @artist_db = Artist.find_by(name: @artist_name_id3)
@@ -58,10 +65,9 @@ class Bulk
   def self.create_artist
     I18n.locale = :es
     image_file = 'public/uploads/images/artists/' + @artist_name_id3.gsub(/\s+/, "").downcase + '.jpg'
+    @artist_db = Artist.create(name: @artist_name_id3, bio: @bios_array[@artist_name_id3][:es], genre_id: Genre.find_by(name:@genre_id3).id, city: @extras[1], external_url: @extras[2])    
     if File.exists?(image_file)
-      @artist_db = Artist.create(name: @artist_name_id3, image: File.open(image_file, 'rb'), bio: @bios_array[@artist_name_id3][:es], genre_id: Genre.find_by(name:@genre_id3).id)    
-    else
-      @artist_db = Artist.create(name: @artist_name_id3, bio: @bios_array[@artist_name_id3][:es], genre_id: Genre.find_by(name:@genre_id3).id)          
+      @artist_db.update_attributes(image: File.open(image_file, 'rb'))
     end
     I18n.locale = :en
     @artist_db.update_attributes(bio: @bios_array[@artist_name_id3][:en])
@@ -69,10 +75,9 @@ class Bulk
 
   def self.create_album
     cover_file = 'public/uploads/images/albums/' + @artist_name_id3.gsub(/\s+/, "").downcase + '-' + @album_name_id3.gsub(/\s+/, "").downcase + '.jpg'
+    @album_db = @artist_db.albums.create(name: @album_name_id3, year: @song_year_id3, genre_id: Genre.find_by(name:@genre_id3).id, format_id: @extras[0])
     if File.exists?(cover_file)
-      @album_db = @artist_db.albums.create(name: @album_name_id3, cover: File.open(cover_file, 'rb'), year: @song_year_id3, genre_id: Genre.find_by(name:@genre_id3).id)
-    else
-      @album_db = @artist_db.albums.create(name: @album_name_id3, year: @song_year_id3, genre_id: Genre.find_by(name:@genre_id3).id)
+      @album_db.update_attributes(cover: File.open(cover_file, 'rb'))
     end
   end
 

@@ -12,7 +12,7 @@
         = f.text_field :city, class: 'form-control'
       .form_group
         = f.label t(:artist_url)
-        = f.text_field :url, class: 'form-control'
+        = f.text_field :external_url, class: 'form-control'
       .form_group
         = f.label t(:genre)
         - genres_array = Genre.all.map { |genre| [genre.name, genre.id] }

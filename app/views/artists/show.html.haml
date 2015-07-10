@@ -34,7 +34,7 @@
         %br
         %strong
           = t(:artist_url) + ": "
-        = @artist.url
+        = link_to @artist.external_url, @artist.external_url
         %br
         %strong
           = t(:genre) + ": "

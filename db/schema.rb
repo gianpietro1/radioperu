@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709150945) do
+ActiveRecord::Schema.define(version: 20150710135226) do
 
   create_table "album_translations", force: :cascade do |t|
     t.integer  "album_id",   null: false
@@ -50,10 +50,10 @@ ActiveRecord::Schema.define(version: 20150709150945) do
     t.string   "name"
     t.string   "image"
     t.string   "city"
-    t.string   "url"
-    t.boolean  "active",     default: true
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "external_url"
+    t.boolean  "active",       default: true
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "genre_id"
     t.integer  "user_id"
   end

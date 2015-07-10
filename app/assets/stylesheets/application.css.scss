@@ -622,6 +622,10 @@ ul.playlist li {
   -o-transition-duration: 0.15s;
 }
 
+ul.playlist.song-playlist li {
+  background-color: #eee;
+}
+
 ul.playlist li a {
  display:block;
  text-decoration:none;

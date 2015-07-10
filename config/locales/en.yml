@@ -112,3 +112,10 @@ en:
   cancel: "Cancel"
   current_file: "Current file"
   genre: "Main genre"
+  # Devise
+  login: "Login"
+  email: "Email"
+  remember_me: "Remember me"
+  sign_up: "Sign Up"
+  password: "Password"
+  forgot_password: "Forgot my password"
