@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'musician_form/new'
+
+  get 'musician_form/create'
+
   get 'programs/new'
 
   get 'programs/edit'
@@ -8,6 +12,7 @@ Rails.application.routes.draw do
     resources :radios, only: [:show] do
       resources :programs
     end
+    resources :musician_forms, only: [:new, :create]
     devise_for :users
     resources :artists do
       resources :albums, except: [:index] do

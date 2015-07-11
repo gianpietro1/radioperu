@@ -97,3 +97,5 @@ gem 'soulmate_rails'
 gem 'jquery-ui-rails'
 # Video info
 gem 'video_info', github: 'thibaudgg/video_info'
+# Mail form
+gem 'mail_form'

@@ -1,0 +1,36 @@
+= form_for @musician_form do |f|  
+  .row
+    .col-md-10
+      %h4
+        %br
+        = simple_format(t(:musician_form_disclaimer))
+  .row
+    .col-md-4
+      .form_group
+        = f.label t(:musician_name)
+        %span.red
+          *
+        = f.text_field :musician_name, class: 'form-control', :required => true, :title => 'Por favor llena este campo.'
+      .form_group
+        = f.label t(:musician_contact)
+        %span.red
+          *
+        = f.text_field :musician_contact, class: 'form-control', :required => true, :title => 'Por favor llena este campo.'
+      .form_group
+        = f.label t(:musician_email)
+        %span.red
+          *
+        = f.text_field :musician_email, class: 'form-control', :required => true, :title => 'Por favor llena este campo.'
+      .form_group
+        = f.label t(:musician_url)
+        %span.red
+          *
+        = f.text_field :musician_url, class: 'form-control', :required => true, :title => 'Por favor llena este campo.'
+      .form_group
+        = f.label t(:musician_phone)
+        = f.text_field :musician_phone, class: 'form-control'
+      %p
+      .form_group.pull-left
+        = link_to t(:cancel), root_path, class: "btn btn-danger"
+        = f.submit t(:form_send), class: 'btn btn-success'
+

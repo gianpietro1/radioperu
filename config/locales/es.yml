@@ -113,6 +113,7 @@ es:
   cancel: "Cancelar"
   current_file: "Archivo actual"
   genre: "Género principal"
+  back_to_home: "Volver a radioperu.pe"
   # Devise
   login: "Ingresar"
   email: "Correo electrónico"
@@ -120,3 +121,17 @@ es:
   sign_up: "Inscribirse"
   password: "Contraseña"
   forgot_password: "Olvidé mi contraseña"
+  #Musician Form
+  musician_name: "Nombre de la banda o músico"
+  musician_email: "Correo Electrónico"
+  musician_phone: "Telefóno"
+  musician_url: "Sitio web"
+  musician_contact: "Nombre de contacto"
+  form_email_success: "Formulario enviado satisfactoriamente"
+  form_error: "El formulario contiene un error, revisa los campos (correo válido, etc.)"
+  email_error: "Hubo un error al enviar el correo, puedes escribir directo a contacto@radioperu.pe."
+  form_send: "Enviar"
+  musician_form_disclaimer: |-
+    Si deseas sonar en radioperu.pe, por favor llena el siguiente formulario y nos pondremos en contacto contigo.  El único requisito es contar con material de alta calidad sonora.
+
+    En radioperu.pe nos encargamos de subir tu material, o si deseas puedes solicitar un usuario con privilegios para controlar tu contenido.

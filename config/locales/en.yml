@@ -113,6 +113,7 @@ en:
   cancel: "Cancel"
   current_file: "Current file"
   genre: "Main genre"
+  back_to_home: "Back to radioperu.pe"
   # Devise
   login: "Login"
   email: "Email"
@@ -120,3 +121,17 @@ en:
   sign_up: "Sign Up"
   password: "Password"
   forgot_password: "Forgot my password"
+  #Musician Form
+  musician_name: "Musician/Band name"
+  musician_email: "Email"
+  musician_phone: "Phone"
+  musician_url: "Web site"
+  musician_contact: "Contact name"
+  form_email_success: "Form submitted successfully"
+  form_error: "The form has an error, please check the fields (valid email, etc.)"
+  email_error: "There was an error sending the email.  Please write to contacto@radioperu.pe directly."
+  form_send: "Send"
+  musician_form_disclaimer: |-
+    If you want to appear in radioperu.pe, please fill the following form and we'll contact you.  The only requisite is to have high sound quality recordings.
+
+    At radioperu.pe we take care of uploading your music, or if you wish, you can request a user with privileges to control your own content.
