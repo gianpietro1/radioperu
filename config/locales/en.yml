@@ -104,6 +104,7 @@ en:
   program_delete_error: "Error deleting the program"
   edit: "[edit]"
   adminedit: "[edit admin]"
+  sponsor_available: "Sponsorship available for this program"
   #Search Categories
   artists: "Artists"
   albums: "Albums"

@@ -260,20 +260,41 @@ body {
     width: 200px;
     border: 1px solid #ececec;
     text-align: center;
-    background-color: #428bca;
-    color:#f6f3e4;
-    font-size: 1.2em;
+    font-size: 1.3em;
+    padding-top:4px;
+    color: #3c3333;
+}
+
+.radiomenu1, .radiomenu1 a {
+    background-color: #ECB85B;
+}
+
+.radiomenu2, .radiomenu2 a {
+    background-color: #C05B69;
+}
+
+.radiomenu3, .radiomenu3 a {
+    background-color: #81BB7E;
+}
+
+.radiomenu4, .radiomenu4 a {
+    background-color: #F7764D;
+}
+
+.radiomenu5, .radiomenu5 a {
+    background-color: #93D3D7;
 }
 
 .radionav a:hover,  {
   text-decoration: none;
-  color: #3c3c33;
-  background-color: #f6f3e4;
+  border: 1px solid #3c3333 !important;
+  font-weight: bold;
 }
 
 .highlighted {
-  background-color: #3c3c33 ! important;
-  color: #f6f3e4;
+  font-weight: bold;
+  color: #f6f3e4 !important;
+  border: 1px solid #3c3333 !important;
 }
 
 .radionav {
@@ -281,7 +302,6 @@ body {
     width: 79%;
     margin: 0 auto;
     padding: 5px 40px;
-
 }
 
 .radio_container {
@@ -386,8 +406,9 @@ body {
 }
 
 .active_program {
-  background-color: lightblue;
+  background-color: #e0e0e0;
   color: white;
+  font-weight: bold;
 }
 
 .tdhover:hover {
@@ -400,11 +421,26 @@ body {
   float: left;
   text-align: center;
   padding: 0;
+  color: #3c3c33;  
 }
 
 .programtable:hover {
   text-decoration: none;
   color:white;
+}
+
+.programtable a {
+  color: #3c3c33;  
+}
+
+.default-sponsor {
+  height: 359px;
+  margin: 20px;
+  background-color: #e0e0e0;
+  font-size: 1em;
+  border-radius: 10px;
+  padding: 10px;
+  padding-top: 70%;
 }
 
 // Artist

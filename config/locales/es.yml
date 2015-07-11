@@ -104,6 +104,7 @@ es:
   program_delete_error: "Error al borrar el programa"
   edit: "[editar]"
   adminedit: "[editar admin]"
+  sponsor_available: "Patrocinio disponible para este programa"
   #Search Categories
   artists: "Artistas"
   albums: "Álbumes"

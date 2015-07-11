@@ -3,9 +3,9 @@
     - (1..@radios.count).each do |i|
       %li
         - if @radio.id == i
-          =link_to @radios.find_by(id:i).name, radio_path(id: i), class: 'highlighted'
+          =link_to @radios.find_by(id:i).name, radio_path(id: i), class: "radiomenu#{i} highlighted"
         - else
-          =link_to @radios.find_by(id:i).name, radio_path(id: i)
+          =link_to @radios.find_by(id:i).name, radio_path(id: i), class: "radiomenu#{i}"
 
 .row
   .col-md-1
