@@ -47,6 +47,8 @@ es:
   artist_isnotactive: "Inactivo"
   artist_updated: "El artista fue actualizado satisfactoriamente."
   random_artists_station: "Artistas varios de la Estación"
+  see_all: "Ver todos"
+  artists_from_station: "Artistas de la estación"
   # Albums
   add_album: "Añadir Álbum"
   album_name: "Nombre del Álbum"
@@ -83,6 +85,11 @@ es:
   # Station page
   artist_notfound: "Artista no encontrado"
   album_notfound: "Álbum no encontrado"
+  current_peak_listeners: |-
+    Oyentes
+    Actuales/Máximos
+
+
   # Schedule
   station_schedule: "Programación"
   current_program_sponsor: "Patrocinador de este programa"

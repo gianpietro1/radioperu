@@ -23,6 +23,7 @@ body {
 }
 
 .margin-bottom-01 { margin-bottom: 0.1em; }
+.margin-bottom-10 { margin-bottom: 1.0em; }
 
 .margin-left-00 { margin-left: 0em; }
 
@@ -344,7 +345,7 @@ body {
 #artist {
   font-weight: bold;
   font-size: 1.5em;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 #song {
@@ -359,6 +360,7 @@ body {
   color: #3c3c33;
   padding: 5px;
   margin-top: 10px;
+  clear: both;
 }
 
 #artist-image {
@@ -372,6 +374,19 @@ body {
   margin-top: 10px;
 }
 
+.listeners {
+  height: 100px;    
+  border-radius: 10px;
+  border: 1px solid #ececec;
+  color: #3c3c33;
+  padding: 8px;
+  margin-top: 10px;
+  width: 170px;
+  font-weight: bold;
+  float:left;
+  margin-bottom: 10px
+}
+
 .album-info {
   height: 100px;    
   border-radius: 10px;
@@ -379,8 +394,10 @@ body {
   color: #3c3c33;
   padding: 5px;
   margin-top: 10px;
-  width: 50%;
+  width: 323px;
   font-weight: bold;
+  float:left;
+  margin-left: 5px;
 }
 
 #album-cover {
@@ -449,42 +466,51 @@ body {
 // Artist
 
 .artists_container {
-  height: 132px;
-  border-radius: 10px;
-  border: 1px solid #ececec;
+  height: 183px;
   margin-top: 5px;
   padding: 0 10px;
 }
 
 #artist_container1 {
-  border: 1px solid #ECB85B;
   border-top: 7px solid #ECB85B;
 }
 
 #artist_container2 {
-  border: 1px solid #C05B69;
   border-top: 7px solid #C05B69;
 }
 
 #artist_container3 {
-  border: 1px solid #81BB7E;
   border-top: 7px solid #81BB7E;
 }
 
 #artist_container4 {
-  border: 1px solid #F7764D;
   border-top: 7px solid #F7764D;
 }
 
 #artist_container5 {
-  border: 1px solid #93D3D7;
   border-top: 7px solid #93D3D7;
 }
 
 .artist_thumb {
   display: block;
-  padding: 0 10px;
+  padding: 20px;
+  padding-bottom: 5px;
+  width: 175px;
+  height: 124px;
   float: left;
+  border: 1px solid #3c3333;
+  color: #3c3333;
+  margin-right: 10px;
+  word-wrap: break-word;
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+
+.artist_thumb:hover {
+  text-decoration: none;
+  font-family: 'Myriad Pro Semibold';
+  box-shadow: 0 5px 3px -3px #777;
+  color: #3c3333;
 }
 
 .artist_div {

@@ -1,5 +1,7 @@
 class Artist < ActiveRecord::Base
 
+  default_scope  { order('LOWER(name)') }
+  
   autocomplete :name, :score => :id
   
   translates :bio

@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     get '/search_suggestions_artists' => 'search_suggestions#index_artists'
     get '/search_suggestions_albums' => 'search_suggestions#index_albums'
     get '/search_suggestions_songs' => 'search_suggestions#index_songs'
+    get 'artists/station/:station_id' => 'artists#index_station'
   end
 
   get '/:locale' => 'welcome#index'

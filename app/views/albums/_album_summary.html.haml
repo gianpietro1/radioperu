@@ -1,7 +1,10 @@
 .album-info
   - if @album
     #album-cover
-      = image_tag( @album.cover.thumb )
+      - unless @album.cover.file == nil
+        = image_tag( @album.cover.thumb )
+      - else
+        = image_tag( 'default_album_thumb.jpg' )
     #album-name
       = @album.name
     #album-year

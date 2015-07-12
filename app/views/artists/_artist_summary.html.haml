@@ -1,7 +1,10 @@
 .artist-info
   -if @artist
     #artist-image
-      = image_tag( @artist.image.midsize )
+      -unless @artist.image.file == nil
+        = image_tag( @artist.image.midsize )
+      -else
+        = image_tag( 'default_artist_midsize.jpg' )      
     #artist-bio
       = @artist.bio
   - else

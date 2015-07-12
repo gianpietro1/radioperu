@@ -47,6 +47,8 @@ en:
   artist_isnotactive: "Not active today"
   artist_updated: "The artist was updated successfully."
   random_artists_station: "Random Artists from Station"
+  see_all: "See all"
+  artists_from_station: "Artists from station"
   # Albums
   add_album: "Add Album"
   album_name: "Album name"
@@ -83,6 +85,11 @@ en:
   # Station page
   artist_notfound: "Artist not found"
   album_notfound: "Album not found"
+  current_peak_listeners: |-
+    Listeners
+    Current/Peak
+
+
   # Schedule
   station_schedule: "Station Schedule"
   current_program_sponsor: "Current Program Sponsor"

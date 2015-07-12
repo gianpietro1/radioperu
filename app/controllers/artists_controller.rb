@@ -7,6 +7,11 @@ class ArtistsController < ApplicationController
     authorize @artists
   end
 
+  def index_station
+    @radio = Radio.find_by_id(params[:station_id])
+    @artists = @radio.artists
+  end
+
   def show
     @artist = Artist.find(params[:id])
     authorize @artist
