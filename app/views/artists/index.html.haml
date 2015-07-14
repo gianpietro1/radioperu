@@ -11,7 +11,7 @@
   .col-md-1
   .col-md-10
     - Radio.all.shuffle.each do |radio|
-      %h4
+      %h4.artist_catalogue_title
         =t(:random_artists_station) + " " + radio.id.to_s + " (#{radio.description})"
         .pull-right
           = link_to t(:see_all), "artists/station/#{radio.id}", params[:radio]

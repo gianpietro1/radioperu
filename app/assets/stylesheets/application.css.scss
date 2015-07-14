@@ -143,7 +143,7 @@ body {
 
 .station1,.station2,.station3,.station4,.station5 {
   display: block;
-  width: 180px;
+  width: 19.5%;
   height: 340px;
   float: left;
   margin: 2px;
@@ -151,14 +151,13 @@ body {
 }
 
 .stationlink {
-  width: 70%;
-  height: 25%;
-  background-color: rgba(255,255,255,0.6);
+  width: 97%;
+  height: 28%;
+  background-color: rgba(255,255,255,0.4);
   margin: auto;
   color: #3c3c33;
   margin-top: 220px;
   padding: 10px;
-  border-radius: 10px;
 }
 
 .station1:hover,.station2:hover,.station3:hover,.station4:hover,.station5:hover {
@@ -203,7 +202,7 @@ body {
 
 .catalogue {
   display: block;
-  width: 660px;
+  width: 100%;
   height: 100px;
   background-color: #f6f3e4;
   border-radius: 10px;
@@ -215,7 +214,7 @@ body {
   background-size: 75px 75px;
   background-position: 10px;
   text-align: left;
-  padding-left: 160px;
+  padding-left: 28%;
   float: left;
 }
 
@@ -246,7 +245,7 @@ body {
   color: #3c3c33;
   height: 100px;
   width: 195px;
-  line-height: 85px;
+  line-height: 95px;
   border-radius: 10px;
   border: 1px solid #ececec;
 }
@@ -264,17 +263,18 @@ body {
 /* Radios */
 
 .radionav li {
-    float: left;
+    display: inline-block;
 }
 
 .radionav a {
     display: block;
-    width: 200px;
+    min-width: 170px;
     border: 1px solid #ececec;
     text-align: center;
     font-size: 1.3em;
     padding-top:4px;
     color: #3c3333;
+    margin-right: -2px;
 }
 
 .radiomenu1, .radiomenu1 a {
@@ -311,9 +311,13 @@ body {
 
 .radionav {
     list-style-type: none;
-    width: 79%;
+    width: auto;
     margin: 0 auto;
-    padding: 5px 40px;
+    text-align: center;
+    margin-left: -6%;
+}
+
+.radiotitles {
 }
 
 .radio_container {
@@ -389,7 +393,7 @@ body {
   color: #3c3c33;
   padding: 8px;
   margin-top: 10px;
-  width: 170px;
+  width: 33.5%;
   font-weight: bold;
   float:left;
   margin-bottom: 10px
@@ -402,7 +406,7 @@ body {
   color: #3c3c33;
   padding: 5px;
   margin-top: 10px;
-  width: 323px;
+  width: 64.5%;
   font-weight: bold;
   float:left;
   margin-left: 5px;
@@ -415,17 +419,22 @@ body {
 
 #album-name {
   overflow: auto;
-  margin-top: 10px;
 }
 
+.album-summary {
+  width: 60%;
+} 
+
 .station_schedule, .station_sponsor {
-  min-height: 425px;  
+  height: 425px;  
   border-radius: 10px;
   border: 1px solid #ececec;
   color: #3c3c33;
   margin-left: -15px;
   padding:0;
-  text-align: center
+  text-align: center;
+  overflow-y: auto;
+  font-size: 0.9em;
 }
 
 .admin_program {
@@ -529,12 +538,13 @@ body {
 
 .artist_divleft {
   float:left;
-  width: 34%;
+  width: 320px;
+  margin-bottom: 10px;
 }
 
 .artist_divright {
-  float:right;
-  width: 61%;
+  float:left;
+  width: 30%;
 }
 
 .artist_bio {
@@ -591,12 +601,27 @@ body {
   margin-bottom: 5px;
 }
 
+.album_image {
+  float:left;
+  width: 320px;
+  margin-bottom: 20px
+}
+
+.album_songs {
+  float:left;
+  width: 80%;
+}
+
 .album_bio p {
   font-size: 1.0em;
   font-weight: normal;
   overflow: auto;
   height: 213px;
 } 
+
+.album_mininfo {
+  margin-top: 10px;
+}
 
 /* Edit forms */
 
@@ -687,7 +712,7 @@ ul.playlist li {
  position:relative;
  display:block;
  width:auto;
- font-size:1.1em;
+ font-size:1em;
  color:#3c3c33;
  padding:0.25em 0.5em 0.25em 0.5em;
  border:none;
@@ -1170,32 +1195,341 @@ font-weight: normal;
 src: local('Myriad Pro Bold'), url('MYRIADPRO-BOLD.woff') format('woff');
 }
 
-/* Responsiveness 
+/* Responsiveness */
 
-@media screen and (max-width: 1435px) {
+@media screen and (max-width: 1350px) {
+
+ /* Radio Stations */
+
+.radionav a {
+  min-width: 137px
+}
+
+/* Artists Catalogue */
+
+.song-video iframe {
+  width: 426px;
+  height: 286px;
+}
+
+}
+
+@media screen and (max-width: 1292px) {
+
+/* Welcome page */
+
+.radiotitle {
+  font-size: 1em;
+}
+
+.radiodescription {
+  font-size: 0.9em;
+}
 
 .station1,.station2,.station3,.station4,.station5 {
-  width: 160px;
+  width: 19%;
 }
+
+.musician {
+  width: 90%;
+  padding-left: 40%;
+  background-size: 40px 40px;
+  background-position: 7px;
+}
+
+.catalogue {
+  padding-left: 22%
+}
+
+/* Radio Stations */
+
+.station_player {
+  font-size: 0.8em
+}
+
+.listeners {
+  font-size: 0.8em
+}
+
+.album-info {
+  font-size: 0.8em
+}
+
+.album-summary {
+  width: 57%;
+} 
 
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1060px) {
 
-.station1,.station2,.station3,.station4,.station5 {
-  width: 150px;
-  height: 280px;
+/* Welcome page */
+
+.stationlink {
+  margin-top: 200px;
+  height: 30%;
 }
+
+.radiotitle {
+  font-size: 0.8em;
+}
+
+.radiodescription {
+  font-size: 0.7em;
+}
+
+/* Radio Stations */
+
+.station_player {
+  font-size: 0.7em
+}
+
+.listeners {
+  font-size: 0.7em
+}
+
+.album-info {
+  font-size: 0.8em
+}
+
+.album-summary {
+  width: 50%;
+} 
+
+}
+
+@media screen and (max-width: 991px) {
+
+/* Welcome page */
+
+.catalogue {
+  margin: 10px 3px;
+}
+
+.catalogue h3 {
+}
+
+.musician {
+  width: 100%;
+  background-size: 75px 75px;
+  background-position: 10px;
+  padding-left: 22%;
+}
+
+.musician h5 {
+  font-size: 1.5em;
+}
+
+/* Radio Stations */
+
+.station_player {
+  font-size: 1em
+}
+
+.listeners {
+  font-size: 1em
+}
+
+.album-info {
+  font-size: 1em
+}
+
+.station_schedule {
+  min-height: 200px;
+}
+
+.default-sponsor {
+  padding-top: 18%;
+  width: 30%;
+  margin: auto;
+}
+
+.radionav a {
+  min-width: 122px
+}
+
+/* Artists Catalogue */
 
 }
 
 @media screen and (max-width: 768px) {
 
+/* Welcome page */
+
+.stationlink {
+  width: 95%;
+  padding: 10px 2px;
+  word-wrap: break-word;
+}
+
+.station1,.station2,.station3,.station4,.station5 {
+  margin: 1px;
+  height: 300px;
+}
+
+.slogan-animation {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+/* Radio Stations */
+
+.station_player {
+  font-size: 0.9em
+}
+
+.listeners {
+  font-size: 0.9em
+}
+
+.album-info {
+  font-size: 0.9em
+}
+
+.radionav a {
+  min-width: 85px;
+  font-size: 0.9em;
+  margin-right:-3px;
+}
+
+.radionav {
+  margin-left:-9%;
+}
+
+/* Artist catalogue */
+
+.slogan {
+  font-size: 1.5em
+}
+
+.artist_divright {
+  width: 100%;
+}
+
+.artist_bio p {
+  height: 130px;
+}
+
+.album_bio p {
+  height: 130px;
+}
+
+.song-video iframe {
+  width: 320px;
+  height: 215px;
+}
+
+h3.catalogue_title {
+  font-size: 1.2em;
+}
+
 }
 
 @media screen and (max-width: 524px) {
 
+/* Welcome page */
+
+.stationlink {
+  margin-top: 80px;
+  height: 53%;
+  padding: 10px 2px;
 }
 
-*/
+.radiotitle {
+  font-size: 0.6em;
+}
+
+.radiodescription {
+  font-size: 0.5em;
+}
+
+.station1,.station2,.station3,.station4,.station5 {
+  height: 180px;
+  margin: 1px;
+}
+
+.slogan-animation {
+  font-size: 1.3em;
+}
+
+.logo {
+  font-size: 3.4em
+}
+
+.search input {
+  width: 280px;
+  text-align: center;
+}
+
+.catalogue h3 {
+  font-size: 1.3em;
+  padding-left: 10%;
+}
+
+.musician {
+  padding-left: 32%;
+}
+
+.musician h5 {
+  font-size: 1.3em;
+}
+
+/* Radio Stations */
+
+.radio_container {
+  padding: 10px;
+}
+
+.station_player {
+  font-size: 0.7em
+}
+
+.listeners {
+  font-size: 0.7em
+}
+
+.album-info {
+  font-size: 0.7em
+}
+
+.album-summary {
+  width: 45%;
+} 
+
+.radionav a {
+  min-width: 61px;
+  font-size: 0.7em;
+  margin-right:-3px;
+}
+
+.radionav {
+  margin-left:-15%;
+}
+
+.station_title h3 {
+  font-size: 1em;
+}
+
+.default-sponsor {
+  height: 250px;
+  font-size: 0.8em
+}
+
+.station_sponsor {
+  min-height: 300px;
+}
+
+/* Artist catalogue */
+
+.artist_thumb {
+  width: 145px;
+  font-size: 11px;
+}
+
+h4.artist_catalogue_title {
+  font-size: 12px;
+}
+
+}
+
 

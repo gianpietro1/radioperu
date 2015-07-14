@@ -1,8 +1,9 @@
 .album-info
   - if @album
-    .pull-left
-      %h5.margin-bottom-00.line-height-00
-        = t(:album)
+    .pull-left.album-summary
+      .margin-bottom-00
+        %em
+          = t(:album)
       #album-name.margin-top-00.margin-left-01
         = @album.name
       #album-year.margin-left-01
@@ -15,7 +16,7 @@
           = image_tag( 'default_album_thumb.jpg' )
   - else
     .pull-left
-      %h5.margin-bottom-00.line-height-00
+      .margin-bottom-00
         = t(:album)
       #album-name.margin-left-01
         %em

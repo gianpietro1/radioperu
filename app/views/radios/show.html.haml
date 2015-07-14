@@ -1,11 +1,15 @@
 .row
-  %ul.radionav
-    - (1..@radios.count).each do |i|
-      %li
-        - if @radio.id == i
-          =link_to @radios.find_by(id:i).name, radio_path(id: i), class: "radiomenu#{i} highlighted"
-        - else
-          =link_to @radios.find_by(id:i).name, radio_path(id: i), class: "radiomenu#{i}"
+  .col-md-1
+  .col-md-10
+    .radiotitles
+      %ul.radionav
+        - (1..@radios.count).each do |i|
+          %li
+            - if @radio.id == i
+              =link_to @radios.find_by(id:i).name, radio_path(id: i), class: "radiomenu#{i} highlighted"
+            - else
+              =link_to @radios.find_by(id:i).name, radio_path(id: i), class: "radiomenu#{i}"
+  .col-md-1
 
 .row
   .col-md-1

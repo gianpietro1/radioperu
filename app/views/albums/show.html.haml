@@ -12,19 +12,19 @@
 .row
   .col-md-1
   .col-md-10
-    %h3
+    %h3.catalogue_title
       = (link_to @artist.name, @artist) + ' - ' + @album.name
   .col-md-1
 
 .row
   .col-md-1
-  .col-md-3
-    - if @album.cover?
-      = image_tag( @album.cover )
-    - else
-      = image_tag( 'default_album.jpg' )
-    %p
-    .artist_info
+  .col-md-8
+    .album_image
+      - if @album.cover?
+        = image_tag( @album.cover )
+      - else
+        = image_tag( 'default_album.jpg' )
+    .album_mininfo
       %strong
         = t(:album_year) + ": "
       = @album.year
@@ -36,23 +36,30 @@
       %strong
         = t(:genre) + ": "
       = @album.genre.name
-    .album_bio
-      %p
-        = @album.review
-  %ul.playlist
-    .col-md-4
-      %h5 
-        =t(:click_to_play_arrow_for_details)
-      - @songs.each do |song|
-        %li
-          .pointer
-            - if song.name != ''
-              =link_to raw("&#10138;"), artist_album_song_path(@artist,@album,song)
-          %a{ href: song.filename }
-            - if song.track
-              = format('%02d', song.track).to_s + ' ' + song.name
-            - elsif song.name
-              = '00' + ' ' + song.name
-            - else
-              = ''
+    - unless @album.review == nil
+      .album_bio
+        %p
+          = @album.review
+  .col-md-1
+
+.row
+  .col-md-1
+  .col-md-8
+    .album_songs
+      %ul.playlist
+        %h5 
+          =t(:click_to_play_arrow_for_details)
+        - @songs.each do |song|
+          %li
+            .pointer
+              - if song.name != ''
+                =link_to raw("&#10138;"), artist_album_song_path(@artist,@album,song)
+            %a{ href: song.filename }
+              - if song.track
+                = format('%02d', song.track).to_s + ' ' + song.name
+              - elsif song.name
+                = '00' + ' ' + song.name
+              - else
+                = ''
+
   .col-md-4

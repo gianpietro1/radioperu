@@ -13,7 +13,7 @@
 .row
   .col-md-1
   .col-md-10
-    %h3
+    %h3.catalogue_title
       = @artist.name
   .col-md-1
 
@@ -42,10 +42,11 @@
         %strong
           = t(:genre) + ": "
         = @artist.genre.name
-        %br   
-        .artist_bio.margin-top-05
-          %p
-            = @artist.bio
+        %br  
+        - unless @artist.bio == nil
+          .artist_bio.margin-top-05
+            %p
+              = @artist.bio
   .col-md-1
 
 .row

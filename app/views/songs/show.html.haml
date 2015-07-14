@@ -12,7 +12,7 @@
 .row
   .col-md-1
   .col-md-10
-    %h3
+    %h3.catalogue_title
       = (link_to @artist.name, @artist) + ' - ' + (link_to @album.name, [@artist,@album]) + ' - ' + @song.name
   .col-md-1
 
@@ -33,17 +33,18 @@
     %h4
       =t(:song_video)
     %p.margin-top-05
-      - if @song.video == nil || ''
-        = t(:video_not_available)
-      - else
-        - @video_id = VideoInfo.new(@song.video).video_id
-        %iframe{:allowscriptaccess => "always", :allowFullScreen => "true", :frameborder => "0", :height => "430", :src => "http://www.youtube.com/embed/#{@video_id}", :title => "YouTube video player", :width => "640"}
+      .song-video
+        - if @song.video == nil
+          = t(:video_not_available)
+        - else
+          - @video_id = VideoInfo.new(@song.video).video_id
+          %iframe{:allowscriptaccess => "always", :allowFullScreen => "true", :frameborder => "0", :height => "430", :src => "http://www.youtube.com/embed/#{@video_id}", :title => "YouTube video player", :width => "640"}
     
   .col-md-4
     %h4
       =t(:song_lyrics)
     %p.margin-top-05
-      - if @song.lyrics == nil || ''
+      - if @song.lyrics == nil
         = t(:lyrics_not_available)
       - else
         = h(@song.lyrics).gsub("\n", "<br>").html_safe 

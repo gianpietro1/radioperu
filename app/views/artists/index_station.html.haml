@@ -10,7 +10,7 @@
 .row
   .col-md-1
   .col-md-10
-    %h4
+    %h4.artist_catalogue_title
       =t(:artists_from_station) + " " + @radio.id.to_s + " (#{@radio.description})"
       .row.artists_container{:id => "artist_container#{@radio.id}"}
         - @artists.each do |artist|
