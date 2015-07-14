@@ -6,7 +6,9 @@ class User < ActiveRecord::Base
   #,:registerable
 
   has_many :artists
-
+  has_many :albums
+  has_many :songs
+  
   def admin?
     role == 'admin'
   end

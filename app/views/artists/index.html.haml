@@ -11,11 +11,11 @@
   .col-md-1
   .col-md-10
     - Radio.all.shuffle.each do |radio|
-      =t(:random_artists_station) + " " + radio.id.to_s + " (#{radio.description})"
+      %h4
+        =t(:random_artists_station) + " " + radio.id.to_s + " (#{radio.description})"
+        .pull-right
+          = link_to t(:see_all), "artists/station/#{radio.id}", params[:radio]
       .row.margin-bottom-10.artists_container{:id => "artist_container#{radio.id}"}
-        %h4
-          .pull-right
-            = link_to t(:see_all), "artists/station/#{radio.id}", params[:radio]
         - radio.artists.shuffle[0..5].each do |artist|
           %a{ href: artist_path(artist.id), class: "artist_thumb text-center"}
             - if artist.image?

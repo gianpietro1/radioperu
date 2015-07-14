@@ -39,6 +39,7 @@ class AlbumsController < ApplicationController
     @album = @artist.albums.build(album_params)
     authorize @album
     if @album.save
+      @album.update_attributes(user_id: @artist.user_id)
       if @album.genre == nil
         @album.genre = @artist.genre
       end

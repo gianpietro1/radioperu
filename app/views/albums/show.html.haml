@@ -36,8 +36,9 @@
       %strong
         = t(:genre) + ": "
       = @album.genre.name
-    .artist_bio
-      = @album.review
+    .album_bio
+      %p
+        = @album.review
   %ul.playlist
     .col-md-4
       %h5 

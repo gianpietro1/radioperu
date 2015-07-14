@@ -1,7 +1,7 @@
 class AlbumPolicy < ApplicationPolicy
 
   def create?
-    user.present? && (record.artist.user == user || user.admin?)
+    user.present? && (record.user == user || user.admin?)
   end
 
   def update?

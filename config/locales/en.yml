@@ -24,7 +24,7 @@ en:
   hello: "Hello world"
   discover: "Discover all the music from Peru."
   catalogue: "music catalogue"
-  catalogue_description: "a collection of music from all genres & times"
+  catalogue_description: "on-demand music from all genres & times"
   register_as_listener: "Register as a listener"
   register_as_musician: "Register as a musician"
   search_text: "Search Artists, Albums and Songs"
@@ -82,6 +82,7 @@ en:
   song_lyrics: "Lyrics"
   lyrics_not_available: "Lyrics not available"
   video_not_available: "Video not available"
+  song_updated: "Song updated successfully"
   # Station page
   artist_notfound: "Artist not found"
   album_notfound: "Album not found"

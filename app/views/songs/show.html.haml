@@ -33,7 +33,7 @@
     %h4
       =t(:song_video)
     %p.margin-top-05
-      - if @song.video == nil
+      - if @song.video == nil || ''
         = t(:video_not_available)
       - else
         - @video_id = VideoInfo.new(@song.video).video_id
@@ -43,7 +43,7 @@
     %h4
       =t(:song_lyrics)
     %p.margin-top-05
-      - if @song.lyrics == nil
+      - if @song.lyrics == nil || ''
         = t(:lyrics_not_available)
       - else
         = h(@song.lyrics).gsub("\n", "<br>").html_safe 

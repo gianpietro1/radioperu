@@ -24,7 +24,7 @@ es:
   hello: "Hola mundo"
   discover: "Descubre toda la música del Perú."
   catalogue: "catálogo musical"
-  catalogue_description: "una colección de música de todos los géneros y épocas"
+  catalogue_description: "música en demanda de todos los géneros y épocas"
   register_as_listener: "Regístrate como oyente"
   register_as_musician: "Regístrate como músico"
   search_text: "Buscar Artistas, Álbumes y Canciones"
@@ -82,12 +82,13 @@ es:
   song_lyrics: "Letra"
   lyrics_not_available: "Letra no disponible"
   video_not_available: "Video no disponible"
+  song_updated: "Canción actualizada existosamente."
   # Station page
   artist_notfound: "Artista no encontrado"
   album_notfound: "Álbum no encontrado"
   current_peak_listeners: |-
     Oyentes
-    Actuales/Máximos
+    Actuales/Máximo
 
 
   # Schedule

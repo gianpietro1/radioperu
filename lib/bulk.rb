@@ -58,31 +58,35 @@ class Bulk
         create_song(mp3file)
       end
 
+      mp3path.close
+    
     end
   
   end
 
   def self.create_artist
-    I18n.locale = :es
+    I18n.locale = :en
     image_file = 'public/uploads/images/artists/' + @artist_name_id3.gsub(/\s+/, "").downcase + '.jpg'
-    @artist_db = Artist.create(name: @artist_name_id3, bio: @bios_array[@artist_name_id3][:es], genre_id: Genre.find_by(name:@genre_id3).id, city: @extras[1], external_url: @extras[2])    
+    @artist_db = Artist.create(name: @artist_name_id3, bio: @bios_array[@artist_name_id3][:en], genre_id: Genre.find_by(name:@genre_id3).id, city: @extras[1], external_url: @extras[2], user_id: 1)    
     if File.exists?(image_file)
       @artist_db.update_attributes(image: File.open(image_file, 'rb'))
     end
-    I18n.locale = :en
-    @artist_db.update_attributes(bio: @bios_array[@artist_name_id3][:en])
+    I18n.locale = :es
+    @artist_db.update_attributes(bio: @bios_array[@artist_name_id3][:es])
   end
 
   def self.create_album
+    I18n.locale = :en
     cover_file = 'public/uploads/images/albums/' + @artist_name_id3.gsub(/\s+/, "").downcase + '-' + @album_name_id3.gsub(/\s+/, "").downcase + '.jpg'
-    @album_db = @artist_db.albums.create(name: @album_name_id3, year: @song_year_id3, genre_id: Genre.find_by(name:@genre_id3).id, format_id: @extras[0])
+    @album_db = @artist_db.albums.create(name: @album_name_id3, year: @song_year_id3, genre_id: Genre.find_by(name:@genre_id3).id, format_id: @extras[0], user_id: 1)
     if File.exists?(cover_file)
       @album_db.update_attributes(cover: File.open(cover_file, 'rb'))
     end
   end
 
   def self.create_song(file)
-    @album_db.songs.create(name: @song_name_id3, filename: File.open(file, 'rb'), track: @song_track_id3, discnum: @song_discnum_id3, genre_id: Genre.find_by(name:@genre_id3).id)
+    I18n.locale = :en
+    @album_db.songs.create(name: @song_name_id3, filename: File.open(file, 'rb'), track: @song_track_id3, discnum: @song_discnum_id3, genre_id: Genre.find_by(name:@genre_id3).id, user_id: 1)
   end
 
 end

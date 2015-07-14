@@ -3,8 +3,8 @@ class SongsController < ApplicationController
   def show
     @song = Song.find(params[:id])
     authorize @song
-    @album = Album.find(params[:album_id])
-    @artist = Artist.find(params[:artist_id])
+    @album = @song.album
+    @artist = @album.artist
   end
 
   def edit
