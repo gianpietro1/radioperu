@@ -1,6 +1,6 @@
 .row
   .col-md-1
-  .col-md-10
+  .col-md-10.col-xs-12
     .slogan-animation
       = t(:discover)
     .search
@@ -9,7 +9,7 @@
 
 .row.margin-top-15
   .col-md-1
-  .col-md-10
+  .col-md-10.col-xs-12
     .radios
       - (1..@radios.count).each do |i|
         %a{ href: radio_path(id: i), class: "station#{i}" }
@@ -22,8 +22,8 @@
   .col-md-1
 
 .row.margin-top-10
-  .col-md-2
-  .col-md-6 
+  .col-md-2.col-xs-2
+  .col-md-6.col-xs-8
     %a.catalogue{ href: artists_path, data_description: t(:catalogue) }
       %h3
         = t(:catalogue)
@@ -34,11 +34,11 @@
   /  %a.listener{ href: new_user_registration_path, data_description: t(:register_as_listener) }
   /    %h5
   /      = t :register_as_listener
-  .col-md-2
+  .col-md-2.col-xs-2
     %a.musician{ href: new_musician_form_path, data_description: t(:register_as_musician) }
       %h5
         = t :register_as_musician
-  .col-md-2
+  .col-md-2.col-xs-2
 
 %script{:type=>"text/javascript"}
 

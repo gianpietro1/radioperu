@@ -1170,4 +1170,32 @@ font-weight: normal;
 src: local('Myriad Pro Bold'), url('MYRIADPRO-BOLD.woff') format('woff');
 }
 
-/* Responsiveness */
+/* Responsiveness 
+
+@media screen and (max-width: 1435px) {
+
+.station1,.station2,.station3,.station4,.station5 {
+  width: 160px;
+}
+
+}
+
+@media screen and (max-width: 960px) {
+
+.station1,.station2,.station3,.station4,.station5 {
+  width: 150px;
+  height: 280px;
+}
+
+}
+
+@media screen and (max-width: 768px) {
+
+}
+
+@media screen and (max-width: 524px) {
+
+}
+
+*/
+
