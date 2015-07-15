@@ -47,9 +47,7 @@ namespace :deploy do
     end
   end
 
-  after :publishing, :restart do
-    run "cd #{release_path}; RAILS_ENV=production bundle exec rake assets:precompile"
-  end
+  after :publishing, :restart
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
