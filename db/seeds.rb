@@ -111,4 +111,3 @@ Genre.find_by_id(25).set_translations(:en => { :name => 'Jazz' }, :es => { :name
 Genre.find_by_id(26).set_translations(:en => { :name => 'World Music' }, :es => { :name => 'Música del mundo'})
 Genre.find_by_id(27).set_translations(:en => { :name => 'Academic' }, :es => { :name => 'Académica'})
 Genre.find_by_id(28).set_translations(:en => { :name => 'Instrumental Fusion' }, :es => { :name => 'Fusión Instrumental'})
-
