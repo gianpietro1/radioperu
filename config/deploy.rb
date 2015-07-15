@@ -57,8 +57,6 @@ namespace :deploy do
     end
   end
 
-end
-
 # ==============================
 # Uploads
 # ==============================
@@ -96,3 +94,6 @@ namespace :uploads do
   on :start,  "uploads:register_dirs"
 
 end
+
+end
+
