@@ -7,7 +7,7 @@ class CreateAlbums < ActiveRecord::Migration
       t.string :cover
       t.timestamps null: false
     end
-      Album.create_translation_table! :review => :text, :format => :string
+      Album.create_translation_table! :review => :text
   end
 
   def down
