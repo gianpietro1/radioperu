@@ -4,7 +4,7 @@ User.create!([
   {email: "admin@example.com", password: "helloworld", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-05-29 17:13:57", last_sign_in_at: "2015-05-29 17:13:57", current_sign_in_ip: "::1", last_sign_in_ip: "::1", confirmation_token: nil, confirmed_at: "2015-05-29 17:13:31", confirmation_sent_at: nil, unconfirmed_email: nil, name: "Admin User", username: nil, role: 'admin'}
 ])
 
-Radio.create!([
+Radio.create([
   {player: "http://player.radiocdn.com/iframe.js?hash=5e6ead35300119bc5234f1800b455a948ddedf3d-118-41", host: "eclipse.wavestreaming.com", port: 3771},
   {player: "http://player.radiocdn.com/iframe.js?hash=5e6ead35300119bc5234f1800b455a948ddedf3d-118-41", host: "eclipse.wavestreaming.com", port: 3771},
   {player: "http://player.radiocdn.com/iframe.js?hash=5e6ead35300119bc5234f1800b455a948ddedf3d-118-41", host: "eclipse.wavestreaming.com", port: 3771},
@@ -12,27 +12,11 @@ Radio.create!([
   {player: "http://player.radiocdn.com/iframe.js?hash=5e6ead35300119bc5234f1800b455a948ddedf3d-118-41", host: "eclipse.wavestreaming.com", port: 3771}
 ])
 
-Radio.find_by_id(1).set_translations(:en => { :name => 'Station 1', :description => 'coast & folk' },
-  :es  => { :name => 'Estación 1', :description => 'costeña y canción'} )
-Radio.find_by_id(2).set_translations(:en => { :name => 'Station 2', :description => 'andean' }),
-  :es  => { :name => 'Estación 2', :description => 'andina'} )
-Radio.find_by_id(3).set_translations(:en => { :name => 'Station 3', :description => 'tropical' }),
-  :es  => { :name => 'Estación 3', :description => 'tropical'} )
-Radio.find_by_id(4).set_translations(:en => { :name => 'Station 4', :description => 'rock, pop & related' }),
-  :es  => { :name => 'Estación 4', :description => 'rock, pop y afines'} )
-Radio.find_by_id(5).set_translations(:en => { :name => 'Station 5', :description => 'instrumental' }),
-  :es  => { :name => 'Estación 5', :description => 'instrumental'} )
-
-Radio.find_by_id(1).set_translations(:en => { :name => 'Station 1', :description => 'coast & folk' },
-  :es  => { :name => 'Estación 1', :description => 'costeña y canción'} )
-Radio.find_by_id(2).set_translations(:en => { :name => 'Station 2', :description => 'andean' }),
-  :es  => { :name => 'Estación 2', :description => 'andina'} )
-Radio.find_by_id(3).set_translations(:en => { :name => 'Station 3', :description => 'tropical' }),
-  :es  => { :name => 'Estación 3', :description => 'tropical'} )
-Radio.find_by_id(4).set_translations(:en => { :name => 'Station 4', :description => 'rock, pop & related' }),
-  :es  => { :name => 'Estación 4', :description => 'rock, pop y afines'} )
-Radio.find_by_id(5).set_translations(:en => { :name => 'Station 5', :description => 'instrumental' }),
-  :es  => { :name => 'Estación 5', :description => 'instrumental'} )
+Radio.find_by_id(1).set_translations(:en => { :name => 'Station 1', :description => 'coast & folk' }, :es => { :name => 'Estación 1', :description => 'costeña y canción'} )
+Radio.find_by_id(2).set_translations(:en => { :name => 'Station 2', :description => 'andean' }, :es => { :name => 'Estación 2', :description => 'andina'} )
+Radio.find_by_id(3).set_translations(:en => { :name => 'Station 3', :description => 'tropical' }, :es => { :name => 'Estación 3', :description => 'tropical'} )
+Radio.find_by_id(4).set_translations(:en => { :name => 'Station 4', :description => 'rock, pop & related' }, :es => { :name => 'Estación 4', :description => 'rock, pop y afines'} )
+Radio.find_by_id(5).set_translations(:en => { :name => 'Station 5', :description => 'instrumental' }, :es => { :name => 'Estación 5', :description => 'instrumental'} )
 
 Radio.first.genres.create(name:"Criollo")
 Radio.first.genres.create(name:"Trova")
