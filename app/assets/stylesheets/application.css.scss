@@ -167,27 +167,27 @@ body {
 }
 
 .station1 {
-    background-image: image-url('station1b.jpg') no-repeat;
+    background: asset-url('station1b.jpg') no-repeat;
     background-size: 180px 340px;
 }
 
 .station2 {
-    background-image: image-url('station2b.jpg') no-repeat;
+    background: asset-url('station2b.jpg') no-repeat;
     background-size: 180px 340px;
 }
 
 .station3 {
-    background-image: image-url('station3b.jpg') no-repeat;
+    background: asset-url('station3b.jpg') no-repeat;
     background-size: 180px 340px;
 }  
 
 .station4 {
-    background-image: image-url('station4b.jpg') no-repeat;
+    background: asset-url('station4b.jpg') no-repeat;
     background-size: 180px 340px;
 }  
 
 .station5 {
-    background-image: image-url('station5b.jpg') no-repeat;
+    background: asset-url('station5b.jpg') no-repeat;
     background-size: 180px 340px;
 }
 
@@ -210,7 +210,7 @@ body {
   color: #3c3c33;
   text-transform: lowercase;
   line-height: 85px;
-  background-image: image-url('catalogue.png') no-repeat left;
+  background: asset-url('catalogue.png') no-repeat left;
   background-size: 75px 75px;
   background-position: 10px;
   text-align: left;
@@ -229,11 +229,11 @@ body {
 }
 
 .musician {
-  background-image: image-url('musician.png') no-repeat left;
+  background: asset-url('musician.png') no-repeat left;
 }
 
 .listener {
-  background-image: image-url('listener.png') no-repeat left;
+  background: asset-url('listener.png') no-repeat left;
 }
 
 .listener, .musician {
@@ -1128,7 +1128,7 @@ div.pointer a:hover {
 font-family: 'Myriad Pro Regular';
 font-style: normal;
 font-weight: normal;
-src: local('Myriad Pro Regular'), asset_url('fonts/MYRIADPRO-REGULAR.woff') format('woff');
+src: local('Myriad Pro Regular'), url('fonts/MYRIADPRO-REGULAR.woff') format('woff');
 }
 
 
@@ -1136,7 +1136,7 @@ src: local('Myriad Pro Regular'), asset_url('fonts/MYRIADPRO-REGULAR.woff') form
 font-family: 'Myriad Pro Condensed';
 font-style: normal;
 font-weight: normal;
-src: local('Myriad Pro Condensed'), asset_url('MYRIADPRO-COND.woff') format('woff');
+src: local('Myriad Pro Condensed'), url('MYRIADPRO-COND.woff') format('woff');
 }
 
 
@@ -1144,7 +1144,7 @@ src: local('Myriad Pro Condensed'), asset_url('MYRIADPRO-COND.woff') format('wof
 font-family: 'Myriad Pro Semibold Italic';
 font-style: normal;
 font-weight: normal;
-src: local('Myriad Pro Semibold Italic'), asset_url('MYRIADPRO-SEMIBOLDIT.woff') format('woff');
+src: local('Myriad Pro Semibold Italic'), url('MYRIADPRO-SEMIBOLDIT.woff') format('woff');
 }
 
 
@@ -1152,7 +1152,7 @@ src: local('Myriad Pro Semibold Italic'), asset_url('MYRIADPRO-SEMIBOLDIT.woff')
 font-family: 'Myriad Pro Semibold';
 font-style: normal;
 font-weight: normal;
-src: local('Myriad Pro Semibold'), asset_url('MYRIADPRO-SEMIBOLD.woff') format('woff');
+src: local('Myriad Pro Semibold'), url('fonts/MYRIADPRO-SEMIBOLD.woff') format('woff');
 }
 
 
@@ -1160,7 +1160,7 @@ src: local('Myriad Pro Semibold'), asset_url('MYRIADPRO-SEMIBOLD.woff') format('
 font-family: 'Myriad Pro Condensed Italic';
 font-style: normal;
 font-weight: normal;
-src: local('Myriad Pro Condensed Italic'), asset_url('MYRIADPRO-CONDIT.woff') format('woff');
+src: local('Myriad Pro Condensed Italic'), rl('MYRIADPRO-CONDIT.woff') format('woff');
 }
 
 
@@ -1168,7 +1168,7 @@ src: local('Myriad Pro Condensed Italic'), asset_url('MYRIADPRO-CONDIT.woff') fo
 font-family: 'Myriad Pro Bold Italic';
 font-style: normal;
 font-weight: normal;
-src: local('Myriad Pro Bold Italic'), asset_url('MYRIADPRO-BOLDIT.woff') format('woff');
+src: local('Myriad Pro Bold Italic'), url('MYRIADPRO-BOLDIT.woff') format('woff');
 }
 
 
@@ -1176,7 +1176,7 @@ src: local('Myriad Pro Bold Italic'), asset_url('MYRIADPRO-BOLDIT.woff') format(
 font-family: 'Myriad Pro Bold Condensed Italic';
 font-style: normal;
 font-weight: normal;
-src: local('Myriad Pro Bold Condensed Italic'), asset_url('MYRIADPRO-BOLDCONDIT.woff') format('woff');
+src: local('Myriad Pro Bold Condensed Italic'), url('MYRIADPRO-BOLDCONDIT.woff') format('woff');
 }
 
 
@@ -1184,7 +1184,7 @@ src: local('Myriad Pro Bold Condensed Italic'), asset_url('MYRIADPRO-BOLDCONDIT.
 font-family: 'Myriad Pro Bold Condensed';
 font-style: normal;
 font-weight: normal;
-src: local('Myriad Pro Bold Condensed'), asset_url('MYRIADPRO-BOLDCOND.woff') format('woff');
+src: local('Myriad Pro Bold Condensed'), url('MYRIADPRO-BOLDCOND.woff') format('woff');
 }
 
 
@@ -1192,7 +1192,7 @@ src: local('Myriad Pro Bold Condensed'), asset_url('MYRIADPRO-BOLDCOND.woff') fo
 font-family: 'Myriad Pro Bold';
 font-style: normal;
 font-weight: normal;
-src: local('Myriad Pro Bold'), asset_url('MYRIADPRO-BOLD.woff') format('woff');
+src: local('Myriad Pro Bold'), url('fonts/MYRIADPRO-BOLD.woff') format('woff');
 }
 
 /* Responsiveness */
