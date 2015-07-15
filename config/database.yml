@@ -21,11 +21,5 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql
-  encoding: utf8
-  database: name
-  username: gianpietro
-  password: G14np13tr02%
-  pool: 5
-  timeout: 5000
-  host: localhost
+  <<: *default
+  database: db/production.sqlite3
