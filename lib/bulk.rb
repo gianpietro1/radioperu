@@ -46,16 +46,16 @@ class Bulk
         if @album_db
           @song_db = @album_db.songs.find_by(name: @song_name_id3)
           unless @song_db
-            create_song
+            create_song(mp3file)
           end
         else
           create_album
-          create_song
+          create_song(mp3file)
         end
       else
         create_artist
         create_album
-        create_song
+        create_song(mp3file)
       end
 
       mp3path.close
@@ -84,7 +84,7 @@ class Bulk
     end
   end
 
-  def self.create_song
+  def self.create_song(mp3file)
     I18n.locale = :en
     file = File.open(mp3file, 'rb')
     @album_db.songs.create(name: @song_name_id3, filename: file, track: @song_track_id3, discnum: @song_discnum_id3, genre_id: Genre.find_by(name:@genre_id3).id, user_id: 1)
