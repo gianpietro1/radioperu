@@ -31,7 +31,8 @@
       %br
       %strong
         = t(:album_format) + ": "
-      = @album.format.name
+      - if @album.format.name
+        = @album.format.name
       %br
       %strong
         = t(:genre) + ": "
