@@ -99,3 +99,9 @@ gem 'jquery-ui-rails'
 gem 'video_info', github: 'thibaudgg/video_info'
 # Mail form
 gem 'mail_form'
+
+# Capistrano
+gem 'capistrano', '~> 3.1.0'
+gem 'capistrano-bundler', '~> 1.1.2'
+gem 'capistrano-rails', '~> 1.1.1'
+gem 'capistrano-rvm', github: "capistrano/rvm"
