@@ -167,27 +167,27 @@ body {
 }
 
 .station1 {
-    background: image-url('station1b.jpg') no-repeat;
+    background: asset-url('station1b.jpg') no-repeat;
     background-size: 180px 340px;
 }
 
 .station2 {
-    background: image-url('station2b.jpg') no-repeat;
+    background: asset-url('station2b.jpg') no-repeat;
     background-size: 180px 340px;
 }
 
 .station3 {
-    background: image-url('station3b.jpg') no-repeat;
+    background: asset-url('station3b.jpg') no-repeat;
     background-size: 180px 340px;
 }  
 
 .station4 {
-    background: image-url('station4b.jpg') no-repeat;
+    background: asset-url('station4b.jpg') no-repeat;
     background-size: 180px 340px;
 }  
 
 .station5 {
-    background: image-url('station5b.jpg') no-repeat;
+    background: asset-url('station5b.jpg') no-repeat;
     background-size: 180px 340px;
 }
 
@@ -210,7 +210,7 @@ body {
   color: #3c3c33;
   text-transform: lowercase;
   line-height: 85px;
-  background: image-url('catalogue.png') no-repeat left;
+  background: asset-url('catalogue.png') no-repeat left;
   background-size: 75px 75px;
   background-position: 10px;
   text-align: left;
@@ -229,11 +229,11 @@ body {
 }
 
 .musician {
-  background: image-url('musician.png') no-repeat left;
+  background: asset-url('musician.png') no-repeat left;
 }
 
 .listener {
-  background: image-url('listener.png') no-repeat left;
+  background: asset-url('listener.png') no-repeat left;
 }
 
 .listener, .musician {
