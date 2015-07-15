@@ -9,7 +9,7 @@ class Bulk
   end
 
   def self.dbload
-    Dir.glob("**{,/*/**}/*.mp3") do |mp3file|
+    Dir.glob("/home/gianpietro/radioperu/current/public/uploads/song/*/*/*.mp3") do |mp3file|
 
       @mp3path = open(mp3file.to_s, "rb")
       @id3tags = ID3Tag.read(@mp3path)
