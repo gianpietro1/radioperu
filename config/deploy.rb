@@ -2,13 +2,13 @@
 lock '3.1.0'
 
 set :application, 'radioperu'
-set :repo_url, 'git@github.com:gianpietro/radioperu.git'
+set :repo_url, 'https://github.com/gianpietro1/radioperu.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/home/deploy/radioperu'
+set :deploy_to, '/home/gianpietro/radioperu'
 
 # Default value for :scm is :git
 # set :scm, :git
