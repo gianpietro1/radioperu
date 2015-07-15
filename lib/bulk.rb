@@ -86,7 +86,7 @@ class Bulk
 
   def self.create_song(mp3file)
     I18n.locale = :en
-    file = File.open(mp3file, 'rb')
+    file = mp3file[mp3file.rindex('/')+1..-1]
     @album_db.songs.create(name: @song_name_id3, filename: file, track: @song_track_id3, discnum: @song_discnum_id3, genre_id: Genre.find_by(name:@genre_id3).id, user_id: 1)
   end
 

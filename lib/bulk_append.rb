@@ -40,7 +40,7 @@ class Bulk
       end
 
       if @id3tags.get_frames(:COMM)
-        @extras = @id3tags.get_frames(:COMM).last.content.split('%')
+        @extras = @id3tags.get_frames(:COMM).last.content.split('-')
       else
         @extras = [1, '-', '-']
       end
@@ -68,6 +68,11 @@ class Bulk
     
     end
   
+    insert_artists
+    insert_albums
+    insert_songs
+    update_bios
+
   end
 
   def self.create_artist
@@ -86,9 +91,9 @@ class Bulk
     I18n.locale = :en
     cover_file = 'public/uploads/images/albums/' + @artist_name_id3.gsub(/\s+/, "").downcase + '-' + @album_name_id3.gsub(/\s+/, "").downcase + '.jpg'
     if File.exists?(cover_file)
-      @album_db = {artist_id: @artist.id, name: @album_name_id3, year: @song_year_id3, genre_id: Genre.find_by(name:@genre_id3).id, format_id: @extras[0], user_id: 1, cover: File.open(cover_file, 'rb')}
+      @album_db = {artist_id: Artist.find_by(name: @artist_name_id3).id, name: @album_name_id3, year: @song_year_id3, genre_id: Genre.find_by(name:@genre_id3).id, format_id: @extras[0], user_id: 1, cover: File.open(cover_file, 'rb')}
     else
-      @album_db = {artist_id: @artist.id, name: @album_name_id3, year: @song_year_id3, genre_id: Genre.find_by(name:@genre_id3).id, format_id: @extras[0], user_id: 1}
+      @album_db = {artist_id: Artist.find_by(name: @artist_name_id3).id, name: @album_name_id3, year: @song_year_id3, genre_id: Genre.find_by(name:@genre_id3).id, format_id: @extras[0], user_id: 1}
     end
     @albums_en_array << @album_db
   end
@@ -96,17 +101,12 @@ class Bulk
   def self.create_song(file)
     I18n.locale = :en
     file = File.open(mp3file, 'rb')
-    @song_db = {album_id: @album.id, name: @song_name_id3, filename: file, track: @song_track_id3, discnum: @song_discnum_id3, genre_id: Genre.find_by(name:@genre_id3).id, user_id: 1}
+    @song_db = {album_id: Album.find_by(name: @album_name_id3).id, name: @song_name_id3, filename: file, track: @song_track_id3, discnum: @song_discnum_id3, genre_id: Genre.find_by(name:@genre_id3).id, user_id: 1}
     @songs_en_array << @song_db
     file.close
   end
 
-  def self.insert_artists
-    I18n.locale = :en
-    Artist.create(@artists_en_array)
-  end
-
-  def update_es_bios
+  def self.update_es_bios
     I18n.locale = :es
     Artist.all.map do |artist|
       if @artists_bios_es_hash[artist.name]
@@ -115,14 +115,19 @@ class Bulk
     end
   end
 
+  def self.insert_artists
+    I18n.locale = :en
+    Artist.create!(@artists_en_array)
+  end
+
   def self.insert_albums
     I18n.locale = :en
-    Album.create(@albums_en_array)
+    Album.create!(@albums_en_array)
   end
 
   def self.insert_songs
     I18n.locale = :en
-    Song.create(@songs_en_array)
+    Song.create!(@songs_en_array)
   end
 
 end
