@@ -72,21 +72,20 @@
   locale = "#{I18n.locale}";
 
   $( ".search-field" ).catcomplete({
-
+  source: '/search_suggestions' + "?locale=" + locale,
+  minLength: 3,
   select:function(event, ui){
   if ( ui.item.model == 'Artist' ) {
-  window.location = locale + '/artists/' + ui.item.model_id;
+  window.location = '/artists/' + ui.item.model_id + "?locale=" + locale;
   }
   else if ( ui.item.model == 'Album' ) {
-  window.location = locale + '/artists/' + ui.item.parent_model_id + '/albums/' + ui.item.model_id;
+  window.location = '/artists/' + ui.item.parent_model_id + '/albums/' + ui.item.model_id + "?locale=" + locale;
   }
   else if ( ui.item.model == 'Song' ) {
-  window.location = locale + '/artists/' + ui.item.gparent_model_id + '/albums/' + ui.item.parent_model_id + '/songs/' + ui.item.model_id
+  window.location = '/artists/' + ui.item.gparent_model_id + '/albums/' + ui.item.parent_model_id + '/songs/' + ui.item.model_id + "?locale=" + locale
   }
   },
-
   appendTo: ".search-form",
-  source: locale + '/search_suggestions' 
   });
 
   });
