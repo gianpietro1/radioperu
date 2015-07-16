@@ -1,5 +1,4 @@
 set :stage, :production
-set :app_dir, 'deploy'
 
 # Simple Role Syntax
 # ==================

@@ -1,5 +1,4 @@
 set :stage, :staging
-set :app_dir, 'gianpietro'
 
 # Simple Role Syntax
 # ==================
