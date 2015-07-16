@@ -25,8 +25,10 @@ set :repo_url, 'https://github.com/gianpietro1/radioperu.git'
 set :linked_files, %w{config/database.yml config/application.yml}
 
 # Default value for linked_dirs is []
-set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-set :linked_dirs, fetch(:linked_dirs) + %w{public/uploads}
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
+
+# Solve public/uploads issue
+set(:shared_children, ["public/uploads"])
 
 set :bundle_binstubs, nil
 
