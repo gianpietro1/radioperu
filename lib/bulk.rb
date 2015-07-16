@@ -9,7 +9,13 @@ class Bulk
   end
 
   def self.dbload
-    Dir.glob("/home/gianpietro/radioperu/current/public/uploads/song/*/*/*.mp3") do |mp3file|
+    if Rails.env.development? 
+      user = gianpietro
+    elsif Rails.env.production?
+      user = deploy
+    end
+
+    Dir.glob("/home/#{user}/radioperu/shared/public/uploads/song/*/*/*.mp3") do |mp3file|
 
       @mp3path = open(mp3file.to_s, "rb")
       @id3tags = ID3Tag.read(@mp3path)
