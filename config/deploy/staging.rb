@@ -1,4 +1,5 @@
 set :stage, :staging
+set :deploy_to, '/home/gianpietro/radioperu'
 
 # Simple Role Syntax
 # ==================

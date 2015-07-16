@@ -1,4 +1,5 @@
 set :stage, :production
+set :deploy_to, '/home/deploy/radioperu'
 
 # Simple Role Syntax
 # ==================
