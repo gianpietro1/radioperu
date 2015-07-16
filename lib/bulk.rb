@@ -10,9 +10,9 @@ class Bulk
 
   def self.dbload
     if Rails.env.development? 
-      user = gianpietro
+      user = 'gianpietro'
     elsif Rails.env.production?
-      user = deploy
+      user = 'deploy'
     end
 
     Dir.glob("/home/#{user}/radioperu/shared/public/uploads/song/*/*/*.mp3") do |mp3file|
