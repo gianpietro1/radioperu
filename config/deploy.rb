@@ -28,7 +28,7 @@ set :linked_files, %w{config/database.yml config/application.yml}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 
 # Solve public/uploads issue
-set(:shared_children, ["public/uploads"])
+set :shared_children, shared_children + %w{public/uploads}
 
 set :bundle_binstubs, nil
 
