@@ -1413,7 +1413,13 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 }
 
 .artist_divright {
+  width: 100%;
 }
+
+.artist_divright a {
+  width: 50%;
+}
+
 
 .song-video iframe {
   width: 320px;
