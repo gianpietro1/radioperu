@@ -76,7 +76,7 @@
   minLength: 3,
   select:function(event, ui){
   if ( ui.item.model == 'Artist' ) {
-  $('.ui-autocomplete').off('menufocus hover mouseover mouseenter');
+  $('.ui-autocomplete-category').off('menufocus hover mouseover mouseenter');
   window.location = '/artists/' + ui.item.model_id + "?locale=" + locale;
   }
   else if ( ui.item.model == 'Album' ) {
