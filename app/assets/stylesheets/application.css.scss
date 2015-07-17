@@ -1326,13 +1326,14 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 }
 
 .station_schedule {
-  min-height: 200px;
+  height: auto;
 }
 
 .default-sponsor {
   padding-top: 18%;
   width: 30%;
   margin: auto;
+  height: auto
 }
 
 .radionav a {
