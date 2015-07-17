@@ -354,7 +354,7 @@ body {
 }
 
 #songtitle {
-
+  float:left;
 }
 
 #artist {
@@ -1492,11 +1492,13 @@ h3.catalogue_title {
 }
 
 .listeners {
-  font-size: 0.7em
+  font-size: 0.7em;
+  overflow: auto
 }
 
 .album-info {
-  font-size: 0.7em
+  font-size: 0.7em;
+  overflow: auto;
 }
 
 .album-summary {
@@ -1528,6 +1530,18 @@ h3.catalogue_title {
 
 #artist-bio {
   font-size: 0.8em;
+}
+
+#artist {
+  font-size: 1.2em;
+}
+
+#song {
+  font-size: 1em
+}
+
+#songtitle {
+  vertical-align: middle;
 }
 
 /* Artist catalogue */
