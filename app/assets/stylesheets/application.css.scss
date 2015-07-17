@@ -1440,6 +1440,21 @@ h3.catalogue_title {
 
 /* Welcome page */
 
+.container-fluid {
+  padding: 8px 10px;
+}
+
+
+.search input {
+  width: 282px;
+  font-size: 0.9em;
+}
+
+.search {
+  float:none;
+  text-align: center;
+}
+
 .radiotitle {
   font-size: 0.75em;
 }
@@ -1580,3 +1595,18 @@ h4.artist_catalogue_title {
 }
 
 
+@media screen and (max-width: 360px) {
+
+.container-fluid {
+  padding: 8px 2px;
+}
+
+.language {
+  margin-left: 17px;
+}
+
+.blackbtn {
+  margin-right: 17px;
+}
+
+}
