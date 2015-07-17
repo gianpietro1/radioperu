@@ -41,6 +41,9 @@
   $( ".search-field" ).catcomplete({
   source: '/search_suggestions' + "?locale=" + locale,
   minLength: 3,
+  open: function(event, ui) {
+  $('.ui-autocomplete').off('menufocus hover mouseover mouseenter');
+  },
   select:function(event, ui){
   if ( ui.item.model == 'Artist' ) {
   window.location = '/artists/' + ui.item.model_id + "?locale=" + locale;
