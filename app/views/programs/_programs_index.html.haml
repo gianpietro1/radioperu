@@ -50,7 +50,8 @@
 
   var locale = "#{I18n.locale}";
   var radio_id = "#{@radio.id}";
-
+  tempScrollTop = $(window).scrollTop();
+  
   function update_sponsor() {
 
   var current_program_id = $('.active_program').attr('id');
@@ -66,6 +67,7 @@
   var program_id = $(this).attr('id');
 
   $.ajax({data: { radio_id: radio_id, program_id: program_id }, type: 'get', url: "/" + locale + "/program_show", success: function(r) { $('#station_schedule').html(r); } });
+
   
   });
 

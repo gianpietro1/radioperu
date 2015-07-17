@@ -87,7 +87,7 @@ es:
   artist_notfound: "Artista no encontrado"
   album_notfound: "Álbum no encontrado"
   listeners: "Oyentes"
-  nexttitle: "A continuación"
+  nexttitle: "Sigue"
   # Schedule
   station_schedule: "Programación"
   current_program_sponsor: "Patrocinador de este programa"
