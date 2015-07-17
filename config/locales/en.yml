@@ -86,11 +86,8 @@ en:
   # Station page
   artist_notfound: "Artist not found"
   album_notfound: "Album not found"
-  current_peak_listeners: |-
-    Listeners
-    Current/Peak
-
-
+  listeners: "Listeners"
+  nexttitle: "Next Title"
   # Schedule
   station_schedule: "Station Schedule"
   current_program_sponsor: "Current Program Sponsor"

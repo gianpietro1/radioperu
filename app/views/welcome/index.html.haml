@@ -75,8 +75,8 @@
   source: '/search_suggestions' + "?locale=" + locale,
   minLength: 3,
   select:function(event, ui){
-  $('.search-field').off('menufocus hover mouseover mouseenter');
   if ( ui.item.model == 'Artist' ) {
+  $('.ui-autocomplete').off('menufocus hover mouseover mouseenter');
   window.location = '/artists/' + ui.item.model_id + "?locale=" + locale;
   }
   else if ( ui.item.model == 'Album' ) {
