@@ -94,7 +94,7 @@ gem 'redis'
 # Soulmate Autocomplete & Search
 gem 'soulmate_rails'
 # Jquery UI for Autocomplete
-gem 'jquery-ui-rails'
+gem 'jquery-ui-rails', '~> 5.0.5'
 # Video info
 gem 'video_info', github: 'thibaudgg/video_info'
 # Mail form
