@@ -12,8 +12,15 @@
 .row
   .col-md-1
   .col-md-10
-    %h3.catalogue_title
-      = (link_to @artist.name, @artist) + ' - ' + (link_to @album.name, [@artist,@album]) + ' - ' + @song.name
+    %h3
+      %span.catalogue_title
+        = (link_to @artist.name, @artist)
+      %span
+        =  ' - '
+      %span.catalogue_title
+        = (link_to @album.name, [@artist,@album])
+      %span
+        = ' - ' + @song.name
   .col-md-1
 
 .row

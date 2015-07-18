@@ -52,7 +52,7 @@
 .row
   .col-md-1
   .col-md-4 
-    %h4
+    %h4.bold
       = t(:albums)
     .artist_albums
       - @albums.each do |album|
@@ -66,9 +66,10 @@
             .artist_album_info
               = album.name
               %br
-              = album.year
+              .small
+                = album.year
   .col-md-4 
-    %h4
+    %h4.bold
       = t(:songs)
     .artist_songs
       %ul.playlist
