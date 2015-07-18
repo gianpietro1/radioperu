@@ -75,7 +75,7 @@
   source: '/search_suggestions' + "?locale=" + locale,
   minLength: 3,
   open: function(event, ui) {
-  $('.ui-autocomplete').off('menufocus hover mouseover mouseenter');
+  $('.ui-autocomplete').on('menufocus hover mouseover mouseenter');
   },
   select:function(event, ui){
   if ( ui.item.model == 'Artist' ) {
