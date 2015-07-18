@@ -576,6 +576,7 @@ body {
   color: #3c3c33;
   border-bottom: 1px solid #3c3c33;
   height: 86px;
+  width: 100%;
 }
 
 .artist_album:hover {
@@ -590,7 +591,6 @@ body {
 .artist_album_info {
   padding: 10px;
   float: left;
-  width: 69%;
 }
 
 .artist_songs {
@@ -1598,7 +1598,6 @@ h4.artist_catalogue_title {
 }
 
 .artist_album_info {
-  width: 65%;
 }
 
 .ui-menu .ui-menu-item {
