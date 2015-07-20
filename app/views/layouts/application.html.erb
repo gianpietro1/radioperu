@@ -52,15 +52,30 @@
 
     <div class="landing">
       <p></p>
-      <div class="row">     
-        <div class="col-md-12">
-          <h1 class="text-center logo">
-            <%= link_to 'radioperu.pe', root_path %>
-          </h1>
+
+      <div class="row">
+        <div class="pull-left home">
+          <%= link_to image_tag("home.png"), root_path %>
+        </div>        
+        <div class="pull-right social">
+            <%= link_to image_tag("facebook.png"), 'https://www.facebook.com/radioperu.pe', class: "facebook", :target => "_blank" %>
+            <%= link_to image_tag("twitter.png"), 'https://twitter.com/radioperu_pe', class: "twitter", :target => "_blank" %>
+            <%= link_to image_tag("email.png"), 'mailto:contacto@radioperu.pe', class: "email" %>
         </div>
       </div>
-      <%= yield %>
+      
+      <div class="row">
+        <h1 class="text-center logo">
+          <%= link_to 'radioperu.pe', root_path %>
+        </h1>
+      </div>     
+
+    <%= yield %>
+
     </div>
+    
+    
+  </div>
 
 </div>
 </body>

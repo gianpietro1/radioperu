@@ -97,7 +97,7 @@ body {
 }
 
 .logo {
-  margin-top: 0px;
+  margin-top: -40px;
   font-size: 4.4em;
   margin-bottom: 20px;
 }
@@ -125,12 +125,10 @@ body {
 }
 
 .slogan a {
-  color: #3c3c33;
 }
 
 .slogan a:hover {
-  color: #428bca;
-  text-decoration: none;
+
 }
 
 .search {
@@ -144,6 +142,14 @@ body {
 }
 
 /* Welcome view */
+
+.home img:hover {
+  box-shadow: 0 5px 3px -3px #777;
+}
+
+.social img:hover {
+  box-shadow: 0 5px 3px -3px #777;
+}
 
 .radios {
   width: 83%;
@@ -249,7 +255,7 @@ body {
   background-size: 75px 75px;
   background-position: 10px;
   float: left;
-  padding-left: 100px;
+  padding-left: 94px;
   color: #3c3c33;
   height: 100px;
   width: 195px;
@@ -491,7 +497,6 @@ body {
 /* Artist */
 
 span.catalogue_title a {
-  text-decoration: underline !important;
 }
 
 .artists_container {
@@ -1303,6 +1308,10 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 
 /* Welcome page */
 
+.logo {
+  margin-top: -20px;
+}
+
 .catalogue {
   margin: 10px 3px;
 }
@@ -1369,6 +1378,31 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 @media screen and (max-width: 768px) {
 
 /* Welcome page */
+
+.home img {
+  width: 30px;
+  height: 30px;
+}
+
+.social .facebook img {
+  width: 30px;
+  height: 30px; 
+}
+
+.social .twitter img {
+  width: 27px;
+  height: 27px; 
+}
+
+.social .email img {
+  width: 34px;
+  height: 34px; 
+}
+
+.logo {
+  margin-top: -8px;
+  font-size: 4em
+}
 
 .radiotitle {
   font-size: 1em;
@@ -1455,6 +1489,25 @@ h3.catalogue_title {
   padding: 8px 10px;
 }
 
+.home img {
+  width: 25px;
+  height: 25px;
+}
+
+.social .facebook img {
+  width: 25px;
+  height: 25px; 
+}
+
+.social .twitter img {
+  width: 23px;
+  height: 23px; 
+}
+
+.social .email img {
+  width: 29px;
+  height: 29px; 
+}
 
 .language {
   margin-left: 17px;
@@ -1499,7 +1552,8 @@ h3.catalogue_title {
 }
 
 .logo {
-  font-size: 3.4em
+  margin-top: -2px;
+  font-size: 3.2em
 }
 
 .search input {
@@ -1631,7 +1685,11 @@ h4.artist_catalogue_title {
 }
 
 .logo {
-  font-size: 3.2em
+  font-size: 3em
+}
+
+.social {
+  margin-right: 10px;
 }
 
 .catalogue h3 {
