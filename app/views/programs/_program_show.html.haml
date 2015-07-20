@@ -14,11 +14,10 @@
 %script{:type=>"text/javascript"}
 
   $(window).scrollTop(tempScrollTop);
-  clearInterval(programInterval);
 
   $("#backbutton").click(function() {
   
-  programInterval = setInterval(update_programs,10000);
+  update_programs;
 
   $.ajax({data: { radio_id: radio_id },type: 'get', url: "/" + locale + "/program_index", success: function(r) { $('#station_schedule').html(r); } });
   

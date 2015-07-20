@@ -91,6 +91,10 @@
   });
   }
 
+  function update_programs(){
+  // Update Program List
+  $.ajax({data: { radio_id: radio_id },type: 'get', url: "/" + locale + "/program_index", success: function(r) { $('#station_schedule').html(r); } });
+  }
 
   // Do updates of this periodically
   
