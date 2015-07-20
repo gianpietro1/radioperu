@@ -13,7 +13,7 @@ class ArtistsController < ApplicationController
   end
 
   def show
-    @artist = Artist.find(params[:id])
+    @artist = Artist.friendly.find(params[:id])
     authorize @artist
     @albums = @artist.albums
     @songs = @artist.songs
@@ -45,12 +45,12 @@ class ArtistsController < ApplicationController
   end
 
   def edit
-    @artist = Artist.find(params[:id])  
+    @artist = Artist.friendly.find(params[:id])  
     authorize @artist  
   end
 
   def update
-    @artist = Artist.find(params[:id])
+    @artist = Artist.friendly.find(params[:id])
     authorize @artist
     if @artist.update_attributes(artist_params)
       flash[:notice] = t(:artist_updated)
@@ -62,7 +62,7 @@ class ArtistsController < ApplicationController
   end
 
   def destroy
-    @artist = Artist.find(params[:id])
+    @artist = Artist.friendly.find(params[:id])
     authorize @artist
     name = @artist.name
     if @artist.destroy

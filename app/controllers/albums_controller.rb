@@ -3,16 +3,16 @@ class AlbumsController < ApplicationController
   respond_to :html, :js
 
   def show
-    @artist = Artist.find(params[:artist_id])
-    @album = Album.find(params[:id])  
+    @album = Album.friendly.find(params[:id])  
     authorize @album
-    @songs = @album.songs
+    @artist = @album.artist
+    @songs = @album.songs.all
   end
 
   def album_summary
-    @artist = Artist.find_by(name: params[:artist_name])
+    @artist = Artist.friendly.find_by(name: params[:artist_name])
     if @artist
-      @song = @artist.songs.find_by(name: params[:song_name])
+      @song = @artist.songs.friendly.find_by(name: params[:song_name])
       if @song
         @album = @song.album
       else
@@ -29,13 +29,13 @@ class AlbumsController < ApplicationController
   end
 
   def new
-    @artist = Artist.find(params[:artist_id])
+    @artist = Artist.friendly.find(params[:artist_id])
     @album = Album.new  
     authorize @album
   end
 
   def create
-    @artist = Artist.find(params[:artist_id])
+    @artist = Artist.friendly.find(params[:artist_id])
     @album = @artist.albums.build(album_params)
     authorize @album
     if @album.save
@@ -53,13 +53,13 @@ class AlbumsController < ApplicationController
   end
 
   def edit
-    @artist = Artist.find(params[:artist_id])
-    @album = Album.find(params[:id])
+    @artist = Artist.friendly.find(params[:artist_id])
+    @album = Album.friendly.find(params[:id])
     authorize @album
   end
 
   def update
-    @album = Album.find(params[:id])
+    @album = Album.friendly.find(params[:id])
     authorize @album
     @artist = @album.artist
     if @album.update_attributes(album_params)      
@@ -73,7 +73,7 @@ class AlbumsController < ApplicationController
   end
 
   def destroy
-   @album = Album.find(params[:id])
+   @album = Album.friendly.find(params[:id])
    authorize @album
    @artist = @album.artist
    name = @album.name

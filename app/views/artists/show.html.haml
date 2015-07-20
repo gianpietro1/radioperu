@@ -57,7 +57,7 @@
     .artist_albums
       - @albums.each do |album|
         .row
-          %a{ href: artist_album_path(@artist,album.id), class: "artist_album"}
+          %a{ href: artist_album_path(@artist,album.slug), class: "artist_album"}
             .artist_album_thumb
               -if album.cover?
                 = image_tag( album.cover.thumb )

@@ -16,6 +16,13 @@ class Song < ActiveRecord::Base
   def id3
   end
 
+  extend FriendlyId
+  friendly_id :name, :use => :scoped, :scope => :album
+
+  def should_generate_new_friendly_id?
+    true
+  end
+
   private
 
     def inherit_genre_and_user

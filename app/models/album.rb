@@ -15,4 +15,7 @@ class Album < ActiveRecord::Base
 
   default_scope { order('year ASC') }
 
+  extend FriendlyId
+  friendly_id :name, :use => :slugged
+
 end

@@ -13,4 +13,7 @@ class Artist < ActiveRecord::Base
   
   mount_uploader :image, ImageUploader
 
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
 end

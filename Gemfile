@@ -99,6 +99,8 @@ gem 'jquery-ui-rails', '~> 5.0.5'
 gem 'video_info', github: 'thibaudgg/video_info'
 # Mail form
 gem 'mail_form'
+# Friendly URLs
+gem 'friendly_id'
 
 # Capistrano
 gem 'capistrano', '~> 3.1.0'
