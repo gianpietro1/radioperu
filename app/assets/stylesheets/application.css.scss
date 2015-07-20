@@ -1616,6 +1616,8 @@ h4.artist_catalogue_title {
 
 @media screen and (max-width: 360px) {
 
+/* Welcome page */
+
 .container-fluid {
   padding: 8px 2px;
 }
@@ -1626,6 +1628,34 @@ h4.artist_catalogue_title {
 
 .blackbtn {
   margin-right: 17px;
+}
+
+.logo {
+  font-size: 4em
+}
+
+.catalogue h3 {
+  font-size: 1.2em;
+  padding-left: 15%;
+}
+
+.musician {
+  font-size: 1.2em;
+  padding-left: 35%;
+}
+
+/* Radio Stations */
+
+.radionav {
+  margin-left:-20%;
+}
+
+.radio_container {
+  padding: 10px 3px;
+}
+
+.landing {
+  padding: 5px 10px 40px 24px;
 }
 
 }
