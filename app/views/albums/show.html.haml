@@ -40,10 +40,12 @@
       %strong
         = t(:genre) + ": "
       = @album.genre.name
-    - unless @album.review == nil
-      .album_bio
-        %p
+    .album_bio
+      %br
+        - unless @album.review.nil? || @album.review.empty?
           = @album.review
+        - else
+          = t(:album_review_not_available)
   .col-md-1
 
 .row

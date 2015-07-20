@@ -51,10 +51,10 @@
     %h4
       =t(:song_lyrics)
     %p.margin-top-05
-      - if @song.lyrics == nil
+      - if @song.lyrics.nil? || @song.lyrics.empty?
         = t(:lyrics_not_available)
       - else
-        = h(@song.lyrics).gsub("\n", "<br>").html_safe 
+        = @song.lyrics.gsub(/(?:\n\r?|\r\n?)/, "<br>").html_safe 
 
 
 

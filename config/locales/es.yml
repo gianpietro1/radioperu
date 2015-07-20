@@ -65,6 +65,7 @@ es:
   id3: "Importar otros campos de etiquetas ID3?"
   click_to_play_arrow_for_details: "Clic para reproducir / Flecha para detalles de la canción"
   click_to_play: "Clic para reproducir"
+  album_review_not_available: "Reseña del álbum no disponible."
   # Songs
   add_song: "Añadir canción"
   remove_song: "Borrar canción"

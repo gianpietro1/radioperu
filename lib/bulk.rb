@@ -25,20 +25,46 @@ class Bulk
         @genre_id3 = @id3tags.genre.gsub(/\,/,"").strip
       end
 
-      if @id3tags.track_nr.first
-        @song_track_id3 = @id3tags.track_nr.first
+      if @id3tags.get_frames(:TRCK).first
+        @song_track_id3 = @id3tags.get_frames(:TRCK).first.content
+      elsif @id3tags.get_frames(:TRCK).last
+        @song_track_id3 = @id3tags.get_frames(:TRCK).last.content
+      else
+        @song_track_id3 = 1
+      end
+
+      if @id3tags.get_frames(:TIT1).first
+        @song_video = @id3tags.get_frames(:TIT1).first.content
+      elsif @id3tags.get_frames(:TIT1).last
+        @song_video = @id3tags.get_frames(:TIT1).last.content
+      else
+        @song_video = nil
       end
 
       if @id3tags.get_frames(:TPOS).first
-        @song_discnum_id3 = @id3tags.get_frames(:TPOS).first.content.first
+        @song_discnum_id3 = @id3tags.get_frames(:TPOS).first.content
+      elsif @id3tags.get_frames(:TPOS).last
+        @song_discnum_id3 = @id3tags.get_frames(:TPOS).last.content
       else
         @song_discnum_id3 = 1
       end
 
       if @id3tags.get_frames(:COMM)
-        @extras = @id3tags.get_frames(:COMM).last.content.split('-')
+        @extras = @id3tags.get_frames(:COMM).last.content.split('%')
       else
-        @extras = [1, '-', '-']
+        @extras = [1, '-', '-', '', '']
+      end
+
+      if @id3tags.get_frames(:USLT)
+        if @id3tags.get_frames(:USLT).first
+          @lyrics = @id3tags.get_frames(:USLT).first.content
+        elsif @id3tags.get_frames(:USLT).last
+          @lyrics = @id3tags.get_frames(:USLT).last.content
+        else
+          @lyrics = ''
+        end
+      else
+        @lyrics = ''
       end
 
       @artist_db = Artist.find_by(name: @artist_name_id3)
@@ -82,15 +108,17 @@ class Bulk
     I18n.locale = :en
     cover_file = 'public/uploads/images/albums/' + @artist_name_id3.gsub(/\s+/, "").downcase + '-' + @album_name_id3.gsub(/\s+/, "").downcase + '.jpg'
     unless File.exists?(cover_file)
-      @album_db = @artist_db.albums.create(name: @album_name_id3, year: @song_year_id3, genre_id: Genre.find_by(name:@genre_id3).id, format_id: @extras[0], user_id: 1)
+      @album_db = @artist_db.albums.create(name: @album_name_id3, year: @song_year_id3, genre_id: Genre.find_by(name:@genre_id3).id, format_id: @extras[0], review: @extras[4], user_id: 1)
     else
-      @album_db = @artist_db.albums.create(name: @album_name_id3, year: @song_year_id3, genre_id: Genre.find_by(name:@genre_id3).id, format_id: @extras[0], user_id: 1, cover: File.open(cover_file, 'rb'))
+      @album_db = @artist_db.albums.create(name: @album_name_id3, year: @song_year_id3, genre_id: Genre.find_by(name:@genre_id3).id, format_id: @extras[0], review: @extras[4], user_id: 1, cover: File.open(cover_file, 'rb'))
     end
+    I18n.locale = :es
+    @album_db.update_attributes(review: @extras[3])
   end
 
   def self.create_song
     I18n.locale = :en
-    @album_db.songs.create(name: @song_name_id3, filename: @mp3path, track: @song_track_id3, discnum: @song_discnum_id3, genre_id: Genre.find_by(name:@genre_id3).id, user_id: 1)
+    @album_db.songs.create(name: @song_name_id3, filename: @mp3path, track: @song_track_id3, discnum: @song_discnum_id3, genre_id: Genre.find_by(name:@genre_id3).id, lyrics: @lyrics, video: @song_video, user_id: 1)
   end
 
 end

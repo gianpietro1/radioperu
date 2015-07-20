@@ -65,6 +65,7 @@ en:
   id3: "Import other fields from ID3 tags?"
   click_to_play_arrow_for_details: "Click to play / Arrow for song details"
   click_to_play: "Click to play"
+  album_review_not_available: "Album review not available."
   # Songs
   add_song: "Add song"
   remove_song: "Delete song"
