@@ -1350,9 +1350,8 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 
 .default-sponsor {
   padding-top: 18%;
-  width: 30%;
-  margin: auto;
-  height: auto
+  margin: 10px;
+  width: auto;
 }
 
 .radionav a {
@@ -1449,6 +1448,10 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 
 .radionav {
   margin-left:-9%;
+}
+
+.default-sponsor {
+  padding-top: 28%;
 }
 
 /* Artist catalogue */
