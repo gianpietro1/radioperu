@@ -42,7 +42,10 @@
   source: '/search_suggestions' + "?locale=" + locale,
   minLength: 3,
   open: function(event, ui) {
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+
   $('.ui-autocomplete').off('menufocus hover mouseover mouseenter');
+  }
   },
   select:function(event, ui){
   if ( ui.item.model == 'Artist' ) {
