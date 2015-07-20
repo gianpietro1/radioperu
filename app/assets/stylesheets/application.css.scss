@@ -142,6 +142,12 @@ body {
   cursor: pointer
 }
 
+@-moz-document url-prefix() {
+    .logo {
+        margin-left: 135px;
+    }
+}
+
 /* Welcome view */
 
 .home img {
