@@ -15,7 +15,7 @@
         %a{ href: radio_path(id: i), class: "station#{i}" }
           .stationlink
             %span.radiotitle
-              =@radios.find_by(id:i).name
+              =@radios.find_by(id:i).name.downcase
             %br
             %span.radiodescription
               =@radios.find_by(id:i).description
