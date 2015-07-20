@@ -100,6 +100,7 @@ body {
   margin-top: -40px;
   font-size: 4.4em;
   margin-bottom: 20px;
+  font-family: 'Myriad Pro Semibold';
 }
 
 .logo a {
@@ -142,6 +143,10 @@ body {
 }
 
 /* Welcome view */
+
+.home img {
+  margin-left: 6px;
+}
 
 .home img:hover {
   box-shadow: 0 5px 3px -3px #777;
