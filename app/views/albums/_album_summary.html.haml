@@ -13,7 +13,7 @@
         - unless @album.cover.file == nil
           = link_to image_tag( @album.cover.thumb ), [@artist,@album], target: "_blank"
         - else
-          = image_tag( 'default_album_thumb.jpg' )
+          = link_to image_tag( 'default_album_thumb.jpg' ), [@artist,@album], target: "_blank"
   - else
     .pull-left
       .margin-bottom-00

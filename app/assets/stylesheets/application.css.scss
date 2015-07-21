@@ -572,7 +572,7 @@ span.catalogue_title a {
 
 .artist_divright {
   float:left;
-  width: 30%;
+  width: 45%;
 }
 
 .artist_bio {
@@ -1313,6 +1313,12 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
   width: 50%;
 } 
 
+/* Artist Catalogue */
+
+.artist_divright {
+  width: 40%;
+}
+
 }
 
 @media screen and (max-width: 991px) {
@@ -1371,7 +1377,7 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 
 /* Artists Catalogue */
 
-.artist_albums, .artist_songs, .album_bio p, .artist_bio p {
+.artist_albums, .artist_songs {
   height: auto;
 }
 
@@ -1497,6 +1503,10 @@ h3.catalogue_title {
 
 .album_image {
   width: 100%;
+}
+
+.album_bio p, .artist_bio p {
+  height: auto;
 }
 
 }

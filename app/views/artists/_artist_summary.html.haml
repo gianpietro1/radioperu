@@ -4,7 +4,7 @@
       -unless @artist.image.file == nil
         = link_to image_tag( @artist.image.midsize ), @artist, target: "_blank"
       -else
-        = image_tag( 'default_artist_midsize.jpg' )      
+        = link_to image_tag( 'default_artist_midsize.jpg' ), @artist, target: "_blank"      
     #artist-bio
       = @artist.bio
   - else

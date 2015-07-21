@@ -50,7 +50,13 @@ class Bulk
       end
 
       if @id3tags.get_frames(:COMM)
-        @extras = @id3tags.get_frames(:COMM).last.content.split('%')
+        if @id3tags.get_frames(:COMM).first
+          @extras = @id3tags.get_frames(:COMM).first.content.split('%')
+        elsif @id3tags.get_frames(:COMM).last
+          @extras = @id3tags.get_frames(:COMM).last.content.split('%')
+        else
+          @extras = [1, '-', '-', '', '']
+        end
       else
         @extras = [1, '-', '-', '', '']
       end
