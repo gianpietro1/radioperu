@@ -142,10 +142,12 @@ body {
   cursor: pointer
 }
 
+/* Browser-specific / General */
+
 @-moz-document url-prefix() {
-    .logo {
-        margin-left: 135px;
-    }
+  .logo {
+      margin-left: 135px;
+  }
 }
 
 /* Welcome view */
