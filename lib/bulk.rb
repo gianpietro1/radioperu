@@ -8,6 +8,12 @@ class Bulk
     @bios_array[row.fields[0]] = Hash[row.headers[1..-1].zip(row.fields[1..-1])]
   end
 
+  @reviews_array = {}
+
+  CSV.foreach("public/album_reviews.csv", encoding: 'utf-8', :headers => true, :header_converters => :symbol, :converters => :all) do |row|
+    @reviews_array[row.fields[0]+row.fields[1]] = Hash[row.headers[2..-1].zip(row.fields[2..-1])]
+  end
+
   def self.dbload
 
 
@@ -50,15 +56,17 @@ class Bulk
       end
 
       if @id3tags.get_frames(:COMM)
-        if @id3tags.get_frames(:COMM).first
+        if @id3tags.get_frames(:COMM).first && @id3tags.get_frames(:COMM).first.content != "0"
           @extras = @id3tags.get_frames(:COMM).first.content.split('%')
         elsif @id3tags.get_frames(:COMM).last
           @extras = @id3tags.get_frames(:COMM).last.content.split('%')
         else
-          @extras = [1, '-', '-', '', '']
+          #@extras = [1, '-', '-', '', '']
+          @extras = [1, '-', '-']
         end
       else
-        @extras = [1, '-', '-', '', '']
+        #@extras = [1, '-', '-', '', '']
+        @extras = [1, '-', '-']
       end
 
       if @id3tags.get_frames(:USLT)
@@ -114,12 +122,12 @@ class Bulk
     I18n.locale = :en
     cover_file = 'public/uploads/images/albums/' + @artist_name_id3.gsub(/\s+/, "").downcase + '-' + @album_name_id3.gsub(/\s+/, "").downcase + '.jpg'
     unless File.exists?(cover_file)
-      @album_db = @artist_db.albums.create(name: @album_name_id3, year: @song_year_id3, genre_id: Genre.find_by(name:@genre_id3).id, format_id: @extras[0], review: @extras[4], user_id: 1)
+      @album_db = @artist_db.albums.create(name: @album_name_id3, review: @reviews_array[@artist_name_id3+@album_name_id3][:en], year: @song_year_id3, genre_id: Genre.find_by(name:@genre_id3).id, format_id: @extras[0], user_id: 1)
     else
-      @album_db = @artist_db.albums.create(name: @album_name_id3, year: @song_year_id3, genre_id: Genre.find_by(name:@genre_id3).id, format_id: @extras[0], review: @extras[4], user_id: 1, cover: File.open(cover_file, 'rb'))
+      @album_db = @artist_db.albums.create(name: @album_name_id3, review: @reviews_array[@artist_name_id3+@album_name_id3][:en], year: @song_year_id3, genre_id: Genre.find_by(name:@genre_id3).id, format_id: @extras[0], user_id: 1, cover: File.open(cover_file, 'rb'))
     end
     I18n.locale = :es
-    @album_db.update_attributes(review: @extras[3])
+    @album_db.update_attributes(review: @reviews_array[@artist_name_id3+@album_name_id3][:es])
   end
 
   def self.create_song

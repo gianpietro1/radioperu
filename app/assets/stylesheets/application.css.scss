@@ -423,7 +423,8 @@ body {
   width: 33.5%;
   font-weight: bold;
   float:left;
-  margin-bottom: 10px
+  margin-bottom: 10px;
+  overflow: auto;
 }
 
 .album-info {
@@ -1490,7 +1491,7 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 }
 
 .artist_divright a {
-  width: 50%;
+  word-wrap: break-word;
 }
 
 

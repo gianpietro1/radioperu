@@ -55,12 +55,15 @@
   // Set variables
   var locale = "#{I18n.locale}";
   var radio_id = "#{@radio.id}";
+  var shoutcast_stats_host = "#{Radio.find(@radio.id).host}"
+  var shoutcast_port = "#{Radio.find(@radio.id).port}"
   songtitle_old = 0
   songtitle_new = 1
+  
 
   function update_artist(){
 
-  $.SHOUTcast({host : 'eclipse.wavestreamer.com',port:3771}).stats(function(){
+  $.SHOUTcast({host: shoutcast_stats_host,port:shoutcast_port}).stats(function(){
  
   // Shoutcast main variable
   songtitle_new = this.get('songtitle');
