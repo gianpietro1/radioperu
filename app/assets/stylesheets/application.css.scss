@@ -379,6 +379,7 @@ body {
 
 #songtitle {
   float:left;
+  width: 280px;
 }
 
 #artist {
@@ -390,6 +391,7 @@ body {
 #song {
   font-weight: bold;
   font-size: 1em;
+  line-height: 1.2em
 }
 
 .artist-info {
@@ -1496,6 +1498,10 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
   padding-top: 28%;
 }
 
+#songtitle {
+  width: 240px;
+}
+
 /* Artist catalogue */
 
 .slogan {
@@ -1762,6 +1768,11 @@ h4.artist_catalogue_title {
 
 .landing {
   padding: 5px 10px 40px 24px;
+}
+
+.radio_container {
+  margin-left: -15px;
+  margin-right: -4px;
 }
 
 }
