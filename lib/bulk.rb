@@ -56,10 +56,12 @@ class Bulk
       end
 
       if @id3tags.get_frames(:COMM)
-        if @id3tags.get_frames(:COMM).first && @id3tags.get_frames(:COMM).first.content != "0"
-          @extras = @id3tags.get_frames(:COMM).first.content.split('%')
-        elsif @id3tags.get_frames(:COMM).last
+        if @id3tags.get_frames(:COMM).last
           @extras = @id3tags.get_frames(:COMM).last.content.split('%')
+        elsif @id3tags.get_frames(:COMM).first && @id3tags.get_frames(:COMM).first.content != "0"
+          if @id3tags.get_frames(:COMM).first.content
+            @extras = @id3tags.get_frames(:COMM).first.content.split('%')
+          end
         else
           #@extras = [1, '-', '-', '', '']
           @extras = [1, '-', '-']
@@ -132,7 +134,7 @@ class Bulk
 
   def self.create_song
     I18n.locale = :en
-    @album_db.songs.create(name: @song_name_id3, filename: @mp3path, track: @song_track_id3, discnum: @song_discnum_id3, genre_id: Genre.find_by(name:@genre_id3).id, lyrics: @lyrics, video: @song_video, user_id: 1)
+    @album_db.songs.create(name: @song_name_id3, filename: @mp3path, track: @song_track_id3, discnum: @song_discnum_id3, genre_id: @album_db.genre.id, lyrics: @lyrics, video: @song_video, user_id: 1)
   end
 
 end

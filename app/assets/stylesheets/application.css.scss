@@ -383,13 +383,13 @@ body {
 
 #artist {
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin-top: 6px;
 }
 
 #song {
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 .artist-info {
@@ -1287,6 +1287,18 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
   width: 57%;
 } 
 
+#artist {
+  font-size: 1.1em;
+}
+
+#song {
+  font-size: 0.9em;
+}
+
+#songtitle {
+  width: 170px;  
+}
+
 }
 
 @media screen and (max-width: 1060px) {
@@ -1376,6 +1388,10 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 
 .radionav a {
   min-width: 122px
+}
+
+#songtitle {
+  width: auto;
 }
 
 /* Artists Catalogue */
@@ -1660,16 +1676,15 @@ h3.catalogue_title {
 
 #artist {
   font-size: 1.1em;
-  width: 90px;
 }
 
 #song {
   font-size: 0.9em;
-  width: 90px;
 }
 
 #songtitle {
   vertical-align: middle;
+  width: 140px;
 }
 
 #album-name {

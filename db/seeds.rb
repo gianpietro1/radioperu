@@ -109,8 +109,10 @@ I18n.locale = "es"
 Format.create(name:"CD")
 Format.create(name:"Vinilo")
 Format.create(name:"Cassette")
+Format.create(name:"Desconocido")
 
 I18n.locale = "en"
 Format.find_by_id(1).update_attributes(name:"CD")
 Format.find_by_id(2).update_attributes(name:"Vinyl")
 Format.find_by_id(3).update_attributes(name:"Cassette")
+Format.find_by_id(4).update_attributes(name:"Unknown")
