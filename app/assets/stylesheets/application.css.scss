@@ -1797,12 +1797,14 @@ h4.artist_catalogue_title {
   word-wrap: break-word;
 }
 
-#wPlayerPlayer #wPlayerTime {
-  font-size: 8px !important;
+
+@media screen and (max-width: 300px) {
+
+#songtitle {
+  width: 80px;
+  word-wrap: break-word;
 }
 
-#wPlayerPlayer img {
-  max-width: 20px !important;
 }
 
 }
