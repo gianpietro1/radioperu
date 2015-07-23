@@ -1793,21 +1793,23 @@ h4.artist_catalogue_title {
 
 #songtitle {
   vertical-align: middle;
-  width: 150px;
+  width: 120px;
   word-wrap: break-word;
 }
 
 
 @media screen and (max-width: 300px) {
 
+/* Radio Stations */ 
+
 #artist {
   font-size: 0.9em;
-  line-height: 1em
+  line-height: 1.1em
 }
 
 #song {
   font-size: 0.7em;
-  line-height: 0.8em
+  line-height: 01em
 }
 
 .album-info a img {
@@ -1818,6 +1820,12 @@ h4.artist_catalogue_title {
 #songtitle {
   width: 55px;
   word-wrap: break-word;
+}
+
+.radionav a {
+  min-width: 40px;
+  font-size: 0.5em;
+  margin-right:-5px;
 }
 
 }
