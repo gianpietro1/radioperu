@@ -1800,6 +1800,17 @@ h4.artist_catalogue_title {
 
 @media screen and (max-width: 300px) {
 
+#artist {
+  font-size: 0.9em;
+  line-height: 1em
+}
+
+#song {
+  font-size: 0.7em;
+  line-height: 0.8em
+}
+
+
 #songtitle {
   width: 55px;
   word-wrap: break-word;
