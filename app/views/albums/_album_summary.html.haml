@@ -15,12 +15,12 @@
         - else
           = link_to image_tag( 'default_album_thumb.jpg' ), [@artist,@album], target: "_blank"
   - else
-    .pull-left
+    .pull-left.album-summary
       .margin-bottom-00
-        = t(:album)
-      #album-name.margin-left-01
         %em
-          = t(:album_notfound)
+          = t(:album)
+      #album-name.margin-top-00.margin-left-01
+        = t(:album_notfound)
     .pull-right
       #album-cover
         = image_tag( 'default_album_thumb.jpg' )
