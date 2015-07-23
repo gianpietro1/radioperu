@@ -366,7 +366,7 @@ body {
   margin-top: 10px;
   padding: 5px;
   padding-left: 10px;
-  height: 80px;    
+  min-height: 80px;    
   border-radius: 10px;
   border: 1px solid #ececec;
   color: #3c3c33;
@@ -1782,18 +1782,26 @@ h4.artist_catalogue_title {
 }
 
 #artist {
-  font-size: 0.9em;
+  font-size: 1.1em;
   line-height: 1em
 }
 
 #song {
-  font-size: 0.7em;
+  font-size: 0.9em;
   line-height: 1em
 }
 
 #songtitle {
   vertical-align: middle;
   width: 140px;
+}
+
+#wPlayerPlayer #wPlayerTime {
+  font-size: 8px !important;
+}
+
+#wPlayerPlayer img {
+  max-width: 20px !important;
 }
 
 }
