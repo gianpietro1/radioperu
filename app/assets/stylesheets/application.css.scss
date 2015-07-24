@@ -1375,11 +1375,16 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 }
 
 .album-info {
-  font-size: 1em
+  font-size: 1em;
+  width: 65%;
 }
 
 .station_schedule {
   height: auto;
+}
+
+.station_schedule, .station_sponsor {
+  margin-left: -1px;
 }
 
 .default-sponsor {
@@ -1647,6 +1652,7 @@ h3.catalogue_title {
 .album-info {
   font-size: 0.7em;
   overflow: auto;
+  width: 64.5%;
 }
 
 .album-summary {
