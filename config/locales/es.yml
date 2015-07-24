@@ -31,6 +31,8 @@ es:
   search: "Buscar"
   login: "Ingresa"
   greetings: "Hola"
+  about: "sobre el proyecto"
+  some_voices: "Algunas voces..."
   # Artists
   artist_name: "Nombre del Artista"
   artist_city: "Ciudad de origen"

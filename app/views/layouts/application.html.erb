@@ -56,7 +56,9 @@
       <div class="row">
         <div class="pull-left home">
           <%= link_to image_tag("home.png"), root_path %>
-          <%= link_to 'Sobre el proyecto', about_path, class: "about_link" %>
+          <div class="about_link">
+            <%= link_to t(:about), about_path %>
+          </div>
         </div>        
         <div class="pull-right social">
             <%= link_to image_tag("facebook.png"), 'https://www.facebook.com/radioperu.pe', class: "facebook", :target => "_blank" %>

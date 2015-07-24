@@ -150,10 +150,18 @@ body {
   }
 }
 
+/* About view */
+
+.voices {
+  font-size: 0.9em
+}
+
+
 /* Welcome view */
 
 .home img {
   margin-left: 6px;
+  float: left;
 }
 
 .home img:hover {
@@ -161,14 +169,26 @@ body {
 }
 
 .about_link {
-  text-transform: uppercase;
-  background-color: #3c3333;
+  background-color: #3c3c33;
   font-size: 0.8em;
   border-radius: 10px;
   color: white;
-  width: 100px;
-  padding: 10px;
+  width: auto;
+  padding: 3px 7px;
+  margin-left: 10px;
+  float:left;
+  margin-top: 10px;
 }
+
+.about_link a {
+  color: white;
+}
+
+.about_link a:hover {
+  color: orange;
+  text-decoration: none
+}
+
 
 .social img:hover {
   box-shadow: 0 5px 3px -3px #777;
@@ -1447,6 +1467,11 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
   height: 30px;
 }
 
+.about_link {
+  margin-top: 5px;
+  font-size: 0.6em
+}
+
 .social .facebook img {
   width: 30px;
   height: 30px; 
@@ -1463,7 +1488,7 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 }
 
 .logo {
-  margin-top: -8px;
+  margin-top: 8px;
   font-size: 4em
 }
 
@@ -1627,7 +1652,6 @@ h3.catalogue_title {
 }
 
 .logo {
-  margin-top: -2px;
   font-size: 3.2em
 }
 
