@@ -89,6 +89,7 @@ en:
   album_notfound: "Album not found"
   listeners: "Listeners"
   nexttitle: "Next Title"
+  album: "Album"
   # Schedule
   station_schedule: "Station Schedule"
   current_program_sponsor: "Current Program Sponsor"

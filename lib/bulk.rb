@@ -4,13 +4,13 @@ class Bulk
 
   @bios_array = {}
 
-  CSV.foreach("public/artists_bios.csv", encoding: 'utf-8', :headers => true, :header_converters => :symbol, :converters => :all) do |row|
+  CSV.foreach("public/uploads/artists_bios.csv", encoding: 'utf-8', :headers => true, :header_converters => :symbol, :converters => :all) do |row|
     @bios_array[row.fields[0]] = Hash[row.headers[1..-1].zip(row.fields[1..-1])]
   end
 
   @reviews_array = {}
 
-  CSV.foreach("public/album_reviews.csv", encoding: 'utf-8', :headers => true, :header_converters => :symbol, :converters => :all) do |row|
+  CSV.foreach("public/uploads/album_reviews.csv", encoding: 'utf-8', :headers => true, :header_converters => :symbol, :converters => :all) do |row|
     @reviews_array[row.fields[0]+row.fields[1]] = Hash[row.headers[2..-1].zip(row.fields[2..-1])]
   end
 

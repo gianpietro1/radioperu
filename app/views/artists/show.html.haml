@@ -51,7 +51,7 @@
 
 .row
   .col-md-1
-  .col-md-4 
+  .col-md-7
     %h4.bold
       = t(:albums)
     .artist_albums
@@ -68,16 +68,3 @@
               %br
               .small
                 = album.year
-  .col-md-4 
-    %h4.bold
-      = t(:songs)
-    .artist_songs
-      %ul.playlist
-        - @albums.each do |album|
-          - album.songs.each do |song|
-            %li
-              %a{ href: song.filename }
-                - if song.track
-                  = format('%02d', song.track).to_s + ' ' + song.name
-                - else
-                  = format('%02d', 0).to_s + ' ' + song.name
