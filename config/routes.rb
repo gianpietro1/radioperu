@@ -1,13 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'musician_form/new'
-
-  get 'musician_form/create'
-
-  get 'programs/new'
-
-  get 'programs/edit'
-
   scope "(:locale)", locale: /es|en/ do
     resources :radios, only: [:show] do
       resources :programs
@@ -29,6 +21,7 @@ Rails.application.routes.draw do
     get '/search_suggestions_albums' => 'search_suggestions#index_albums'
     get '/search_suggestions_songs' => 'search_suggestions#index_songs'
     get 'artists/station/:station_id' => 'artists#index_station'
+    get 'about' => 'about#index'
   end
 
   get '/:locale' => 'welcome#index'
