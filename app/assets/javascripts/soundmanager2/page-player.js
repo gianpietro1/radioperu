@@ -41,12 +41,12 @@ function PagePlayer() {
     useWaveformData: false, // [Flash 9 only]: enable sound spectrum (raw waveform data) - WARNING: CPU-INTENSIVE: may set CPUs on fire.
     useEQData: false,       // [Flash 9 only]: enable sound EQ (frequency spectrum data) - WARNING: Also CPU-intensive.
     fillGraph: false,       // [Flash 9 only]: draw full lines instead of only top (peak) spectrum points
-    allowRightClick: true,  // let users right-click MP3 links ("save as...", etc.) or discourage (can't prevent.)
+    allowRightClick: false,  // let users right-click MP3 links ("save as...", etc.) or discourage (can't prevent.)
     useThrottling: true,    // try to rate-limit potentially-expensive calls (eg. dragging position around)
     autoStart: false,       // begin playing first sound when page loads
     playNext: true,         // stop after one sound, or play through list until end
     updatePageTitle: true,  // change the page title while playing sounds
-    emptyTime: 'cargando/loading',      // null/undefined timer values (before data is available)
+    emptyTime: '-:--',      // null/undefined timer values (before data is available)
     useFavIcon: false       // try to show peakData in address bar (Firefox + Opera) - may be too CPU heavy
   };
 
