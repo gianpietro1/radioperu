@@ -67,7 +67,8 @@
                 = '00' + ' ' + song.name
               - else
                 = ''
-    %p.pull-left.margin-top-10
-      - if @artist.albums.count > 1
-        = link_to t(:next_album), [@artist,@album.next(@albums_array,@artist)], class: 'btn btn-info btn-sm'
+      %p.margin-top-10
+        - if @artist.albums.count > 1
+          = link_to '<', [@artist,@album.prev(@albums_array,@artist)], class: 'btn btn-info btn-sm pull-left'
+          = link_to '>', [@artist,@album.next(@albums_array,@artist)], class: 'btn btn-info btn-sm pull-right'
   .col-md-4

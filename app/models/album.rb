@@ -18,6 +18,14 @@ class Album < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, :use => :slugged
 
+  def prev(array,artist)
+    if array[array.index(artist.albums.find(id).id) - 1]
+      artist.albums.find(array[array.index(artist.albums.find(id).id) - 1])
+    else
+      artist.albums.find(array[array.count - 1])
+    end
+  end
+
   def next(array,artist)
     if array[array.index(artist.albums.find(id).id) + 1]
       artist.albums.find(array[array.index(artist.albums.find(id).id) + 1])
