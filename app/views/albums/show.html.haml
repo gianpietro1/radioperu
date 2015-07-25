@@ -21,7 +21,7 @@
 
 .row
   .col-md-1
-  .col-md-8
+  .col-md-7
     .album_image
       - if @album.cover?
         = image_tag( @album.cover )
@@ -67,5 +67,7 @@
                 = '00' + ' ' + song.name
               - else
                 = ''
-
+    %p.pull-left.margin-top-10
+      - if @artist.albums.count > 1
+        = link_to t(:next_album), [@artist,@album.next(@artist)], class: 'btn btn-info btn-sm'
   .col-md-4

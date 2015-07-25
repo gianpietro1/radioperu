@@ -15,6 +15,7 @@
 /*jslint white: false, onevar: true, undef: true, nomen: false, eqeqeq: true, plusplus: false, bitwise: true, newcap: true, immed: true */
 /*global soundManager, window, document, navigator, setTimeout, attachEvent, Metadata, PP_CONFIG */
 
+
 var pagePlayer = null;
 
 function PagePlayer() {
@@ -35,6 +36,7 @@ function PagePlayer() {
 
   // configuration options
   // note that if Flash 9 is required, you must set soundManager.flashVersion = 9 in your script before this point.
+  soundManager.setup({ flashVersion: 9 })
 
   this.config = {
     usePeakData: false,     // [Flash 9 only]: show peak data
@@ -293,7 +295,7 @@ function PagePlayer() {
     if (o.nodeName.toLowerCase() !== 'li') {
       return null;
     } else {
-      return o.getElementsByTagName('a')[1];  // changed from 0 to 1 to match second "a"
+      return o.getElementsByTagName('a')[0];
     }
   };
 

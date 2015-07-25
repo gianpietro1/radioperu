@@ -15,6 +15,7 @@
 /*jslint white: false, onevar: true, undef: true, nomen: false, eqeqeq: true, plusplus: false, bitwise: true, newcap: true, immed: true */
 /*global soundManager, window, document, navigator, setTimeout, attachEvent, Metadata, PP_CONFIG */
 
+
 var pagePlayer = null;
 
 function PagePlayer() {
@@ -35,6 +36,10 @@ function PagePlayer() {
 
   // configuration options
   // note that if Flash 9 is required, you must set soundManager.flashVersion = 9 in your script before this point.
+  soundManager.setup({
+    // If you need flash 9, include this line.
+    flashVersion: 9
+  });
 
   this.config = {
     usePeakData: false,     // [Flash 9 only]: show peak data
@@ -282,19 +287,22 @@ function PagePlayer() {
 
   this.getNextItem = function(o) {
     // given <li> playlist item, find next <li> and then <a>
+    
     if (o.nextElementSibling) {
       o = o.nextElementSibling;
     } else {
       o = o.nextSibling; // move from original node..
-      while (o && o.nextSibling && o.nextSibling.nodeType !== 1) {
+      while (o && o.nextSibling && o.nextSibling.nodeType !== 1 && /(?:^|\s+)ignore(?:\s|$)/.test(o.nextSibling.className)) {
         o = o.nextSibling;
       }
     }
+
     if (o.nodeName.toLowerCase() !== 'li') {
       return null;
     } else {
-      return o.getElementsByTagName('a')[1];  // changed from 0 to 1 to match second "a"
+      return o.getElementsByTagName('a')[0];
     }
+
   };
 
   this.playNext = function(oSound) {
