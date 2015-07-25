@@ -65,8 +65,8 @@ es:
   album_updated: "El álbum fue actualizado satisfactoriamente."
   album_saved: "El álbum fue creado satisfactoriamente."
   id3: "Importar otros campos de etiquetas ID3?"
-  click_to_play_arrow_for_details: "Clic para reproducir / Flecha para detalles de la canción"
-  click_to_play: "Clic para reproducir"
+  click_to_play_arrow_for_details: "Clic para reproducir o parar / Flecha para detalles de la canción"
+  click_to_play: "Clic para reproducir o parar"
   album_review_not_available: "Reseña del álbum no disponible."
   # Songs
   add_song: "Añadir canción"

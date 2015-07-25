@@ -65,8 +65,8 @@ en:
   album_updated: "The album was updated successfully."
   album_saved: "The album was created successfully."
   id3: "Import other fields from ID3 tags?"
-  click_to_play_arrow_for_details: "Click to play / Arrow for song details"
-  click_to_play: "Click to play"
+  click_to_play_arrow_for_details: "Click to play or stop / Arrow for song details"
+  click_to_play: "Click to play or stop"
   album_review_not_available: "Album review not available."
   # Songs
   add_song: "Add song"

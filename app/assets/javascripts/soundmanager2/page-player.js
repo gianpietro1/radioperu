@@ -46,7 +46,7 @@ function PagePlayer() {
     autoStart: false,       // begin playing first sound when page loads
     playNext: true,         // stop after one sound, or play through list until end
     updatePageTitle: true,  // change the page title while playing sounds
-    emptyTime: '-:--',      // null/undefined timer values (before data is available)
+    emptyTime: 'cargando/loading',      // null/undefined timer values (before data is available)
     useFavIcon: false       // try to show peakData in address bar (Firefox + Opera) - may be too CPU heavy
   };
 
