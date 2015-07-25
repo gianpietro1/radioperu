@@ -11,7 +11,6 @@ class AlbumsController < ApplicationController
     @artist.albums.each do |album| 
       @albums_array << album.id
     end
-    @albums_array.sort!
   end
 
   def album_summary

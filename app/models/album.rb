@@ -19,8 +19,8 @@ class Album < ActiveRecord::Base
   friendly_id :name, :use => :slugged
 
   def next(array,artist)
-    if artist.albums.exists?(id + 1)
-      artist.albums.find(array[array.index(artist.albums.find(id).id) + 1]) 
+    if array[array.index(artist.albums.find(id).id) + 1]
+      artist.albums.find(array[array.index(artist.albums.find(id).id) + 1])
     else
       artist.albums.find(array[0])
     end
