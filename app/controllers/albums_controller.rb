@@ -7,6 +7,11 @@ class AlbumsController < ApplicationController
     authorize @album
     @artist = @album.artist
     @songs = @album.songs.all
+    @albums_array = []
+    @artist.albums.each do |album| 
+      @albums_array << album.id
+    end
+    @albums_array.sort!
   end
 
   def album_summary

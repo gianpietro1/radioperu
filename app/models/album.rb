@@ -18,8 +18,12 @@ class Album < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, :use => :slugged
 
-  def next(artist)
-    artist.albums.where("id > ?", id).order("year ASC" || "id ASC").first || artist.albums.first
+  def next(array,artist)
+    if artist.albums.exists?(id + 1)
+      artist.albums.find(array[array.index(artist.albums.find(id).id) + 1]) 
+    else
+      artist.albums.find(array[0])
+    end
   end
 
 end
