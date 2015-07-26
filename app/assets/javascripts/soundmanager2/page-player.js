@@ -262,7 +262,7 @@ function PagePlayer() {
     if (o.nodeName.toLowerCase() !== 'li') {
       return null;
     } else {
-      return o.getElementsByTagName('a')[0];
+      return o.getElementsByTagName('a')[1];
     }
   };
 
@@ -402,6 +402,7 @@ function PagePlayer() {
         var oTemp = this._data.oLI.getElementsByTagName('a')[0],
             oString = oTemp.innerHTML,
             oThis = this;
+
         oTemp.innerHTML = oString+' <span style="font-size:0.5em"> | Load failed, d\'oh! '+(sm.sandbox.noRemote?' Possible cause: Flash sandbox is denying remote URL access.':(sm.sandbox.noLocal?'Flash denying local filesystem access':'404?'))+'</span>';
         setTimeout(function(){
           oTemp.innerHTML = oString;
@@ -586,6 +587,7 @@ function PagePlayer() {
 
     } else {
 
+
       // we have something we're interested in.
 
       // find and init parent UL, if need be
@@ -594,7 +596,10 @@ function PagePlayer() {
       // and decorate the link too, if needed
       self.initItem(o);
 
-      soundURL = o.href;
+      //glch addition
+      //soundURL = o.href;
+      soundURL = "http://" + window.location.host + smglch_fol + o.getAttribute('href').split('%')[0+smglch_offset] + "/" + o.getAttribute('href').split('%')[1+smglch_offset] + "/" + o.getAttribute('href').split('%')[2+smglch_offset];
+
       thisSound = self.getSoundByObject(o);
 
       if (thisSound) {
@@ -627,6 +632,7 @@ function PagePlayer() {
       } else {
 
         // create sound
+
         thisSound = sm.createSound({
           id:o.id,
           url:decodeURI(soundURL),

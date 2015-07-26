@@ -52,23 +52,39 @@
   .col-md-1
   .col-md-8
     .album_songs
-      %ul.playlist
-        %h5 
-          =t(:click_to_play_arrow_for_details)
-        - @songs.each do |song|
-          %li
-            .pointer
-              - if song.name != ''
-                =link_to raw("&#10138;"), [@artist,@album,song]
-            %a{ href: song.filename }
-              - if song.track
-                = format('%02d', song.track).to_s + ' ' + song.name
-              - elsif song.name
-                = '00' + ' ' + song.name
-              - else
-                = ''
+      %div{"oncontextmenu"=>"return false"}
+        %ul.playlist
+          %h5 
+            =t(:click_to_play_arrow_for_details)
+          - @songs.each do |song|
+            %li{id: "li"}
+              .pointer
+                - if song.name != ''
+                  =link_to raw("&#10138;"), [@artist,@album,song]
+              - offset = ENV["SOUND_OFFSET"].to_i
+              %a{ href: ('%')*offset + @artist.name + '%' + @album.name + '%' + song.filename.file.filename}
+                - if song.track
+                  = format('%02d', song.track).to_s + ' ' + song.name
+                - elsif song.name
+                  = '00' + ' ' + song.name
+                - else
+                  = ''
       %p.margin-top-10
         - if @artist.albums.count > 1
           = link_to '<', [@artist,@album.prev(@albums_array,@artist)], class: 'btn btn-info btn-sm pull-left'
           = link_to '>', [@artist,@album.next(@albums_array,@artist)], class: 'btn btn-info btn-sm pull-right'
   .col-md-4
+
+%script{:type=>"text/javascript"}
+
+  var locale = "#{I18n.locale}";
+
+  function sound_offset(){
+  $.ajax({type: 'get', url: "/" + locale + "/sound_offset", success: function(r) { 
+  smglch_offset = parseInt(r.split('%')[0]);
+  smglch_fol = r.split('%')[1];
+  smglch_ext = r.split('%')[2].toString();
+  }});
+  }
+
+  sound_offset();

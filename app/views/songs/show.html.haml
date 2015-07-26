@@ -26,17 +26,19 @@
 .row
   .col-md-1
   .col-md-6
-    %ul.playlist.song-playlist
-      %h4
-        =t(:click_to_play)
-      %li
-        %a{ href: @song.filename }
-          - if @song.track
-            = format('%02d', @song.track).to_s + ' ' + @song.name
-          - elsif @song.name
-            = '00' + ' ' + @song.name
-          - else
-            = ''
+    %div{"oncontextmenu"=>"return false"}
+      %ul.playlist.song-playlist
+        %h4
+          =t(:click_to_play)
+        %li{id: "li"}
+          - offset = ENV["SOUND_OFFSET"].to_i
+          %a{ href: ('%')*offset + @artist.name + '%' + @album.name + '%' + @song.filename.file.filename}
+            - if @song.track
+              = format('%02d', @song.track).to_s + ' ' + @song.name
+            - elsif @song.name
+              = '00' + ' ' + @song.name
+            - else
+              = ''
     %h4
       =t(:song_video)
     %p.margin-top-05
@@ -56,5 +58,16 @@
       - else
         = @song.lyrics.gsub(/(?:\n\r?|\r\n?)/, "<br>").html_safe 
 
+%script{:type=>"text/javascript"}
 
+  var locale = "#{I18n.locale}";
 
+  function sound_offset(){
+  $.ajax({type: 'get', url: "/" + locale + "/sound_offset", success: function(r) { 
+  smglch_offset = parseInt(r.split('%')[0]);
+  smglch_fol = r.split('%')[1];
+  smglch_ext = r.split('%')[2];
+  }});
+  }
+
+  sound_offset();
