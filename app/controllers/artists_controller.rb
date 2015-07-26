@@ -74,12 +74,6 @@ class ArtistsController < ApplicationController
     end
   end
 
-  def sound_offset
-    respond_with() do |format|
-      format.html {render :partial => "sound_offset" }
-    end
-  end
-
 private
 
   def artist_params

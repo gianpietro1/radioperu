@@ -62,7 +62,7 @@
                 - if song.name != ''
                   =link_to raw("&#10138;"), [@artist,@album,song]
               - offset = ENV["SOUND_OFFSET"].to_i
-              %a{ href: ('%')*offset + @artist.name + '%' + @album.name + '%' + song.filename.file.filename}
+              %a{ href: ('%')*offset + "password" + '%' + rand(0..43254735465623).to_s + '%' + song.filename.file.basename + '%' + ".ogg"}
                 - if song.track
                   = format('%02d', song.track).to_s + ' ' + song.name
                 - elsif song.name
@@ -78,12 +78,15 @@
 %script{:type=>"text/javascript"}
 
   var locale = "#{I18n.locale}";
+  var album_name = "#{@album.name}"
 
   function sound_offset(){
-  $.ajax({type: 'get', url: "/" + locale + "/sound_offset", success: function(r) { 
+  $.ajax({data: { album_name: album_name }, type: 'get', url: "/" + locale + "/sound_offset",
+  success: function(r) { 
   smglch_offset = parseInt(r.split('%')[0]);
-  smglch_fol = r.split('%')[1];
-  smglch_ext = r.split('%')[2].toString();
+  smglch_hash1 = r.split('%')[1];
+  smglch_hash2 = r.split('%')[2];
+  smglch_hash3 = r.split('%')[3];
   }});
   }
 

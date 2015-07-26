@@ -1,20 +1,3 @@
-/**
- * SoundManager 2 Demo: "Page as playlist" UI
- * ----------------------------------------------
- * http://schillmania.com/projects/soundmanager2/
- *
- * An example of a Muxtape.com-style UI, where an
- * unordered list of MP3 links becomes a playlist
- *
- * Flash 9 "MovieStar" edition supports MPEG4
- * audio as well.
- *
- * Requires SoundManager 2 Javascript API.
- */
-
-/*jslint white: false, onevar: true, undef: true, nomen: false, eqeqeq: true, plusplus: false, bitwise: true, newcap: true, immed: true */
-/*global soundManager, window, document, navigator, setTimeout, attachEvent, Metadata, PP_CONFIG */
-
 var pagePlayer = null;
 
 function PagePlayer() {
@@ -598,7 +581,7 @@ function PagePlayer() {
 
       //glch addition
       //soundURL = o.href;
-      soundURL = "http://" + window.location.host + smglch_fol + o.getAttribute('href').split('%')[0+smglch_offset] + "/" + o.getAttribute('href').split('%')[1+smglch_offset] + "/" + o.getAttribute('href').split('%')[2+smglch_offset];
+      soundURL = "http://" + window.location.host + smglch_hash1 + "/" + smglch_hash2 + "/" + smglch_hash3 + "/" + (o.getAttribute('href').split('%')[2+smglch_offset] + ".mp3");
 
       thisSound = self.getSoundByObject(o);
 
