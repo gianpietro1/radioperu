@@ -33,12 +33,16 @@
         %li{id: "li"}
           - offset = ENV["SOUND_OFFSET"].to_i
           %a{ href: ('%')*offset + "password" + '%' + rand(0..43254735465623).to_s + '%' + @song.filename.file.basename + '%' + ".ogg"}
-            - if @song.track
-              = format('%02d', @song.track).to_s + ' ' + @song.name
-            - elsif @song.name
-              = '00' + ' ' + @song.name
+            - if @songs.last.discnum && @songs.last.discnum > 1                 
+              - if @song.track
+                = format('%02d', @song.discnum).to_s + '-' + format('%02d', @song.track).to_s + ' ' + @song.name
+              - elsif @song.name
+                = '00' + ' ' + @song.name
             - else
-              = ''
+              - if @song.track
+                = format('%02d', @song.track).to_s + ' ' + @song.name
+              - elsif @song.name
+                = '00' + ' ' + @song.name
     %h4
       =t(:song_video)
     %p.margin-top-05

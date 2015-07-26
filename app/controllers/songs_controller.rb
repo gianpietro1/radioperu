@@ -3,6 +3,7 @@ class SongsController < ApplicationController
   def show
     @album = Album.friendly.find(params[:album_id])
     @song = @album.songs.friendly.find(params[:id])
+    @songs = @album.songs
     authorize @song
     @artist = @album.artist
   end

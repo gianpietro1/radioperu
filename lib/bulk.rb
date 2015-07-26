@@ -11,7 +11,7 @@ class Bulk
   @reviews_array = {}
 
   CSV.foreach("public/uploads/album_reviews.csv", encoding: 'utf-8', :headers => true, :header_converters => :symbol, :converters => :all) do |row|
-    @reviews_array[row.fields[0]+row.fields[1]] = Hash[row.headers[2..-1].zip(row.fields[2..-1])]
+    @reviews_array[row.fields[0].to_s+row.fields[1].to_s] = Hash[row.headers[2..-1].zip(row.fields[2..-1])]
   end
 
   def self.dbload

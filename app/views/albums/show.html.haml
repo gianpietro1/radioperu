@@ -63,12 +63,16 @@
                   =link_to raw("&#10138;"), [@artist,@album,song]
               - offset = ENV["SOUND_OFFSET"].to_i
               %a{ href: ('%')*offset + "password" + '%' + rand(0..43254735465623).to_s + '%' + song.filename.file.basename + '%' + ".ogg"}
-                - if song.track
-                  = format('%02d', song.track).to_s + ' ' + song.name
-                - elsif song.name
-                  = '00' + ' ' + song.name
+                - if @songs.last.discnum && @songs.last.discnum > 1                 
+                  - if song.track
+                    = format('%02d', song.discnum).to_s + '-' + format('%02d', song.track).to_s + ' ' + song.name
+                  - elsif song.name
+                    = '00' + ' ' + song.name
                 - else
-                  = ''
+                  - if song.track
+                    = format('%02d', song.track).to_s + ' ' + song.name
+                  - elsif song.name
+                    = '00' + ' ' + song.name           
       %p.margin-top-10
         - if @artist.albums.count > 1
           = link_to '<', [@artist,@album.prev(@albums_array,@artist)], class: 'btn btn-info btn-sm pull-left'
