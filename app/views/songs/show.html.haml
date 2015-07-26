@@ -32,7 +32,7 @@
           =t(:click_to_play)
         %li{id: "li"}
           - offset = ENV["SOUND_OFFSET"].to_i
-          %a{ href: ('%')*offset + "password" + '%' + rand(0..43254735465623).to_s + '%' + @song.filename.file.basename + '%' + ".aac"}
+          %a{ href: ('%')*offset + "password" + '%' + rand(0..43254735465623).to_s + '%' + @song.filename.file.basename + '%' + ".mp3"}
             - if @songs.last.discnum && @songs.last.discnum > 1                 
               - if @song.track
                 = format('%02d', @song.discnum).to_s + '-' + format('%02d', @song.track).to_s + ' ' + @song.name
