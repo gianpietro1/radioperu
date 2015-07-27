@@ -62,7 +62,7 @@
                 - if song.name != ''
                   =link_to raw("&#10138;"), [@artist,@album,song]
               - offset = ENV["SOUND_OFFSET"].to_i
-              %a{ href: ('%')*offset + "password" + '%' + rand(0..43254735465623).to_s + '%' + song.filename.file.basename + '%' + ".mp3"}
+              %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.filename.file.basename + '#' + ".mp3"}
                 - if @songs.last.discnum && @songs.last.discnum > 1                 
                   - if song.track
                     = format('%02d', song.discnum).to_s + '-' + format('%02d', song.track).to_s + ' ' + song.name
@@ -87,10 +87,10 @@
   function sound_offset(){
   $.ajax({data: { album_name: album_name }, type: 'get', url: "/" + locale + "/sound_offset",
   success: function(r) { 
-  smglch_offset = parseInt(r.split('%')[0]);
-  smglch_hash1 = r.split('%')[1];
-  smglch_hash2 = r.split('%')[2];
-  smglch_hash3 = r.split('%')[3];
+  smglch_offset = parseInt(r.split('#')[0]);
+  smglch_hash1 = r.split('#')[1];
+  smglch_hash2 = r.split('#')[2];
+  smglch_hash3 = r.split('#')[3];
   }});
   }
 
