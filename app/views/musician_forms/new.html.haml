@@ -29,6 +29,9 @@
       .form_group
         = f.label t(:musician_phone)
         = f.text_field :musician_phone, class: 'form-control'
+      .form_group
+        = f.label t(:musician_comments)
+        = f.text_area :musician_comments, class: 'form-control'
       %p
       .form_group.pull-left
         = link_to t(:cancel), root_path, class: "btn btn-danger"

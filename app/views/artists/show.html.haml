@@ -43,10 +43,12 @@
           = t(:genre) + ": "
         = @artist.genre.name
         %br  
-        - unless @artist.bio == nil
           .artist_bio.margin-top-05
             %p
-              = @artist.bio
+              - unless @artist.bio.nil? || @artist.bio.empty?
+                = @artist.bio
+              - else
+                = t(:artist_bio_not_available)
   .col-md-1
 
 .row

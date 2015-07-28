@@ -51,6 +51,7 @@ es:
   random_artists_station: "Artistas varios de la Estación"
   see_all: "Ver todos"
   artists_from_station: "Artistas de la estación"
+  artist_bio_not_available: "Biografía no disponible."
   # Albums
   add_album: "Añadir Álbum"
   album_name: "Nombre del Álbum"
@@ -136,6 +137,7 @@ es:
   musician_phone: "Telefóno"
   musician_url: "Sitio web"
   musician_contact: "Nombre de contacto"
+  musician_comments: "Comentarios"
   form_email_success: "Formulario enviado satisfactoriamente"
   form_error: "El formulario contiene un error, revisa los campos (correo válido, etc.)"
   email_error: "Hubo un error al enviar el correo, puedes escribir directo a contacto@radioperu.pe."
@@ -143,4 +145,4 @@ es:
   musician_form_disclaimer: |-
     Si deseas sonar en radioperu.pe, por favor llena el siguiente formulario y nos pondremos en contacto contigo.  El único requisito es contar con material de alta calidad sonora.
 
-    En radioperu.pe nos encargamos de subir tu material, o si deseas puedes solicitar un usuario con privilegios para controlar tu contenido.
+    Si ya existes como músico en radioperu.pe, puedes solicitar un usuario con privilegios para controlar tu contenido.
