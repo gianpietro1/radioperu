@@ -26,7 +26,7 @@ class Bulk
       @album_name_id3 = @id3tags.album
       @song_name_id3 = @id3tags.title
       @song_year_id3 = @id3tags.year
-      
+    
       if @id3tags.genre
         @genre_id3 = @id3tags.genre.gsub(/\,/,"").strip
       end
