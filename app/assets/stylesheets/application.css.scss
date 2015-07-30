@@ -126,6 +126,7 @@ body {
   float: left;
   color: #3c3c33;
   opacity: 0;
+  margin-left: 95px;
 }
 
 .slogan a {
@@ -139,6 +140,7 @@ body {
   font-size: 1.0em;
   float: right;
   padding-top: 6px;
+  margin-right: 100px;
 }
 
 .search-field {
@@ -1311,6 +1313,14 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
   padding-left: 22%
 }
 
+.slogan-animation {
+  margin-left: 2px;
+}
+
+.search {
+  margin-right: 28px;
+}
+
 /* Radio Stations */
 
 .station_player {
@@ -1350,6 +1360,18 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 .stationlink {
   margin-top: 200px;
   height: 30%;
+}
+
+.slogan-animation {
+  margin-left: 0px;
+  float: none;
+  text-align: center;
+}
+
+.search {
+  margin-right: 0px;
+  float: none;
+  text-align: center;
 }
 
 /* Radio Stations */
@@ -1410,18 +1432,11 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 
 .slogan-animation {
   font-size: 1.5em;
-  float: none;
-  text-align: center;
 }
 
 .slogan {
   float: none;
   text-align: center;
-}
-
-.search {
-  float:none;
-  text-align: center;  
 }
 
 /* Radio Stations */
