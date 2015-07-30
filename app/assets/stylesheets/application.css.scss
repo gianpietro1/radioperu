@@ -546,6 +546,10 @@ body {
 
 /* Artist */
 
+hr {
+  margin-top: 60px;
+}
+
 span.catalogue_title a {
 }
 
@@ -1410,6 +1414,11 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
   text-align: center;
 }
 
+.slogan {
+  float: none;
+  text-align: center;
+}
+
 .search {
   float:none;
   text-align: center;  
@@ -1453,6 +1462,10 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 }
 
 /* Artists Catalogue */
+
+hr {
+  margin-top: 20px;
+}
 
 .artist_albums p, .artist_songs p {
   height: auto;
