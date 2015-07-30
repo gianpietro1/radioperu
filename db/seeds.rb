@@ -50,7 +50,7 @@ Radio.find_by_id(5).genres.create(name:"Fusión Instrumental")
 
 Genre.find_by_id(1).set_translations(:en => { :name => 'Creole' }, :es => { :name => 'Criollo'})
 Genre.find_by_id(2).set_translations(:en => { :name => 'Trova' }, :es => { :name => 'Trova'})
-Genre.find_by_id(3).set_translations(:en => { :name => 'Canción de Autor' }, :es => { :name => 'Canción de Autor'})
+Genre.find_by_id(3).set_translations(:en => { :name => 'Cancion de Autor' }, :es => { :name => 'Canción de Autor'})
 Genre.find_by_id(4).set_translations(:en => { :name => 'Afro-Peruvian' }, :es => { :name => 'Afroperuano'})
 Genre.find_by_id(5).set_translations(:en => { :name => 'Andean' }, :es => { :name => 'Andino'})
 Genre.find_by_id(6).set_translations(:en => { :name => 'Salsa' }, :es => { :name => 'Salsa'})
@@ -80,7 +80,7 @@ Genre.find_by_id(29).set_translations(:en => { :name => 'Instrumental Fusion' },
 
 Genre.find_by_id(1).set_translations(:en => { :name => 'Creole' }, :es => { :name => 'Criollo'})
 Genre.find_by_id(2).set_translations(:en => { :name => 'Trova' }, :es => { :name => 'Trova'})
-Genre.find_by_id(3).set_translations(:en => { :name => 'Canción de Autor' }, :es => { :name => 'Canción de Autor'})
+Genre.find_by_id(3).set_translations(:en => { :name => 'Cancion de Autor' }, :es => { :name => 'Canción de Autor'})
 Genre.find_by_id(4).set_translations(:en => { :name => 'Afro-Peruvian' }, :es => { :name => 'Afroperuano'})
 Genre.find_by_id(5).set_translations(:en => { :name => 'Andean' }, :es => { :name => 'Andino'})
 Genre.find_by_id(6).set_translations(:en => { :name => 'Salsa' }, :es => { :name => 'Salsa'})
