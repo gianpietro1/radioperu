@@ -6,7 +6,10 @@
       -else
         = link_to image_tag( 'default_artist_midsize.jpg' ), @artist, target: "_blank"      
     #artist-bio
-      = @artist.bio
+      - unless @artist.bio.nil? || @artist.bio.empty?
+        = @artist.bio
+      - else
+        = t(:artist_bio_not_available)
   - else
     #artist-image
       = image_tag( 'default_artist_midsize.jpg' )
