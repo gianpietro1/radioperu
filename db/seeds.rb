@@ -121,6 +121,7 @@ Format.find_by_id(3).update_attributes(name:"Cassette")
 Format.find_by_id(4).update_attributes(name:"Unknown")
 
 I18n.locale = "es"
+
 Program.create(name: "Ritmos Negros del Perú", description: "Una muestra de nuestra cultura afroperuana a través de su música, distinguida por una percusión única.", radio_id: 1, program_start: "08:00", program_end: "09:59", days_array: "1,2,3,4,5,6,7")
 Program.create(name: "Ritmos Negros del Perú", description: "Una muestra de nuestra cultura afroperuana a través de su música, distinguida por una percusión única.", radio_id: 1, program_start: "20:00", program_end: "20:59", days_array: "1,2,3,4,5,6,7")
 Program.create(name: "Canción de Autor", description: "Cantautores peruanos en su máxima expresión.", radio_id: 1, program_start: "10:00", program_end: "10:59", days_array: "1,2,3,4,5,6,7")
@@ -132,8 +133,16 @@ Program.create(name: "Varios de la Costa", description: "Música criolla y ritmo
 Program.create(name: "Varios de la Costa", description: "Música criolla y ritmos negros unidos.", radio_id: 1, program_start: "17:00", program_end: "19:59", days_array: "1,2,3,4,5,6,7")
 Program.create(name: "Varios de la Costa", description: "Música criolla y ritmos negros unidos.", radio_id: 1, program_start: "23:00", program_end: "07:59", days_array: "1,2,3,4,5,6,7")
 
+Program.create(name: "Varios del Ande", description: "Música andina del Perú.", radio_id: 2, program_start: "08:00", program_end: "09:59", days_array: "1,2,3,4,5,6,7")
+Program.create(name: "Varios del Ande", description: "Música andina del Perú.", radio_id: 2, program_start: "11:00", program_end: "14:59", days_array: "1,2,3,4,5,6,7")
+Program.create(name: "Varios del Ande", description: "Música andina del Perú.", radio_id: 2, program_start: "16:00", program_end: "19:59", days_array: "1,2,3,4,5,6,7")
+Program.create(name: "Varios del Ande", description: "Música andina del Perú.", radio_id: 2, program_start: "21:00", program_end: "07:59", days_array: "1,2,3,4,5,6,7")
+Program.create(name: "Arequipay", description: "Música andina del departamento de Arequipa.", radio_id: 2, program_start: "10:00", program_end: "10:59", days_array: "1,2,3,4,5,6,7")
+Program.create(name: "Arequipay", description: "Música andina del departamento de Arequipa.", radio_id: 2, program_start: "15:00", program_end: "15:59", days_array: "1,2,3,4,5,6,7")
+Program.create(name: "Arequipay", description: "Música andina del departamento de Arequipa.", radio_id: 2, program_start: "20:00", program_end: "20:59", days_array: "1,2,3,4,5,6,7")
 
 I18n.locale = "en"
+
 Program.find(1).update_attributes(name:"Black Rythms of Perú", description: "A sign of our Afro-Peruvian culture through its music, distinguished by its unique percussion.")
 Program.find(2).update_attributes(name:"Black Rythms of Perú", description: "A sign of our Afro-Peruvian culture through its music, distinguished by its unique percussion.")
 Program.find(3).update_attributes(name:"Singer/Songwriters", description: "Peruvian singer/songwriters at their best.")
@@ -144,4 +153,12 @@ Program.find(7).update_attributes(name:"Creole Soul", description: "Puro Creole 
 Program.find(8).update_attributes(name:"Various from the Coast", description: "Creole music and black rhythms together.")
 Program.find(9).update_attributes(name:"Various from the Coast", description: "Creole music and black rhythms together.")
 Program.find(10).update_attributes(name:"Various from the Coast", description: "Creole music and black rhythms together.")
+
+Program.find(11).update_attributes(name:"Various from the Andes", description: "Andean music fron Peru.")
+Program.find(12).update_attributes(name:"Various from the Andes", description: "Andean music fron Peru.")
+Program.find(13).update_attributes(name:"Various from the Andes", description: "Andean music fron Peru.")
+Program.find(14).update_attributes(name:"Various from the Andes", description: "Andean music fron Peru.")
+Program.find(15).update_attributes(name:"Arequipay", description: "Andean music from de Arequipa department.")
+Program.find(16).update_attributes(name:"Arequipay", description: "Andean music from de Arequipa department.")
+Program.find(17).update_attributes(name:"Arequipay", description: "Andean music from de Arequipa department.")
 
