@@ -157,8 +157,21 @@ body {
 
 /* About view */
 
-.voices {
-  font-size: 0.9em
+.mission p, .mission li {
+  font-size: 1.2em
+}
+
+.mission {
+  border-right: 1px solid #e0e0e0;
+  min-height: 380px;
+}
+
+.mission h3, .voices h3 {
+  margin-top: 0px;
+}
+
+.voices p {
+  font-size: 0.9em;
 }
 
 
@@ -1442,6 +1455,15 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 }
 
 @media screen and (max-width: 991px) {
+
+/* About */
+
+.mission {
+  min-height: auto;
+  height: auto;
+  border: none;
+  margin-bottom: 20px;
+}
 
 /* Welcome page */
 
