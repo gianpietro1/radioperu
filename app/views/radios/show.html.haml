@@ -45,7 +45,7 @@
       %h5.text-center
         = t(:current_program_sponsor)
       #station_sponsor
-        = render partial: 'programs/program_sponsor'
+        = render partial: 'programs/program_sponsor', radio: @radio
   .col-md-1
 
 = javascript_include_tag 'jquery.shoutcast.min.js'

@@ -481,7 +481,7 @@ body {
 
 #album-cover {
   float:left;
-  margin: 10px;
+  margin: 5px;
 }
 
 #album-name {
@@ -523,7 +523,7 @@ body {
 .programtable {
   display: block;
   float: left;
-  text-align: center;
+  text-align: left;
   padding: 0;
   color: #3c3c33;  
 }
@@ -540,11 +540,51 @@ body {
 .default-sponsor {
   height: 359px;
   margin: 20px;
-  background-color: #e0e0e0;
   font-size: 1em;
+  font-weight: bold;
   border-radius: 10px;
   padding: 10px;
   padding-top: 70%;
+}
+
+.active_program_1 {
+  background-color: #ECB85B;
+}
+
+.active_program_2 {
+  background-color: #C05B69;
+}
+
+.active_program_3 {
+  background-color: #81BB7E;
+}
+
+.active_program_4 {
+  background-color: #F7764D;
+}
+
+.active_program_5 {
+  background-color: #93D3D7;
+}
+
+.default-sponsor-1 {
+  border: 2px solid #ECB85B;
+}
+
+.default-sponsor-2 {
+  border: 2px solid #C05B69;
+}
+
+.default-sponsor-3 {
+  border: 2px solid #81BB7E;
+}
+
+.default-sponsor-4 {
+  border: 2px solid #F7764D;
+}
+
+.default-sponsor-5 {
+  border: 2px solid #93D3D7;
 }
 
 /* Artist */

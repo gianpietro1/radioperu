@@ -18,11 +18,11 @@
           - if @time_end < @time_start
             - @time_end += 86400
           - @time_current = Time.now.strftime( "%H").to_i * 3600 + Time.now.strftime( "%M").to_i * 60
-          %tr
+          %tr.text-left
           - if @time_start <= @time_current && @time_current <= @time_end
             %td
               = program.program_start.strftime("%H:%M") + ' - ' + program.program_end.strftime("%H:%M")
-            %td.active_program.tdhover{:id => "#{program.id}"}
+            %td.active_program.tdhover{:id => "#{program.id}", :class => "active_program_#{@radio.id}"}
               %a{ href: '#', class: "programtable" }
                 = program.name
                 - if policy(program).edit?
@@ -58,7 +58,7 @@
 
   var current_program_id = $('.active_program').attr('id');
 
-  $.ajax({data: { current_program_id: current_program_id },type: 'get', url: "/" + locale + "/program_sponsor", success: function(r) { $('#station_sponsor').html(r); } });
+  $.ajax({data: { current_program_id: current_program_id, radio_id: radio_id },type: 'get', url: "/" + locale + "/program_sponsor", success: function(r) { $('#station_sponsor').html(r); } });
   
   }
 

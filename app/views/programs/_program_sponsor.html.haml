@@ -2,6 +2,6 @@
   - if @current_program_ajax.banner?
     = image_tag( @current_program_ajax.banner )
   - else
-    .default-sponsor
+    %div{:class => "default-sponsor default-sponsor-#{@radio.id}"}
       %em
         = t(:sponsor_available)
