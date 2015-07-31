@@ -15,11 +15,9 @@
         - if program.days_array.include? (Time.now.wday + 1).to_s
           - @time_start = program.program_start.strftime( "%H" ).to_i * 3600 + program.program_start.strftime( "%M" ).to_i * 60
           - @time_end = program.program_end.strftime( "%H" ).to_i * 3600 + program.program_end.strftime( "%M" ).to_i * 60
-          - if @time_end < @time_start
-            - @time_end += 86400
           - @time_current = Time.now.strftime( "%H").to_i * 3600 + Time.now.strftime( "%M").to_i * 60
           %tr.text-left
-          - if @time_start <= @time_current && @time_current <= @time_end
+          - if (@time_end > @time_start) && (@time_start <= @time_current && @time_current <= @time_end) || (@time_end < @time_start) && (@time_start <= @time_current || @time_current <= @time_end)
             %td
               = program.program_start.strftime("%H:%M") + ' - ' + program.program_end.strftime("%H:%M")
             %td.active_program.tdhover{:id => "#{program.id}", :class => "active_program_#{@radio.id}"}
