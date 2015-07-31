@@ -15,6 +15,8 @@
         - if program.days_array.include? (Time.now.wday + 1).to_s
           - @time_start = program.program_start.strftime( "%H" ).to_i * 3600 + program.program_start.strftime( "%M" ).to_i * 60
           - @time_end = program.program_end.strftime( "%H" ).to_i * 3600 + program.program_end.strftime( "%M" ).to_i * 60
+          - if @time_end < @time_start
+            - @time_end += 24
           - @time_current = Time.now.strftime( "%H").to_i * 3600 + Time.now.strftime( "%M").to_i * 60
           %tr
           - if @time_start <= @time_current && @time_current <= @time_end
@@ -36,7 +38,7 @@
         - elsif policy(program).destroy?
           %tr
             %td
-              = program.program_start.getlocal.strftime("%H:%M") + ' - ' + program.program_end.getlocal.strftime("%H:%M")
+              = program.program_start.strftime("%H:%M") + ' - ' + program.program_end.strftime("%H:%M")
             %td.admin_program.tdhover
               %a{ href: '#', class: "programtable" }
                 %em
