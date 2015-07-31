@@ -210,6 +210,7 @@ Program.find(33).update_attributes(name:"Hard Rock & Punk", description: "Hard R
 Program.find(34).update_attributes(name:"Rocks, Pops & More", description: "Rock, Pop, Funk, Hip-Hop & more!")
 Program.find(35).update_attributes(name:"Rocks, Pops & More", description: "Rock, Pop, Funk, Hip-Hop & more!")
 
+Program.find(36).update_attributes(name:"Various from Jazz & Instrumental Fusion", description: "Jazz and Instrumental fusion from all times.")
 Program.find(37).update_attributes(name:"Various from Jazz & Instrumental Fusion", description: "Jazz and Instrumental fusion from all times.")
 Program.find(38).update_attributes(name:"Various from Jazz & Instrumental Fusion", description: "Jazz and Instrumental fusion from all times.")
 Program.find(39).update_attributes(name:"Electronica", description: "Electronica music, mostly not fused.")
