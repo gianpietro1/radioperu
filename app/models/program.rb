@@ -1,4 +1,7 @@
 class Program < ActiveRecord::Base
+
+  default_scope  { order('program_start ASC') }
+
   translates :name, :description, :banner
   belongs_to :radio
 
