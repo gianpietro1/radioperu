@@ -6,7 +6,7 @@
 %p
   = '"' + @program.name + '"' 
 %p
-  - if @program.image
+  - if @program.image.file
     = image_tag( @program.image )
   - else
     = image_tag( 'default_program_image.jpg' )
