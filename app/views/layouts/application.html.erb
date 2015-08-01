@@ -6,6 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= csrf_meta_tags %>
+  <%= render partial: "partials/google_analytics" %>
 </head>
 <body data-no-turbolink>
   <div class="container-fluid">
@@ -81,5 +82,6 @@
   </div>
 
 </div>
+<%= render partial: "partials/google_analytics_pageview" %>
 </body>
 </html>
