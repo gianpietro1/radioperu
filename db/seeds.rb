@@ -158,7 +158,7 @@ Program.create(name: "SkaFunk", description: "Ska y Funk de todos los tiempos.",
 Program.create(name: "SkaFunk", description: "Ska y Funk de todos los tiempos.", radio_id: 4, program_start: "22:00", program_end: "22:59", days_array: "1,2,3,4,5,6,7")
 Program.create(name: "Hard Rock & Punk", description: "Rock y Punk del duro.", radio_id: 4, program_start: "14:00", program_end: "14:59", days_array: "1,2,3,4,5,6,7")
 Program.create(name: "Hard Rock & Punk", description: "Rock y Punk del duro.", radio_id: 4, program_start: "23:00", program_end: "00:59", days_array: "1,2,3,4,5,6,7")
-Program.create(name: "Rocas, Popas y Otras", description: "Rock, Pop, Funk, Hip-Hop y más!", radio_id: 4, program_start: "15:00", program_end: "19:59", days_array: "1,2,3,4,5,6,7")
+Program.create(name: "Rocas, Popas y Otras", description: "Rock, Pop, Funk, Hip-Hop y más!", radio_id: 4, program_start: "15:00", program_end: "18:59", days_array: "1,2,3,4,5,6,7")
 Program.create(name: "Rocas, Popas y Otras", description: "Rock, Pop, Funk, Hip-Hop y más!", radio_id: 4, program_start: "01:00", program_end: "07:59", days_array: "1,2,3,4,5,6,7")
 
 Program.create(name: "Varios del Jazz y Fusión Instrumental", description: "Jazz y fusiones instrumentales de todos los tiempos.", radio_id: 5, program_start: "22:00", program_end: "08:59", days_array: "1,2,3,4,5,6,7")
