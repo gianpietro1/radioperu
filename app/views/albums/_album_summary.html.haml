@@ -1,5 +1,11 @@
 .album-info
   - if @album
+    .pull-left
+      #album-cover
+        - unless @album.cover.file == nil
+          = link_to image_tag( @album.cover.thumb ), [@artist,@album], target: "_blank"
+        - else
+          = link_to image_tag( 'default_album_thumb.jpg' ), [@artist,@album], target: "_blank"
     .pull-left.album-summary
       .margin-bottom-00
         %em
@@ -8,19 +14,15 @@
         = @album.name
       #album-year.margin-left-01
         = @album.year
-    .pull-right
-      #album-cover
-        - unless @album.cover.file == nil
-          = link_to image_tag( @album.cover.thumb ), [@artist,@album], target: "_blank"
-        - else
-          = link_to image_tag( 'default_album_thumb.jpg' ), [@artist,@album], target: "_blank"
+
   - else
+    .pull-left
+      #album-cover
+        = image_tag( 'default_album_thumb.jpg' )
     .pull-left.album-summary
       .margin-bottom-00
         %em
           = t(:album)
       #album-name.margin-top-00.margin-left-01
         = t(:album_notfound)
-    .pull-right
-      #album-cover
-        = image_tag( 'default_album_thumb.jpg' )
+
