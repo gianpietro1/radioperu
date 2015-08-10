@@ -80,7 +80,7 @@ body {
   background-color: white;
   padding: 5px 24px 40px 24px;
   margin: 8px 0px 15px 0px;
-  min-height: 685px;
+  min-height: 865px;
   border-radius: 10px;
 }
 
@@ -224,6 +224,7 @@ body {
   float: left;
   margin: 2px;
   text-align: center;
+  background-size: 250px;
 }
 
 .stationlink {
@@ -243,27 +244,22 @@ body {
 
 .station1 {
     background: asset-url('station1b.jpg') no-repeat;
-    background-size: 180px 340px;
 }
 
 .station2 {
     background: asset-url('station2b.jpg') no-repeat;
-    background-size: 180px 340px;
 }
 
 .station3 {
     background: asset-url('station3b.jpg') no-repeat;
-    background-size: 180px 340px;
 }  
 
 .station4 {
     background: asset-url('station4b.jpg') no-repeat;
-    background-size: 180px 340px;
 }  
 
 .station5 {
     background: asset-url('station5b.jpg') no-repeat;
-    background-size: 180px 340px;
 }
 
 .radiotitle {
@@ -1329,9 +1325,23 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 
 /* Responsiveness */
 
+@media screen and (max-width: 1800px) {
+
+/* Welcome Screen */
+
+.station1,.station2,.station3,.station4,.station5 {
+  background-size: 180px 340px;
+}
+
+.landing {
+  min-height: 685px;
+}
+
+}
+
 @media screen and (max-width: 1350px) {
 
- /* Radio Stations */
+/* Radio Stations */
 
 .radionav a {
   min-width: 137px
