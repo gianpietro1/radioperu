@@ -38,31 +38,9 @@
   $(function() {
 
   locale = "#{I18n.locale}";
-  var search_data = '/search_suggestions' + "?locale=" + locale
-
-  var accentMap = {
-  "á": "a",
-  "ö": "o",
-  "í": "i",
-  "é": "e"
-  };
-  
-  var normalize = function( term ) {
-  var ret = "";
-  for ( var i = 0; i < term.length; i++ ) {
-  ret += accentMap[ term.charAt(i) ] || term.charAt(i);
-  }
-  return ret;
-  };
 
   $( ".search-field" ).catcomplete({
-  source: function( request, response ) {
-  var matcher = new RegExp( $.ui.autocomplete.escapeRegex( request.term ), "i" );
-  response( $.grep( search_data, function( value ) {
-  value = value.label || value.value || value;
-  return matcher.test( value ) || matcher.test( normalize( value ) );
-  }) );
-  },
+  source: '/search_suggestions' + "?locale=" + locale,
   minLength: 3,
   open: function(event, ui) {
   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
