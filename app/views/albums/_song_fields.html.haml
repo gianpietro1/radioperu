@@ -25,10 +25,14 @@
 
 %script{:type=>"text/javascript"}
   jQuery(function($) {
+  
   $("#checkbox [id^='album_songs_attributes_']").click(function() {
   var a = $(this).attr('id').indexOf("id3");
   var num = $(this).attr('id').substring(23, a-1);
   var cb1 = $("#album_songs_attributes_" + num + "_id3").prop('checked');
-  $("#blockable [id*='songs_attributes_" + num + "']").prop('disabled', cb1);    
+  $("#blockable [id*='songs_attributes_" + num + "']").prop('readonly', cb1);    
   });
+
+
   });
+

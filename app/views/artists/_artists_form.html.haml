@@ -2,8 +2,11 @@
   .row
     .col-md-6
       .form_group
-        = f.label t(:artist_name)
-        = f.text_field :name, class: 'form-control'
+        - if current_user.admin?
+          = f.label t(:artist_name)
+          = f.text_field :name, class: 'form-control'
+        - else
+          = artist.name
       .form_group
         = f.label t(:artist_bio)
         = f.text_area :bio, class: 'form-control'

@@ -41,14 +41,14 @@ class AlbumsController < ApplicationController
   def create
     @artist = Artist.friendly.find(params[:artist_id])
     @album = @artist.albums.build(album_params)
+    @album.user_id = @artist.user_id
     authorize @album
     if @album.save
       @album.update_attributes(user_id: @artist.user_id)
-      if @album.genre == nil
-        @album.genre = @artist.genre
+      if @album.genre_id == nil
+        @album.genre_id = @artist.genre_id
       end
       flash[:notice] = t(:album_saved)
-      update_id3
       redirect_to [@artist,@album]      
     else
       flash[:error] = t(:album_create_error)
@@ -68,7 +68,6 @@ class AlbumsController < ApplicationController
     @artist = @album.artist
     if @album.update_attributes(album_params)      
       flash[:notice] = t(:album_updated)
-      update_id3
       redirect_to [@artist,@album]
     else
       flash[:error] = t(:album_update_error)
@@ -102,34 +101,6 @@ class AlbumsController < ApplicationController
 
     def album_params
       params.require(:album).permit(:name, :year, :cover, :review, :format_id, :genre_id, songs_attributes: [ :id, :discnum, :track, :name, :filename, :id3, :_destroy ] )
-    end
-
-    def update_id3
-      params[:album][:songs_attributes].each do |song|
-        if song[1][:id3] == '1'
-
-          if Song.find_by_id(song[1][:id])
-            song_stored = Song.find_by_id(song[1][:id])
-          else
-            song_stored = Song.find_by(filename: (song[1][:filename].original_filename.to_s) )
-          end
-          mp3_path = open(song_stored.filename.path.to_s, "rb")
-          @id3tags = ID3Tag.read(mp3_path)
-
-          song_hash = {}
-          if @id3tags.title
-            song_hash[:name] = @id3tags.title
-          end
-          if @id3tags.track_nr.first
-            song_hash[:track] = @id3tags.title
-          end
-          if @id3tags.get_frames(:TPOS).first
-            song_hash[:discnum] = @id3tags.title            
-          end
-          song_stored.update_attributes(song_hash) unless song_hash.empty?
-
-        end
-      end
     end
 
 end

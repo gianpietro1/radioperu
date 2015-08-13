@@ -147,6 +147,10 @@ body {
   cursor: pointer
 }
 
+textarea.form-control {
+  height: 200px;
+}
+
 /* Browser-specific / General */
 
 @-moz-document url-prefix() {

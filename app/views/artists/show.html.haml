@@ -41,7 +41,8 @@
         %br
         %strong
           = t(:genre) + ": "
-        = @artist.genre.name
+        - unless @artist.genre.nil?
+          = @artist.genre.name
         %br  
           .artist_bio.margin-top-05
             %p

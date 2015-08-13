@@ -27,6 +27,10 @@
           .form_group
             = f.label t(:song_filename)
             = f.file_field :filename, class: 'form-control'
+            - if f.object.filename
+              .current_file
+                - file = URI.unescape(URI(f.object.filename.to_s).path.split('/').last.to_s)
+                = t(:current_file) + ': ' + (file.length > 0 ? file : "-").to_s
           .form_group
             = f.label t(:song_video)
             = f.text_field :video, class: 'form-control'

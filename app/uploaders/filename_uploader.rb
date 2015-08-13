@@ -13,7 +13,7 @@ class FilenameUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{model.album.artist.name.to_s}/#{model.album.name.to_s}"
+    "uploads/song/#{model.album.artist.name.to_s}/#{model.album.name.to_s}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

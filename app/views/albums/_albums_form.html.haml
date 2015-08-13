@@ -1,4 +1,4 @@
-= form_for [artist,album] do |f|  
+= form_for [artist,album], :html => {:id => "album_form"}  do |f|  
   .row
     .col-md-6
       .form_group
@@ -27,9 +27,34 @@
             - file = URI.unescape(URI(f.object.cover.to_s).path.split('/').last.to_s)
             = t(:current_file) + ': ' + (file.length > 0 ? file : "-").to_s
   .row
-    .col-md-4
+    .col-md-10
       %h4 
         = t(:songs_title)
+      .song_instructions.msg.alert.alert-success
+        - if I18n.locale == :es
+          %ul
+            %li
+              Los archivos deben ser en MP3 de 128Kbps, esto es importante.
+            %li
+              Se recomienda subirlas en grupos de alrededor de 5, sobre todo en conexiones de Internet no tan rápidas.
+            %li
+              Haciendo clic en el "check" para cada canción, es posible extraer el título y otros parámetros del archivo MP3 (etiquetas "ID3").  Asegúrate que la versión de etiquetado "ID3" sea igual o superior a v2.3 para mejores resultados (esta versión se puede cambiar, por ejemplo, con clic derecho en la canción ITunes)
+            %li
+              Se pide no cambiar el nombre de la canción posteriormente (o avisarnos), sobre todo para las canciones que se deseen 'radiar'.
+            %li    
+              Si deseas ayuda o que hagamos la carga nosotros, envíanos los archivos a contacto@radioperu.pe
+        - elsif I18n.locale == :en
+          %ul
+            %li
+              Files must be MP3 at 128Kbps, this is important.
+            %li
+              We recommend to upload them in groups of around 5, especially in slower Internet connections.
+            %li
+              Clicking on the checkbox, it's possible to extract the song title and other information from the MP3 file, please ensure that the title is correctly spelled and ID3 tags version is 2.3 or later for better results.
+            %li
+              We ask you to not change the song title over time, especially if the song is going to be broadcasted at the radio stations.
+            %li    
+              If you need help or need us to upload the songs, please email us to contacto@radioperu.pe
   .row.text-center.bold
     .col-md-3
       = t(:song_filename)
@@ -50,4 +75,3 @@
       .form_group.pull-right
         = link_to t(:cancel), [@artist], class: "btn btn-danger"
         = f.submit t(:form_save), class: 'btn btn-success'
-

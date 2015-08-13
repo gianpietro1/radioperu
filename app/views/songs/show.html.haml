@@ -43,11 +43,17 @@
                 = format('%02d', @song.track).to_s + ' ' + @song.name
               - elsif @song.name
                 = '00' + ' ' + @song.name
+    - unless @song.review.nil? || @song.review.empty?
+      %h4
+        =t(:song_review)      
+      %p.margin-top-05
+        .song-video
+          = @song.review
     %h4
       =t(:song_video)
     %p.margin-top-05
       .song-video
-        - if @song.video == nil
+        - if @song.video == nil || @song.video == ''
           = t(:video_not_available)
         - else
           - @video_id = VideoInfo.new(@song.video).video_id
