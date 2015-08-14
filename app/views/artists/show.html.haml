@@ -45,11 +45,10 @@
           = @artist.genre.name
         %br  
           .artist_bio.margin-top-05
-            %p
-              - unless @artist.bio.nil? || @artist.bio.empty?
-                = @artist.bio
-              - else
-                = t(:artist_bio_not_available)
+            - unless @artist.bio.nil? || @artist.bio.empty?
+              = simple_format(@artist.bio)
+            - else
+              = t(:artist_bio_not_available)
   .col-md-1
 
 .row
