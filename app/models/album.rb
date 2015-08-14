@@ -18,6 +18,10 @@ class Album < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, :use => :slugged
 
+  def should_generate_new_friendly_id?
+    slug.blank? || name_changed?
+  end
+  
   def prev(array,artist)
     if array[array.index(artist.albums.find(id).id) - 1]
       artist.albums.find(array[array.index(artist.albums.find(id).id) - 1])
