@@ -32,4 +32,15 @@ class Usercontrol
 
   end
 
+  def self.createartist(email,artist)
+
+    user = User.find_by(email: email)
+
+    Artist.create!(
+      name: artist,
+      user_id: user.id
+      )
+
+  end
+
 end
