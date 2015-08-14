@@ -9,16 +9,16 @@ class SongsController < ApplicationController
   end
 
   def edit
-    @song = Song.friendly.find(params[:id])
-    authorize @song
     @album = Album.friendly.find(params[:album_id])
+    @song = @album.songs.friendly.find(params[:id])
+    authorize @song
     @artist = Artist.friendly.find(params[:artist_id])
   end
 
   def update
-    @song = Song.friendly.find(params[:id])
-    authorize @song
     @album = Album.friendly.find(params[:album_id])
+    @song = @album.songs.friendly.find(params[:id])
+    authorize @song
     @artist = Artist.friendly.find(params[:artist_id])
     if @song.update_attributes(song_params)
       if @song.genre == nil
@@ -33,9 +33,9 @@ class SongsController < ApplicationController
   end
 
   def destroy
-   @song = Song.friendly.find(params[:id])
+   @album = Album.friendly.find(params[:album_id])
+   @song = @album.songs.friendly.find(params[:id])
    authorize @song
-   @album = @song.album
    @artist = @album.artist
    name = @song.name
     if @song.destroy

@@ -33,7 +33,7 @@
       .song_instructions.msg.alert.alert-success
         - if I18n.locale == :es
           %ul
-            %li
+            %li.bold
               Los archivos deben ser en MP3 de 128Kbps, esto es importante.
             %li
               Se recomienda subirlas en grupos de alrededor de 5, sobre todo en conexiones de Internet no tan rápidas.
@@ -45,7 +45,7 @@
               Si deseas ayuda o que hagamos la carga nosotros, envíanos los archivos a contacto@radioperu.pe
         - elsif I18n.locale == :en
           %ul
-            %li
+            %li.bold
               Files must be MP3 at 128Kbps, this is important.
             %li
               We recommend to upload them in groups of around 5, especially in slower Internet connections.

@@ -3,9 +3,9 @@ class AlbumsController < ApplicationController
   respond_to :html, :js
 
   def show
-    @album = Album.friendly.find(params[:id])  
+    @artist = Artist.friendly.find(params[:artist_id])  
+    @album = @artist.albums.friendly.find(params[:id])
     authorize @album
-    @artist = @album.artist
     @songs = @album.songs.all
     @albums_array = []
     @artist.albums.each do |album| 
@@ -58,14 +58,14 @@ class AlbumsController < ApplicationController
 
   def edit
     @artist = Artist.friendly.find(params[:artist_id])
-    @album = Album.friendly.find(params[:id])
+    @album = @artist.albums.friendly.find(params[:id])
     authorize @album
   end
 
   def update
-    @album = Album.friendly.find(params[:id])
+    @artist = Artist.friendly.find(params[:artist_id])  
+    @album = @artist.albums.friendly.find(params[:id])
     authorize @album
-    @artist = @album.artist
     if @album.update_attributes(album_params)      
       flash[:notice] = t(:album_updated)
       redirect_to [@artist,@album]
@@ -76,9 +76,9 @@ class AlbumsController < ApplicationController
   end
 
   def destroy
-   @album = Album.friendly.find(params[:id])
+   @artist = Artist.friendly.find(params[:artist_id])  
+   @album = @artist.albums.friendly.find(params[:id])
    authorize @album
-   @artist = @album.artist
    name = @album.name
     if @album.destroy
       flash[:notice] = t(:album_destroyed)
