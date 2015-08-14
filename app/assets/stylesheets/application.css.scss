@@ -1823,17 +1823,10 @@ h3.catalogue_title {
   overflow: auto
 }
 
-/*
 .album-info {
   font-size: 0.7em;
-  overflow: auto;
-  width: 64.5%;
+  font-weight: normal
 }
-
-.album-summary {
-  width: 40%;
-}
-*/ 
 
 .radionav a {
   min-width: 56px;
@@ -1873,10 +1866,6 @@ h3.catalogue_title {
 #songtitle {
   vertical-align: middle;
   width: 120px;
-}
-
-#album-name {
- font-size: 0.9em;
 }
 
 /* Artist catalogue */
@@ -1935,16 +1924,9 @@ h4.artist_catalogue_title {
   padding-left: 35%;
 }
 
-/*
-.album-info {
-  margin-left: 1px;
+.album-summary {
+  width: 200px;
 }
-
-.album-info a img {
-  width: 40px;
-  height: 40px;
-}
-*/
 
 .artist_album_info {
   font-size: 0.9em;
@@ -2000,13 +1982,6 @@ h4.artist_catalogue_title {
   font-size: 0.7em;
   line-height: 01em
 }
-
-/*
-.album-info a img {
-  width: 30px;
-  height: 30px;
-}
-*/
 
 #songtitle {
   width: 55px;

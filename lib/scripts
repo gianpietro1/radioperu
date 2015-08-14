@@ -1,0 +1,8 @@
+Usercontrol.createuser('cholosoymanager@gmail.com','cholosoy123','Jaime Cuadra','Jaime Cuadra')
+
+Usercontrol.createall('iris_milagritos_rivera@hotmail.com','milagros123','Milagros Rivera','Franco Hamilton')
+Usercontrol.createartist('iris_milagritos_rivera@hotmail.com','Desakuerdo')
+Usercontrol.createartist('iris_milagritos_rivera@hotmail.com','Crossover')
+Usercontrol.createartist('iris_milagritos_rivera@hotmail.com','Los Arman')
+
+Usercontrol.createall('astronautband@hotmail.com','astronaut123','Astronaut Project','Astronaut Project')
