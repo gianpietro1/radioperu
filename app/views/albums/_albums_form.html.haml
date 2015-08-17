@@ -30,30 +30,38 @@
     .col-md-10
       %h4 
         = t(:songs_title)
-      .song_instructions.msg.alert.alert-success
+      .song_instructions.msg.alert.alert-warning
         - if I18n.locale == :es
           .bold.font-11em
-            Los archivos deben ser en MP3 de 128Kbps, esto es importante (estamos trabajando para automatizar esto pronto)
+            Instrucciones para subir canciones
           %ul
+            %li.bold
+              Los archivos deben estar en MP3, esto es indispensable.
             %li
-              Haciendo clic en el "check" para cada canción, es posible extraer el título y número de canción automáticamente del archivo MP3 (etiquetas conocidas como "ID3").  Asegúrate que la versión de etiquetado "ID3" sea igual o superior a v2.3 para mejores resultados (esta versión se puede cambiar, por ejemplo en ITunes, con clic derecho en la canción), de lo contrario lo mejor será tipear los nombres y números manualmente.
+              Se recomienda que la calidad de los archivos MP3 sea de 128Kbps, de lo contrario demorarán más en subir no sólo debido al tamaño del archivo, sino porque haremos la conversión automática y esto agregará varios segundos por canción.
             %li
-              Se pide no cambiar el nombre de la canción posteriormente (o avisarnos), sobre todo para las canciones que se deseen rotar en la radio.
+              Haciendo clic en el "check" para cada canción, es posible extraer el título y número de canción automáticamente del archivo MP3 (etiquetas conocidas como "ID3").  Para mejores resultados, asegurarse que la versión de ID3 sea 2.3 o superior, de no saberlo es mejor tipear los títulos manualmente.
             %li
-              Se sugiere subir las canciones en grupos de alrededor de 5, sobre todo en conexiones de Internet lentas.
+              Revisa que los títulos de las canciones sean los que desees que los oyentes vean. Se pide no cambiarlos posteriormente (o avisarnos), sobre todo para las canciones que se deseen rotar en la radio.
+            %li
+              Se sugiere subir las canciones en grupos (por ejemplo de a 5), sobre todo en conexiones de Internet lentas.
             %li.bold  
               Si deseas que hagamos la carga nosotros, envíanos los archivos a contacto@radioperu.pe y lo haremos con mucho gusto.
         - elsif I18n.locale == :en
           .bold.font-11em
-            Files must be MP3 at 128Kbps, this is important.
+            Instructions for song uploading
           %ul
+            %li.bold
+              Files must be MP3.
+            %li
+              We recommend quality to be 128Kbps, otherwise they will take longer to upload not only because of their size, but because we'll covert them anyway and this will add some seconds per song. 
             %li
               Clicking on the checkbox, it's possible to extract the song title and other information from the MP3 file, please ensure that the title is correctly spelled and ID3 tags version is 2.3 or later for better results.
             %li
-              We ask you to not change the song title over time, especially if the song is going to be broadcasted at the radio stations.
+              Check that the titles are as you want them to be seen by your listeners.  We ask you to not change them over time, especially if the song is going to be broadcasted at the radio stations.
             %li
               We recommend to upload them in groups of around 5, especially in slower Internet connections.
-            %li    
+            %li.bold
               If you need help or need us to upload the songs, please email us to contacto@radioperu.pe
   .row.text-center.bold
     .col-md-3
