@@ -33,7 +33,7 @@ class Song < ActiveRecord::Base
         unless fileref.null?
           properties = fileref.audio_properties
           if properties.bitrate != 128
-            system("avconv -i '#{songpath}' -y -b:a 128k -vsync 2 '#{songpath[0..-5] + '-temp' + '.mp3'}'")
+            system("avconv -i '#{songpath}' -c:a libmp3lame -y -vn -b:a 128k -vsync 2 '#{songpath[0..-5] + '-temp' + '.mp3'}'")
             system("mv '#{songpath[0..-5] + '-temp' + '.mp3'}' '#{songpath}'")    
           end
         end
