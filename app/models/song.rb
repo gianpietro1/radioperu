@@ -1,6 +1,8 @@
 class Song < ActiveRecord::Base
 
-  after_save :inherit_genre_and_user, :update_id3
+  require 'taglib'
+
+  after_save :inherit_genre_and_user, :update_id3, :encode128
 
   autocomplete :name, :score => :id
 
@@ -22,6 +24,22 @@ class Song < ActiveRecord::Base
   end
 
   private
+
+    def encode128
+
+      songpath = self.filename.file.file
+
+      TagLib::FileRef.open(songpath) do |fileref|
+        unless fileref.null?
+          properties = fileref.audio_properties
+          if properties.bitrate != 128
+            system("avconv -i '#{songpath}' -y -b:a 128k -vsync 2 '#{songpath[0..-5] + '-temp' + '.mp3'}'")
+            system("mv '#{songpath[0..-5] + '-temp' + '.mp3'}' '#{songpath}'")    
+          end
+        end
+      end
+
+    end
 
     def inherit_genre_and_user
       if self.genre_id == nil

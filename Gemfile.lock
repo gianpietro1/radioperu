@@ -379,6 +379,7 @@ GEM
       colorize (>= 0.7.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    taglib-ruby (0.7.0)
     therubyracer (0.12.2)
       libv8 (~> 3.16.14.0)
       ref
@@ -445,6 +446,7 @@ DEPENDENCIES
   soulmate_rails
   spring (~> 1.3.6)
   sqlite3
+  taglib-ruby
   therubyracer
   turbolinks
   uglifier (>= 1.3.0)

@@ -101,6 +101,8 @@ gem 'video_info', github: 'thibaudgg/video_info'
 gem 'mail_form'
 # Friendly URLs
 gem 'friendly_id'
+# TagLib to read bitrate
+gem 'taglib-ruby'
 
 # Capistrano
 gem 'capistrano', '~> 3.1.0'

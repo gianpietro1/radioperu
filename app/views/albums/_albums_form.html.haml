@@ -32,27 +32,27 @@
         = t(:songs_title)
       .song_instructions.msg.alert.alert-success
         - if I18n.locale == :es
+          .bold.font-11em
+            Los archivos deben ser en MP3 de 128Kbps, esto es importante (estamos trabajando para automatizar esto pronto)
           %ul
-            %li.bold
-              Los archivos deben ser en MP3 de 128Kbps, esto es importante.
             %li
-              Se recomienda subirlas en grupos de alrededor de 5, sobre todo en conexiones de Internet no tan rápidas.
+              Haciendo clic en el "check" para cada canción, es posible extraer el título y número de canción automáticamente del archivo MP3 (etiquetas conocidas como "ID3").  Asegúrate que la versión de etiquetado "ID3" sea igual o superior a v2.3 para mejores resultados (esta versión se puede cambiar, por ejemplo en ITunes, con clic derecho en la canción), de lo contrario lo mejor será tipear los nombres y números manualmente.
             %li
-              Haciendo clic en el "check" para cada canción, es posible extraer el título y otros parámetros del archivo MP3 (etiquetas "ID3").  Asegúrate que la versión de etiquetado "ID3" sea igual o superior a v2.3 para mejores resultados (esta versión se puede cambiar, por ejemplo, con clic derecho en la canción ITunes)
+              Se pide no cambiar el nombre de la canción posteriormente (o avisarnos), sobre todo para las canciones que se deseen rotar en la radio.
             %li
-              Se pide no cambiar el nombre de la canción posteriormente (o avisarnos), sobre todo para las canciones que se deseen 'radiar'.
-            %li    
-              Si deseas ayuda o que hagamos la carga nosotros, envíanos los archivos a contacto@radioperu.pe
+              Se sugiere subir las canciones en grupos de alrededor de 5, sobre todo en conexiones de Internet lentas.
+            %li.bold  
+              Si deseas que hagamos la carga nosotros, envíanos los archivos a contacto@radioperu.pe y lo haremos con mucho gusto.
         - elsif I18n.locale == :en
+          .bold.font-11em
+            Files must be MP3 at 128Kbps, this is important.
           %ul
-            %li.bold
-              Files must be MP3 at 128Kbps, this is important.
-            %li
-              We recommend to upload them in groups of around 5, especially in slower Internet connections.
             %li
               Clicking on the checkbox, it's possible to extract the song title and other information from the MP3 file, please ensure that the title is correctly spelled and ID3 tags version is 2.3 or later for better results.
             %li
               We ask you to not change the song title over time, especially if the song is going to be broadcasted at the radio stations.
+            %li
+              We recommend to upload them in groups of around 5, especially in slower Internet connections.
             %li    
               If you need help or need us to upload the songs, please email us to contacto@radioperu.pe
   .row.text-center.bold
