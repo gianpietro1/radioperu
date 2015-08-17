@@ -100,7 +100,7 @@ class AlbumsController < ApplicationController
   private
 
     def album_params
-      params.require(:album).permit(:name, :year, :cover, :review, :format_id, :genre_id, songs_attributes: [ :id, :discnum, :track, :name, :filename, :id3, :_destroy ] )
+      params.require(:album).permit(:name, :year, :cover, :review, :format_id, :genre_id, :buylink, songs_attributes: [ :id, :discnum, :track, :name, :filename, :id3, :_destroy ] )
     end
 
 end

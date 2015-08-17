@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150720152519) do
+ActiveRecord::Schema.define(version: 20150817193016) do
 
   create_table "album_translations", force: :cascade do |t|
     t.integer  "album_id",   null: false
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20150720152519) do
     t.integer  "format_id"
     t.integer  "user_id"
     t.string   "slug"
+    t.string   "buylink"
   end
 
   add_index "albums", ["slug"], name: "index_albums_on_slug"

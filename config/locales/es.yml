@@ -74,6 +74,7 @@ es:
   click_to_play_arrow_for_details: "Clic para reproducir o parar / Flecha para detalles de la canción"
   click_to_play: "Clic para reproducir o parar"
   album_review_not_available: "Reseña del álbum no disponible."
+  buylink: "Enlace de compra"
   # Songs
   add_song: "Añadir canción"
   remove_song: "Borrar canción"

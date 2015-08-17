@@ -13,6 +13,8 @@ class Album < ActiveRecord::Base
 
   mount_uploader :cover, CoverUploader
 
+  before_validation :smart_add_url_protocol
+
   default_scope { order('year ASC') }
 
   extend FriendlyId
@@ -37,5 +39,16 @@ class Album < ActiveRecord::Base
       artist.albums.find(array[0])
     end
   end
+
+ protected
+
+  def smart_add_url_protocol
+    unless self.buylink.nil? || self.buylink.empty?
+      unless self.buylink[/\Ahttp:\/\//] || self.buylink[/\Ahttps:\/\//]
+        self.buylink = "http://#{self.buylink}"
+      end
+    end
+  end
+
 
 end

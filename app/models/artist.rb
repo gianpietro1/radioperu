@@ -3,7 +3,8 @@ class Artist < ActiveRecord::Base
   default_scope  { order('LOWER(name)') }
   
   autocomplete :name, :score => :id
-  
+  before_validation :smart_add_url_protocol
+
   translates :bio
 
   belongs_to :user
@@ -15,5 +16,16 @@ class Artist < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :name, use: :slugged
+
+protected
+
+  def smart_add_url_protocol
+    unless self.external_url.nil? || self.external_url.empty?
+      unless self.external_url[/\Ahttp:\/\//] || self.external_url[/\Ahttps:\/\//]
+        self.external_url = "http://#{self.external_url}"
+      end
+    end
+  end
+
 
 end

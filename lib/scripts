@@ -12,16 +12,38 @@ Usercontrol.createall('dacalromero@gmail.com','dacal123','José Dacal','La Prens
 Usercontrol.createall('contacto@andreamartinez.pe','andrea123','Andrea Martinez','Andrea Martinez')
 
 
+Usercontrol.createall('ciudadgragea@gmail.com','ciudad123','Ciudad Gragea','Ciudad Gragea')
 
-songpath = song.filename.file.file
+Usercontrol.createall('daniel.bramag@gmail.com','bramag123','Daniel Bracamonte','Agonia Catartica')
+Usercontrol.createall('aldre_111@hotmail.com','alvarocooper123','Alvaro Cooper','Alvaro Cooper')
+Usercontrol.createall('gpachecoylapandilla@gmail.com','gpacheco123','Guillermo Pacheco','Guillermo Pacheco y La Pandilla')
+Usercontrol.createall('radiogarageperu@gmail.com','radiogarage123','Radio Garage','Radio Garage')
+Usercontrol.createall('ernestoheidersdorf@gmail.com','ernesto123','Ernesto Heidersdorf','Chatarra TV')
+Usercontrol.createall('zafirodelasgalas@hotmail.com','zafiro123','Martin Alcantara','Cuarto Elegido')
 
-TagLib::FileRef.open(songpath) do |fileref|
-  unless fileref == nil
-    properties = fileref.audio_properties
-    if properties.bitrate != 128
-      system("ffmpeg -i '#{songpath}' -y -b:a 128k -vsync 2 '#{songpath[0..-5] + '-temp' + '.mp3'}'")
-      system("mv '#{songpath[0..-5] + '-temp' + '.mp3'}' '#{songpath}'")    
+
+
+
+# app/workers/conversion_worker.rb
+
+class ConversionWorker
+  include Sidekiq::Worker
+
+  def encode128(song)
+
+    songpath = song.filename.file.file
+
+    TagLib::FileRef.open(songpath) do |fileref|
+      unless fileref == nil
+        properties = fileref.audio_properties
+        if properties.bitrate != 128
+          system("ffmpeg -i '#{songpath}' -y -b:a 128k -vsync 2 '#{songpath[0..-5] + '-temp' + '.mp3'}'")
+          system("mv '#{songpath[0..-5] + '-temp' + '.mp3'}' '#{songpath}'")    
+        end
+      end
     end
+
   end
+
 end
 

@@ -1706,8 +1706,9 @@ h3.catalogue_title {
   width: 100%;
 }
 
-.album_bio p, .artist_bio p {
+.album_bio, .artist_bio {
   height: auto;
+  max-height: 200px;
 }
 
 }
