@@ -20,7 +20,7 @@ class ArtistsController < ApplicationController
   end
 
   def artist_summary
-    @artist = Artist.find_by(name: params[:artist_name])
+    @artist = Artist.where('lower(name) = ?', params[:artist_name].downcase).first
     respond_with(@artist) do |format|
     format.html {render :partial => "artist_summary" }
     end
