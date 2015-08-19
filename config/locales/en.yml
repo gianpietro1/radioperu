@@ -135,6 +135,8 @@ en:
   # Social
   share_this: "share this!"
   share_this_artist: "share this artist in"
+  share_this_album: "share this album in"
+  share_this_song: "share this song in"
   radioperu_about: "About the radioperu.pe project"
   in_radioperu: "in radioperu.pe"
   # Devise

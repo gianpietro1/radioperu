@@ -6,11 +6,6 @@ class SongsController < ApplicationController
     @songs = @album.songs
     authorize @song
     @artist = @album.artist
-    begin
-     @video_id = VideoInfo.new(@song.video).video_id
-    rescue
-     @song.update_attributes(video: nil)
-    end  
   end
 
   def edit
@@ -30,6 +25,11 @@ class SongsController < ApplicationController
         @song.genre = @album.genre
       end
       flash[:notice] = t(:song_updated)
+      begin
+        @video_id = VideoInfo.new(@song.video).video_id
+      rescue
+        @song.update_attributes(video: nil)
+      end
       @song.send_update_email
       redirect_to [@artist,@album,@song]
     else

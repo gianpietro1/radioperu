@@ -1,4 +1,7 @@
-- set_meta_tags :og => {:title => @artist.name, :url => artist_url(@artist), :image => image_url(@artist.image) }
+-if @artist.image?
+  - set_meta_tags :og => {:title => @artist.name, :url => artist_url(@artist), :image => image_url(@artist.image), :description => @artist.bio }
+-else
+  - set_meta_tags :og => {:title => @artist.name, :url => artist_url(@artist), :description => @artist.bio }  
 
 = render partial: 'artists_header'
 
@@ -23,7 +26,7 @@
         %h5
           = t(:share_this_artist)
         .pull-right
-          = social_share_button_tag((@artist.name + " " + t(:in_radioperu)), popup: "true", image: @artist.image, desc: @artist.bio, via: "radioperu_pe")
+          = social_share_button_tag((@artist.name + " " + t(:in_radioperu)), popup: "true", via: "radioperu_pe")
   .col-md-1
 
 .row

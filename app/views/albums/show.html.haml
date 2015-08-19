@@ -1,3 +1,8 @@
+- if @album.cover?
+  - set_meta_tags :og => {:title => (@artist.name + " - " + @album.name) , :url => artist_album_url(@artist,@album), :image => image_url(@album.cover), :description => @album.review}
+- else
+  - set_meta_tags :og => {:title => (@artist.name + " - " + @album.name) , :url => artist_album_url(@artist,@album), :description => @album.review}
+
 = render partial: 'artists/artists_header'
 
 .row
@@ -12,11 +17,18 @@
 .row
   .col-md-1
   .col-md-10
-    %h3.catalogue_title
-      %span.catalogue_title
-        = (link_to @artist.name, @artist) 
-      %span
-        = ' - ' + @album.name
+    .pull-left
+      %h3.catalogue_title
+        %span.catalogue_title
+          = (link_to @artist.name, @artist) 
+        %span
+          = ' - ' + @album.name
+    - if policy(@album).destroy?
+      .sharepage.pull-right
+        %h5
+          = t(:share_this_album)
+        .pull-right
+          = social_share_button_tag((@artist.name + " - " + @album.name + " " + t(:in_radioperu)), popup: "true", via: "radioperu_pe")
   .col-md-1
 
 .row
