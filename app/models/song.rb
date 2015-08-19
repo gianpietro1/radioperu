@@ -22,7 +22,7 @@ class Song < ActiveRecord::Base
   friendly_id :name, :use => :scoped, :scope => :album
 
   def should_generate_new_friendly_id?
-    true
+    slug.blank? || name_changed?
   end
 
   after_update :send_update_email
