@@ -105,7 +105,8 @@ gem 'friendly_id'
 gem 'taglib-ruby'
 # Social Sharing
 gem 'social-share-button', '~> 0.1.8', git: 'https://github.com/cuterxy/social-share-button.git'
-
+# Meta Tags
+gem 'meta-tags'
 
 
 # Capistrano
