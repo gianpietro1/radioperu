@@ -17,11 +17,11 @@
       %h3.catalogue_title
         = @artist.name
     - if policy(@artist).destroy?
-      .pull-right
-        .float-left
-          = t(:share_this)
-        .float-right
-          = social_share_button_tag((@artist.name + " " + t(:in_radioperu)), :popup => "true", :image => image_tag( @artist.image ), desc: @artist.bio, via: "@radioperu_pe")
+      .sharepage.pull-right
+        %h5
+          = t(:share_this_artist)
+        .pull-right
+          = social_share_button_tag((@artist.name + " " + t(:in_radioperu)), popup: "true", image: @artist.image, desc: @artist.bio, via: "radioperu_pe")
   .col-md-1
 
 .row

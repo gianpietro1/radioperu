@@ -165,12 +165,18 @@ textarea.form-control {
   height: 200px;
 }
 
-/* Browser-specific / General */
+/* Browser-specific */
 
 @-moz-document url-prefix() {
   .logo {
       margin-left: 135px;
   }
+}
+
+/* Social */
+
+.sharepage h5 {
+  margin-bottom:0;
 }
 
 /* About view */
