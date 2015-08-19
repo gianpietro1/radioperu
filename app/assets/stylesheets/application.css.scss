@@ -2,6 +2,7 @@
 
 /*
  *= require jquery-ui
+ *= require social-share-button
  */
 
 @import 'bootstrap-sprockets';
@@ -59,6 +60,15 @@ body {
 .font-11em {
   font-size: 1.1em;
 }
+
+.float-left {
+  float: left
+}
+
+.float-right {
+  float: right
+}
+
 
 .container-fluid>form>.field,.container-fluid>h2 {
   color: #f6f3e4;

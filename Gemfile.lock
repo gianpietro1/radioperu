@@ -362,6 +362,9 @@ GEM
       activesupport (~> 4)
     sexp_processor (4.6.0)
     slop (3.6.0)
+    social-share-button (0.1.8)
+      coffee-rails
+      sass-rails
     soulmate_rails (0.3.2)
       activesupport
       json (>= 1.7.7)
@@ -443,6 +446,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   seed_dump
+  social-share-button
   soulmate_rails
   spring (~> 1.3.6)
   sqlite3

@@ -16,6 +16,10 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
+  # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
+  # the I18n.default_locale when a translation cannot be found).
+  config.i18n.fallbacks = true
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
@@ -51,6 +55,5 @@ Rails.application.configure do
   #  config.ignore_processing_errors = false
   #  config.ignore_download_errors = false
   #end
-
 
 end

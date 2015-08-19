@@ -17,5 +17,6 @@
 //= require cocoon
 //= require turbolinks
 //= require bootstrap
+//= require social-share-button
 //= require soundmanager2/soundmanager2-nodebug-jsmin
 //= require_tree .

@@ -132,6 +132,10 @@ en:
   current_file: "Current file"
   genre: "Main genre"
   back_to_home: "Back to radioperu.pe"
+  # Social
+  share_this: "share this!"
+  radioperu_about: "About the radioperu.pe project"
+  in_radioperu: "in radioperu.pe"
   # Devise
   login: "Login"
   email: "Email"

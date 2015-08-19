@@ -103,6 +103,8 @@ gem 'mail_form'
 gem 'friendly_id'
 # TagLib to read bitrate
 gem 'taglib-ruby'
+# Social Sharing
+gem 'social-share-button'
 
 # Capistrano
 gem 'capistrano', '~> 3.1.0'
