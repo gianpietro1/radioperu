@@ -14,13 +14,15 @@ class Artist < ActiveRecord::Base
   
   mount_uploader :image, ImageUploader
 
-  after_update :send_update_email
-
   extend FriendlyId
   friendly_id :name, use: :slugged
 
   def should_generate_new_friendly_id?
     slug.blank? || name_changed?
+  end
+
+  def send_update_email
+    UpdatesMailer.new_artist_update(self).deliver
   end
 
 protected
@@ -31,10 +33,6 @@ protected
         self.external_url = "http://#{self.external_url}"
       end
     end
-  end
-
-  def send_update_email
-    UpdatesMailer.new_artist_update(self).deliver
   end
 
 

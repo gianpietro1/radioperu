@@ -40,8 +40,10 @@ class Album < ActiveRecord::Base
     end
   end
 
-  after_update :send_update_email
-
+  def send_update_email
+    UpdatesMailer.new_album_update(self.artist,self).deliver
+  end
+  
  protected
 
   def smart_add_url_protocol
@@ -50,10 +52,6 @@ class Album < ActiveRecord::Base
         self.buylink = "http://#{self.buylink}"
       end
     end
-  end
-
-  def send_update_email
-    UpdatesMailer.new_album_update(self.artist,self).deliver
   end
 
 end

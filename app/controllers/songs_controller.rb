@@ -30,6 +30,7 @@ class SongsController < ApplicationController
         @song.genre = @album.genre
       end
       flash[:notice] = t(:song_updated)
+      @song.send_update_email
       redirect_to [@artist,@album,@song]
     else
       flash[:error] = t(:song_update_error)

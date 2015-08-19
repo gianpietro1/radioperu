@@ -45,6 +45,7 @@ class AlbumsController < ApplicationController
     authorize @album
     if @album.save
       @album.update_attributes(user_id: @artist.user_id)
+      @album.send_update_email
       if @album.genre_id == nil
         @album.genre_id = @artist.genre_id
       end
@@ -67,6 +68,7 @@ class AlbumsController < ApplicationController
     @album = @artist.albums.friendly.find(params[:id])
     authorize @album
     if @album.update_attributes(album_params)      
+      @album.send_update_email
       flash[:notice] = t(:album_updated)
       redirect_to [@artist,@album]
     else

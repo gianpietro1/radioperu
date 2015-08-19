@@ -25,7 +25,9 @@ class Song < ActiveRecord::Base
     slug.blank? || name_changed?
   end
 
-  after_update :send_update_email
+  def send_update_email
+    UpdatesMailer.new_song_update(self.album.artist,self).deliver
+  end
 
   private
 
@@ -35,10 +37,6 @@ class Song < ActiveRecord::Base
           self.video = "http://#{self.video}"
         end
       end
-    end
-
-    def send_update_email
-      UpdatesMailer.new_song_update(self.album.artist,self).deliver
     end
 
     def encode128
