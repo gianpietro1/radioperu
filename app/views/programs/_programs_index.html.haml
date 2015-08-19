@@ -4,7 +4,7 @@
     %thead
       %tr
         %th.text-center{:colspan => 2}
-          = l Time.now, format: :short
+          = (l Time.now, format: :short) + " - " + t(:peru_time)
       %tr
         %th.text-center
           = t(:program_time)
