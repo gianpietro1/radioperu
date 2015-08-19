@@ -1,6 +1,6 @@
--if @artist.image?
+- if @artist.image?
   - set_meta_tags :og => {:title => @artist.name, :url => artist_url(@artist), :image => image_url(@artist.image), :description => @artist.bio }
--else
+- else
   - set_meta_tags :og => {:title => @artist.name, :url => artist_url(@artist), :description => @artist.bio }  
 
 = render partial: 'artists_header'

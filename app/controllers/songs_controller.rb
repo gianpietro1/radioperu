@@ -4,6 +4,7 @@ class SongsController < ApplicationController
     @album = Album.friendly.find(params[:album_id])
     @song = @album.songs.friendly.find(params[:id])
     @songs = @album.songs
+    @video_id = VideoInfo.new(@song.video).video_id
     authorize @song
     @artist = @album.artist
   end
