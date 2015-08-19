@@ -80,5 +80,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'radioperu.pe' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
+  config.action_controller.asset_host = 'radioperu.pe'
+  config.action_mailer.asset_host = 'http://radioperu.pe'
 
 end

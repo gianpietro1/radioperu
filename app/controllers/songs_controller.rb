@@ -6,6 +6,11 @@ class SongsController < ApplicationController
     @songs = @album.songs
     authorize @song
     @artist = @album.artist
+    begin
+     @video_id = VideoInfo.new(@song.video).video_id
+    rescue
+     @song.update_attributes(video: nil)
+    end  
   end
 
   def edit

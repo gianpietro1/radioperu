@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+.row
+  .artist_div
+    .artist_divleft
+      .artist_imageinfo
+        - if @artist.image?
+          = image_tag( @artist.image )
+        - else
+          = image_tag( 'default_artist.jpg' )
+    .artist_divright
+      %strong
+        = t(:artist_city) + ": "
+      = @artist.city
+      %br
+      %strong
+        = t(:artist_url) + ": "
+        -if @artist.external_url
+          = link_to @artist.external_url, @artist.external_url, :target => "_blank"
+        - else
+          \-
+      %br
+      %strong
+        = t(:genre) + ": "
+      - unless @artist.genre.nil?
+        = @artist.genre.name
+      %br  
+        .artist_bio.margin-top-05
+          - unless @artist.bio.nil? || @artist.bio.empty?
+            = simple_format(@artist.bio)
+          - else
+            = t(:artist_bio_not_available)

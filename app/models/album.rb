@@ -40,6 +40,8 @@ class Album < ActiveRecord::Base
     end
   end
 
+  after_update :send_update_email
+
  protected
 
   def smart_add_url_protocol
@@ -50,5 +52,8 @@ class Album < ActiveRecord::Base
     end
   end
 
+  def send_update_email
+    UpdatesMailer.new_album_update(self.artist,self).deliver
+  end
 
 end

@@ -77,8 +77,10 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: 'radioperu.pe' }
+  config.action_mailer.default_url_options = { host: '192.168.0.22' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
-  
+  config.action_controller.asset_host = '192.168.0.22'
+  config.action_mailer.asset_host = 'http://192.168.0.22'
+
 end

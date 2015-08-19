@@ -4,6 +4,8 @@ class Song < ActiveRecord::Base
 
   after_save :inherit_genre_and_user, :update_id3, :encode128
 
+  before_validation :smart_add_url_protocol
+
   autocomplete :name, :score => :id
 
   translates :review
@@ -23,7 +25,21 @@ class Song < ActiveRecord::Base
     true
   end
 
+  after_update :send_update_email
+
   private
+
+    def smart_add_url_protocol
+      unless self.video.nil? || self.video.empty?
+        unless self.video[/\Ahttp:\/\//] || self.video[/\Ahttps:\/\//]
+          self.video = "http://#{self.video}"
+        end
+      end
+    end
+
+    def send_update_email
+      UpdatesMailer.new_song_update(self.album.artist,self).deliver
+    end
 
     def encode128
 

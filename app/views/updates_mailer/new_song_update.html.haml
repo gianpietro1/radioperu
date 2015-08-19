@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+.row
+  - unless @song.review.nil? || @song.review.empty?
+    %h4
+      =t(:song_review)      
+    %p.margin-top-05
+      .song-video
+        = @song.review
+  %h4
+    =t(:song_video_title)
+  %p.margin-top-05
+    .song-video
+      - if @song.video == nil || @song.video == ''
+        = t(:video_not_available)
+      - else
+        = @song.video
+  %h4
+    =t(:song_lyrics)
+  %p.margin-top-05
+    - if @song.lyrics.nil? || @song.lyrics.empty?
+      = t(:lyrics_not_available)
+    - else
+      = @song.lyrics.gsub(/(?:\n\r?|\r\n?)/, "<br>").html_safe 

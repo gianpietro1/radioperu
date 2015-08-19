@@ -56,7 +56,6 @@
         - if @song.video == nil || @song.video == ''
           = t(:video_not_available)
         - else
-          - @video_id = VideoInfo.new(@song.video).video_id
           %iframe{:allowscriptaccess => "always", :allowFullScreen => "true", :frameborder => "0", :height => "430", :src => "http://www.youtube.com/embed/#{@video_id}", :title => "YouTube video player", :width => "640"}
     
   .col-md-4
