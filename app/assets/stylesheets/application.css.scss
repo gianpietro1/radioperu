@@ -177,7 +177,8 @@ textarea.form-control {
 
 .sharepage h5 {
   margin-bottom:0;
-  font-family: 'Myriad Pro Semibold'
+  font-family: 'Myriad Pro Semibold';
+  font-size: 0.8em;
 }
 
 .social-share-button-twitter {
@@ -1745,6 +1746,11 @@ h3.catalogue_title {
 }
 
 @media screen and (max-width: 524px) {
+
+/* Social */
+.sharepage h5 {
+  font-size: 0.6em;
+}
 
 /* Welcome page */
 
