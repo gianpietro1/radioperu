@@ -46,3 +46,31 @@ Usercontrol.createartist('produccion@miryamquinones.com','Miryam Quinones')
         end
       end
 
+
+
+$.post(
+    'https://graph.facebook.com',
+    {
+        id: 'www.radioperu.pe',
+        scrape: true
+    },
+    function(response){
+        console.log(response);
+    }
+);
+
+
+
+I18n.locale = "es"
+Format.create(name:"Digital")
+
+I18n.locale = "en"
+Format.find_by_id(4).update_attributes(name:"Digital")
+
+I18n.locale = "es"
+
+
+FB.ui({
+  method: 'share',
+  href: 'http://radioperu.pe/radios/1',
+}, function(response){});

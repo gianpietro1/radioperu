@@ -48,6 +48,22 @@
 
 %script{:type=>"text/javascript"}
 
+  window.fbAsyncInit = function() {
+  FB.init({
+  appId      : '440598459358292',
+  xfbml      : true,
+  version    : 'v2.4'
+  });
+  };
+
+  (function(d, s, id){
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
   // Set variables
   var locale = "#{I18n.locale}";
   var radio_id = "#{@radio.id}";
