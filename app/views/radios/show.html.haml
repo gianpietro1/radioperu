@@ -1,3 +1,4 @@
+- set_meta_tags :og => {:description => "Estación #{@radio.id} - #{@radio.description}", :url => "http://radioperu.pe/radios/#{@radio.id}", :image => image_url('radioperu200.png') }
 .row
   .col-md-1
   .col-md-10
@@ -24,14 +25,9 @@
         #songtitle
           #artist
           #song
-      -#.listeners.text-center
-        -#%span.strong
-          -#= t(:listeners) + ": "
-        -#%em#listeners
-        -# %br
-        -# %span.strong
-        -# = t(:nexttitle) + ": "
-        -# %em#nexttitle
+        .pull-right
+          - if current_user && current_user.admin?
+            %span#share_song
       #album_summary
       #artist_summary
   .col-md-3.margin-top-10
@@ -67,16 +63,11 @@
  
   // Shoutcast main variable
   songtitle_new = this.get('songtitle');
-
-  // Update Listeners
-  var listeners = this.get('currentlisteners');
-  $('#listeners').text(listeners);
   
   if (songtitle_new != songtitle_old) {
   // Get or format variables
   var artist = songtitle_new.substring(0, this.get('songtitle').indexOf(" - "));
   var song = songtitle_new.substring(this.get('songtitle').indexOf(" - ") + 3);
-  var nexttitle = this.get('nexttitle'); 
   // Append artist and song to player
   $('#artist').text(artist);
   $('#song').text(song);
@@ -84,6 +75,8 @@
   $.ajax({data: { artist_name: artist }, type: 'get', url: "/" + locale + "/artist_summary", success: function(r) { $('#artist_summary').html(r); } });
   // Ajax call album summary partial based on artist and song variable
   $.ajax({data: { song_name: song, artist_name: artist }, type: 'get', url: "/" + locale + "/album_summary", success: function(r) { $('#album_summary').html(r); } });
+  // Ajax call share song partial based on artist and song variable
+  $.ajax({data: { song_name: song, artist_name: artist, radio_id: radio_id }, type: 'get', url: "/" + locale + "/share_song", success: function(r) { $('#share_song').html(r); } });
   // Update Next Title
   $('#nexttitle').text(nexttitle);
   // Update Program List

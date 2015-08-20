@@ -32,4 +32,14 @@ class RadiosController < ApplicationController
     end
   end
 
+  def share_song
+    @artist = params[:artist_name]
+    @song = params[:song_name]
+    @radio_id = params[:radio_id]
+    respond_with(@artist,@song,@radio) do |format|
+    format.html {render :partial => "share_song" }
+    end
+  end
+
+
 end

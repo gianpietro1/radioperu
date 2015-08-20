@@ -193,7 +193,17 @@ textarea.form-control {
   background: asset-url('share_facebook.png') no-repeat;
 }
 
-.social-share-button-twitter
+#share_song .social-share-button-twitter {
+  width: 16px;
+  height: 16px;
+  background: asset-url('share_twitter_16.png') no-repeat;
+}
+
+#share_song .social-share-button-facebook {
+  width: 16px;
+  height: 16px;
+  background: asset-url('share_facebook_16.png') no-repeat;
+}
 
 /* About view */
 

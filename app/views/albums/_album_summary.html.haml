@@ -6,7 +6,7 @@
           = link_to image_tag( @album.cover.thumb ), [@artist,@album], target: "_blank"
         - else
           = link_to image_tag( 'default_album_thumb.jpg' ), [@artist,@album], target: "_blank"
-    .pull-left.album-summary
+    .album-summary
       .margin-bottom-00
         %em
           = t(:album)
