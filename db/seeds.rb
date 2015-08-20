@@ -110,6 +110,7 @@ Genre.find_by_id(29).set_translations(:en => { :name => 'Instrumental Fusion' },
 
 I18n.locale = "es"
 Format.create(name:"CD")
+Format.create(name:"Digital")
 Format.create(name:"Vinilo")
 Format.create(name:"Cassette")
 Format.create(name:"Desconocido")
@@ -119,6 +120,7 @@ Format.find_by_id(1).update_attributes(name:"CD")
 Format.find_by_id(2).update_attributes(name:"Vinyl")
 Format.find_by_id(3).update_attributes(name:"Cassette")
 Format.find_by_id(4).update_attributes(name:"Unknown")
+Format.find_by_id(4).update_attributes(name:"Digital")
 
 I18n.locale = "es"
 
