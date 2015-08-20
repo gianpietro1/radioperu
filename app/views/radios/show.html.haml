@@ -27,7 +27,10 @@
           #song
         .pull-right
           %span#share_song
-          %a{ href: "javascript:;", id: "share_facebook" }
+          - if current_user && current_user.admin?
+            %a{ href: "javascript:;", id: "share_facebook_test" }
+          - else
+            %a{ href: "javascript:;", id: "share_facebook" }
       #album_summary
       #artist_summary
   .col-md-3.margin-top-10
@@ -118,10 +121,25 @@
   title: 'Estoy escuchando...',
   description: songtitle_new,
   caption: 'radioperu.pe - estación ' + radio_id,
-  href: 'http://radioperu.pe/radios/' + radio_id,
+  href: 'http://radioperu.pe/es/radios/' + radio_id
+  }, function(response){});
+  }
+
+  function share_facebook_test(){
+  FB.ui({
+  method: 'share', 
+  title: 'Estoy escuchando...',
+  description: songtitle_new,
+  caption: 'radioperu.pe - estación ' + radio_id,
+  href: 'http://radioperu.pe/es/radios/' + radio_id,
+  display: 'touch'
   }, function(response){});
   }
 
   $("#share_facebook").click(function() {
+  share_facebook();
+  });
+
+  $("#share_facebook_test").click(function() {
   share_facebook();
   });
