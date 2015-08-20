@@ -31,7 +31,7 @@
       %h5
         = t(:share_this_song)
       .pull-right
-        = social_share_button_tag((@artist.name + " - " + @song.name), popup: "true", via: "radioperu_pe")
+        = social_share_button_tag((@artist.name + " - " + @song.name + " " + t(:in_radioperu)), popup: "true", via: "radioperu_pe")
   .col-md-1
 
 .row

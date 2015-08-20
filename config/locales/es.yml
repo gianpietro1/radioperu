@@ -138,7 +138,7 @@ es:
   share_this_album: "comparte este álbum en"
   share_this_song: "comparte esta canción en"
   radioperu_about: "Sobre el proyecto radioperu.pe"
-  in_radioperu: "en radioperu.pe"
+  in_radioperu: "en #radioperu"
   # Devise
   login: "Ingresar"
   email: "Correo electrónico"
