@@ -69,8 +69,19 @@ Format.find_by_id(4).update_attributes(name:"Digital")
 
 I18n.locale = "es"
 
+  FB.ui({
+    method: 'share', 
+    title: 'Estoy escuchando...',
+    description: songtitle_new,
+    caption: 'radioperu.pe - estación ' + radio_id,
+    href: 'http://radioperu.pe/radios/' + radio_id,
+  }, function(response){});
+
 
 FB.ui({
-  method: 'share',
+  method: 'share', 
+  title: 'Estoy escuchando...',
+  description: songtitle_new,
+  caption: 'radioperu.pe - estación 1',
   href: 'http://radioperu.pe/radios/1',
 }, function(response){});

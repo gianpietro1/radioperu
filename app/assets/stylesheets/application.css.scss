@@ -200,9 +200,7 @@ textarea.form-control {
 }
 
 #share_song .social-share-button-facebook {
-  width: 16px;
-  height: 16px;
-  background: asset-url('share_facebook_16.png') no-repeat;
+  display: none;
 }
 
 /* About view */

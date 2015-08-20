@@ -1,4 +1,4 @@
-- set_meta_tags :og => {:description => "Estación #{@radio.id} - #{@radio.description}", :url => "http://radioperu.pe/radios/#{@radio.id}", :image => image_url('radioperu200.png') }
+- set_meta_tags :og => {:title => "radioperu.pe - estación #{@radio.id}", :description => @radio.description, :url => "http://radioperu.pe/radios/#{@radio.id}", :image => image_url('radioperu200.png') }
 .row
   .col-md-1
   .col-md-10
@@ -26,8 +26,7 @@
           #artist
           #song
         .pull-right
-          - if current_user && current_user.admin?
-            %span#share_song
+          %span#share_song
       #album_summary
       #artist_summary
   .col-md-3.margin-top-10
@@ -66,7 +65,7 @@
 
   // Set variables
   var locale = "#{I18n.locale}";
-  var radio_id = "#{@radio.id}";
+  radio_id = "#{@radio.id}";
   var shoutcast_stats_host = "#{Radio.find(@radio.id).host}"
   var shoutcast_port = "#{Radio.find(@radio.id).port}"
   songtitle_old = 0
@@ -82,8 +81,8 @@
   
   if (songtitle_new != songtitle_old) {
   // Get or format variables
-  var artist = songtitle_new.substring(0, this.get('songtitle').indexOf(" - "));
-  var song = songtitle_new.substring(this.get('songtitle').indexOf(" - ") + 3);
+  artist = songtitle_new.substring(0, this.get('songtitle').indexOf(" - "));
+  song = songtitle_new.substring(this.get('songtitle').indexOf(" - ") + 3);
   // Append artist and song to player
   $('#artist').text(artist);
   $('#song').text(song);
@@ -93,8 +92,6 @@
   $.ajax({data: { song_name: song, artist_name: artist }, type: 'get', url: "/" + locale + "/album_summary", success: function(r) { $('#album_summary').html(r); } });
   // Ajax call share song partial based on artist and song variable
   $.ajax({data: { song_name: song, artist_name: artist, radio_id: radio_id }, type: 'get', url: "/" + locale + "/share_song", success: function(r) { $('#share_song').html(r); } });
-  // Update Next Title
-  $('#nexttitle').text(nexttitle);
   // Update Program List
   $.ajax({data: { radio_id: radio_id },type: 'get', url: "/" + locale + "/program_index", success: function(r) { $('#station_schedule').html(r); } });
   }
