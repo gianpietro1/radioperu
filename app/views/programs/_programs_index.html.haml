@@ -21,7 +21,7 @@
             %td
               = program.program_start.strftime("%H:%M") + ' - ' + program.program_end.strftime("%H:%M")
             %td.active_program.tdhover{:id => "#{program.id}", :class => "active_program_#{@radio.id}"}
-              %a{ href: '#', class: "programtable" }
+              %a{ href: "javascript:;", class: "programtable" }
                 = program.name
                 - if policy(program).edit?
                   = link_to t(:edit), edit_radio_program_path(@radio,program), class: 'small'
@@ -29,7 +29,7 @@
             %td
               = program.program_start.strftime("%H:%M") + ' - ' + program.program_end.strftime("%H:%M")
             %td.tdhover{:id => "#{program.id}"}
-              %a{ href: '#', class: "programtable" }
+              %a{ href: "javascript:;", class: "programtable" }
                 = program.name
                 - if policy(program).edit?  
                   = link_to t(:edit), edit_radio_program_path(@radio,program), class: 'small'
@@ -38,7 +38,7 @@
             %td
               = program.program_start.strftime("%H:%M") + ' - ' + program.program_end.strftime("%H:%M")
             %td.admin_program.tdhover
-              %a{ href: '#', class: "programtable" }
+              %a{ href: "javascript:;", class: "programtable" }
                 %em
                   = program.name
                 = link_to t(:adminedit), edit_radio_program_path(@radio,program), class: 'small'

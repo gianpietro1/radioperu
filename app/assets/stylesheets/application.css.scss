@@ -175,6 +175,7 @@ textarea.form-control {
 
 /* Social */
 
+/* Share pages for Catalogue */
 .sharepage h5 {
   margin-bottom:0;
   font-family: 'Myriad Pro Semibold';
@@ -193,6 +194,7 @@ textarea.form-control {
   background: asset-url('share_facebook.png') no-repeat;
 }
 
+/* Share listening for Radios */
 #share_song .social-share-button-twitter {
   width: 16px;
   height: 16px;
@@ -201,6 +203,13 @@ textarea.form-control {
 
 #share_song .social-share-button-facebook {
   display: none;
+}
+
+#share_facebook {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: asset-url('share_facebook_16.png') no-repeat; 
 }
 
 /* About view */
@@ -456,7 +465,7 @@ textarea.form-control {
 
 .station_player {
   margin-top: 10px;
-  padding: 5px;
+  padding: 4px;
   padding-left: 10px;
   min-height: 80px;    
   border-radius: 10px;
@@ -1687,7 +1696,8 @@ hr {
 /* Radio Stations */
 
 .station_player {
-  font-size: 0.9em
+  font-size: 0.9em;
+  padding-left: 5px;
 }
 
 .listeners {
