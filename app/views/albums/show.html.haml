@@ -23,12 +23,11 @@
           = (link_to @artist.name, @artist) 
         %span
           = ' - ' + @album.name
-    - if policy(@album).destroy?
-      .sharepage.pull-right
-        %h5
-          = t(:share_this_album)
-        .pull-right
-          = social_share_button_tag((@artist.name + " - " + @album.name + " " + t(:in_radioperu)), popup: "true", via: "radioperu_pe")
+    .sharepage.pull-right
+      %h5
+        = t(:share_this_album)
+      .pull-right
+        = social_share_button_tag((@artist.name + " - " + @album.name), popup: "true", via: "radioperu_pe")
   .col-md-1
 
 .row

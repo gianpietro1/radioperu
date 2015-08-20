@@ -177,7 +177,22 @@ textarea.form-control {
 
 .sharepage h5 {
   margin-bottom:0;
+  font-family: 'Myriad Pro Semibold'
 }
+
+.social-share-button-twitter {
+  width: 32px;
+  height: 32px;
+  background: asset-url('share_twitter.png') no-repeat;
+}
+
+.social-share-button-facebook {
+  width: 32px;
+  height: 32px;
+  background: asset-url('share_facebook.png') no-repeat;
+}
+
+.social-share-button-twitter
 
 /* About view */
 

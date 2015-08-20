@@ -21,12 +21,11 @@
     .pull-left
       %h3.catalogue_title
         = @artist.name
-    - if policy(@artist).destroy?
-      .sharepage.pull-right
-        %h5
-          = t(:share_this_artist)
-        .pull-right
-          = social_share_button_tag((@artist.name + " " + t(:in_radioperu)), popup: "true", via: "radioperu_pe")
+    .sharepage.pull-right
+      %h5
+        = t(:share_this_artist)
+      .pull-right
+        = social_share_button_tag(@artist.name, popup: "true", via: "radioperu_pe")
   .col-md-1
 
 .row
