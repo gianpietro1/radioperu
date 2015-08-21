@@ -37,8 +37,7 @@ class ArtistsController < ApplicationController
     authorize @artist
     if @artist.save
       flash[:notice] = t(:artist_saved)
-      url = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@artist.slug}&scrape=true"
-      system("curl --insecure '#{url}'")
+      update_facebook_graph
       redirect_to @artist
     else
       flash[:error] = t(:artist_create_error)
@@ -57,8 +56,7 @@ class ArtistsController < ApplicationController
     if @artist.update_attributes(artist_params)
       flash[:notice] = t(:artist_updated)
       @artist.send_update_email
-      url = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@artist.slug}&scrape=true"
-      system("curl --insecure '#{url}'")
+      update_facebook_graph
       redirect_to @artist
     else
       flash[:error] = t(:artist_update_error)
@@ -83,6 +81,13 @@ private
 
   def artist_params
     params.require(:artist).permit(:name, :city, :external_url, :active, :bio, :image, :genre_id)
+  end
+
+  def update_facebook_graph
+    url = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@artist.slug}&scrape=true&access_token=440598459358292|GVj1kcc9QwokzIRBDoNAkznYhQM"
+    system("curl --insecure '#{url}'")
+    url = "https://graph.facebook.com/?id=http://radioperu.pe/en/artists/#{@artist.slug}&scrape=true&access_token=440598459358292|GVj1kcc9QwokzIRBDoNAkznYhQM"
+    system("curl --insecure '#{url}'")
   end
 
 end

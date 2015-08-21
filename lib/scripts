@@ -31,6 +31,11 @@ Usercontrol.createall('vyttzcontact@gmail.com','vyttz123','VYTTZ','VYTTZ')
 Usercontrol.createuser('pierre@pro-show.net','vyttz123','VYTTZ','VYTTZ')
 
 
+Usercontrol.createall('marlene.miyashiro@gmail.com','marlene123','Marlene Miyashiro','Patanes')
+Usercontrol.createall('laneblinademuriel@hotmail.com','neblina123','Neblina de Muriel','La Neblina de Muriel')
+Usercontrol.createall('aauqui@bdo.com.pe','aauqui123','Diego Auqui','La Maldita Costumbre')
+Usercontrol.createall('alejarumusica@gmail.com','alejaru123','Alejaru','Alejaru')
+
 Usercontrol.createall('produccion@miryamquinones.com','miryamq123','Miryam Q','Miryam Quinones')
 Usercontrol.createartist('produccion@miryamquinones.com','Miryam Quinones')
 
@@ -51,7 +56,7 @@ Usercontrol.createartist('produccion@miryamquinones.com','Miryam Quinones')
 $.post(
     'https://graph.facebook.com',
     {
-        id: 'http://radioperu.pe/artists/andrea-martinez',
+        id: 'http://radioperu.pe/artists/licky-moreno',
         scrape: true
     },
     function(response){
@@ -98,16 +103,16 @@ FB.ui({
 
   Artist.all.each do |artist|
    @slug = artist.slug
-   url = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@slug}&scrape=true"
+   url = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@slug}&scrape=true&access_token=440598459358292|GVj1kcc9QwokzIRBDoNAkznYhQM"
    system("curl --insecure '#{url}'")
    sleep 5
   end
 
-  Artist.all.each do |artist|
+  Artist.all.reverse_each do |artist|
    @slug = artist.slug
    artist.albums.each do |album|
     albumslug = album.slug
-      albumurl = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@slug}/albums/#{albumslug}&scrape=true"
+      albumurl = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@slug}/albums/#{albumslug}&scrape=true&access_token=440598459358292|GVj1kcc9QwokzIRBDoNAkznYhQM"
       system("curl --insecure '#{albumurl}'")
       sleep 5
     end
@@ -119,7 +124,7 @@ FB.ui({
     @albumslug = album.slug
       album.songs.each do |song|
         songslug = album.slug
-        songurl = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@slug}/albums/#{@albumslug}/songs/#{songslug}&scrape=true"
+        songurl = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@slug}/albums/#{@albumslug}/songs/#{songslug}&scrape=true&access_token=440598459358292|GVj1kcc9QwokzIRBDoNAkznYhQM"
         system("curl --insecure '#{albumurl}'")
         sleep 5
       end

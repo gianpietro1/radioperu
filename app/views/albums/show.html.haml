@@ -70,7 +70,7 @@
     .album_songs
       %div{"oncontextmenu"=>"return false"}
         %ul.playlist
-          %h5 
+          %h5.playlist_title
             =t(:click_to_play_arrow_for_details)
           - @songs.each do |song|
             %li{id: "li"}

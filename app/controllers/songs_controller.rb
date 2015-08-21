@@ -34,8 +34,7 @@ class SongsController < ApplicationController
         @song.update_attributes(video: nil)
       end
       @song.send_update_email
-      url = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@artist.slug}/albums/#{@album.slug}/songs/#{@song.slug}&scrape=true"
-      system("curl --insecure '#{url}'")
+      update_facebook_graph
       redirect_to [@artist,@album,@song]
     else
       flash[:error] = t(:song_update_error)
@@ -63,6 +62,13 @@ class SongsController < ApplicationController
 
   def song_params
     params.require(:song).permit(:discnum, :track, :name, :review, :filename, :id3, :video, :lyrics, :genre_id)
+  end
+
+  def update_facebook_graph
+    url = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@artist.slug}/albums/#{@album.slug}/songs/#{@song.slug}&scrape=true&access_token=440598459358292|GVj1kcc9QwokzIRBDoNAkznYhQM"
+    system("curl --insecure '#{url}'")
+    url = "https://graph.facebook.com/?id=http://radioperu.pe/en/artists/#{@artist.slug}/albums/#{@album.slug}/songs/#{@song.slug}&scrape=true&access_token=440598459358292|GVj1kcc9QwokzIRBDoNAkznYhQM"
+    system("curl --insecure '#{url}'")
   end
 
 end

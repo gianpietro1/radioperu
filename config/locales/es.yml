@@ -71,7 +71,7 @@ es:
   album_update_error: "Hubo un problema al actualizar el álbum."
   album_create_error: "Hubo un problema al crear el álbum."
   id3: "Importar otros campos de etiquetas ID3?"
-  click_to_play_arrow_for_details: "Clic para reproducir o parar / Flecha para detalles de la canción"
+  click_to_play_arrow_for_details: "Clic para reproducir o parar - Flecha para detalles de la canción (video, letra, reseña)"
   click_to_play: "Clic para reproducir o parar"
   album_review_not_available: "Reseña del álbum no disponible."
   buylink: "Enlace de compra"

@@ -71,7 +71,7 @@ en:
   album_update_error: "There was problem updating the album."
   album_create_error: "There was problem creating the album."
   id3: "Import other fields from ID3 tags?"
-  click_to_play_arrow_for_details: "Click to play or stop / Arrow for song details"
+  click_to_play_arrow_for_details: "Click to play or stop - Arrow for song details (video, lyrics, review)"
   click_to_play: "Click to play or stop"
   buylink: "Buy Link"
   album_review_not_available: "Album review not available."

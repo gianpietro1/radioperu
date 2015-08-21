@@ -46,8 +46,7 @@ class AlbumsController < ApplicationController
     if @album.save
       @album.update_attributes(user_id: @artist.user_id)
       @album.send_update_email
-      url = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@artist.slug}/albums/#{@album.slug}&scrape=true"
-      system("curl --insecure '#{url}'")
+      update_facebook_graph
       if @album.genre_id == nil
         @album.genre_id = @artist.genre_id
       end
@@ -71,10 +70,9 @@ class AlbumsController < ApplicationController
     authorize @album
     if @album.update_attributes(album_params)      
       @album.send_update_email
+      update_facebook_graph
       flash[:notice] = t(:album_updated)
       redirect_to [@artist,@album]
-      url = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@artist.slug}/albums/#{@album.slug}&scrape=true"
-      system("curl --insecure '#{url}'")
     else
       flash[:error] = t(:album_update_error)
       render :edit
@@ -107,6 +105,13 @@ class AlbumsController < ApplicationController
 
     def album_params
       params.require(:album).permit(:name, :year, :cover, :review, :format_id, :genre_id, :buylink, songs_attributes: [ :id, :discnum, :track, :name, :filename, :id3, :_destroy ] )
+    end
+
+    def update_facebook_graph
+      url = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@artist.slug}/albums/#{@album.slug}&scrape=true&access_token=440598459358292|GVj1kcc9QwokzIRBDoNAkznYhQM"
+      system("curl --insecure '#{url}'")
+      url = "https://graph.facebook.com/?id=http://radioperu.pe/en/artists/#{@artist.slug}/albums/#{@album.slug}&scrape=true&access_token=440598459358292|GVj1kcc9QwokzIRBDoNAkznYhQM"
+      system("curl --insecure '#{url}'")
     end
 
 end
