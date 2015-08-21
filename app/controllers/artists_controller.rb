@@ -37,6 +37,8 @@ class ArtistsController < ApplicationController
     authorize @artist
     if @artist.save
       flash[:notice] = t(:artist_saved)
+      url = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@artist.slug}&scrape=true"
+      system("curl --insecure '#{url}'")
       redirect_to @artist
     else
       flash[:error] = t(:artist_create_error)
@@ -55,6 +57,8 @@ class ArtistsController < ApplicationController
     if @artist.update_attributes(artist_params)
       flash[:notice] = t(:artist_updated)
       @artist.send_update_email
+      url = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@artist.slug}&scrape=true"
+      system("curl --insecure '#{url}'")
       redirect_to @artist
     else
       flash[:error] = t(:artist_update_error)

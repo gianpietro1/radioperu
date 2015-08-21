@@ -51,7 +51,7 @@ Usercontrol.createartist('produccion@miryamquinones.com','Miryam Quinones')
 $.post(
     'https://graph.facebook.com',
     {
-        id: 'www.radioperu.pe',
+        id: 'http://radioperu.pe/artists/andrea-martinez',
         scrape: true
     },
     function(response){
@@ -77,7 +77,6 @@ I18n.locale = "es"
     href: 'http://radioperu.pe/radios/' + radio_id,
   }, function(response){});
 
-
 FB.ui({
   method: 'share', 
   title: 'Estoy escuchando...',
@@ -85,3 +84,45 @@ FB.ui({
   caption: 'radioperu.pe - estación 1',
   href: 'http://radioperu.pe/radios/1',
 }, function(response){});
+
+
+  FB.ui({
+  method: 'share', 
+  title: 'Estoy escuchando...',
+  description: songtitle_new,
+  caption: 'radioperu.pe - estación ' + radio_id,
+  href: 'http://radioperu.pe/es/radios/' + radio_id
+  }, function(response){});
+
+
+
+  Artist.all.each do |artist|
+   @slug = artist.slug
+   url = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@slug}&scrape=true"
+   system("curl --insecure '#{url}'")
+   sleep 5
+  end
+
+  Artist.all.each do |artist|
+   @slug = artist.slug
+   artist.albums.each do |album|
+    albumslug = album.slug
+      albumurl = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@slug}/albums/#{albumslug}&scrape=true"
+      system("curl --insecure '#{albumurl}'")
+      sleep 5
+    end
+  end
+
+  Artist.all.each do |artist|
+   @slug = artist.slug
+   artist.albums.each do |album|
+    @albumslug = album.slug
+      album.songs.each do |song|
+        songslug = album.slug
+        songurl = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@slug}/albums/#{@albumslug}/songs/#{songslug}&scrape=true"
+        system("curl --insecure '#{albumurl}'")
+        sleep 5
+      end
+    end
+  end
+

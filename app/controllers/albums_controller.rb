@@ -46,6 +46,8 @@ class AlbumsController < ApplicationController
     if @album.save
       @album.update_attributes(user_id: @artist.user_id)
       @album.send_update_email
+      url = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@artist.slug}/albums/#{@album.slug}&scrape=true"
+      system("curl --insecure '#{url}'")
       if @album.genre_id == nil
         @album.genre_id = @artist.genre_id
       end
@@ -71,6 +73,8 @@ class AlbumsController < ApplicationController
       @album.send_update_email
       flash[:notice] = t(:album_updated)
       redirect_to [@artist,@album]
+      url = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@artist.slug}/albums/#{@album.slug}&scrape=true"
+      system("curl --insecure '#{url}'")
     else
       flash[:error] = t(:album_update_error)
       render :edit

@@ -34,6 +34,8 @@ class SongsController < ApplicationController
         @song.update_attributes(video: nil)
       end
       @song.send_update_email
+      url = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@artist.slug}/albums/#{@album.slug}/songs/#{@song.slug}&scrape=true"
+      system("curl --insecure '#{url}'")
       redirect_to [@artist,@album,@song]
     else
       flash[:error] = t(:song_update_error)
