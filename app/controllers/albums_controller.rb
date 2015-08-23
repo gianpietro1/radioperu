@@ -109,9 +109,7 @@ class AlbumsController < ApplicationController
 
     def update_facebook_graph
       url = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@artist.slug}/albums/#{@album.slug}&scrape=true&access_token=440598459358292|GVj1kcc9QwokzIRBDoNAkznYhQM"
-      system("curl --insecure '#{url}'")
-      url = "https://graph.facebook.com/?id=http://radioperu.pe/en/artists/#{@artist.slug}/albums/#{@album.slug}&scrape=true&access_token=440598459358292|GVj1kcc9QwokzIRBDoNAkznYhQM"
-      system("curl --insecure '#{url}'")
+      system("curl -X POST --insecure '#{url}'")
     end
 
 end
