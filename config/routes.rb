@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   scope "(:locale)", locale: /es|en/ do
+    root to: 'welcome#index'
     resources :radios, only: [:show] do
       resources :programs
     end
@@ -18,15 +19,14 @@ Rails.application.routes.draw do
     get 'program_sponsor' => 'radios#program_sponsor'
     get 'program_show' => 'radios#program_show'
     get 'sound_offset' => 'albums#sound_offset'
-    get '/search_suggestions' => 'search_suggestions#index'
-    get '/search_suggestions_artists' => 'search_suggestions#index_artists'
-    get '/search_suggestions_albums' => 'search_suggestions#index_albums'
-    get '/search_suggestions_songs' => 'search_suggestions#index_songs'
+    get 'search_suggestions' => 'search_suggestions#index'
+    get 'search_suggestions_artists' => 'search_suggestions#index_artists'
+    get 'search_suggestions_albums' => 'search_suggestions#index_albums'
+    get 'search_suggestions_songs' => 'search_suggestions#index_songs'
     get 'artists/station/:station_id' => 'artists#index_station'
     get 'about' => 'about#index'
   end
 
   get '/:locale' => 'welcome#index'
-  root to: 'welcome#index'
 
 end
