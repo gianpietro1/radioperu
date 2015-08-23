@@ -1,7 +1,10 @@
+- title @artist.name + ' - ' + @song.name
 - if @album.cover?
   - set_meta_tags :og => {:title => (@artist.name + " - " + @song.name) , :url => artist_album_song_url(@artist,@album,@song), :image => image_url(@album.cover), :description => @song.review}
 - else
   - set_meta_tags :og => {:title => (@artist.name + " - " + @song.name) , :url => artist_album_song_url(@artist,@album,@song), :description => @song.review}
+- set_meta_tags description: (@song.review || @song.name)
+- set_meta_tags keywords: %W[radio peru radioperu musica peruana #{@song.name}]
 
 = render partial: 'artists/artists_header'
 

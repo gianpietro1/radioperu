@@ -2,6 +2,8 @@
   - set_meta_tags :og => {:title => 'radioperu.pe', :url => root_url, :description => 'descubre toda la música del Perú', :image => image_url('estacionesfblink.png') }
 - elsif I18n.locale == :en
   - set_meta_tags :og => {:title => 'radioperu.pe', :url => root_url, :description => 'discover all the music from Perú', :image => image_url('estacionesfblink.png') }
+- set_meta_tags description: ("radioperu.pe - " + t(:discover))
+- set_meta_tags keywords: %W[radio peru radioperu musica peruana]
 
 .row
   .col-md-1

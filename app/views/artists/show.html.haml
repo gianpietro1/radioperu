@@ -1,7 +1,10 @@
+- title @artist.name
 - if @artist.image?
   - set_meta_tags :og => {:title => @artist.name, :url => artist_url(@artist), :image => image_url(@artist.image), :description => @artist.bio }
 - else
   - set_meta_tags :og => {:title => @artist.name, :url => artist_url(@artist), :description => @artist.bio }  
+- set_meta_tags description: @artist.bio
+- set_meta_tags keywords: %W[radio peru radioperu musica peruana #{@artist.name}]
 
 = render partial: 'artists_header'
 

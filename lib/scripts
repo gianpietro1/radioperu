@@ -39,6 +39,9 @@ Usercontrol.createall('alejarumusica@gmail.com','alejaru123','Alejaru','Alejaru'
 Usercontrol.createall('produccion@miryamquinones.com','miryamq123','Miryam Q','Miryam Quinones')
 Usercontrol.createartist('produccion@miryamquinones.com','Miryam Quinones')
 
+Usercontrol.createall('losborgia@gmail.com','borgia123','Los Borgia','Los Borgia')
+Usercontrol.createall('atomicamail@gmail.com','atomica123','Atómica ','Atómica')
+Usercontrol.createall('ramirezpont@gmail.com','lemerde123','Le Merde Patrol','Le Merde Patrol')
 
 
       songpath = song.filename.file.file

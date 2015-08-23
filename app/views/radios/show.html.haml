@@ -1,4 +1,8 @@
+- title @radio.name
 - set_meta_tags :og => {:title => "radioperu.pe - estación #{@radio.id}", :description => @radio.description, :url => "http://radioperu.pe/radios/#{@radio.id}", :image => image_url('radioperu200.png') }
+- set_meta_tags description: @radio.description
+- set_meta_tags keywords: %W[radio peru radioperu musica peruana]
+
 .row
   .col-md-1
   .col-md-10

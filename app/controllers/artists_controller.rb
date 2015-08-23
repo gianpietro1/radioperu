@@ -37,7 +37,6 @@ class ArtistsController < ApplicationController
     authorize @artist
     if @artist.save
       flash[:notice] = t(:artist_saved)
-      update_facebook_graph
       redirect_to @artist
     else
       flash[:error] = t(:artist_create_error)

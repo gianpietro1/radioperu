@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>radioperu.pe</title>
+  <title><%= if content_for?(:title) then yield(:title) + ' | ' end %>
+  radioperu.pe</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="alternate" href="http://radioperu.pe/en" hreflang="en" />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
   <%= display_meta_tags :site => 'radioperu.pe' %>
   <%= csrf_meta_tags %>
   <%= render partial: "partials/google_analytics" %>
 </head>
 <body data-no-turbolink>
+
   <div class="container-fluid">
 
     <div class="row container-top">
