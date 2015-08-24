@@ -22,7 +22,7 @@
             = f.text_area :review, class: 'form-control'
           .form_group
             = f.label t(:genre)
-            - genres_array = Genre.all.map { |genre| [genre.name, genre.id] }
+            - genres_array = Genre.all.ordered_by_name.map { |genre| [genre.name, genre.id] }
             = f.select(:genre_id, options_for_select(genres_array, f.object.genre_id), {:size => 15, :class => 'form-control half-width'})
           .form_group
             = f.label t(:song_filename)

@@ -7,4 +7,6 @@ class Genre < ActiveRecord::Base
 
   translates :name
 
+  scope :ordered_by_name, ->   { with_translations(I18n.locale).order('LOWER(name)') }
+
 end

@@ -43,6 +43,8 @@ Usercontrol.createall('losborgia@gmail.com','borgia123','Los Borgia','Los Borgia
 Usercontrol.createall('atomicamail@gmail.com','atomica123','Atómica ','Atómica')
 Usercontrol.createall('ramirezpont@gmail.com','lemerde123','Le Merde Patrol','Le Merde Patrol')
 
+Usercontrol.createuser('javieralejandroramos@hotmail.com','javier123','Javier A. Ramos','Gian Marco')
+Usercontrol.createuser('zela_victor@hotmail.com','victorzela123','Víctor Zela','Chacalón y La Nueva Crema')
 
       songpath = song.filename.file.file
 
@@ -59,8 +61,9 @@ Usercontrol.createall('ramirezpont@gmail.com','lemerde123','Le Merde Patrol','Le
 $.post(
     'https://graph.facebook.com',
     {
-        id: 'http://radioperu.pe/artists/licky-moreno',
-        scrape: true
+        id: 'http://radioperu.pe/es/artists/danny-zka',
+        scrape: true,
+        access_token: '440598459358292|GVj1kcc9QwokzIRBDoNAkznYhQM'
     },
     function(response){
         console.log(response);
@@ -107,8 +110,8 @@ FB.ui({
   Artist.all.each do |artist|
    @slug = artist.slug
    url = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@slug}&scrape=true&access_token=440598459358292|GVj1kcc9QwokzIRBDoNAkznYhQM"
-   system("curl --insecure '#{url}'")
-   sleep 5
+   system("curl -X POST --insecure '#{url}'")
+   sleep 2
   end
 
   Artist.all.reverse_each do |artist|
@@ -116,8 +119,8 @@ FB.ui({
    artist.albums.each do |album|
     albumslug = album.slug
       albumurl = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@slug}/albums/#{albumslug}&scrape=true&access_token=440598459358292|GVj1kcc9QwokzIRBDoNAkznYhQM"
-      system("curl --insecure '#{albumurl}'")
-      sleep 5
+      system("curl -X POST --insecure '#{albumurl}'")
+      sleep 2
     end
   end
 
@@ -128,8 +131,8 @@ FB.ui({
       album.songs.each do |song|
         songslug = album.slug
         songurl = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@slug}/albums/#{@albumslug}/songs/#{songslug}&scrape=true&access_token=440598459358292|GVj1kcc9QwokzIRBDoNAkznYhQM"
-        system("curl --insecure '#{albumurl}'")
-        sleep 5
+        system("curl -X POST --insecure '#{songurl}'")
+        sleep 2
       end
     end
   end
