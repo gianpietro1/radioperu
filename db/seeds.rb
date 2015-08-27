@@ -47,7 +47,8 @@ Radio.find_by_id(5).genres.create(name:"Jazz")
 Radio.find_by_id(5).genres.create(name:"Música del mundo")
 Radio.find_by_id(5).genres.create(name:"Académica")
 Radio.find_by_id(5).genres.create(name:"Fusión Instrumental")
-Radio.find_by_id(4).genres.create(name:"Reguetón")
+Radio.find_by_id(4).genres.create(name:"Reggaetón")
+Radio.find_by_id(4).genres.create(name:"Pop Urbano")
 
 Genre.find_by_id(1).set_translations(:en => { :name => 'Creole' }, :es => { :name => 'Criollo'})
 Genre.find_by_id(2).set_translations(:en => { :name => 'Trova' }, :es => { :name => 'Trova'})
@@ -78,7 +79,8 @@ Genre.find_by_id(26).set_translations(:en => { :name => 'Jazz' }, :es => { :name
 Genre.find_by_id(27).set_translations(:en => { :name => 'World Music' }, :es => { :name => 'Música del mundo'})
 Genre.find_by_id(28).set_translations(:en => { :name => 'Academic' }, :es => { :name => 'Académica'})
 Genre.find_by_id(29).set_translations(:en => { :name => 'Instrumental Fusion' }, :es => { :name => 'Fusión Instrumental'})
-Genre.find_by_id(30).set_translations(:en => { :name => 'Reggaeton' }, :es => { :name => 'Reguetón'})
+Genre.find_by_id(30).set_translations(:en => { :name => 'Reggaeton' }, :es => { :name => 'Reggaetón'})
+Genre.find_by_id(31).set_translations(:en => { :name => 'Urban Pop' }, :es => { :name => 'Pop Urbano'})
 
 Genre.find_by_id(1).set_translations(:en => { :name => 'Creole' }, :es => { :name => 'Criollo'})
 Genre.find_by_id(2).set_translations(:en => { :name => 'Trova' }, :es => { :name => 'Trova'})
@@ -109,7 +111,8 @@ Genre.find_by_id(26).set_translations(:en => { :name => 'Jazz' }, :es => { :name
 Genre.find_by_id(27).set_translations(:en => { :name => 'World Music' }, :es => { :name => 'Música del mundo'})
 Genre.find_by_id(28).set_translations(:en => { :name => 'Academic' }, :es => { :name => 'Académica'})
 Genre.find_by_id(29).set_translations(:en => { :name => 'Instrumental Fusion' }, :es => { :name => 'Fusión Instrumental'})
-Genre.find_by_id(30).set_translations(:en => { :name => 'Reggaeton' }, :es => { :name => 'Reguetón'})
+Genre.find_by_id(30).set_translations(:en => { :name => 'Reggaeton' }, :es => { :name => 'Reggaetón'})
+Genre.find_by_id(31).set_translations(:en => { :name => 'Urban Pop' }, :es => { :name => 'Pop Urbano'})
 
 I18n.locale = "es"
 Format.create(name:"CD")

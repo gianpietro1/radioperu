@@ -1,6 +1,7 @@
 - title t(:register_as_musician)
 - set_meta_tags description: t(:musician_form_disclaimer)
 - set_meta_tags keywords: %W[radioperu.pe radio peru radioperu musica peruana]
+- set_meta_tags :og => {:image => image_url('radioperu200.png') }
 
 = form_for @musician_form do |f|  
   .row

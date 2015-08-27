@@ -4,6 +4,7 @@ Usercontrol.createall('iris_milagritos_rivera@hotmail.com','milagros123','Milagr
 Usercontrol.createartist('iris_milagritos_rivera@hotmail.com','Desakuerdo')
 Usercontrol.createartist('iris_milagritos_rivera@hotmail.com','Crossover')
 Usercontrol.createartist('iris_milagritos_rivera@hotmail.com','Los Arman')
+Usercontrol.createartist('iris_milagritos_rivera@hotmail.com','KikasBan')
 
 Usercontrol.createall('astronautband@hotmail.com','astronaut123','Astronaut Project','Astronaut Project')
 
@@ -46,6 +47,20 @@ Usercontrol.createall('ramirezpont@gmail.com','lemerde123','Le Merde Patrol','Le
 Usercontrol.createuser('javieralejandroramos@hotmail.com','javier123','Javier A. Ramos','Gian Marco')
 Usercontrol.createuser('zela_victor@hotmail.com','victorzela123','Víctor Zela','Chacalón y La Nueva Crema')
 
+Usercontrol.createall('sonidoslatentes@live.com','latentes123','Sonidos Latentes','Liken')
+Usercontrol.createartist('sonidoslatentes@live.com','Circo al Edén')
+Usercontrol.createartist('sonidoslatentes@live.com','Era Miscela')
+Usercontrol.createartist('sonidoslatentes@live.com','Ephientai')
+Usercontrol.createartist('sonidoslatentes@live.com','Stochastic')
+Usercontrol.createartist('sonidoslatentes@live.com','Alonso Barrios')
+Usercontrol.createartist('sonidoslatentes@live.com','Prealba')
+
+Usercontrol.createuser('contacto@raycallao.com','raycallao123','Ray Callao','Ray Callao')
+
+Usercontrol.createall('managerbettinesolf@gmail.com','bettine123','Bettine Solf','Bettine Solf')
+Usercontrol.createall('sanabriairving@gmail.com','harison123','Hari Son','Hari Son')
+
+
       songpath = song.filename.file.file
 
       TagLib::FileRef.open(songpath) do |fileref|
@@ -56,7 +71,19 @@ Usercontrol.createuser('zela_victor@hotmail.com','victorzela123','Víctor Zela',
         end
       end
 
+require 'csv'
 
+file = "#{Rails.root}/public/uploads/data.csv"
+
+CSV.open( file, 'w' ) do |writer|
+  Artist.all.each do |artist|
+    if artist.genre != nil
+      writer << [artist.name,artist.genre.radio.id.to_s,artist.genre.name,artist.user_id]
+    else
+      writer << [artist.name,'','']
+    end
+  end
+end
 
 $.post(
     'https://graph.facebook.com',

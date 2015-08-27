@@ -21,3 +21,6 @@
 
 # Ignore uploads caching
 /public/uploads/
+
+# Ignore scripts
+/lib/scripts
