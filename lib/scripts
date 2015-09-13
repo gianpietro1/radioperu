@@ -4,7 +4,6 @@ Usercontrol.createall('iris_milagritos_rivera@hotmail.com','milagros123','Milagr
 Usercontrol.createartist('iris_milagritos_rivera@hotmail.com','Desakuerdo')
 Usercontrol.createartist('iris_milagritos_rivera@hotmail.com','Crossover')
 Usercontrol.createartist('iris_milagritos_rivera@hotmail.com','Los Arman')
-Usercontrol.createartist('iris_milagritos_rivera@hotmail.com','KikasBan')
 
 Usercontrol.createall('astronautband@hotmail.com','astronaut123','Astronaut Project','Astronaut Project')
 
@@ -29,8 +28,6 @@ Usercontrol.createall('dilargeband@gmail.com','dilarge123','Dilarge Band','Dilar
 
 Usercontrol.createall('vyttzcontact@gmail.com','vyttz123','VYTTZ','VYTTZ')
 
-Usercontrol.createuser('pierre@pro-show.net','vyttz123','VYTTZ','VYTTZ')
-
 
 Usercontrol.createall('marlene.miyashiro@gmail.com','marlene123','Marlene Miyashiro','Patanes')
 Usercontrol.createall('laneblinademuriel@hotmail.com','neblina123','Neblina de Muriel','La Neblina de Muriel')
@@ -47,18 +44,36 @@ Usercontrol.createall('ramirezpont@gmail.com','lemerde123','Le Merde Patrol','Le
 Usercontrol.createuser('javieralejandroramos@hotmail.com','javier123','Javier A. Ramos','Gian Marco')
 Usercontrol.createuser('zela_victor@hotmail.com','victorzela123','Víctor Zela','Chacalón y La Nueva Crema')
 
-Usercontrol.createall('sonidoslatentes@live.com','latentes123','Sonidos Latentes','Liken')
-Usercontrol.createartist('sonidoslatentes@live.com','Circo al Edén')
-Usercontrol.createartist('sonidoslatentes@live.com','Era Miscela')
-Usercontrol.createartist('sonidoslatentes@live.com','Ephientai')
-Usercontrol.createartist('sonidoslatentes@live.com','Stochastic')
-Usercontrol.createartist('sonidoslatentes@live.com','Alonso Barrios')
-Usercontrol.createartist('sonidoslatentes@live.com','Prealba')
+Usercontrol.createall('ralvarezd@hotmail.com','jenkins345','René Álvarez','La Jenkins Warox Typical Banda')
+Usercontrol.createall('valstaccato@hotmail.com','staccato654','Val Staccato','Val Staccato')
 
-Usercontrol.createuser('contacto@raycallao.com','raycallao123','Ray Callao','Ray Callao')
+Usercontrol.createall('tantrisrockperu@gmail.com','tantris345','Tantris','Tantris')
+Usercontrol.createall('divanoirerock@gmail.com','noire654','Diva Noire','Diva Noire')
+Usercontrol.createall('bettonektp@hotmail.com','bettone345','Bettone','Bettone')
+Usercontrol.createall('ansound@hotmail.com','cobra654','Antonio Nuñez','Doctor Cobra')
+Usercontrol.createall('jduran1977@gmail.com','juldun345','Julio Durán','Jul Dun')
 
-Usercontrol.createall('managerbettinesolf@gmail.com','bettine123','Bettine Solf','Bettine Solf')
-Usercontrol.createall('sanabriairving@gmail.com','harison123','Hari Son','Hari Son')
+Usercontrol.createall('dospablos@gmail.com','filipz456','Pablo Tamayo','Los Filipz')
+Usercontrol.createall('mellega59@gmail.com','pangolin432','Adrian León','Pangolin SoundSystem')
+Usercontrol.createall('loszapping@gmail.com','zapping654','Los Zapping','Los Zapping')
+
+Usercontrol.createall('daniel@larenken.com','willowman321','Daniel Vigo','WillowMan')
+Usercontrol.createall('bruno@larenken.com','larenken123','La Renken','La Renken')
+
+Usercontrol.createall('carlos.huaman@peruimagen.com','peruimagen654','Perú Imagen','Última Conexión')
+Usercontrol.createartist('carlos.huaman@peruimagen.com','PablogoO')
+Usercontrol.createartist('carlos.huaman@peruimagen.com','Toño Lopez & Los Vintash')
+Usercontrol.createartist('carlos.huaman@peruimagen.com','Brujas')
+Usercontrol.createartist('carlos.huaman@peruimagen.com','Ausencia')
+Usercontrol.createartist('carlos.huaman@peruimagen.com','La Banda del Dr. Poggy')
+Usercontrol.createall('matteobonora@gmail.com','bonora432','Matteo Bonora','Loko Bonó')
+Usercontrol.createuser('losolaya@gmail.com','olaya234','Olaya Sound System','Olaya Sound System')
+Usercontrol.createuser('raquel@noize.pe','raquel765','Raquel Rodríguez','Pelo Madueño')
+
+
+
+
+Usercontrol.createuser('pmontaldo@hotmail.com','montaldo543','Piero Montaldo','Piero Montaldo')
 
 
       songpath = song.filename.file.file
@@ -71,19 +86,7 @@ Usercontrol.createall('sanabriairving@gmail.com','harison123','Hari Son','Hari S
         end
       end
 
-require 'csv'
 
-file = "#{Rails.root}/public/uploads/data.csv"
-
-CSV.open( file, 'w' ) do |writer|
-  Artist.all.each do |artist|
-    if artist.genre != nil
-      writer << [artist.name,artist.genre.radio.id.to_s,artist.genre.name,artist.user_id]
-    else
-      writer << [artist.name,'','']
-    end
-  end
-end
 
 $.post(
     'https://graph.facebook.com',
