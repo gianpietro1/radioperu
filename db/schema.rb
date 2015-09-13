@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150817193016) do
+ActiveRecord::Schema.define(version: 20150913042929) do
 
   create_table "album_translations", force: :cascade do |t|
     t.integer  "album_id",   null: false
@@ -108,6 +108,20 @@ ActiveRecord::Schema.define(version: 20150817193016) do
     t.integer "radio_id"
   end
 
+  create_table "playlist_songs", force: :cascade do |t|
+    t.integer  "playlist_id"
+    t.integer  "song_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "playlists", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "program_translations", force: :cascade do |t|
     t.integer  "program_id",  null: false
     t.string   "locale",      null: false
@@ -183,6 +197,14 @@ ActiveRecord::Schema.define(version: 20150817193016) do
   end
 
   add_index "songs", ["slug"], name: "index_songs_on_slug"
+
+  create_table "sponsors", force: :cascade do |t|
+    t.string   "name"
+    t.string   "url"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

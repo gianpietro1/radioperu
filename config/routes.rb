@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     end
     get 'artist_summary' => 'artists#artist_summary'
     get 'album_summary' => 'albums#album_summary'
+    get 'sponsorbanner' => 'sponsors#show'
     get 'share_song' => 'radios#share_song'
     get 'program_index' => 'radios#program_index'
     get 'program_sponsor' => 'radios#program_sponsor'

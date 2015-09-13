@@ -81,6 +81,8 @@
       - else
         = @song.lyrics.gsub(/(?:\n\r?|\r\n?)/, "<br>").html_safe 
 
+= render partial: 'sponsors/sponsorbanner'
+
 %script{:type=>"text/javascript"}
 
   var locale = "#{I18n.locale}";

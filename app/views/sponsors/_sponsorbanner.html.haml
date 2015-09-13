@@ -1,0 +1,14 @@
+.floating-ad
+  %span.bold
+    radioperu.pe
+  %span
+    es posible gracias a:
+  - offset = rand(Sponsor.count)
+  - sponsor = Sponsor.offset(offset).first
+  = link_to image_tag(sponsor.image), sponsor.url, :target => "_blank"
+
+%script{:type=>"text/javascript"}
+
+  $( ".floating-ad" ).slideToggle("slow", function() {
+  $( ".floating-ad" ).delay(3000).slideToggle("slow");
+  });

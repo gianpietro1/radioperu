@@ -838,6 +838,21 @@ span.catalogue_title a {
   font-size: 0.8em;
 }
 
+/* Floating Ads */
+
+.floating-ad {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 180px;
+  width: 320px;
+  padding: 5px;
+  background-color: white;
+  border: 2px solid black;
+  display: none;
+  z-index: 200;
+}
+
 
 /* SoundManager */
 
