@@ -1788,6 +1788,24 @@ h3.catalogue_title {
   max-height: 200px;
 }
 
+.floating-ad {
+  height: 110px;
+}
+
+.sponsor-text {
+  float: left;
+  width: 120px;
+}
+
+.sponsor-image {
+  float: right;
+  width: 50%;
+}
+
+.sponsor-image img {
+  width: 150px;
+}
+
 }
 
 @media screen and (max-width: 524px) {
@@ -1974,21 +1992,7 @@ h4.artist_catalogue_title {
 /* Floating Ads */
 
 .floating-ad {
-  height: 124px;
-  width: 100%;
-}
-
-.sponsor-text {
-  float: left;
-  width: 120px;
-}
-
-.sponsor-image {
-  float: right;
-  width: 50%;
-}
-
-.sponsor-image img {
+  height: 90px;
   width: 100%;
 }
 
@@ -2071,12 +2075,6 @@ h4.artist_catalogue_title {
   vertical-align: middle;
   width: 120px;
   word-wrap: break-word;
-}
-
-/* Floating Ads */
-
-.floating-ad {
-  height: 100px;
 }
 
 }
