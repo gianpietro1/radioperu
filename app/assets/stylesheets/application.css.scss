@@ -849,6 +849,7 @@ span.catalogue_title a {
   padding: 5px;
   background-color: white;
   border: 2px solid black;
+  border-bottom: none;
   display: none;
   z-index: 200;
 }
@@ -1970,6 +1971,27 @@ h4.artist_catalogue_title {
   font-size: 0.6em;
 }
 
+/* Floating Ads */
+
+.floating-ad {
+  height: 124px;
+  width: 100%;
+}
+
+.sponsor-text {
+  float: left;
+  width: 120px;
+}
+
+.sponsor-image {
+  float: right;
+  width: 50%;
+}
+
+.sponsor-image img {
+  width: 100%;
+}
+
 }
 
 
@@ -2051,6 +2073,13 @@ h4.artist_catalogue_title {
   word-wrap: break-word;
 }
 
+/* Floating Ads */
+
+.floating-ad {
+  height: 100px;
+}
+
+}
 
 @media screen and (max-width: 300px) {
 
@@ -2075,8 +2104,6 @@ h4.artist_catalogue_title {
   min-width: 40px;
   font-size: 0.5em;
   margin-right:-5px;
-}
-
 }
 
 }
