@@ -53,7 +53,7 @@ Usercontrol.createall('bettonektp@hotmail.com','bettone345','Bettone','Bettone')
 Usercontrol.createall('ansound@hotmail.com','cobra654','Antonio Nuñez','Doctor Cobra')
 Usercontrol.createall('jduran1977@gmail.com','juldun345','Julio Durán','Jul Dun')
 
-Usercontrol.createall('dospablos@gmail.com','filipz456','Pablo Tamayo','Los Filipz')
+Usercontrol.createall('losfilipz@gmail.com','filipz890','Los Filipz','Los Filipz')
 Usercontrol.createall('mellega59@gmail.com','pangolin432','Adrian León','Pangolin SoundSystem')
 Usercontrol.createall('loszapping@gmail.com','zapping654','Los Zapping','Los Zapping')
 
@@ -70,10 +70,23 @@ Usercontrol.createall('matteobonora@gmail.com','bonora432','Matteo Bonora','Loko
 Usercontrol.createuser('losolaya@gmail.com','olaya234','Olaya Sound System','Olaya Sound System')
 Usercontrol.createuser('raquel@noize.pe','raquel765','Raquel Rodríguez','Pelo Madueño')
 
+Usercontrol.createartist('mafer@capitansimio.com','Wendy Sulca')
 
+Usercontrol.createall('oilpivan@gmail.com','eldoc123','Iván León','Macondo')
+Usercontrol.createall('versoazul1@hotmail.com','bluempc654','Stephanie Valdivieso','Blue MPC')
+
+Usercontrol.createall('aldocastillejos@hotmail.com','akasicos765','Aldo Castillejos','Registros Akásicos')
+
+Usercontrol.createall('mediterraneoperu@outlook.com','mediterraneo876','Mediterráneo','Mediterráneo')
+Usercontrol.createall('ppcespedes@yahoo.com','pepecespedes987','Pepe Céspedes','Pepe Céspedes')
+
+Usercontrol.createuser('gustavoratto@outlook.com','ratto678','Gustavo Ratto','Gustavo Ratto')
+
+Usercontrol.createuser('dimitrimsikuri@hotmail.com','dimitri765','Dimitri Manga','Dimitri Manga')
 
 
 Usercontrol.createuser('pmontaldo@hotmail.com','montaldo543','Piero Montaldo','Piero Montaldo')
+Usercontrol.createall('lafiestaconsaborperu@gmail.com','fiesta987','La Fiesta Con Sabor','La Fiesta Con Sabor')
 
 
       songpath = song.filename.file.file
