@@ -29,8 +29,11 @@
         <%if current_user %>
           <%= t :greetings %> 
           <%= (current_user.name || current_user.email) %> !
+          <%if current_user.role == 'admin'%>
+            <%= link_to 'admin', '/admin', class: 'btn btn-primary btn-sm' %>
           <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm' do %>
             <span class="glyphicon glyphicon-log-out"></span>
+          <% end %>
           <% end %>
         <% else %>
           <%= link_to (t :login), new_user_session_path, class: 'btn blackbtn' %>
