@@ -1,0 +1,36 @@
+.row.margin-top-20
+  .col-md-2
+  .col-md-8
+    %table.table.table-striped.table-bordered.table-condensed.text-center
+      %thead
+        %tr
+          %th.text-center
+            Artista
+          %th.text-center
+            Controla su espacio?
+          %th.text-center
+            Tiene Canciones?
+          %th.text-center
+            Creación
+          %th.text-center
+            Última Actualización
+      %tbody
+        - @artists.each do |artist|
+          %tr
+            %td
+              = link_to artist.name, artist
+            %td
+              - if artist.user_id == 1
+                No
+              - else
+                Sí
+            %td
+              - if artist.songs.count > 0
+                Sí
+              - else
+                No
+            %td
+              = artist.created_at.strftime("%d-%m-%Y")
+            %td
+              = artist.updated_at.strftime("%d-%m-%Y")
+  .col-md-2

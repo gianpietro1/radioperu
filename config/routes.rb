@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'admin' => 'admin#index'
+
   scope "(:locale)", locale: /es|en/ do
     root to: 'welcome#index'
     resources :radios, only: [:show] do

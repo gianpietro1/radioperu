@@ -29,6 +29,12 @@ class Usercontrol
     )
 
     Artist.find_by(name: artist).update_attributes(user_id: user.id)
+    Artist.find_by(name: artist).albums.each do |album|
+      album.update_attributes(user_id: user.id)
+      album.songs.each do |song|
+        song.update_attributes(user_id: user.id)
+      end
+    end
 
   end
 

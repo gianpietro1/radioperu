@@ -1,0 +1,15 @@
+%h4 Administrador
+
+- if current_user && current_user.role == 'admin'
+  .row
+    .tabbable.tabs-left
+      %ul.nav.nav-tabs
+        %li.active
+          %a{href: "#artists", 'data-toggle' => "tab"}
+            Artistas
+    .tab-content
+      .tab-pane.active{:id => "artists"}
+        = render 'admin_artists'
+
+%script{:type=>"text/javascript"}
+  $(".logo").hide()

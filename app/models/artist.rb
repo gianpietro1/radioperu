@@ -1,7 +1,7 @@
 class Artist < ActiveRecord::Base
 
   default_scope  { order('LOWER(name)') }
-  
+
   autocomplete :name, :score => :id
   before_validation :smart_add_url_protocol
   
