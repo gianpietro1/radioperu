@@ -14,6 +14,7 @@ Rails.application.routes.draw do
         resources :songs, except: [:index]
       end
     end
+    get 'soymusico' => 'musician_forms#new'
     get 'artist_summary' => 'artists#artist_summary'
     get 'album_summary' => 'albums#album_summary'
     get 'sponsorbanner' => 'sponsors#show'
