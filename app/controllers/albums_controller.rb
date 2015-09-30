@@ -16,7 +16,7 @@ class AlbumsController < ApplicationController
   def album_summary
     @artist = Artist.find_by(name: params[:artist_name])
     if @artist
-      @song = @artist.songs.where('rtrim(lower(songs.name)) = ?', params[:song_name].downcase).first
+      @song = @artist.songs.where(@artist.songs.arel_table[:name].matches(params[:song_name].downcase)).first
       if @song
         @album = @song.album
       else
