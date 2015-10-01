@@ -11,7 +11,7 @@ class MusicianForm < MailForm::Base
   # in ActionMailer accepts.
   def headers
     {
-      :subject => "Inscripción de banda - #{musician_name}",
+      :subject => "Inscripción de músico - #{musician_name}",
       :to => "contacto@radioperu.pe",
       :from => %("#{musician_name}" <#{musician_email}>)
     }
