@@ -455,10 +455,11 @@ textarea.form-control {
   color: #3c3c33;  
 }
 
-.station_title h3 {
+h1.station_title {
   color: #3c3c33;
   padding: 0;
   margin: 0;
+  font-size: 1.5em
 }
 
 .station_player {
@@ -1942,8 +1943,8 @@ h3.catalogue_title {
   margin-left:-18%;
 }
 
-.station_title h3 {
-  font-size: 1em;
+h1.station_title {
+  font-size: 0.9em;
 }
 
 .default-sponsor {

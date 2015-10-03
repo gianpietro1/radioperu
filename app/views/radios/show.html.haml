@@ -20,9 +20,8 @@
   .col-md-1
   .col-md-5.margin-top-10
     .radio_container
-      .station_title
-        %h3
-          = @radio.name.titleize + ' - ' + @radio.description.camelize
+      %h1.station_title
+        = @radio.name.titleize + ' - ' + @radio.description.camelize
       .station_player
         #player
           %script{:type=>"text/javascript", :src=>@radio.player}
