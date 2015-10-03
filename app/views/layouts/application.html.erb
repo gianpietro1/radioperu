@@ -65,21 +65,21 @@
 
       <div class="row">
         <div class="pull-left home">
-          <%= link_to image_tag("home.png"), root_path %>
+          <%= link_to image_tag("home.png", :alt => 'home'), root_path %>
           <div class="about_link">
             <%= link_to t(:about), elproyecto_path %>
           </div>
         </div>        
         <div class="pull-right social">
-            <%= link_to image_tag("facebook.png"), 'https://www.facebook.com/radioperu.pe', class: "facebook", :target => "_blank" %>
-            <%= link_to image_tag("twitter.png"), 'https://twitter.com/radioperu_pe', class: "twitter", :target => "_blank" %>
-            <%= link_to image_tag("email.png"), 'mailto:contacto@radioperu.pe', class: "email" %>
+            <%= link_to image_tag("facebook.png", :alt => 'facebook'), 'https://www.facebook.com/radioperu.pe', class: "facebook", :target => "_blank" %>
+            <%= link_to image_tag("twitter.png", :alt => 'twitter'), 'https://twitter.com/radioperu_pe', class: "twitter", :target => "_blank" %>
+            <%= link_to image_tag("email.png", :alt => 'email'), 'mailto:contacto@radioperu.pe', class: "email" %>
         </div>
       </div>
       
       <div class="row">
         <h1 class="logo text-center">
-          <%= link_to image_tag('rp-a.png'), root_path %>
+          <%= link_to image_tag('rp-a.png', :alt => 'radioperu.pe'), root_path, title: 'radioperu.pe' %>
         </h1>
       </div>     
 
