@@ -34,10 +34,13 @@
                         <loc>http://radioperu.pe/es/artists</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/musician_forms/new</loc>
+                        <loc>http://radioperu.pe/soymusico</loc>
                         </url>
                         <url>
                         <loc>http://radioperu.pe/en/users/sign_in</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/users/password/new</loc>
                         </url>
                         <url>
                         <loc>http://radioperu.pe/en/elproyecto</loc>
@@ -61,12 +64,6 @@
                         <loc>http://radioperu.pe/en/artists</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/musician_forms/new</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/users/password/new</loc>
-                        </url>
-                        <url>
                         <loc>http://radioperu.pe/es/about</loc>
                         </url>
                         <url>
@@ -76,25 +73,97 @@
                         <loc>http://radioperu.pe/artists/station/5</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/manongo-mujica</loc>
+                        <loc>http://radioperu.pe/es/artists/javier-echecopar-mongilardi</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/carlos-carty</loc>
+                        <loc>http://radioperu.pe/es/artists/perujazz</loc>
                         </url>
                         <url>
                         <loc>http://radioperu.pe/es/artists/celso-garrido-lecca</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/senen-pani</loc>
+                        <loc>http://radioperu.pe/es/artists/felix-casaverde</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/carlos-carty</loc>
                         </url>
                         <url>
                         <loc>http://radioperu.pe/es/artists/octavio-santa-cruz</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/serenata-de-los-andes</loc>
+                        <loc>http://radioperu.pe/artists/station/4</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/menores-de-edad</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/atomica</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/ivan-fajardo</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/gerardo-manuel-y-el-humo</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/nosequien-y-los-nosecuantos</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/alvaro-cooper</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/artists/station/2</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/quinteto-union-de-cotahuasi</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/magaly-solier</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/jaime-guardia</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/damaris</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/manuel-silva-pichinkucha</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/oswaldo-castillo</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/artists/station/1</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/chabuca-granda</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/luis-abanto-morales</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/rafael-matallana</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/los-kipus</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/los-embajadores-criollos</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/trio-los-chamas</loc>
                         </url>
                         <url>
                         <loc>http://radioperu.pe/artists/station/3</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/alfredo-linares-y-su-sonora</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/los-mirlos</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/bareto</loc>
                         </url>
                         <url>
                         <loc>http://radioperu.pe/es/artists/cuarteto-continental</loc>
@@ -106,85 +175,31 @@
                         <loc>http://radioperu.pe/es/artists/ray-callao</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/los-mirlos</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/bareto</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/alfredo-linares-y-su-sonora</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/artists/station/4</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/the-mads</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/los-borgia</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/kanaku-y-el-tigre</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/daniel-f</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/menores-de-edad</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/liken</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/artists/station/1</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/trio-los-chamas</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/cecilia-barraza</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/de-familia</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/abelardo-vasquez</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/lucha-reyes</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/los-cholos</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/artists/station/2</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/luciano-quispe</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/ronald-contreras</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/los-errantes</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/los-campesinos</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/magaly-solier</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/walter-mendieta-callirgos</loc>
-                        </url>
-                        <url>
                         <loc>http://radioperu.pe/en/users/password/new</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/senen-pani</loc>
+                        <loc>http://radioperu.pe/es/musician_forms/new</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/dimitri-manga</loc>
+                        <loc>http://radioperu.pe/en/musician_forms/new</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/javier-lazo</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/los-embajadores-criollos</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/rosa-guzman</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/jean-pierre-vismara</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/oscar-aviles</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/los-romanceros-criollos</loc>
                         </url>
                         <url>
                         <loc>http://radioperu.pe/en/artists/javier-echecopar-mongilardi</loc>
@@ -193,58 +208,16 @@
                         <loc>http://radioperu.pe/en/artists/manongo-mujica</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/serenata-de-los-andes</loc>
+                        <loc>http://radioperu.pe/en/artists/celso-garrido-lecca</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/octavio-santa-cruz</loc>
+                        <loc>http://radioperu.pe/en/artists/andres-prado</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/los-cholos</loc>
+                        <loc>http://radioperu.pe/en/artists/felix-casaverde</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/peru-negro</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/cecilia-barraza</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/eva-ayllon</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/lucila-campos</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/los-embajadores-criollos</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/mader-funker</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/bettine-solf</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/la-maldita-costumbre</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/mar-de-copas</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/septimo-cielo</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/inyectores</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/chacalon-y-la-nueva-crema</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/alfredo-linares-y-su-sonora</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/ray-callao</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/bareto</loc>
+                        <loc>http://radioperu.pe/en/artists/senen-pani</loc>
                         </url>
                         <url>
                         <loc>http://radioperu.pe/en/artists/los-mirlos</loc>
@@ -253,22 +226,52 @@
                         <loc>http://radioperu.pe/en/artists/cuarteto-continental</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/trio-ayacucho</loc>
+                        <loc>http://radioperu.pe/en/artists/chacalon-y-la-nueva-crema</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/conjunto-lira-paucina</loc>
+                        <loc>http://radioperu.pe/en/artists/ray-callao</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/los-hermanos-azpilcueta</loc>
+                        <loc>http://radioperu.pe/en/artists/alfredo-linares-y-su-sonora</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/oswaldo-castillo</loc>
+                        <loc>http://radioperu.pe/en/artists/bareto</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/luis-ayvar-alfaro</loc>
+                        <loc>http://radioperu.pe/en/artists/elky-la-chaskanahui</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/damaris</loc>
+                        <loc>http://radioperu.pe/en/artists/quinteto-union-de-cotahuasi</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/los-apus</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/los-engreidos-del-peru</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/conjunto-sol-andino-de-pachaconas</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/raul-garcia-zarate</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/jul-dun</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/noche-futura</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/franco-hamilton</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/jaime-cuadra</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/menores-de-edad</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/olaya-sound-system</loc>
                         </url>
                         <url>
                         <loc>http://radioperu.pe/es/artists/station/5</loc>
@@ -316,97 +319,34 @@
                         <loc>http://radioperu.pe/es/artists/88</loc>
                         </url>
                         <url>
+                        <loc>http://radioperu.pe/en/artists/perujazz</loc>
+                        </url>
+                        <url>
                         <loc>http://radioperu.pe/</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/manongo-mujica/albums/el-sonido-de-los-dioses</loc>
+                        <loc>http://radioperu.pe/es/artists/perujazz/albums/perujazz-en-vivo</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/manongo-mujica/albums/tribal</loc>
+                        <loc>http://radioperu.pe/es/artists/perujazz/albums/mundo-nuevo</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/senen-pani/albums/cantos-de-sanacion-del-ayahuasca</loc>
+                        <loc>http://radioperu.pe/es/artists/javier-echecopar-mongilardi/albums/lo-mejor-de-javier-echecopar-mongilardi</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/carlos-carty</loc>
+                        <loc>http://radioperu.pe/es/artists/javier-echecopar-mongilardi/albums/composiciones-vol-1</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/carlos-carty/albums/machu-picchu-o-segredo-dos-incas</loc>
+                        <loc>http://radioperu.pe/es/artists/javier-echecopar-mongilardi/albums/la-guitarra-en-el-barroco-del-peru</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/serenata-de-los-andes/albums/en-vivo-la-huaca</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/octavio-santa-cruz/albums/al-compas-del-socabon</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/celso-garrido-lecca</loc>
+                        <loc>http://radioperu.pe/es/artists/javier-echecopar-mongilardi/albums/guitarra-andina-del-peru</loc>
                         </url>
                         <url>
                         <loc>http://radioperu.pe/es/artists/celso-garrido-lecca/albums/concierto-para-guitarra-y-orquesta</loc>
                         </url>
                         <url>
                         <loc>http://radioperu.pe/es/artists/celso-garrido-lecca/albums/sinfonia-n-2-introspecciones</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/cuarteto-continental/albums/el-autentico-e-imbatible</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/station/3</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/station/3</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/45</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/62</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/192</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/44</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/1</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/122</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/ray-callao/albums/el-tiempo-y-la-marea</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/los-mirlos/albums/cumbia-amazonica</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/bareto/albums/boleto</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/bareto/albums/cumbia</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/bareto/albums/sodoma-y-gamarra</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/bareto/albums/ves-lo-que-quieres-ver</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/alfredo-linares-y-su-sonora/albums/salsa-a-todo-sabor</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/los-borgia</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/los-borgia/albums/que-siga-la-jarana</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/the-mads</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/the-mads/albums/molesto</loc>
                         </url>
                         <url>
                         <loc>http://radioperu.pe/es/artists/station/4</loc>
@@ -769,37 +709,214 @@
                         <loc>http://radioperu.pe/es/artists/165</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/liken</loc>
+                        <loc>http://radioperu.pe/es/artists/felix-casaverde/albums/guitarra-negra</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/liken/albums/society-sour</loc>
+                        <loc>http://radioperu.pe/en/artists/octavio-santa-cruz</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/kanaku-y-el-tigre</loc>
+                        <loc>http://radioperu.pe/es/artists/octavio-santa-cruz/albums/al-compas-del-socabon</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/kanaku-y-el-tigre/albums/caracoles</loc>
+                        <loc>http://radioperu.pe/en/artists/carlos-carty</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/menores-de-edad</loc>
+                        <loc>http://radioperu.pe/es/artists/carlos-carty/albums/machu-picchu-o-segredo-dos-incas</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/ivan-fajardo</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/ivan-fajardo/albums/vimana</loc>
                         </url>
                         <url>
                         <loc>http://radioperu.pe/es/artists/menores-de-edad/albums/suena-la-ciudad-ep</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/daniel-f</loc>
+                        <loc>http://radioperu.pe/en/artists/gerardo-manuel-y-el-humo</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/daniel-f/albums/memorias-desde-vesania</loc>
+                        <loc>http://radioperu.pe/es/artists/gerardo-manuel-y-el-humo/albums/apocalypsis</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/daniel-f/albums/en-la-paradoja-del-cero-47</loc>
+                        <loc>http://radioperu.pe/en/artists/nosequien-y-los-nosecuantos</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/daniel-f/albums/el-origen-de-los-fundamentos</loc>
+                        <loc>http://radioperu.pe/es/artists/nosequien-y-los-nosecuantos/albums/no-somos-nada</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/daniel-f/albums/la-ventana-de-los-ciclopes</loc>
+                        <loc>http://radioperu.pe/es/artists/nosequien-y-los-nosecuantos/albums/amorfo</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/nosequien-y-los-nosecuantos/albums/pisco-sour</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/atomica</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/atomica/albums/atomica</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/atomica/albums/gracias-por-el-refugio-tributo-peruano-a-los-rolling-stones</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/atomica/albums/tiempo-roto</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/station/2</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/station/2</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/18</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/95</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/65</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/92</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/162</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/80</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/158</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/141</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/3</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/28</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/33</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/126</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/131</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/69</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/129</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/51</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/93</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/75</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/116</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/47</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/119</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/22</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/115</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/52</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/32</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/87</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/127</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/121</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/111</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/7</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/quinteto-union-de-cotahuasi/albums/alma-surena</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/magaly-solier</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/magaly-solier/albums/warmi</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/jaime-guardia</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/jaime-guardia/albums/el-charango-del-peru</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/alvaro-cooper</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/alvaro-cooper/albums/la-verdad</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/alvaro-cooper/albums/en-la-red</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/oswaldo-castillo</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/-</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/oswaldo-castillo/albums/hermanando-pueblos</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/chabuca-granda</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/chabuca-granda/albums/dialogando</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/chabuca-granda/albums/voz-y-vena-de-chabuca-granda</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/chabuca-granda/albums/cada-cancion-con-su-razon</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/chabuca-granda/albums/lo-nuevo-de-chabuca-granda</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/manuel-silva-pichinkucha</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/manuel-silva-pichinkucha/albums/lo-mejor-de-pichinkucha</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/damaris</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/damaris/albums/mil-caminos</loc>
                         </url>
                         <url>
                         <loc>http://radioperu.pe/es/artists/station/1</loc>
@@ -940,292 +1057,109 @@
                         <loc>http://radioperu.pe/es/artists/123</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/lucha-reyes</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/lucha-reyes/albums/una-carta-al-cielo</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/abelardo-vasquez</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/abelardo-vasquez/albums/homenaje-a-don-porfirio-pipo-y-vicente</loc>
-                        </url>
-                        <url>
                         <loc>http://radioperu.pe/en/artists/trio-los-chamas</loc>
                         </url>
                         <url>
                         <loc>http://radioperu.pe/es/artists/trio-los-chamas/albums/trio-los-chamas</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/cecilia-barraza/albums/alborotando</loc>
+                        <loc>http://radioperu.pe/en/artists/rafael-matallana</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/de-familia</loc>
+                        <loc>http://radioperu.pe/es/artists/rafael-matallana/albums/rafael-matallana</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/de-familia/albums/de-familia-pureza-de-una-tradicion-vol-1</loc>
+                        <loc>http://radioperu.pe/es/artists/rafael-matallana/albums/el-caballero-de-la-cancion</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/de-familia/albums/de-familia-pureza-de-una-tradicion-vol-2</loc>
+                        <loc>http://radioperu.pe/es/artists/los-embajadores-criollos/albums/cofre-de-recuerdos-vol-2</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/de-familia/albums/de-familia-pureza-de-una-tradicion-vol-3</loc>
+                        <loc>http://radioperu.pe/es/artists/los-embajadores-criollos/albums/callecita</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/de-familia/albums/de-familia-pureza-de-una-tradicion-vol-4</loc>
+                        <loc>http://radioperu.pe/es/artists/los-embajadores-criollos/albums/cofre-de-recuerdos-vol-1</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/-</loc>
+                        <loc>http://radioperu.pe/es/artists/los-embajadores-criollos/albums/tesoro-criollo</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/los-cholos/albums/epoca-de-oro-del-criollismo</loc>
+                        <loc>http://radioperu.pe/es/artists/los-embajadores-criollos/albums/siempre-idolos</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/ronald-contreras</loc>
+                        <loc>http://radioperu.pe/en/artists/los-kipus</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/ronald-contreras/albums/nueva-sangre-sonidos-del-ande-peruano-guitarra</loc>
+                        <loc>http://radioperu.pe/es/artists/los-kipus/albums/los-kipus-con-eva-ayllon</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/ronald-contreras/albums/interpretando-a-pablo-ojeda</loc>
+                        <loc>http://radioperu.pe/en/artists/luis-abanto-morales</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/ronald-contreras/albums/guitarra-andina</loc>
+                        <loc>http://radioperu.pe/es/artists/luis-abanto-morales/albums/el-cantor-del-pueblo</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/ronald-contreras/albums/folklore-tradicional-peruano</loc>
+                        <loc>http://radioperu.pe/es/artists/luis-abanto-morales/albums/luis-abanto-morales</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/luciano-quispe</loc>
+                        <loc>http://radioperu.pe/es/artists/station/3</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/luciano-quispe/albums/nueva-sangre-sonidos-del-ande-peruano-arpa</loc>
+                        <loc>http://radioperu.pe/en/artists/station/3</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/los-errantes</loc>
+                        <loc>http://radioperu.pe/es/artists/45</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/los-errantes/albums/grandes-exitos</loc>
+                        <loc>http://radioperu.pe/es/artists/62</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/station/2</loc>
+                        <loc>http://radioperu.pe/es/artists/192</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/station/2</loc>
+                        <loc>http://radioperu.pe/es/artists/44</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/18</loc>
+                        <loc>http://radioperu.pe/es/artists/1</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/95</loc>
+                        <loc>http://radioperu.pe/es/artists/122</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/65</loc>
+                        <loc>http://radioperu.pe/es/artists/cuarteto-continental/albums/el-autentico-e-imbatible</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/92</loc>
+                        <loc>http://radioperu.pe/es/artists/alfredo-linares-y-su-sonora/albums/salsa-a-todo-sabor</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/162</loc>
+                        <loc>http://radioperu.pe/es/artists/los-mirlos/albums/cumbia-amazonica</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/80</loc>
+                        <loc>http://radioperu.pe/es/artists/bareto/albums/boleto</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/158</loc>
+                        <loc>http://radioperu.pe/es/artists/bareto/albums/cumbia</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/141</loc>
+                        <loc>http://radioperu.pe/es/artists/bareto/albums/sodoma-y-gamarra</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/3</loc>
+                        <loc>http://radioperu.pe/es/artists/bareto/albums/ves-lo-que-quieres-ver</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/28</loc>
+                        <loc>http://radioperu.pe/es/artists/ray-callao/albums/el-tiempo-y-la-marea</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/33</loc>
+                        <loc>http://radioperu.pe/es/artists/javier-lazo</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/126</loc>
+                        <loc>http://radioperu.pe/en/artists/javier-lazo/albums/esperanza-grande</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/131</loc>
+                        <loc>http://radioperu.pe/en/artists/javier-lazo/albums/lazos</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/69</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/129</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/51</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/93</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/75</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/116</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/47</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/119</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/22</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/115</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/52</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/32</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/87</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/127</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/121</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/111</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/7</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/los-campesinos</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/los-campesinos/albums/grandes-exitos-3d03fb76-ffa3-4c60-8db3-6cc5e36b9a0c</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/walter-mendieta-callirgos</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/walter-mendieta-callirgos/albums/remembranza</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/magaly-solier</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/magaly-solier/albums/warmi</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/senen-pani/albums/cantos-de-sanacion-del-ayahuasca</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/octavio-santa-cruz/albums/al-compas-del-socabon</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/serenata-de-los-andes/albums/en-vivo-la-huaca</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/dimitri-manga</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/dimitri-manga/albums/nueva-sangre-sonidos-del-ande-peruano-vientos</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/manongo-mujica/albums/el-sonido-de-los-dioses</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/manongo-mujica/albums/tribal</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/javier-echecopar-mongilardi</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/javier-echecopar-mongilardi/albums/lo-mejor-de-javier-echecopar-mongilardi</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/javier-echecopar-mongilardi/albums/composiciones-vol-1</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/javier-echecopar-mongilardi/albums/la-guitarra-en-el-barroco-del-peru</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/javier-echecopar-mongilardi/albums/guitarra-andina-del-peru</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/cecilia-barraza/albums/alborotando</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/eva-ayllon</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/eva-ayllon/albums/gracias-a-la-vida</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/eva-ayllon/albums/ritmo-color-y-sabor</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/eva-ayllon/albums/juntos-llevamos-la-paz</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/eva-ayllon/albums/eva</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/peru-negro</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/peru-negro/albums/sangre-de-un-don</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/peru-negro/albums/jolgorio</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/peru-negro/albums/sus-raices</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/los-cholos/albums/epoca-de-oro-del-criollismo</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/lucila-campos</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/lucila-campos/albums/seguimos-valseando-festejos-30996ca3-cd36-4de0-a758-dc59255d8b24</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/lucila-campos/albums/lucila-campos</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/la-maldita-costumbre</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/la-maldita-costumbre/albums/del-este-aunque-nos-cueste-sonidero-central</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/la-maldita-costumbre/albums/calzon-ep</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/la-maldita-costumbre/albums/caras-vemos-ep</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/bettine-solf</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/bettine-solf/albums/soy-opuesta</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/mader-funker</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/en/artists/mader-funker/albums/baila-sin-miedo</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/los-embajadores-criollos</loc>
+                        <loc>http://radioperu.pe/en/artists/javier-lazo/albums/mala-rabia</loc>
                         </url>
                         <url>
                         <loc>http://radioperu.pe/en/artists/los-embajadores-criollos/albums/cofre-de-recuerdos-vol-2</loc>
@@ -1243,67 +1177,97 @@
                         <loc>http://radioperu.pe/en/artists/los-embajadores-criollos/albums/siempre-idolos</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/mar-de-copas</loc>
+                        <loc>http://radioperu.pe/es/artists/jean-pierre-vismara</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/mar-de-copas/albums/mar-de-copas</loc>
+                        <loc>http://radioperu.pe/en/artists/jean-pierre-vismara/albums/carpe-diem</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/mar-de-copas/albums/entre-los-arboles</loc>
+                        <loc>http://radioperu.pe/es/artists/oscar-aviles</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/mar-de-copas/albums/iii</loc>
+                        <loc>http://radioperu.pe/en/artists/oscar-aviles/albums/otra-vez-aviles</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/mar-de-copas/albums/suna</loc>
+                        <loc>http://radioperu.pe/en/artists/oscar-aviles/albums/solo-aviles</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/mar-de-copas/albums/ramera</loc>
+                        <loc>http://radioperu.pe/es/artists/rosa-guzman</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/mar-de-copas/albums/de-tierra</loc>
+                        <loc>http://radioperu.pe/en/artists/rosa-guzman/albums/despertar</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/mar-de-copas/albums/si-algo-asi-como-el-amor-esta-en-el-aire</loc>
+                        <loc>http://radioperu.pe/en/artists/rosa-guzman/albums/rememorando</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/inyectores</loc>
+                        <loc>http://radioperu.pe/en/artists/rosa-guzman/albums/rememorando-ii</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/inyectores/albums/bombardero</loc>
+                        <loc>http://radioperu.pe/en/artists/rosa-guzman/albums/privilegios</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/inyectores/albums/rompecaminos</loc>
+                        <loc>http://radioperu.pe/es/artists/andres-prado</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/inyectores/albums/desenchufado-en-vivo</loc>
+                        <loc>http://radioperu.pe/en/artists/andres-prado/albums/solo</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/ray-callao/albums/el-tiempo-y-la-marea</loc>
+                        <loc>http://radioperu.pe/en/artists/andres-prado/albums/chinchano</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/septimo-cielo</loc>
+                        <loc>http://radioperu.pe/en/artists/celso-garrido-lecca/albums/concierto-para-guitarra-y-orquesta</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/septimo-cielo/albums/mil-anos-despues</loc>
+                        <loc>http://radioperu.pe/en/artists/celso-garrido-lecca/albums/sinfonia-n-2-introspecciones</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/septimo-cielo/albums/dulce-adiccion</loc>
+                        <loc>http://radioperu.pe/es/artists/los-romanceros-criollos</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/alfredo-linares-y-su-sonora/albums/salsa-a-todo-sabor</loc>
+                        <loc>http://radioperu.pe/en/artists/los-romanceros-criollos/albums/los-romanceros-criollos</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/trio-ayacucho</loc>
+                        <loc>http://radioperu.pe/es/artists/manongo-mujica</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/trio-ayacucho/albums/trio-ayacucho</loc>
+                        <loc>http://radioperu.pe/en/artists/manongo-mujica/albums/el-sonido-de-los-dioses</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/manongo-mujica/albums/tribal</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/javier-echecopar-mongilardi/albums/lo-mejor-de-javier-echecopar-mongilardi</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/javier-echecopar-mongilardi/albums/composiciones-vol-1</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/javier-echecopar-mongilardi/albums/la-guitarra-en-el-barroco-del-peru</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/javier-echecopar-mongilardi/albums/guitarra-andina-del-peru</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/felix-casaverde/albums/guitarra-negra</loc>
                         </url>
                         <url>
                         <loc>http://radioperu.pe/en/artists/cuarteto-continental/albums/el-autentico-e-imbatible</loc>
                         </url>
                         <url>
                         <loc>http://radioperu.pe/en/artists/los-mirlos/albums/cumbia-amazonica</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/senen-pani</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/senen-pani/albums/cantos-de-sanacion-del-ayahuasca</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/elky-la-chaskanahui</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/elky-la-chaskanahui/albums/las-caricias-de-menkantasperu</loc>
                         </url>
                         <url>
                         <loc>http://radioperu.pe/en/artists/bareto/albums/boleto</loc>
@@ -1318,55 +1282,109 @@
                         <loc>http://radioperu.pe/en/artists/bareto/albums/ves-lo-que-quieres-ver</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/conjunto-lira-paucina</loc>
+                        <loc>http://radioperu.pe/en/artists/quinteto-union-de-cotahuasi/albums/alma-surena</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/conjunto-lira-paucina/albums/lira-paucina</loc>
+                        <loc>http://radioperu.pe/en/artists/ray-callao/albums/el-tiempo-y-la-marea</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/los-hermanos-azpilcueta</loc>
+                        <loc>http://radioperu.pe/en/artists/alfredo-linares-y-su-sonora/albums/salsa-a-todo-sabor</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/los-hermanos-azpilcueta/albums/yaravi-arequipa-y-su-canto</loc>
+                        <loc>http://radioperu.pe/es/artists/los-engreidos-del-peru</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/luis-ayvar-alfaro</loc>
+                        <loc>http://radioperu.pe/en/artists/los-engreidos-del-peru/albums/llora-llora-corazon</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/luis-ayvar-alfaro/albums/winaytakinchiq</loc>
+                        <loc>http://radioperu.pe/es/artists/jul-dun</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/damaris</loc>
+                        <loc>http://radioperu.pe/en/artists/jul-dun/albums/demo-2013</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/damaris/albums/mil-caminos</loc>
+                        <loc>http://radioperu.pe/es/artists/conjunto-sol-andino-de-pachaconas</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/oswaldo-castillo</loc>
+                        <loc>http://radioperu.pe/en/artists/conjunto-sol-andino-de-pachaconas/albums/yawar-fiesta</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/oswaldo-castillo/albums/hermanando-pueblos</loc>
+                        <loc>http://radioperu.pe/en/artists/conjunto-sol-andino-de-pachaconas/albums/bodas-de-plata</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/31</loc>
+                        <loc>http://radioperu.pe/en/artists/conjunto-sol-andino-de-pachaconas/albums/recuerdos</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/dimitri-manga/albums/nueva-sangre-sonidos-del-ande-peruano-vientos</loc>
+                        <loc>http://radioperu.pe/es/artists/los-apus</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/los-apus/albums/huk-sunqulla-apukunamanta</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/los-apus/albums/el-imperio-de-los-apus</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/raul-garcia-zarate</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/raul-garcia-zarate/albums/guitarra-del-peru</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/raul-garcia-zarate/albums/guitarra-del-peru-andino</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/raul-garcia-zarate/albums/el-alma-de-la-guitarra-peruana</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/menores-de-edad/albums/suena-la-ciudad-ep</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/jaime-cuadra</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/jaime-cuadra/albums/cholo-soy-1</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/jaime-cuadra/albums/la-valse-creole-cholo-soy-2</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/jaime-cuadra/albums/cholo-3</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/olaya-sound-system</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/olaya-sound-system/albums/nadar-en-el-cemento</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/olaya-sound-system/albums/nuestra-casa</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/olaya-sound-system/albums/quien-es-quien</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/franco-hamilton</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/franco-hamilton/albums/nudo-de-luces</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/noche-futura</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/noche-futura/albums/dulce-fantasia</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/en/artists/152</loc>
                         </url>
                         <url>
                         <loc>http://radioperu.pe/en/artists/112</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/andres-prado/albums/solo</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/andres-prado/albums/chinchano</loc>
-                        </url>
-                        <url>
                         <loc>http://radioperu.pe/en/artists/6</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/152</loc>
+                        <loc>http://radioperu.pe/en/artists/31</loc>
                         </url>
                         <url>
                         <loc>http://radioperu.pe/en/artists/103</loc>
@@ -1396,108 +1414,90 @@
                         <loc>http://radioperu.pe/en/artists/88</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/felix-casaverde/albums/guitarra-negra</loc>
+                        <loc>http://radioperu.pe/es/artists/andres-prado/albums/solo</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/javier-echecopar-mongilardi/albums/lo-mejor-de-javier-echecopar-mongilardi</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/javier-echecopar-mongilardi/albums/composiciones-vol-1</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/javier-echecopar-mongilardi/albums/la-guitarra-en-el-barroco-del-peru</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/javier-echecopar-mongilardi/albums/guitarra-andina-del-peru</loc>
+                        <loc>http://radioperu.pe/es/artists/andres-prado/albums/chinchano</loc>
                         </url>
                         <url>
                         <loc>http://radioperu.pe/es/artists/jean-pierre-magnet/albums/gozando-al-peru</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/perujazz/albums/perujazz-en-vivo</loc>
+                        <loc>http://radioperu.pe/es/artists/dimitri-manga/albums/nueva-sangre-sonidos-del-ande-peruano-vientos</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/perujazz/albums/mundo-nuevo</loc>
+                        <loc>http://radioperu.pe/es/artists/manongo-mujica/albums/el-sonido-de-los-dioses</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/manongo-mujica/albums/tribal</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/senen-pani/albums/cantos-de-sanacion-del-ayahuasca</loc>
+                        </url>
+                        <url>
+                        <loc>http://radioperu.pe/es/artists/serenata-de-los-andes/albums/en-vivo-la-huaca</loc>
                         </url>
                         <url>
                         <loc>http://radioperu.pe/es/artists/pepe-cespedes/albums/7-pisos</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/en/artists/carlos-carty/albums/machu-picchu-o-segredo-dos-incas</loc>
+                        <loc>http://radioperu.pe/en/artists/perujazz/albums/perujazz-en-vivo</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/senen-pani/albums/cantos-de-sanacion-del-ayahuasca/songs/bewa-icaro-canto-de-preparacion</loc>
+                        <loc>http://radioperu.pe/en/artists/perujazz/albums/mundo-nuevo</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/senen-pani/albums/cantos-de-sanacion-del-ayahuasca/songs/masha-icaro-canto-de-elevacion</loc>
+                        <loc>http://radioperu.pe/es/artists/perujazz/albums/perujazz-en-vivo/songs/salon-de-baile</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/senen-pani/albums/cantos-de-sanacion-del-ayahuasca/songs/raro-bewa-icaro-canto-de-la-alegria</loc>
+                        <loc>http://radioperu.pe/es/artists/perujazz/albums/perujazz-en-vivo/songs/la-marinera</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/senen-pani/albums/cantos-de-sanacion-del-ayahuasca/songs/bewa-icaro-elevado</loc>
+                        <loc>http://radioperu.pe/es/artists/perujazz/albums/perujazz-en-vivo/songs/miles</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/senen-pani/albums/cantos-de-sanacion-del-ayahuasca/songs/icaro-para-curar-a-un-nino</loc>
+                        <loc>http://radioperu.pe/es/artists/perujazz/albums/perujazz-en-vivo/songs/paisaje-costeno</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/senen-pani/albums/cantos-de-sanacion-del-ayahuasca/songs/icaro-al-amanecer</loc>
+                        <loc>http://radioperu.pe/es/artists/perujazz/albums/perujazz-en-vivo/songs/a-george-harrison</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/senen-pani/albums/cantos-de-sanacion-del-ayahuasca/songs/icaro-de-despedida</loc>
+                        <loc>http://radioperu.pe/es/artists/perujazz/albums/perujazz-en-vivo/songs/homenaje-a-perez-prado</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/manongo-mujica/albums/tribal/songs/el-llamado</loc>
+                        <loc>http://radioperu.pe/es/artists/perujazz/albums/perujazz-en-vivo/songs/el-huayno</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/manongo-mujica/albums/tribal/songs/tribu-tribu</loc>
+                        <loc>http://radioperu.pe/es/artists/perujazz/albums/perujazz-en-vivo/songs/el-tren</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/manongo-mujica/albums/tribal/songs/canto-arabe</loc>
+                        <loc>http://radioperu.pe/es/artists/perujazz/albums/perujazz-en-vivo/songs/chincha-saudita</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/manongo-mujica/albums/tribal/songs/rio-madre-de-dios</loc>
+                        <loc>http://radioperu.pe/es/artists/javier-echecopar-mongilardi/albums/lo-mejor-de-javier-echecopar-mongilardi/songs/himno-nacional</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/manongo-mujica/albums/tribal/songs/homenaje-al-mundo-andino</loc>
+                        <loc>http://radioperu.pe/es/artists/javier-echecopar-mongilardi/albums/lo-mejor-de-javier-echecopar-mongilardi/songs/vals-jose-maria</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/manongo-mujica/albums/tribal/songs/el-blues-de-la-selva</loc>
+                        <loc>http://radioperu.pe/es/artists/javier-echecopar-mongilardi/albums/lo-mejor-de-javier-echecopar-mongilardi/songs/festejo</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/manongo-mujica/albums/tribal/songs/el-origen</loc>
+                        <loc>http://radioperu.pe/es/artists/javier-echecopar-mongilardi/albums/lo-mejor-de-javier-echecopar-mongilardi/songs/malbrigo-aire-mestizo-del-norte</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/manongo-mujica/albums/tribal/songs/africana</loc>
+                        <loc>http://radioperu.pe/es/artists/perujazz/albums/mundo-nuevo/songs/king-kong</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/carlos-carty/albums/machu-picchu-o-segredo-dos-incas/songs/danza-inca</loc>
+                        <loc>http://radioperu.pe/es/artists/perujazz/albums/mundo-nuevo/songs/chosica</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/carlos-carty/albums/machu-picchu-o-segredo-dos-incas/songs/apu-inti</loc>
+                        <loc>http://radioperu.pe/es/artists/perujazz/albums/mundo-nuevo/songs/criollo-futurista</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/carlos-carty/albums/machu-picchu-o-segredo-dos-incas/songs/nas-asas-do-condor</loc>
+                        <loc>http://radioperu.pe/es/artists/perujazz/albums/mundo-nuevo/songs/el-plebeyo</loc>
                         </url>
                         <url>
-                        <loc>http://radioperu.pe/es/artists/manongo-mujica/albums/el-sonido-de-los-dioses/songs/intro</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/manongo-mujica/albums/el-sonido-de-los-dioses/songs/ayahuasca</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/manongo-mujica/albums/el-sonido-de-los-dioses/songs/luna-de-arena</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/manongo-mujica/albums/el-sonido-de-los-dioses/songs/alegria</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/manongo-mujica/albums/el-sonido-de-los-dioses/songs/aura</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/manongo-mujica/albums/el-sonido-de-los-dioses/songs/innombrable</loc>
-                        </url>
-                        <url>
-                        <loc>http://radioperu.pe/es/artists/manongo-mujica/albums/el-sonido-de-los-dioses/songs/los-angeles-son-pajaros-disfrazados</loc>
+                        <loc>http://radioperu.pe/es/artists/perujazz/albums/mundo-nuevo/songs/canto-de-tambores</loc>
                         </url>
                         </urlset>
