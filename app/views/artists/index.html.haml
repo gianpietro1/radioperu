@@ -12,7 +12,7 @@
 .row
   .col-md-1
   .col-md-10
-    - Radio.all.shuffle.each do |radio|
+    - Radio.all.each do |radio|
       %h4.artist_catalogue_title
         =t(:random_artists_station) + " " + radio.id.to_s + " (#{radio.description})"
         .pull-right
