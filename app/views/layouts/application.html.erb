@@ -73,7 +73,10 @@
         <div class="pull-right social">
             <%= link_to image_tag("facebook.png", :alt => 'facebook'), 'https://www.facebook.com/radioperu.pe', class: "facebook", :target => "_blank" %>
             <%= link_to image_tag("twitter.png", :alt => 'twitter'), 'https://twitter.com/radioperu_pe', class: "twitter", :target => "_blank" %>
-            <%= link_to image_tag("email.png", :alt => 'email'), 'mailto:contacto@radioperu.pe', class: "email" %>
+            
+            <%# 
+              <%= link_to image_tag("email.png", :alt => 'email'), 'mailto:contacto@radioperu.pe', class: "email" %>
+
         </div>
       </div>
       
@@ -88,6 +91,10 @@
 
     </div>
     
+    <div itemscope itemtype="http://radioperu.pe" class="float-right microdata">
+      <span itemprop="name">radioperu.pe</span>
+      <a itemprop="email" href="mailto:contacto@radioperu.pe">contacto@radioperu.pe</a>
+    </div>
     
   </div>
 
