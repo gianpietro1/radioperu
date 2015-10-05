@@ -1987,8 +1987,16 @@ h1.station_title {
   font-size: 0.9em;
 }
 
-#artist-bio {
+/*#artist-bio {
   font-size: 0.8em;
+}*/
+
+#artist-image img {
+  width: 100%;
+}
+
+#artist-image {
+  width: 35%;
 }
 
 #artist {
