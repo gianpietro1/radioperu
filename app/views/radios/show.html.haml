@@ -18,7 +18,7 @@
 
 .row
   .col-md-1
-  .col-md-6.margin-top-10
+  .col-md-7.margin-top-10
     .radio_container
       %h1.station_title
         = @radio.name.titleize + ' - ' + @radio.description.camelize
@@ -34,7 +34,7 @@
       .listeners
       #album_summary
       #artist_summary
-  .col-md-4.margin-top-10
+  .col-md-3.margin-top-10
     .station_schedule
       %h5.text-center
         = t(:station_schedule)
