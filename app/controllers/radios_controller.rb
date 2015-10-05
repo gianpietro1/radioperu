@@ -17,9 +17,9 @@ class RadiosController < ApplicationController
   end
 
   def program_sponsor
-    @current_program_ajax = Program.find_by_id(params[:current_program_id])
+    @active_program = Program.find_by_id(params[:current_program_id])
     @radio = Radio.find(params[:radio_id])
-    respond_with(@current_program_ajax) do |format|
+    respond_with(@active_program) do |format|
       format.html {render :partial => "programs/program_sponsor" }
     end
   end

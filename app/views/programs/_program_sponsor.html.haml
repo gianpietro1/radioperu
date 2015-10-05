@@ -1,7 +1,13 @@
-- if @current_program_ajax
-  - if @current_program_ajax.banner?
-    = image_tag( @current_program_ajax.banner )
-  - else
-    %div{:class => "default-sponsor default-sponsor-#{@radio.id}"}
-      %em
-        = t(:sponsor_available)
+.radiosponsor-text
+  %span.bold
+    = @active_program.name
+  %span
+    llega gracias a:
+.radiosponsor-image
+  - if @active_program
+    - if @active_program.banner?
+      = image_tag( @active_program.banner )
+    - else
+      %div{:class => "default-sponsor default-sponsor-#{@radio.id}"}
+        %em
+          = t(:sponsor_available)

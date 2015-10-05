@@ -56,7 +56,7 @@
 
   var current_program_id = $('.active_program').attr('id');
 
-  $.ajax({data: { current_program_id: current_program_id, radio_id: radio_id },type: 'get', url: "/" + locale + "/program_sponsor", success: function(r) { $('#station_sponsor').html(r); } });
+  $.ajax({data: { current_program_id: current_program_id, radio_id: radio_id },type: 'get', url: "/" + locale + "/program_sponsor", success: function(r) { $('.listeners').html(r); } });
   
   }
 
