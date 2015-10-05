@@ -511,8 +511,9 @@ h1.station_title {
   border: 1px solid #ececec;
   color: #3c3c33;
   padding: 5px;
-  margin-top: 10px;
-  clear: both;
+  margin: 10px 0px 0px 5px;
+  float: left;
+  width: 68.5%;
 }
 
 #artist-image {
@@ -527,13 +528,13 @@ h1.station_title {
 }
 
 .listeners {
-  height: 100px;    
+  height: 261px;    
   border-radius: 10px;
   border: 1px solid #ececec;
   color: #3c3c33;
   padding: 6px;
   margin-top: 10px;
-  width: 33.5%;
+  width: 30.5%;
   float:left;
   margin-bottom: 10px;
   overflow-y: auto;
@@ -549,7 +550,7 @@ h1.station_title {
   color: #3c3c33;
   padding: 8px;
   margin: 10px 0px 0px 5px;
-  width: 65.5%;
+  width: 68.5%;
   float:left;
   font-size: 0.9em;
   line-height: 1.3;
@@ -626,11 +627,12 @@ h1.station_title {
 }
 
 .default-sponsor {
-  height: 50px;
+  height: 200px;
   font-size: 1em;
   padding: 10px;
-  padding: 1%;
-  text-align: center
+  padding-top: 40%;
+  text-align: center;
+  border-radius: 10%;
 }
 
 .active_program_1 {
@@ -1506,8 +1508,8 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 }
 
 
-.album-info {
- width: 65%;
+.album-info, .artist-info {
+ width: 68%;
 }
 /*
 .album-summary {
@@ -1760,7 +1762,7 @@ hr {
 }
 
 
-.album-info {
+.album-info, .artist-info {
   overflow: auto
 }
 
@@ -1966,10 +1968,9 @@ h3.catalogue_title {
   overflow: auto
 }
 
-.album-info {
-  font-size: 0.7em;
-  font-weight: normal;
-  width: 64%;
+.album-info, .artist-info {
+  font-size: 0.8em;
+  width: 67%;
 }
 
 .radionav a {
@@ -2118,8 +2119,8 @@ h4.artist_catalogue_title {
   word-wrap: break-word;
 }
 
-.album-info {
-  width: 63%;
+.album-info, .artist-info {
+  width: 66%;
 }
 
 }
@@ -2149,8 +2150,8 @@ h4.artist_catalogue_title {
   margin-right:-5px;
 }
 
-.album-info {
-  width: 62%;
+.album-info, .artist-info {
+  width: 65%;
 }
 
 }

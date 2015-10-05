@@ -14,12 +14,11 @@
         = @album.name
       #album-year.margin-left-01
         = @album.year
-
   - else
     .pull-left
       #album-cover
         = image_tag( 'default_album_thumb.jpg' )
-    .pull-left.album-summary
+    .album-summary
       .margin-bottom-00
         %em
           = t(:album)
