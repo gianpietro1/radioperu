@@ -11,9 +11,11 @@
           %th.text-center
             Tiene Canciones?
           %th.text-center
-            Creación
+            Creación del Artista
           %th.text-center
-            Última Actualización
+            Última Actualización Artista
+          %th.text-center
+            Última Actualización Álbum
       %tbody
         - @artists.each do |artist|
           %tr
@@ -30,7 +32,12 @@
               - else
                 No
             %td
-              = artist.created_at.strftime("%d-%m-%Y")
+              = artist.created_at.strftime("%d-%m-%Y %H:%M")
             %td
-              = artist.updated_at.strftime("%d-%m-%Y")
+              = artist.updated_at.strftime("%d-%m-%Y %H:%M")
+            %td
+              - if artist.albums.count > 0
+                = artist.latest_album_update.strftime("%d-%m-%Y %H:%M")
+              - else
+                = ''
   .col-md-2

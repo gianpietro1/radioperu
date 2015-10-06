@@ -25,6 +25,14 @@ class Artist < ActiveRecord::Base
     UpdatesMailer.new_artist_update(self).deliver
   end
 
+  def latest_album_update
+    array = []
+    self.albums.map do |album|
+      array << album.updated_at
+    end
+    return array.max
+  end
+
 protected
 
   def smart_add_url_protocol
