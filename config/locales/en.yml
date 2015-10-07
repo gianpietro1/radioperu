@@ -121,7 +121,8 @@ en:
   program_delete_error: "Error deleting the program"
   edit: "[edit]"
   adminedit: "[edit admin]"
-  sponsor_available: "Sponsorship available for this program"
+  sponsor_available: "Sponsorship available for this program - Info: contacto @ radioperu.pe"
+  sponsor_available_catalogue: "Sponsorship available for the catalogue - Info: contacto @ radioperu.pe"
   peru_time: "Current Peru Time"
   #Search Categories
   artists: "Artists"
