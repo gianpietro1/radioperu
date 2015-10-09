@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'admin' => 'admin#index'
+  get 'test' => 'test#index'
 
   scope "(:locale)", locale: /es|en/ do
     root to: 'welcome#index'
