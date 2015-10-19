@@ -2,3 +2,41 @@
   Test Radioconciertos
 
 <script src="http://player.radiocdn.com/iframe.js?hash=056fcd16319e21611f5299d4e99663e8d953c477-118-41"></script>
+
+#artist
+#song
+
+= javascript_include_tag 'jquery.shoutcast.min.js'
+
+%script{:type=>"text/javascript"}
+
+  // Set variables
+  var locale = "#{I18n.locale}";
+  songtitle_old = 0
+  songtitle_new = 1
+  
+
+  function update_artist(){
+
+  $.SHOUTcast({host: 'eclipse.wavestreamer.com',port: 9890}).stats(function(){
+ 
+  songtitle_new = this.get('songtitle');
+  
+  if (songtitle_new != songtitle_old) {
+  // Get or format variables
+  artist = songtitle_new.substring(0, this.get('songtitle').indexOf(" - "));
+  song = songtitle_new.substring(this.get('songtitle').indexOf(" - ") + 3);
+  }
+  // Append artist and song to player
+  $('#artist').text(artist);
+  $('#song').text(song);
+  
+  songtitle_old = songtitle_new;
+  });
+  }
+
+  
+  update_artist();
+  setInterval(update_artist,5000);
+  
+ 
