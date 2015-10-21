@@ -280,6 +280,11 @@ textarea.form-control {
 
 }
 
+.snapwidget-widget {
+  border:none;
+  overflow:hidden;
+  width:80%;
+}
 
 .about_link {
   background-color: #3c3c33;
@@ -1484,6 +1489,12 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 
 @media screen and (max-width: 1350px) {
 
+/* Welcome */
+
+.snapwidget-widget {
+  width:90%;
+}
+
 /* Radio Stations */
 
 .radionav a {
@@ -1529,6 +1540,10 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 
 .search {
   margin-right: 28px;
+}
+
+.snapwidget-widget {
+  width:100%;
 }
 
 /* Radio Stations */
