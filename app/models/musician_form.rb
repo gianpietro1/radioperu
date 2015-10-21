@@ -7,6 +7,8 @@ class MusicianForm < MailForm::Base
   attribute :musician_comments,       :validate => false
   attributes :nickname,   :captcha => true
 
+  append :remote_ip, :user_agent
+
   # Declare the e-mail headers. It accepts anything the mail method
   # in ActionMailer accepts.
   def headers
