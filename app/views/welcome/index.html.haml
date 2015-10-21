@@ -53,7 +53,7 @@
     .social-timelines-inner-fb.social-timelines-inner
       %h4
         Facebook
-      %div{class:"fb-page", "data-href"=>"https://www.facebook.com/radioperu.pe", "data-small-header"=>"false", "data-adapt-container-width"=>"true", "data-hide-cover"=>"false", "data-show-facepile"=>"true", "data-show-posts"=>"true"}
+      %div{class:"fb-page", "data-href"=>"https://www.facebook.com/radioperu.pe", "data-small-header"=>"true", "data-adapt-container-width"=>"true", "data-hide-cover"=>"true", "data-show-facepile"=>"true", "data-show-posts"=>"true"}
         .fb-xfbml-parse-ignore
           %blockquote{cite:"https://www.facebook.com/radioperu.pe"}
             %a{href:"https://www.facebook.com/radioperu.pe"}
@@ -68,9 +68,15 @@
     .social-timelines-inner-in.social-timelines-inner
       %h4
         Instagram
-      %iframe{src:"http://snapwidget.com/in/?u=cmFkaW9wZXJ1LnBlfGlufDEyNXwyfDN8fG5vfDV8bm9uZXxvblN0YXJ0fHllc3x5ZXM=&ve=201015", title:"Instagram Widget", class:"snapwidget-widget", allowTransparency:"true", frameborder:"0",scrolling:"no"}
-     
+      %ul{id:"instagram"}
+
 %script{:type=>"text/javascript"}
+  
+  $("#instagram").jqinstapics({
+  "user_id": "2239742174",
+  "access_token": "2239742174.674061d.b5f539d24131481692446e74771ec573",
+  "count": 6
+  });
 
   $.widget( "custom.catcomplete", $.ui.autocomplete, {
   _create: function() {

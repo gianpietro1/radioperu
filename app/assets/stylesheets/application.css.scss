@@ -264,7 +264,7 @@ textarea.form-control {
 
 .social-timelines-inner {
   float: left;
-  width: 30%;
+  width: 31%;
   margin: 0 1%;
 }
 
@@ -276,14 +276,21 @@ textarea.form-control {
 
 }
 
-.social-timelines-inner-in {
-
+.social-timelines-inner-in img {
+  width: 80%;
+  box-shadow: 3px 3px 3px #777;
 }
 
-.snapwidget-widget {
-  border:none;
-  overflow:hidden;
-  width:80%;
+#instagram {
+  margin:0 auto;
+  padding:0;
+  overflow:auto;
+  height: 500px;
+}
+
+#instagram li {
+  list-style:none;
+  margin: 5px auto;
 }
 
 .about_link {
@@ -1489,12 +1496,6 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 
 @media screen and (max-width: 1350px) {
 
-/* Welcome */
-
-.snapwidget-widget {
-  width:90%;
-}
-
 /* Radio Stations */
 
 .radionav a {
@@ -1540,10 +1541,6 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 
 .search {
   margin-right: 28px;
-}
-
-.snapwidget-widget {
-  width:100%;
 }
 
 /* Radio Stations */
