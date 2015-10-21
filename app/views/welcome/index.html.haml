@@ -14,7 +14,7 @@
       = text_field_tag :search, params[:search], placeholder: "#{t(:search_text)}", size: 50, class: 'search-field'
   .col-md-1
 
-.row.margin-top-15
+.row.margin-top-05
   .col-md-1
   .col-md-10
     .radios
@@ -26,17 +26,18 @@
             %br
             %span.radiodescription
               =@radios.find_by(id:i).description
+      %a.catalogue{ href: artists_path, data_description: t(:catalogue) }
+        %h3
+          = t(:catalogue)
+          %br
+          %span.small
+            = t(:catalogue_description)
   .col-md-1
 
 .row.margin-top-10
   .col-md-2
   .col-md-6 
-    %a.catalogue{ href: artists_path, data_description: t(:catalogue) }
-      %h3
-        = t(:catalogue)
-        %br
-        %span.small
-          = t(:catalogue_description)
+
   /.col-md-2
   /  %a.listener{ href: new_user_registration_path, data_description: t(:register_as_listener) }
   /    %h5
@@ -47,6 +48,30 @@
         = t(:register_as_musician)
   .col-md-2
 
+.row.margin-top-05
+  .col-md-1
+  .col-md-10
+    .social-timelines-outer
+      .social-timelines-inner-fb.social-timelines-inner
+        %h4
+          Facebook
+        %div{class:"fb-page", "data-href"=>"https://www.facebook.com/radioperu.pe", "data-small-header"=>"false", "data-adapt-container-width"=>"true", "data-hide-cover"=>"false", "data-show-facepile"=>"true", "data-show-posts"=>"true"}
+          .fb-xfbml-parse-ignore
+            %blockquote{cite:"https://www.facebook.com/radioperu.pe"}
+              %a{href:"https://www.facebook.com/radioperu.pe"}
+                radioperu.pe
+
+      .social-timelines-inner-tw.social-timelines-inner
+        %h4
+          Twitter
+        %a{class:"twitter-timeline", href:"https://twitter.com/radioperu_pe", "data-widget-id"=>"656674867807408128", width:"340", height:"500"}
+          Tweets por @radioperu_pe
+
+      .social-timelines-inner-in.social-timelines-inner
+        %h4
+          Instagram
+        %iframe{src:"http://snapwidget.com/in/?u=cmFkaW9wZXJ1LnBlfGlufDEyNXwyfDN8fG5vfDV8bm9uZXxvblN0YXJ0fHllc3x5ZXM=&ve=201015", title:"Instagram Widget", class:"snapwidget-widget", allowTransparency:"true", frameborder:"0",scrolling:"no",style:"border:none;overflow:hidden;width:100%;"}
+     
 %script{:type=>"text/javascript"}
 
   $.widget( "custom.catcomplete", $.ui.autocomplete, {

@@ -14,6 +14,17 @@
 </head>
 <body data-no-turbolink>
 
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5&appId=440598459358292";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  <script src="http://snapwidget.com/js/snapwidget.js"></script>
+
   <div class="container-fluid">
 
     <div class="row container-top">
@@ -89,12 +100,12 @@
 
     <%= yield %>
 
-    </div>
+  </div>
     
-    <div itemscope itemtype="http://radioperu.pe" class="float-right microdata">
-      <span itemprop="name">radioperu.pe - </span>
-      <a itemprop="email">contacto @ radioperu . pe</a>
-    </div>
+  <div itemscope itemtype="http://radioperu.pe" class="float-right microdata">
+    <span itemprop="name">radioperu.pe - </span>
+    <a itemprop="email">contacto @ radioperu . pe</a>
+  </div>
     
   </div>
 

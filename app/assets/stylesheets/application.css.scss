@@ -255,6 +255,32 @@ textarea.form-control {
   box-shadow: 0 5px 3px -3px #777;
 }
 
+.social-timelines-outer {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  font-family: 'Myriad Pro Semibold';
+}
+
+.social-timelines-inner {
+  float: left;
+  width: 30%;
+  margin: 0 1%;
+}
+
+.social-timelines-inner-fb {
+
+}
+
+.social-timelines-inner-tw {
+
+}
+
+.social-timelines-inner-in {
+
+}
+
+
 .about_link {
   background-color: #3c3c33;
   font-size: 0.8em;
@@ -289,7 +315,7 @@ textarea.form-control {
 .station1,.station2,.station3,.station4,.station5 {
   display: block;
   width: 19.5%;
-  height: 340px;
+  height: 280px;
   float: left;
   margin: 2px;
   text-align: center;
@@ -301,7 +327,7 @@ textarea.form-control {
   height: 28%;
   margin: auto;
   color: #f6f3e4;
-  margin-top: 220px;
+  margin-top: 120px;
   padding: 10px;
 }
 
@@ -342,19 +368,25 @@ textarea.form-control {
 
 .catalogue {
   display: block;
-  width: 100%;
-  height: 100px;
-  background-color: #f6f3e4;
-  border: 1px solid #ececec;
-  color: #3c3c33;
+  width: 99.5%;
+  height: 70px;
+  background-color: #333333;
+  border: 2px solid #d5d2d4;
+  color: #d5d2d4;
   text-transform: lowercase;
-  line-height: 85px;
-  background: asset-url('catalogue.png') no-repeat left;
+  /*background: asset-url('catalogue.png') no-repeat left;
   background-size: 75px 75px;
-  background-position: 10px;
-  text-align: left;
-  padding-left: 28%;
+  background-position: 10px;*/
+  text-align: center;
   float: left;
+}
+
+.catalogue h3 {
+  margin-top: 10px;
+}
+
+.catalogue span {
+  color: #d5d2d4;
 }
 
 .catalogue:hover {
@@ -369,6 +401,7 @@ textarea.form-control {
 
 .musician {
   background: asset-url('musician.png') no-repeat left;
+  display: none;
 }
 
 .listener {
@@ -376,7 +409,7 @@ textarea.form-control {
 }
 
 .listener, .musician {
-  display: block;
+  display: none;
   background-size: 75px 75px;
   background-position: 10px;
   float: left;
@@ -1440,7 +1473,7 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 /* Welcome Screen */
 
 .station1,.station2,.station3,.station4,.station5 {
-  background-size: 180px 340px;
+  background-size: 180px 280px;
 }
 
 .landing {
@@ -1478,15 +1511,16 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
   width: 19%;
 }
 
+.catalogue {
+ width: 97%;
+ margin: 0 auto;
+}
+
 .musician {
   width: 90%;
   padding-left: 40%;
   background-size: 40px 40px;
   background-position: 7px;
-}
-
-.catalogue {
-  padding-left: 22%
 }
 
 .slogan-animation {
@@ -1520,7 +1554,7 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 /* Welcome page */
 
 .stationlink {
-  margin-top: 200px;
+  margin-top: 120px;
   height: 30%;
 }
 
@@ -1583,13 +1617,6 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 
 .logo img {
   width: 300px;
-}
-
-.catalogue {
-  margin: 10px 3px;
-}
-
-.catalogue h3 {
 }
 
 .musician {
@@ -1732,7 +1759,13 @@ hr {
 
 .station1,.station2,.station3,.station4,.station5 {
   margin: 1px;
-  height: 300px;
+  height: 260px;
+  background-size: 180px 260px;
+}
+
+.social-timelines-inner {
+  clear: both;
+  width: 100%;
 }
 
 /* Radio Stations */
@@ -1907,8 +1940,9 @@ h3.catalogue_title {
 }
 
 .station1,.station2,.station3,.station4,.station5 {
-  height: 200px;
+  height: 180px;
   margin: 1px;
+  background-size: 180px 180px;
 }
 
 .slogan-animation {
