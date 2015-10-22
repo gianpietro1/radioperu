@@ -395,10 +395,10 @@ textarea.form-control {
   display: block;
   width: 99.5%;
   height: 70px;
-  background-color: #3c3c33;
-  box-shadow: 0 5px 3px -3px #777;
-  border: 2px solid #d5d2d4;
-  color: #f6f3e4;
+  background-color: #fff;
+  box-shadow: 0 5px 5px -3px #777;
+  border: 1px solid #e0e0e0;
+  color: #3c3c33;
   text-transform: lowercase;
   /*background: asset-url('catalogue.png') no-repeat left;
   background-size: 75px 75px;
@@ -412,13 +412,14 @@ textarea.form-control {
 }
 
 .catalogue span {
-  color: #f6f3e4;
+  color: #3c3c33;
 }
 
 .catalogue:hover {
-  opacity: 0.9;
+  background-color: rgba(60, 60, 51, 0.3);
   box-shadow: 0 10px 6px -6px #777;
-  color: #f6f3e4;
+  color: #3c3c33;
+  z-index: 0;
 }
 
 .catalogue h3 {
@@ -1771,6 +1772,10 @@ hr {
   font-size: 4em
 }
 
+.catalogue {
+  width: 96.5%;
+}
+
 .radiotitle {
   font-size: 1em;
 }
@@ -1906,6 +1911,7 @@ h3.catalogue_title {
 
 .catalogue {
   height: 55px;
+  width: 97.5%;
 }
 
 .container-fluid {

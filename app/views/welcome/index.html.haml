@@ -34,9 +34,7 @@
             = t(:catalogue_description)
   .col-md-1
 
-.row.welcome_div.margin-top-15
-  %h4.text-center
-    = t(:radioperu_in_social_networks)
+.row.welcome_div.margin-top-20
 
 .row.margin-top-05
   .social-timelines-outer
@@ -46,21 +44,19 @@
       %div{class:"fb-page", "data-href"=>"https://www.facebook.com/radioperu.pe", "data-small-header"=>"true", "data-adapt-container-width"=>"true", "data-hide-cover"=>"true", "data-show-facepile"=>"true", "data-show-posts"=>"true"}
         .fb-xfbml-parse-ignore
           %blockquote{cite:"https://www.facebook.com/radioperu.pe"}
-            %a{href:"https://www.facebook.com/radioperu.pe"}
+            %a{href:"https://www.facebook.com/radioeru.pe"}
               radioperu.pe
-
-    .social-timelines-inner-tw.social-timelines-inner
-      %h5.text-center
-        = link_to 'twitter - radioperu.pe', 'https://twitter.com/radioperu_pe'
-      %a{class:"twitter-timeline", href:"https://twitter.com/radioperu_pe", "data-widget-id"=>"656674867807408128", width:"340", height:"493"}
-        Tweets por @radioperu_pe
 
     .social-timelines-inner-in.social-timelines-inner
       %h5.text-center
         = link_to 'instagram - radioperu.pe', 'https://instagram.com/radioperu.pe'
       %ul{id:"instagram"}
 
-
+    .social-timelines-inner-tw.social-timelines-inner
+      %h5.text-center
+        = link_to 'twitter - radioperu.pe', 'https://twitter.com/radioperu_pe'
+      %a{class:"twitter-timeline", href:"https://twitter.com/radioperu_pe", "data-widget-id"=>"656674867807408128", width:"340", height:"493", "data-lang"=>"es"}
+        Tweets por @radioperu_pe
 
 %script{:type=>"text/javascript"}
   
