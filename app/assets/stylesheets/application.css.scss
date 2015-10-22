@@ -269,15 +269,19 @@ textarea.form-control {
 }
 
 .social-timelines-inner-fb {
-
+  border: 1px solid #e8e8e8;
 }
 
 .social-timelines-inner-tw {
+  border: 1px solid #e8e8e8;
+}
 
+.social-timelines-inner-in {
+  border: 1px solid #e8e8e8;
 }
 
 .social-timelines-inner-in img {
-  width: 80%;
+  width: 100%;
   box-shadow: 3px 3px 3px #777;
 }
 
@@ -285,7 +289,7 @@ textarea.form-control {
   margin:0 auto;
   padding:0;
   overflow:auto;
-  height: 500px;
+  height: 499px;
 }
 
 #instagram li {
@@ -332,6 +336,7 @@ textarea.form-control {
   margin: 2px;
   text-align: center;
   background-size: 250px;
+  box-shadow: 0 2px 1px -1px #777;
 }
 
 .stationlink {
@@ -378,13 +383,22 @@ textarea.form-control {
   font-size: 1.0em;
 }
 
+.welcome_div {
+  border-top: 1px solid #e0e0e0;
+}
+
+.btn {
+  text-transform: lowercase;
+}
+
 .catalogue {
   display: block;
   width: 99.5%;
   height: 70px;
-  background-color: #333333;
+  background-color: #3c3c33;
+  box-shadow: 0 5px 3px -3px #777;
   border: 2px solid #d5d2d4;
-  color: #d5d2d4;
+  color: #f6f3e4;
   text-transform: lowercase;
   /*background: asset-url('catalogue.png') no-repeat left;
   background-size: 75px 75px;
@@ -398,12 +412,13 @@ textarea.form-control {
 }
 
 .catalogue span {
-  color: #d5d2d4;
+  color: #f6f3e4;
 }
 
 .catalogue:hover {
   opacity: 0.9;
   box-shadow: 0 10px 6px -6px #777;
+  color: #f6f3e4;
 }
 
 .catalogue h3 {
@@ -1778,6 +1793,7 @@ hr {
 .social-timelines-inner {
   clear: both;
   width: 100%;
+  margin-bottom: 10px;
 }
 
 /* Radio Stations */
@@ -1820,7 +1836,6 @@ hr {
 .artist_divright a {
   word-wrap: break-word;
 }
-
 
 .song-video iframe {
   width: 320px;
@@ -1889,6 +1904,10 @@ h3.catalogue_title {
   width: 200px;
 }
 
+.catalogue {
+  height: 55px;
+}
+
 .container-fluid {
   padding: 8px 10px;
 }
@@ -1922,7 +1941,7 @@ h3.catalogue_title {
   margin-left: 17px;
 }
 
-.blackbtn {
+.login_btn {
   margin-right: 17px;
 }
 

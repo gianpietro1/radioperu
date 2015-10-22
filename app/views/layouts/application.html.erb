@@ -47,7 +47,8 @@
             <span class="glyphicon glyphicon-log-out"></span>
           <% end %>
         <% else %>
-          <%= link_to (t :login), new_user_session_path, class: 'btn blackbtn' %>
+          <%= link_to (t :register_as_musician), '/soymusico', class: 'btn blackbtn' %>        
+          <%= link_to (t :login), new_user_session_path, class: 'btn blackbtn login_btn' %>
         <% end %>
 
       </div>

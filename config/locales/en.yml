@@ -29,10 +29,11 @@ en:
   register_as_musician: "register as a musician"
   search_text: "Search Artists, Albums and Songs"
   search: "Search"
-  login: "Login"
+  login: "login"
   greetings: "Hi"
   about: "about the project"
   some_voices: "Some voices..."
+  radioperu_in_social_networks: "radioperu.pe in social networks"
   # Artists
   artist_name: "Artist Name"
   artist_city: "City"
@@ -141,7 +142,7 @@ en:
   radioperu_about: "About the radioperu.pe project"
   in_radioperu: "in #radioperu"
   # Devise
-  login: "Login"
+  login: "login"
   email: "Email"
   remember_me: "Remember me"
   sign_up: "Sign Up"
