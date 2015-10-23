@@ -17,6 +17,10 @@ class ArtistsController < ApplicationController
     authorize @artist
     @albums = @artist.albums
     @songs = @artist.songs
+
+    rescue ActiveRecord::RecordNotFound  
+      redirect_to :root
+      
   end
 
   def artist_summary
