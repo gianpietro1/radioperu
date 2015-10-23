@@ -14,7 +14,7 @@
       =t(:artists_from_station) + " " + @radio.id.to_s + " (#{@radio.description})"
       .row.artists_container{:id => "artist_container#{@radio.id}"}
         - @artists.each do |artist|
-          %a{ href: artist_path(artist.id), class: "artist_thumb text-center"}
+          %a{ href: "/#{I18n.locale.to_s}/" + artist.slug, class: "artist_thumb text-center"}
             - if artist.image?
               = image_tag( artist.image.thumb )
             - else

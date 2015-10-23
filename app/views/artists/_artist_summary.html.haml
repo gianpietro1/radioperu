@@ -2,9 +2,9 @@
   -if @artist
     #artist-image
       -unless @artist.image.file == nil
-        = link_to image_tag( @artist.image.midsize ), @artist, target: "_blank"
+        = link_to image_tag( @artist.image.midsize ), "/#{I18n.locale.to_s}/" + @artist.slug, target: "_blank"
       -else
-        = link_to image_tag( 'default_artist_midsize.jpg' ), @artist, target: "_blank"      
+        = link_to image_tag( 'default_artist_midsize.jpg' ), "/#{I18n.locale.to_s}/" + @artist.slug, target: "_blank"      
     #artist-bio
       - unless @artist.bio.nil? || @artist.bio.empty?
         = @artist.bio

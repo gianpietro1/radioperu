@@ -82,7 +82,7 @@
             %li{id: "li"}
               .pointer
                 - if song.name != ''
-                  =link_to raw("&#10138;"), [@artist,@album,song]
+                  =link_to raw("&#10138;"), '/' + I18n.locale.to_s + '/' + @artist.slug + '/albums/' + @album.slug + '/songs/' + song.slug
               - offset = ENV["SOUND_OFFSET"].to_i
               - if song.filename.file
                 %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.filename.file.basename + '#' + ".mp3"}

@@ -73,7 +73,7 @@
     .artist_albums
       - @albums.each do |album|
         .row
-          %a{ href: artist_album_path(@artist,album.slug), class: "artist_album"}
+          %a{ href: '/' + I18n.locale.to_s + '/' + @artist.slug + '/albums/' + album.slug, class: "artist_album"}
             .artist_album_thumb
               -if album.cover?
                 = image_tag( album.cover.thumb )
