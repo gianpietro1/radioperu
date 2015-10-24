@@ -29,6 +29,12 @@ class PlaylistsController < ApplicationController
   def edit
   end
 
+  def sound_offset_pl
+    respond_with() do |format|
+      format.html {render :partial => "sound_offset_pl" }
+    end
+  end
+
   def add_to_playlist
     @song = Song.find(params[:song_id])
     @playlist = current_user.playlists.first

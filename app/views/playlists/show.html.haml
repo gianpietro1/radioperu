@@ -15,7 +15,7 @@
                   =link_to raw("&#10138;"), [song.album.artist,song.album,song]
               - offset = ENV["SOUND_OFFSET"].to_i
               - if song.filename.file
-                %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.filename.file.basename + '#' + ".mp3"}
+                %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.filename.file.basename + '#' + song.album.name + '#' + song.album.artist.name + '#' + ".mp3"}
                   = song.album.artist.name + " - " + song.name
           .col-md-1
             = link_to "", "javascript:;", class: "add_to_playlist btn btn-sm btn-danger glyphicon glyphicon-minus-sign #{song.id}", id: song.id   
@@ -23,15 +23,13 @@
 %script{:type=>"text/javascript"}
 
   var locale = "#{I18n.locale}";
-  var album_name = "#{@album.name}"
+  playlist = 1
 
   function sound_offset(){
-  $.ajax({data: { album_name: album_name }, type: 'get', url: "/" + locale + "/sound_offset",
+  $.ajax({type: 'get', url: "/" + locale + "/sound_offset_pl",
   success: function(r) { 
   smglch_offset = parseInt(r.split('#')[0]);
   smglch_hash1 = r.split('#')[1];
-  smglch_hash2 = r.split('#')[2];
-  smglch_hash3 = r.split('#')[3];
   }});
   }
 

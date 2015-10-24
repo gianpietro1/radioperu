@@ -582,7 +582,7 @@ function PagePlayer() {
 
       //glch addition
       //soundURL = o.href;
-      soundURL = "http://" + window.location.host + smglch_hash1 + "/" + smglch_hash2 + "/" + smglch_hash3 + "/" + (o.getAttribute('href').split('#')[2+smglch_offset] + ".mp3");
+      soundURL = "http://" + window.location.host + smglch_hash1 + "/" + o.getAttribute('href').split('#')[4+smglch_offset] + "/" + o.getAttribute('href').split('#')[3+smglch_offset] + "/" + (o.getAttribute('href').split('#')[2+smglch_offset] + ".mp3");
 
       thisSound = self.getSoundByObject(o);
 
