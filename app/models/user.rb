@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :artists
   has_many :albums
   has_many :songs
+  has_many :playlists
   
   def admin?
     role == 'admin'

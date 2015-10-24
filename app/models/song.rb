@@ -12,6 +12,8 @@ class Song < ActiveRecord::Base
   belongs_to :album
   belongs_to :genre
   belongs_to :user
+  has_many :playlist_songs, dependent: :destroy
+  has_many :playlists, through: :playlist_songs
 
   mount_uploader :filename, FilenameUploader
 
@@ -28,6 +30,15 @@ class Song < ActiveRecord::Base
   def send_update_email
     UpdatesMailer.new_song_update(self.album.artist,self).deliver
   end
+
+  def add_to_playlist(playlist_id)
+    PlaylistSong.create(playlist_id: playlist_id, song_id: self.id)
+  end
+
+  def remove_from_playlist(playlist_id)
+    PlaylistSong.find_by(playlist_id: playlist_id, song_id: self.id).delete
+  end
+
 
   private
 

@@ -79,28 +79,35 @@
           %h5.playlist_title
             =t(:click_to_play_arrow_for_details)
           - @songs.each do |song|
-            %li{id: "li"}
-              .pointer
-                - if song.name != ''
-                  =link_to raw("&#10138;"), '/' + I18n.locale.to_s + '/' + @artist.slug + '/albums/' + @album.slug + '/songs/' + song.slug
-              - offset = ENV["SOUND_OFFSET"].to_i
-              - if song.filename.file
-                %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.filename.file.basename + '#' + ".mp3"}
-                  - if @songs.last.discnum && @songs.last.discnum > 1                 
-                    - if song.track
-                      = format('%02d', song.discnum).to_s + '-' + format('%02d', song.track).to_s + ' ' + song.name
-                    - elsif song.name
-                      = '00' + ' ' + song.name
-                  - else
-                    - if song.track
-                      = format('%02d', song.track).to_s + ' ' + song.name
-                    - elsif song.name
-                      = '00' + ' ' + song.name           
-      %p.margin-top-10
-        - if @artist.albums.count > 1
-          = link_to '<', [@artist,@album.prev(@albums_array,@artist)], class: 'btn btn-info btn-sm pull-left'
-          = link_to '>', [@artist,@album.next(@albums_array,@artist)], class: 'btn btn-info btn-sm pull-right'
+            .col-md-11
+              %li{id: "li"}
+                .pointer
+                  - if song.name != ''
+                    =link_to raw("&#10138;"), '/' + I18n.locale.to_s + '/' + @artist.slug + '/albums/' + @album.slug + '/songs/' + song.slug
+                - offset = ENV["SOUND_OFFSET"].to_i
+                - if song.filename.file
+                  %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.filename.file.basename + '#' + ".mp3"}
+                    - if @songs.last.discnum && @songs.last.discnum > 1                 
+                      - if song.track
+                        = format('%02d', song.discnum).to_s + '-' + format('%02d', song.track).to_s + ' ' + song.name
+                      - elsif song.name
+                        = '00' + ' ' + song.name
+                    - else
+                      - if song.track
+                        = format('%02d', song.track).to_s + ' ' + song.name
+                      - elsif song.name
+                        = '00' + ' ' + song.name  
+            .col-md-1
+              = link_to "", "javascript:;", class: "add_to_playlist btn btn-sm btn-success glyphicon glyphicon-plus-sign", id: song.id
   .col-md-4
+
+.row
+  .col-md-1
+  .col-md-6
+    .margin-top-10
+      - if @artist.albums.count > 1
+        = link_to '<', [@artist,@album.prev(@albums_array,@artist)], class: 'btn btn-info btn-sm pull-left'
+        = link_to '>', [@artist,@album.next(@albums_array,@artist)], class: 'btn btn-info btn-sm pull-right'
 
 = render partial: 'sponsors/sponsorbanner'
 
@@ -120,3 +127,17 @@
   }
 
   sound_offset();
+
+
+  $(".add_to_playlist").click(function() {
+
+  var song_id = $(this).attr('id');
+
+  // Ajax call add to playlist with song_id
+  if( $('#'+song_id).hasClass("clicked") ) {        
+  $.ajax({data: { song_id: song_id }, type: 'post', url: "/" + locale + "/remove_from_playlist", success: function() { $('#'+song_id).removeClass( "clicked" ); } });
+  } else {
+  $.ajax({data: { song_id: song_id }, type: 'post', url: "/" + locale + "/add_to_playlist", success: function() { $('#'+song_id).addClass( "clicked" ); } });
+  }
+
+  });

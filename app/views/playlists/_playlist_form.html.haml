@@ -1,0 +1,9 @@
+= form_for playlist do |f|  
+  .row
+    .col-md-6
+      .form_group
+        = f.label t(:playlist_name)
+        = f.text_field :name, class: 'form-control'
+      .form_group.pull-right
+        = link_to t(:cancel), playlists_path, class: "btn btn-danger"
+        = f.submit t(:form_save), class: 'btn btn-success'

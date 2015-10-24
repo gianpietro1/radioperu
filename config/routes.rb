@@ -10,11 +10,14 @@ Rails.application.routes.draw do
     end
     resources :musician_forms, only: [:new, :create]
     devise_for :users
+    resources :playlists
     resources :artists do
       resources :albums, except: [:index] do
         resources :songs, except: [:index]
       end
     end
+    post 'add_to_playlist' => 'playlists#add_to_playlist'
+    post 'remove_from_playlist' => 'playlists#remove_from_playlist'
     get 'soymusico' => 'musician_forms#new'
     get 'artist_summary' => 'artists#artist_summary'
     get 'album_summary' => 'albums#album_summary'

@@ -1,0 +1,31 @@
+= render partial: 'artists/artists_header'
+
+.row
+  .col-md-1
+  .col-md-10
+    %div{"oncontextmenu"=>"return false"}
+      %ul.playlist
+        %h5.playlist_title
+          = @playlist.name
+        - @playlist.songs.each do |song|
+          .col-md-11
+            %li{id: "li", class: "#{song.id}"}
+              .pointer
+                - if song.name != ''
+                  =link_to raw("&#10138;"), [song.album.artist,song.album,song]
+              - if song.filename.file
+                %a{ href: song.album.artist.name + '#' + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.album.name + '#' + song.filename.file.basename + '#' + ".mp3"}
+                  = song.album.artist.name + " - " + song.name
+          .col-md-1
+            = link_to "", "javascript:;", class: "add_to_playlist btn btn-sm btn-danger glyphicon glyphicon-minus-sign #{song.id}", id: song.id   
+
+%script{:type=>"text/javascript"}
+
+  $(".add_to_playlist").click(function() {
+
+  var song_id = $(this).attr('id');
+
+  // Ajax call add to playlist with song_id
+  $.ajax({data: { song_id: song_id }, type: 'post', url: "/" + locale + "/remove_from_playlist", success: function() { $('.'+song_id).hide(); } });
+
+  });
