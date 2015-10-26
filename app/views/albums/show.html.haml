@@ -79,26 +79,25 @@
           %h5.playlist_title
             =t(:click_to_play_arrow_for_details)
           - @songs.each do |song|
-            .col-md-11
-              %li{id: "li"}
-                .pointer
-                  - if song.name != ''
-                    =link_to raw("&#10138;"), '/' + I18n.locale.to_s + '/' + @artist.slug + '/albums/' + @album.slug + '/songs/' + song.slug
-                - offset = ENV["SOUND_OFFSET"].to_i
-                - if song.filename.file
-                  %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.filename.file.basename + '#' + ".mp3"}
-                    - if @songs.last.discnum && @songs.last.discnum > 1                 
-                      - if song.track
-                        = format('%02d', song.discnum).to_s + '-' + format('%02d', song.track).to_s + ' ' + song.name
-                      - elsif song.name
-                        = '00' + ' ' + song.name
-                    - else
-                      - if song.track
-                        = format('%02d', song.track).to_s + ' ' + song.name
-                      - elsif song.name
-                        = '00' + ' ' + song.name  
-            .col-md-1
-              = link_to "", "javascript:;", class: "add_to_playlist btn btn-sm btn-success glyphicon glyphicon-plus-sign", id: song.id
+            %li{id: "li"}
+              .playlist_add
+                = link_to "", "javascript:;", class: "add_to_playlist btn btn-sm btn-success glyphicon glyphicon-plus-sign", id: song.id   
+              .pointer
+                - if song.name != ''
+                  =link_to t(:details), [@artist,@album,song]
+              - offset = ENV["SOUND_OFFSET"].to_i
+              - if song.filename.file
+                %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.filename.file.basename + '#' + song.album.name + '#' + song.album.artist.name + '#' + ".mp3"}
+                  - if @songs.last.discnum && @songs.last.discnum > 1                 
+                    - if song.track
+                      = format('%02d', song.discnum).to_s + '-' + format('%02d', song.track).to_s + ' ' + song.name
+                    - elsif song.name
+                      = '00' + ' ' + song.name
+                  - else
+                    - if song.track
+                      = format('%02d', song.track).to_s + ' ' + song.name
+                    - elsif song.name
+                      = '00' + ' ' + song.name  
   .col-md-4
 
 .row
@@ -117,12 +116,10 @@
   var album_name = "#{@album.name}"
 
   function sound_offset(){
-  $.ajax({data: { album_name: album_name }, type: 'get', url: "/" + locale + "/sound_offset",
+  $.ajax({type: 'get', url: "/" + locale + "/sound_offset",
   success: function(r) { 
   smglch_offset = parseInt(r.split('#')[0]);
   smglch_hash1 = r.split('#')[1];
-  smglch_hash2 = r.split('#')[2];
-  smglch_hash3 = r.split('#')[3];
   }});
   }
 

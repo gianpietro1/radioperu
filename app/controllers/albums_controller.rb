@@ -94,9 +94,7 @@ class AlbumsController < ApplicationController
   end
 
   def sound_offset
-    @album = Album.friendly.find_by(name: params[:album_name]) 
-    @artist = @album.artist
-    respond_with(@artist,@album) do |format|
+    respond_with() do |format|
       format.html {render :partial => "sound_offset" }
     end
   end

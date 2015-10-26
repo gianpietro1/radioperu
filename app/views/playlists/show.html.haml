@@ -8,17 +8,16 @@
         %h5.playlist_title
           = @playlist.name
         - @playlist.songs.each do |song|
-          .col-md-11
-            %li{id: "li", class: "#{song.id}"}
-              .pointer
-                - if song.name != ''
-                  =link_to raw("&#10138;"), [song.album.artist,song.album,song]
-              - offset = ENV["SOUND_OFFSET"].to_i
-              - if song.filename.file
-                %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.filename.file.basename + '#' + song.album.name + '#' + song.album.artist.name + '#' + ".mp3"}
-                  = song.album.artist.name + " - " + song.name
-          .col-md-1
-            = link_to "", "javascript:;", class: "add_to_playlist btn btn-sm btn-danger glyphicon glyphicon-minus-sign #{song.id}", id: song.id   
+          %li{id: "li", class: "#{song.id}"}
+            .playlist_add
+              = link_to "", "javascript:;", class: "add_to_playlist btn btn-sm btn-danger glyphicon glyphicon-minus-sign #{song.id}", id: song.id  
+            .pointer
+              - if song.name != ''
+                =link_to t(:details), [song.album.artist,song.album,song]
+            - offset = ENV["SOUND_OFFSET"].to_i
+            - if song.filename.file
+              %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.filename.file.basename + '#' + song.album.name + '#' + song.album.artist.name + '#' + ".mp3"}
+                = song.album.artist.name + " - " + song.name
 
 %script{:type=>"text/javascript"}
 
@@ -40,6 +39,6 @@
   var song_id = $(this).attr('id');
 
   // Ajax call add to playlist with song_id
-  $.ajax({data: { song_id: song_id }, type: 'post', url: "/" + locale + "/remove_from_playlist", success: function() { $('.'+song_id).hide(); } });
+  $.ajax({data: { song_id: song_id }, type: 'post', url: "/" + locale + "/remove_from_playlist", success: function() { $('.'+song_id).remove(); } });
 
   });

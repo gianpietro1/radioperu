@@ -95,6 +95,7 @@ es:
   lyrics_not_available: "Letra no disponible"
   video_not_available: "Video no disponible"
   song_updated: "Canción actualizada existosamente."
+  details: "detalles"
   # Station page
   artist_notfound: "Artista no encontrado"
   album_notfound: "Álbum no encontrado"

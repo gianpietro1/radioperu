@@ -275,9 +275,9 @@ function PagePlayer() {
     }
     if (o.nodeName.toLowerCase() !== 'li') {
       o = $('ul.playlist li:first').get(0)
-      return o.getElementsByTagName('a')[1];  // changed from return null to these lines to loop album
+      return o.getElementsByTagName('a')[2];  // changed from return null to these lines to loop album
     } else {
-      return o.getElementsByTagName('a')[1];  // changed from 0 to 1 to match second "a"
+      return o.getElementsByTagName('a')[2];  // changed from 0 to 2 to match third "a"
     }
   };
 

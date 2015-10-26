@@ -69,10 +69,6 @@ body {
   float: right
 }
 
-.clicked, .clicked:hover, .clicked:active, .clicked:focus {
-  background-color: lightblue;
-}
-
 .container-fluid>form>.field,.container-fluid>h2 {
   color: #f6f3e4;
   padding: 5px 25px;
@@ -1178,7 +1174,7 @@ ul.playlist li .timing {
  position:absolute;
  display:none;
  text-align:right;
- right:5em;
+ right:9.5em;
  top:1em;
  width:auto;
  height:2em;
@@ -1273,21 +1269,45 @@ ul.playlist li .peak .r {
 div.pointer a {
  float: right;
  background-color: transparent;
- width: 25px;
  height: 25px;
- padding: 0;
+ padding: 3px;
  text-align: center;
  border-radius: 5px;
- border: 2px solid black;
- color: black !important;  
- font-weight: bold !important;
+ border: 1px solid black;
+ color: #333 !important;  
  z-index: 100 !important;
  display: block !important;
- font-weight: bold !important;
+ text-transform: lowercase;
+ margin-top: 1px;
+ font-size: 0.9em
+}
+
+div.playlist_add a {
+ float: right;
+ margin-left: 2px;
+ width: 25px;
+ height: 25px;
+ padding: 2px 0 0 0;
+ text-align: center;
+ z-index: 100 !important;
+ display: block !important;
+ border: 1px solid #333;
 }
 
 div.pointer a:hover {
   color:white !important;
+}
+
+div.playlist_add a:hover {
+  color:white !important;
+}
+
+.clicked, .clicked:hover, .clicked:active, .clicked:focus {
+  background-color: lightblue;
+}
+
+.add_to_playlist {
+  color: #333 !important;
 }
 
 /* SoundManager FlashBlock */

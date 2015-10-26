@@ -36,7 +36,7 @@ class Song < ActiveRecord::Base
   end
 
   def remove_from_playlist(playlist_id)
-    PlaylistSong.find_by(playlist_id: playlist_id, song_id: self.id).delete
+    PlaylistSong.where(playlist_id: playlist_id, song_id: self.id).delete_all
   end
 
 
