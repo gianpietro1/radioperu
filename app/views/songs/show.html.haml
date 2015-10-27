@@ -45,8 +45,9 @@
         %h4
           =t(:click_to_play)
         %li{id: "li"}
-          .playlist_add
-            = link_to "", "javascript:;", class: "add_to_playlist btn btn-sm btn-success glyphicon glyphicon-plus-sign", id: @song.id  
+          -if current_user && current_user.role = 'admin'
+            .playlist_add
+              = link_to "", "javascript:;", class: "add_to_playlist btn btn-sm btn-success glyphicon glyphicon-plus-sign", id: @song.id  
           - offset = ENV["SOUND_OFFSET"].to_i
           %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + @song.filename.file.basename + '#' + @song.album.name + '#' + @song.album.artist.name + '#' + ".mp3"}
             - if @songs.last.discnum && @songs.last.discnum > 1                 

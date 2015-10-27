@@ -80,8 +80,9 @@
             =t(:click_to_play_arrow_for_details)
           - @songs.each do |song|
             %li{id: "li"}
-              .playlist_add
-                = link_to "", "javascript:;", class: "add_to_playlist btn btn-sm btn-success glyphicon glyphicon-plus-sign", id: song.id   
+              -if current_user && current_user.role = 'admin'
+                .playlist_add
+                  = link_to "", "javascript:;", class: "add_to_playlist btn btn-sm btn-success glyphicon glyphicon-plus-sign", id: song.id   
               .pointer
                 - if song.name != ''
                   =link_to t(:details), [@artist,@album,song]
