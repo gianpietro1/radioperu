@@ -17,6 +17,9 @@
         = f.label t(:artist_url)
         = f.text_field :external_url, class: 'form-control'
       .form_group
+        = f.label t(:social_fb)
+        = f.text_field :social_fb, class: 'form-control'
+      .form_group
         = f.label t(:genre)
         - genres_array = Genre.all.ordered_by_name.map { |genre| [genre.name, genre.id] }
         = f.select(:genre_id, options_for_select(genres_array, f.object.genre_id), {:class => 'form-control half-width'})

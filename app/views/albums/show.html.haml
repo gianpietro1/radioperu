@@ -22,7 +22,7 @@
     
 .row
   .col-md-1
-  .col-md-7
+  .col-md-10
     .pull-left
       %h3.catalogue_title
         %span.catalogue_title
@@ -38,7 +38,7 @@
 
 .row
   .col-md-1
-  .col-md-7
+  .col-md-7{id:'main_block'}
     .album_image
       - if @album.cover?
         = image_tag( @album.cover )
@@ -68,12 +68,7 @@
           = simple_format(@album.review)
         - else
           = t(:album_review_not_available)
-  .col-md-1
-
-.row
-  .col-md-1
-  .col-md-8
-    .album_songs
+    .album_songs.clear_both
       %div{"oncontextmenu"=>"return false"}
         %ul.playlist
           %h5.playlist_title
@@ -98,20 +93,33 @@
                     - if song.track
                       = format('%02d', song.track).to_s + ' ' + song.name
                     - elsif song.name
-                      = '00' + ' ' + song.name  
-  .col-md-4
+                      = '00' + ' ' + song.name 
+    - if @artist.albums.count > 1
+      .album_nav.margin-top-10
+        = link_to '<', [@artist,@album.prev(@albums_array,@artist)], class: 'btn btn-info btn-sm pull-left'
+        = link_to '>', [@artist,@album.next(@albums_array,@artist)], class: 'btn btn-info btn-sm pull-right' 
+  .col-md-3.social_networks
+    - if @facebook_id && @facebook_id != ''
+      %h4.bold.clear_both
+        = t(:social_networks)
+      %div{class:"fb-page", "data-href"=>"https://www.facebook.com/#{@facebook_id}", "data-small-header"=>"true", "data-adapt-container-width"=>"true", "data-hide-cover"=>"false", "data-show-facepile"=>"true", "data-show-posts"=>"true", "data-height" => 500}
+        .fb-xfbml-parse-ignore
+          %blockquote{cite:"https://www.facebook.com/#{@facebook_id}"}
+            %a{href:"https://www.facebook.com/#{@facebook_id}"}
+              = @facebook_id.to_s
+  .col-md-1
 
 .row
   .col-md-1
   .col-md-6
-    .margin-top-10
-      - if @artist.albums.count > 1
-        = link_to '<', [@artist,@album.prev(@albums_array,@artist)], class: 'btn btn-info btn-sm pull-left'
-        = link_to '>', [@artist,@album.next(@albums_array,@artist)], class: 'btn btn-info btn-sm pull-right'
+
 
 = render partial: 'sponsors/sponsorbanner'
 
 %script{:type=>"text/javascript"}
+
+  mb_height = $('#main_block').height()
+  $( ".fb-page" ).attr( "data-height", mb_height - 4);
 
   var locale = "#{I18n.locale}";
   var album_name = "#{@album.name}"

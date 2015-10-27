@@ -15,6 +15,10 @@ body {
   font-size: 16px;
 }
 
+.clear_both {
+  clear: both;
+}
+
 .resetfont {
   text-decoration: none !important;
   color: #3c3c33;
@@ -867,7 +871,7 @@ span.catalogue_title a {
 }
 
 .album_songs {
-  width: 80%;
+  /* width: 80%;*/
 }
 
 .album_bio {
@@ -879,6 +883,10 @@ span.catalogue_title a {
 
 .album_mininfo {
   margin-top: 10px;
+}
+
+.album_nav {
+  height: 30px;
 }
 
 .playlist_title {
@@ -1739,6 +1747,10 @@ hr {
 
 .artist_songs {
   padding-left: 0;
+}
+
+#main_block {
+  margin-bottom: 10px;
 }
 
 }

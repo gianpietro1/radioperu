@@ -41,6 +41,12 @@ protected
         self.external_url = "http://#{self.external_url}"
       end
     end
+    unless self.social_fb.nil? || self.social_fb.empty?
+      if self.social_fb.include? "?"
+        self.social_fb = self.social_fb.slice(0..(self.social_fb.index('?')-1))
+      end
+      self.social_fb = self.social_fb.chomp('/')        
+    end
   end
 
 

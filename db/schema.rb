@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151024040320) do
+ActiveRecord::Schema.define(version: 20151027222504) do
 
   create_table "album_translations", force: :cascade do |t|
     t.integer  "album_id",   null: false
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20151024040320) do
     t.integer  "genre_id"
     t.integer  "user_id"
     t.string   "slug"
+    t.string   "social_fb"
   end
 
   add_index "artists", ["slug"], name: "index_artists_on_slug"

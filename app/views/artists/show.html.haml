@@ -20,7 +20,7 @@
 
 .row
   .col-md-1
-  .col-md-7
+  .col-md-10
     .pull-left
       %h3.catalogue_title
         = @artist.name
@@ -33,7 +33,7 @@
 
 .row
   .col-md-1
-  .col-md-8
+  .col-md-7{id:"main_block"}
     .artist_div
       .artist_divleft
         .artist_imageinfo
@@ -63,14 +63,9 @@
               = simple_format(@artist.bio)
             - else
               = t(:artist_bio_not_available)
-  .col-md-1
-
-.row
-  .col-md-1
-  .col-md-7
-    %h4.bold
+    %h4.bold.clear_both
       = t(:albums)
-    .artist_albums
+    .artist_albums.clear_both
       - @albums.each do |album|
         .row
           %a{ href: '/' + I18n.locale.to_s + '/' + @artist.slug + '/albums/' + album.slug, class: "artist_album"}
@@ -84,5 +79,22 @@
               %br
               .small
                 = album.year
+  .col-md-3
+    - if @facebook_id && @facebook_id != ''
+      %h4.bold.clear_both
+        = t(:social_networks)
+      %div{class:"fb-page", "data-href"=>"https://www.facebook.com/#{@facebook_id}", "data-small-header"=>"true", "data-adapt-container-width"=>"true", "data-hide-cover"=>"false", "data-show-facepile"=>"true", "data-show-posts"=>"true", "data-height" => 500}
+        .fb-xfbml-parse-ignore
+          %blockquote{cite:"https://www.facebook.com/#{@facebook_id}"}
+            %a{href:"https://www.facebook.com/#{@facebook_id}"}
+              = @facebook_id.to_s
+  .col-md-1
 
 = render partial: 'sponsors/sponsorbanner'
+
+%script{:type=>"text/javascript"}
+
+  mb_height = $('#main_block').height()
+
+  $( ".fb-page" ).attr( "data-height",  mb_height-47);
+  

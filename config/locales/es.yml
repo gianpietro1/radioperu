@@ -38,6 +38,7 @@ es:
   artist_name: "Nombre del Artista"
   artist_city: "Ciudad de origen"
   artist_url: "Enlace web"
+  social_fb: "Página de Facebook"
   artist_image: "Foto"
   artist_active: "En actividad"
   artist_bio: "Reseña"
@@ -135,6 +136,7 @@ es:
   current_file: "Archivo actual"
   genre: "Género principal"
   back_to_home: "Volver a radioperu.pe"
+  social_networks: "Redes Sociales"
   # Social
   share_this: "comparte!"
   share_this_artist: "comparte este artista en"

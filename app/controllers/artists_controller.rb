@@ -17,7 +17,9 @@ class ArtistsController < ApplicationController
     authorize @artist
     @albums = @artist.albums
     @songs = @artist.songs
-
+    if @artist.social_fb
+      @facebook_id = @artist.social_fb[/.*\/(.*)/,1]
+    end
     rescue ActiveRecord::RecordNotFound  
       redirect_to :root
       
@@ -83,7 +85,7 @@ class ArtistsController < ApplicationController
 private
 
   def artist_params
-    params.require(:artist).permit(:name, :city, :external_url, :active, :bio, :image, :genre_id)
+    params.require(:artist).permit(:name, :city, :external_url, :social_fb, :active, :bio, :image, :genre_id)
   end
 
   def update_facebook_graph

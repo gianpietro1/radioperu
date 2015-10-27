@@ -38,6 +38,7 @@ en:
   artist_name: "Artist Name"
   artist_city: "City"
   artist_url: "Web site"
+  social_fb: "Facebook Page"
   artist_image: "Image"
   artist_active: "In activity"
   artist_bio: "Biography"
@@ -95,6 +96,7 @@ en:
   lyrics_not_available: "Lyrics not available"
   video_not_available: "Video not available"
   song_updated: "Song updated successfully"
+  details: "details"
   # Station page
   artist_notfound: "Artist not found"
   album_notfound: "Album not found"
@@ -134,6 +136,7 @@ en:
   current_file: "Current file"
   genre: "Main genre"
   back_to_home: "Back to radioperu.pe"
+  social_networks: "Social Networks"
   # Social
   share_this: "share this!"
   share_this_artist: "share this artist in"

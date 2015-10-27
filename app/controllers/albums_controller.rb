@@ -7,6 +7,9 @@ class AlbumsController < ApplicationController
     @album = @artist.albums.friendly.find(params[:id])
     authorize @album
     @songs = @album.songs.all
+    if @artist.social_fb
+      @facebook_id = @artist.social_fb[/.*\/(.*)/,1]
+    end
     @albums_array = []
     @artist.albums.each do |album| 
       @albums_array << album.id
