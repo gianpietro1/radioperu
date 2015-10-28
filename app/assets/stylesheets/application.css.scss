@@ -859,6 +859,8 @@ span.catalogue_title a {
 
 .album_mininfo a, .artist_mininfo a {
   word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-all;
 }
 
 .album_nav {
