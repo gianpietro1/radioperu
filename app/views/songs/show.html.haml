@@ -23,11 +23,11 @@
     .pull-left
       %h3.catalogue_title
         %span.catalogue_title
-          = (link_to @artist.name, @artist)
+          = link_to @artist.name, "/#{I18n.locale.to_s}/" + @artist.slug
         %span
           =  ' - '
         %span.catalogue_title
-          = (link_to @album.name, [@artist,@album])
+          = link_to @album.name, "/#{I18n.locale.to_s}/" + @artist.slug + '/albums/' + @album.slug
         %span
           = ' - ' + @song.name
     .sharepage.pull-right
