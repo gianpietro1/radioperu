@@ -77,7 +77,7 @@
     - if @facebook_id && @facebook_id != ''
       %h4.bold.clear_both
         = @artist.name + " " + t(:in_facebook)
-      %div{class:"fb-page", "data-href"=>"https://www.facebook.com/#{@facebook_id}", "data-small-header"=>"true", "data-adapt-container-width"=>"true", "data-hide-cover"=>"false", "data-show-facepile"=>"true", "data-show-posts"=>"true", "data-height" => 500}
+      %div{class:"fb-page", "data-href"=>"https://www.facebook.com/#{@facebook_id}", "data-small-header"=>"true", "data-adapt-container-width"=>"true", "data-hide-cover"=>"true", "data-show-facepile"=>"true", "data-show-posts"=>"true", "data-height" => 500}
         .fb-xfbml-parse-ignore
           %blockquote{cite:"https://www.facebook.com/#{@facebook_id}"}
             %a{href:"https://www.facebook.com/#{@facebook_id}"}
