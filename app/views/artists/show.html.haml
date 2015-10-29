@@ -20,46 +20,43 @@
 
 .row
   .col-md-1
-  .col-md-10
-    .pull-left
-      %h3.catalogue_title
-        = @artist.name
-    .sharepage.pull-right
-      %h5
-        = t(:share_this_artist)
-      .pull-right
-        = social_share_button_tag((@artist.name + " " + t(:in_radioperu)), popup: "true", via: "radioperu_pe")
-  .col-md-1
-
-.row
-  .col-md-1
   .col-md-7{id:"main_block"}
-    .artist_image
-      - if @artist.image?
-        = image_tag( @artist.image )
-      - else
-        = image_tag( 'default_artist.jpg' )  
-    .artist_mininfo    
-      %strong
-        = t(:artist_city) + ": "
-      = @artist.city
-      %br
-      %strong
-        = t(:artist_url) + ": "
-        -if @artist.external_url
-          = link_to @artist.external_url, @artist.external_url, :target => "_blank"
+    .clear_both
+      .pull-left
+        %h3.catalogue_title
+          = @artist.name
+      .sharepage.pull-right
+        %h5
+          = t(:share_this_artist)
+        .pull-right
+          = social_share_button_tag((@artist.name + " " + t(:in_radioperu)), popup: "true", via: "radioperu_pe")
+    .clear_both
+      .artist_image
+        - if @artist.image?
+          = image_tag( @artist.image )
         - else
-          \-
-      %br
-      %strong
-        = t(:genre) + ": "
-      - unless @artist.genre.nil?
-        = @artist.genre.name
-    .artist_bio.margin-top-05
-      - unless @artist.bio.nil? || @artist.bio.empty?
-        = simple_format(@artist.bio)
-      - else
-        = t(:artist_bio_not_available)
+          = image_tag( 'default_artist.jpg' )  
+      .artist_mininfo    
+        %strong
+          = t(:artist_city) + ": "
+        = @artist.city
+        %br
+        %strong
+          = t(:artist_url) + ": "
+          -if @artist.external_url
+            = link_to @artist.external_url, @artist.external_url, :target => "_blank"
+          - else
+            \-
+        %br
+        %strong
+          = t(:genre) + ": "
+        - unless @artist.genre.nil?
+          = @artist.genre.name
+      .artist_bio.margin-top-05
+        - unless @artist.bio.nil? || @artist.bio.empty?
+          = simple_format(@artist.bio)
+        - else
+          = t(:artist_bio_not_available)
     .artists_albums.clear_both
       %h4.bold.clear_both
         = t(:albums)      
@@ -76,7 +73,7 @@
               %br
               .small
                 = album.year
-  .col-md-3.social_networks
+  .col-md-3.social_networks.text-center
     - if @facebook_id && @facebook_id != ''
       %h4.bold.clear_both
         = @artist.name + " " + t(:in_facebook)
@@ -85,7 +82,6 @@
           %blockquote{cite:"https://www.facebook.com/#{@facebook_id}"}
             %a{href:"https://www.facebook.com/#{@facebook_id}"}
               = @facebook_id.to_s
-  .col-md-1
 
 = render partial: 'sponsors/sponsorbanner'
 
@@ -93,5 +89,5 @@
 
   mb_height = $('#main_block').height()
 
-  $( ".fb-page" ).attr( "data-height",  mb_height-47);
+  $( ".fb-page" ).attr( "data-height",  mb_height);
   

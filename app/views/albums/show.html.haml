@@ -19,55 +19,52 @@
         =link_to t(:edit_album), edit_artist_album_path(@artist,@album), class: 'btn btn-warning'
       - if policy(@album).destroy?
         =link_to t(:delete_album), [@artist,@album], method: :delete, class: 'btn btn-danger', data: { confirm: t(:delete_album_confirm) }
-    
-.row
-  .col-md-1
-  .col-md-10
-    .pull-left
-      %h3.catalogue_title
-        %span.catalogue_title
-          = link_to @artist.name, "/#{I18n.locale.to_s}/" + @artist.slug
-        %span
-          = ' - ' + @album.name
-    .sharepage.pull-right
-      %h5
-        = t(:share_this_album)
-      .pull-right
-        = social_share_button_tag((@artist.name + " - " + @album.name + " " + t(:in_radioperu)), popup: "true", via: "radioperu_pe")
-  .col-md-1
 
 .row
   .col-md-1
   .col-md-7{id:'main_block'}
-    .album_image
-      - if @album.cover?
-        = image_tag( @album.cover )
-      - else
-        = image_tag( 'default_album.jpg' )
-    .album_mininfo
-      %strong
-        = t(:album_year) + ": "
-      = @album.year
-      %br
-      %strong
-        = t(:album_format) + ": "
-      - if @album.format
-        = @album.format.name
-      %br
-      %strong
-        = t(:genre) + ": "
-      = @album.genre.name
-      %br
-      %strong
-      - unless @album.buylink.nil? || @album.buylink.empty?
-        = t(:buylink) + ": "
-        = link_to @album.buylink, @album.buylink, :target => "_blank"
-    .album_bio
-      %br
-        - unless @album.review.nil? || @album.review.empty?
-          = simple_format(@album.review)
+    .clear_both
+      .pull-left
+        %h3.catalogue_title
+          %span.catalogue_title
+            = link_to @artist.name, "/#{I18n.locale.to_s}/" + @artist.slug
+          %span
+            = ' - ' + @album.name
+      .sharepage.pull-right
+        %h5
+          = t(:share_this_album)
+        .pull-right
+          = social_share_button_tag((@artist.name + " - " + @album.name + " " + t(:in_radioperu)), popup: "true", via: "radioperu_pe")
+    .clear_both
+      .album_image
+        - if @album.cover?
+          = image_tag( @album.cover )
         - else
-          = t(:album_review_not_available)
+          = image_tag( 'default_album.jpg' )
+      .album_mininfo
+        %strong
+          = t(:album_year) + ": "
+        = @album.year
+        %br
+        %strong
+          = t(:album_format) + ": "
+        - if @album.format
+          = @album.format.name
+        %br
+        %strong
+          = t(:genre) + ": "
+        = @album.genre.name
+        %br
+        %strong
+        - unless @album.buylink.nil? || @album.buylink.empty?
+          = t(:buylink) + ": "
+          = link_to @album.buylink, @album.buylink, :target => "_blank"
+      .album_bio
+        %br
+          - unless @album.review.nil? || @album.review.empty?
+            = simple_format(@album.review)
+          - else
+            = t(:album_review_not_available)
     .album_songs.clear_both
       %div{"oncontextmenu"=>"return false"}
         %ul.playlist
@@ -100,7 +97,7 @@
         = link_to '>', [@artist,@album.next(@albums_array,@artist)], class: 'btn btn-info btn-sm pull-right' 
   .col-md-3.social_networks
     - if @facebook_id && @facebook_id != ''
-      %h4.bold.clear_both
+      %h4.bold.clear_both.text-center
         = @artist.name + " " + t(:in_facebook)
       %div{class:"fb-page", "data-href"=>"https://www.facebook.com/#{@facebook_id}", "data-small-header"=>"true", "data-adapt-container-width"=>"true", "data-hide-cover"=>"false", "data-show-facepile"=>"true", "data-show-posts"=>"true", "data-height" => 500}
         .fb-xfbml-parse-ignore
@@ -119,7 +116,7 @@
 %script{:type=>"text/javascript"}
 
   mb_height = $('#main_block').height()
-  $( ".fb-page" ).attr( "data-height", mb_height - 4);
+  $( ".fb-page" ).attr( "data-height", mb_height);
 
   var locale = "#{I18n.locale}";
   var album_name = "#{@album.name}"
