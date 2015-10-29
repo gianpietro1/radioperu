@@ -14,7 +14,7 @@
 .row
   .col-md-1
   .col-md-10
-    .pull-right
+    .pull-left
       - if policy(@album).edit?
         =link_to t(:edit_album), edit_artist_album_path(@artist,@album), class: 'btn btn-warning'
       - if policy(@album).destroy?
