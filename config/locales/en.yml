@@ -108,6 +108,7 @@ en:
   other_users_playlists: "Other users playlists"
   more_playlists_coming_soon: "Support for more than one playlist coming soon!"
   playlist_description_not_available: "Playlist description not available"
+  you_need_to_login: "You need to login to create playlists"
   # Station page
   artist_notfound: "Artist not found"
   album_notfound: "Album not found"
@@ -149,6 +150,7 @@ en:
   back_to_home: "Back to radioperu.pe"
   social_networks: "Social Networks"
   in_facebook: "in Facebook"
+  sign_in_facebook: "Sign in with Facebook"
   # Social
   share_this: "share this!"
   share_this_artist: "share this artist in"

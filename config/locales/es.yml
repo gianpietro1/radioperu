@@ -109,6 +109,7 @@ es:
   other_users_playlists: "Listas de otros usuarios"
   more_playlists_coming_soon: "Pronto permitiremos más de una lista!"
   playlist_description_not_available: "Lista sin descripción."
+  you_need_to_login: "Necesitas ingresar para crear tus listas"
   # Station page
   artist_notfound: "Artista no encontrado"
   album_notfound: "Álbum no encontrado"
@@ -150,6 +151,7 @@ es:
   back_to_home: "Volver a radioperu.pe"
   social_networks: "Redes Sociales"
   in_facebook: "en Facebook"
+  sign_in_facebook: "Ingresa con Facebook"
   # Social
   share_this: "comparte!"
   share_this_artist: "comparte este artista en"
