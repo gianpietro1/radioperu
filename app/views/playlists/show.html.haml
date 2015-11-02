@@ -37,6 +37,8 @@
               - if policy(@playlist).edit?
                 .playlist_add
                   = link_to "", "javascript:;", class: "add_to_playlist btn btn-sm btn-danger glyphicon glyphicon-minus-sign #{song.id}", id: song.id  
+              - else
+                %a.hide
               .pointer
                 - if song.name != ''
                   =link_to t(:details), [song.album.artist,song.album,song], target: :blank
