@@ -107,6 +107,9 @@ gem 'taglib-ruby'
 gem 'social-share-button', '~> 0.1.8', git: 'https://github.com/cuterxy/social-share-button.git'
 # Meta Tags
 gem 'meta-tags'
+# Facebook login
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 
 # Capistrano

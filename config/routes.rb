@@ -3,13 +3,15 @@ Rails.application.routes.draw do
   get 'admin' => 'admin#index'
   get 'test' => 'test#index'
 
+  devise_for :users, skip: [:session, :password, :registration], controllers: { omniauth_callbacks: "callbacks" }
+
   scope "(:locale)", locale: /es|en/ do
     root to: 'welcome#index'
     resources :radios, only: [:show] do
       resources :programs
     end
     resources :musician_forms, only: [:new, :create]
-    devise_for :users
+    devise_for :users, skip: [:omniauth_callbacks]
     resources :playlists
     resources :artists do
       resources :albums, except: [:index] do
