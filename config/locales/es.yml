@@ -98,6 +98,7 @@ es:
   song_updated: "Canción actualizada existosamente."
   details: "detalles"
   #Playlists
+  playlists: "Listas de reproducción"
   edit_playlist: "editar lista"
   delete_playlist: "borrar lista"
   new_playlist: "Nueva lista"
@@ -107,6 +108,7 @@ es:
   your_playlists: "Tus listas"
   other_users_playlists: "Listas de otros usuarios"
   more_playlists_coming_soon: "Pronto permitiremos más de una lista!"
+  playlist_description_not_available: "Lista sin descripción."
   # Station page
   artist_notfound: "Artista no encontrado"
   album_notfound: "Álbum no encontrado"

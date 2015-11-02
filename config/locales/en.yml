@@ -98,6 +98,7 @@ en:
   song_updated: "Song updated successfully"
   details: "details"
   #Playlists
+  playlists: "playlists"
   edit_playlist: "edit playlist"
   delete_playlist: "delete playlist"
   new_playlist: "new playlist"
@@ -106,6 +107,7 @@ en:
   your_playlists: "Your playlists"
   other_users_playlists: "Other users playlists"
   more_playlists_coming_soon: "Support for more than one playlist coming soon!"
+  playlist_description_not_available: "Playlist description not available"
   # Station page
   artist_notfound: "Artist not found"
   album_notfound: "Album not found"
