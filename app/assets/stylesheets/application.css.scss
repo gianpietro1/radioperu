@@ -108,7 +108,18 @@ body {
   padding-top: 2px;
 }
 
-.blackbtn:hover,.blackbtn:focus {
+.whitebtn {
+  background: #3c3c33;
+  color: #fff;
+  height: 25px;
+  padding-top: 2px;
+}
+
+.whitebtn a {
+  color: #fff;
+}
+
+.blackbtn:hover,.blackbtn:focus,.whitebtn:hover,.whitebtn:focus, {
   color: #3c3c33;
   background-color: orange;
 }
@@ -842,11 +853,17 @@ span.catalogue_title a {
   margin-bottom: 20px
 }
 
+.playlist_image {
+  float:left;
+  width: 220px;
+  margin-bottom: 20px
+}
+
 .album_songs {
   /* width: 80%;*/
 }
 
-.album_bio, .artist_bio {
+.album_bio, .artist_bio, .playlist_description {
   font-size: 1.0em;
   font-weight: normal;
   overflow: auto;
@@ -1290,7 +1307,6 @@ div.playlist_add a:hover {
 }
 
 .clicked, .clicked:hover, .clicked:active, .clicked:focus {
-  background-color: lightblue;
 }
 
 .add_to_playlist {

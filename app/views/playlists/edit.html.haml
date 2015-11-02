@@ -1,3 +1,8 @@
-%h1 Playlists#edit
-%p Find me in app/views/playlists/edit.html.haml
+= render partial: 'artists/artists_header'
 
+.row
+  .col-md-1
+  .col-md-10
+    %h3 
+      = t(:edit_playlist)
+    = render partial: 'playlist_form', locals: { playlist: @playlist }

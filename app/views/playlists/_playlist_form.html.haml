@@ -4,6 +4,17 @@
       .form_group
         = f.label t(:playlist_name)
         = f.text_field :name, class: 'form-control'
+      .form_group
+        = f.label t(:playlist_description)
+        = f.text_area :description, class: 'form-control'
+      .form_group
+        = f.label t(:playlist_image)
+        = f.file_field :image
+        = f.hidden_field :image_cache
+        - if f.object.image
+          .current_file
+            - file = URI(f.object.image.to_s).path.split('/').last.to_s
+            = t(:current_file) + ': ' + (file.length > 0 ? file : "-").to_s
       .form_group.pull-right
         = link_to t(:cancel), playlists_path, class: "btn btn-danger"
         = f.submit t(:form_save), class: 'btn btn-success'

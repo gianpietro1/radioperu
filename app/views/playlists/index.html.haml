@@ -1,12 +1,28 @@
+
 .row
   .col-md-1
-  .col-md-10
-    .pull-right
-      =link_to t(:new_playlist), new_playlist_path, class: 'btn btn-success'
-    
-.row
-  .col-md-1
-  .col-md-10
-    - @user_playlists.each do |playlist|
-      = link_to playlist.name, playlist
+  .col-md-5
+    %h4
+      = t(:your_playlists)
+    - if current_user
+      - if @user_playlists.first != nil
+        - @user_playlists.each do |playlist|
+          = link_to playlist.name, playlist
+      - else
+        = t(:you_dont_have_playlists)
+    - else
+      = t(:you_need_to_login)
+    %br
+    - if policy(Playlist.new).create?
+      - if @user_playlists.count == 0
+        =link_to t(:new_playlist), new_playlist_path, class: 'btn btn-success'
+      - else
+        .margin-top-10
+          %em
+            =t(:more_playlists_coming_soon)
+  .col-md-5
+    %h4
+      = t(:other_users_playlists)
+    - @playlists.each do |playlist|
+      = link_to playlist.name + " - " + playlist.user.name, playlist
   .col-md-1

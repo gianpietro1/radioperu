@@ -3,20 +3,27 @@ class PlaylistsController < ApplicationController
   respond_to :html, :js
 
   def index
-    @user_playlists = current_user.playlists
-    @playlists = Playlist.all
+    if current_user
+      @user_playlists = current_user.playlists
+      @playlists = Playlist.all - @user_playlists
+    else
+      @playlists = Playlist.all
+    end
   end
 
   def show
     @playlist = Playlist.find(params[:id])
+    authorize @playlist
   end
 
   def new
     @playlist = Playlist.new
+    authorize @playlist
   end
 
   def create
     @playlist = current_user.playlists.create(playlist_params)
+    authorize @playlist
     if @playlist.save
       flash[:notice] = t(:playlist_saved)
       redirect_to playlists_path
@@ -27,6 +34,32 @@ class PlaylistsController < ApplicationController
   end
 
   def edit
+    @playlist = Playlist.find(params[:id])
+    authorize @playlist
+  end
+
+  def update
+    @playlist = Playlist.find(params[:id])
+    authorize @playlist
+    if @playlist.update_attributes(playlist_params)
+      flash[:notice] = t(:playlist_updated)
+      redirect_to @playlist
+    else
+      flash[:error] = t(:playlist_update_error)
+      render :edit
+    end
+  end
+
+  def destroy
+    @playlist = Playlist.find(params[:id])
+    authorize @playlist
+    if @playlist.destroy
+      flash[:notice] = t(:playlist_destroyed)
+      redirect_to playlists_path
+    else
+      flash[:error] = t(:playlist_destroy_error)
+      render :show
+    end
   end
 
   def sound_offset_pl
@@ -54,7 +87,7 @@ class PlaylistsController < ApplicationController
   private
 
     def playlist_params
-      params.require(:playlist).permit(:name)
+      params.require(:playlist).permit(:name, :description, :image)
     end
 
 end

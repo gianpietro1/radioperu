@@ -73,8 +73,9 @@
           - @songs.each do |song|
             %li{id: "li"}
               -if current_user && current_user.role = 'admin'
-                .playlist_add
-                  = link_to "", "javascript:;", class: "add_to_playlist btn btn-sm btn-success glyphicon glyphicon-plus-sign", id: song.id   
+                -unless song.in?(current_user.playlists.first.songs)
+                  .playlist_add
+                    = link_to "", "javascript:;", class: "add_to_playlist btn btn-sm btn-success glyphicon glyphicon-plus-sign", id: song.id   
               .pointer
                 - if song.name != ''
                   =link_to t(:details), [@artist,@album,song]
@@ -138,9 +139,9 @@
 
   // Ajax call add to playlist with song_id
   if( $('#'+song_id).hasClass("clicked") ) {        
-  $.ajax({data: { song_id: song_id }, type: 'post', url: "/" + locale + "/remove_from_playlist", success: function() { $('#'+song_id).removeClass( "clicked" ); } });
+  $.ajax({data: { song_id: song_id }, type: 'post', url: "/" + locale + "/remove_from_playlist", success: function() { $('#'+song_id).removeClass( "clicked btn-danger glyphicon-minus-sign" ).addClass("btn-success glyphicon-plus-sign"); } });
   } else {
-  $.ajax({data: { song_id: song_id }, type: 'post', url: "/" + locale + "/add_to_playlist", success: function() { $('#'+song_id).addClass( "clicked" ); } });
+  $.ajax({data: { song_id: song_id }, type: 'post', url: "/" + locale + "/add_to_playlist", success: function() { $('#'+song_id).addClass( "clicked btn-danger glyphicon-minus-sign").removeClass("btn-success glyphicon-plus-sign"); } });
   }
 
   });

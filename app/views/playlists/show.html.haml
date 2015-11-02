@@ -3,21 +3,47 @@
 .row
   .col-md-1
   .col-md-10
-    %div{"oncontextmenu"=>"return false"}
+    .pull-left
+      - if policy(@playlist).edit?
+        =link_to t(:edit_playlist), edit_playlist_path(@playlist), class: 'btn btn-warning'
+      - if policy(@playlist).destroy?
+        =link_to t(:delete_playlist), @playlist, method: :delete, class: 'btn btn-danger', data: { confirm: t(:delete_playlist_confirm) }
+
+.row
+  .col-md-1
+  .col-md-10
+    .clear_both.margin-top-10
+      .playlist_image
+        - if @playlist.image?
+          = image_tag( @playlist.image )
+        - else
+          = image_tag( 'default_playlist.jpg' )
+      .playlist_description
+        %br
+          - unless @playlist.description.nil? || @playlist.description.empty?
+            = simple_format(@playlist.description)
+          - else
+            = t(:playlist_description_not_available)
+    %div{"oncontextmenu"=>"return false", class: "margin-top-10"}
       %ul.playlist
         %h5.playlist_title
-          = @playlist.name
-        - @playlist.songs.each do |song|
-          %li{id: "li", class: "#{song.id}"}
-            .playlist_add
-              = link_to "", "javascript:;", class: "add_to_playlist btn btn-sm btn-danger glyphicon glyphicon-minus-sign #{song.id}", id: song.id  
-            .pointer
-              - if song.name != ''
-                =link_to t(:details), [song.album.artist,song.album,song]
-            - offset = ENV["SOUND_OFFSET"].to_i
-            - if song.filename.file
-              %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.filename.file.basename + '#' + song.album.name + '#' + song.album.artist.name + '#' + ".mp3"}
-                = song.album.artist.name + " - " + song.name
+          =t(:click_to_play_arrow_for_details)
+        - if @playlist.songs.empty?
+          %p
+            = t(:playlist_empty)
+        - else
+          - @playlist.songs.each do |song|
+            %li{id: "li", class: "#{song.id}"}
+              - if policy(@playlist).edit?
+                .playlist_add
+                  = link_to "", "javascript:;", class: "add_to_playlist btn btn-sm btn-danger glyphicon glyphicon-minus-sign #{song.id}", id: song.id  
+              .pointer
+                - if song.name != ''
+                  =link_to t(:details), [song.album.artist,song.album,song], target: :blank
+              - offset = ENV["SOUND_OFFSET"].to_i
+              - if song.filename.file
+                %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.filename.file.basename + '#' + song.album.name + '#' + song.album.artist.name + '#' + ".mp3"}
+                  = song.album.artist.name + " - " + song.name
 
 %script{:type=>"text/javascript"}
 
