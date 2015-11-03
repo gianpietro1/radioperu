@@ -20,7 +20,7 @@
           = image_tag( 'default_playlist.jpg' )
       .playlist_description
         %br
-          %h4
+          %h3.playlist_name
             = @playlist.name
           - unless @playlist.description.nil? || @playlist.description.empty?
             = simple_format(@playlist.description)
@@ -46,7 +46,17 @@
             - else
               = t(:playlist_is_empty)
         - else
+          - i = 0
           - @playlist.songs.shuffle.each do |song|
+            - offset = ENV["SOUND_OFFSET"].to_i
+            -if i % 5 == 0 
+              %li{id: "li", class: "hide"}
+                %a.hide
+                %a.hide
+                - jingle = Album.find_by(user_id: 1, name: 'locuciones').songs.shuffle.first
+                %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + jingle.filename.file.basename + '#' + jingle.album.name + '#' + jingle.album.artist.name + '#' + ".mp3"}
+                  = jingle.album.artist.name + " - " + jingle.name
+            - i += 1
             %li{id: "li", class: "#{song.id}"}
               - if policy(@playlist).edit?
                 .playlist_add
@@ -56,7 +66,6 @@
               .pointer
                 - if song.name != ''
                   =link_to t(:details), [song.album.artist,song.album,song], target: :blank
-              - offset = ENV["SOUND_OFFSET"].to_i
               - if song.filename.file
                 %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.filename.file.basename + '#' + song.album.name + '#' + song.album.artist.name + '#' + ".mp3"}
                   = song.album.artist.name + " - " + song.name
