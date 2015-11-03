@@ -22,7 +22,7 @@
         %h4.playlist_name
           = @playlist.name
         %h5
-          = @playlist.length + " " + t(:minutes)
+          = @playlist.songs.count.to_s + " " + t(:songs) + " / " +  @playlist.length + " " + t(:minutes)
         - unless @playlist.description.nil? || @playlist.description.empty?
           = simple_format(@playlist.description)
         - else
