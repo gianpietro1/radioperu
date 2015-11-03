@@ -20,19 +20,25 @@
           = image_tag( 'default_playlist.jpg' )
       .playlist_description
         %br
+          %h4
+            = @playlist.name
           - unless @playlist.description.nil? || @playlist.description.empty?
             = simple_format(@playlist.description)
           - else
             = t(:playlist_description_not_available)
     %div{"oncontextmenu"=>"return false", class: "margin-top-10"}
-      %ul.playlist
-        %h5.playlist_title
-          =t(:click_to_play_arrow_for_details)
+      %h5.playlist_title
+        =t(:click_to_play_arrow_for_details)
+      %ul.playlist.playlist_scroll
         - if @playlist.songs.empty?
           %p
-            = t(:playlist_empty)
+            - if @playlist.user == current_user
+              = t(:playlist_empty)
+              = link_to t(:catalogue), artists_path
+            - else
+              = t(:playlist_is_empty)
         - else
-          - @playlist.songs.each do |song|
+          - @playlist.songs.shuffle.each do |song|
             %li{id: "li", class: "#{song.id}"}
               - if policy(@playlist).edit?
                 .playlist_add
@@ -70,3 +76,9 @@
   $.ajax({data: { song_id: song_id }, type: 'post', url: "/" + locale + "/remove_from_playlist", success: function() { $('.'+song_id).remove(); } });
 
   });
+
+  function update_scroll(){
+  $('.playlist_scroll').scrollTo('.sm2_playing', { duration: 200 });
+  }
+  
+  setInterval(update_scroll,1000);

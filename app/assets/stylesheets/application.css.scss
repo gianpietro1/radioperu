@@ -877,6 +877,11 @@ span.catalogue_title a {
   margin-bottom: 20px
 }
 
+.playlist_scroll {
+  height: 200px;
+  overflow-y: auto;
+}
+
 .album_songs {
   /* width: 80%;*/
 }

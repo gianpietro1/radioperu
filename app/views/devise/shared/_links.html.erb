@@ -1,9 +1,10 @@
+</br>
 <%- if controller_name != 'sessions' %>
   <%= link_to t(:login), new_session_path(resource_name) %><br />
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to t(:signup), new_registration_path(resource_name) %><br />
+  <%= link_to t(:sign_up), new_registration_path(resource_name) %><br />
 <% end -%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
@@ -18,10 +19,11 @@
   <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
 <% end -%>
 
-<div class="hide">
-  <%- if devise_mapping.omniauthable? %>
-    <%- resource_class.omniauth_providers.each do |provider| %>
-      <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
-    <% end -%>
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <a href= "<%= omniauth_authorize_path(resource_name, provider)%>", class="btn btn-social btn-facebook">
+      <i class = "fa fa-facebook"></i>
+      <%= t(:sign_in_facebook)%>
+    </a>
   <% end -%>
-</div>
+<% end -%>

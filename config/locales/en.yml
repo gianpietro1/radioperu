@@ -103,12 +103,14 @@ en:
   delete_playlist: "delete playlist"
   new_playlist: "new playlist"
   delete_playlist_confirm: "Are you sure you want to delete this playlist?"
-  playlist_empty: "Playlist empty: browse the catalogue to add songs"
+  playlist_empty: "Playlist empty: add songs while browsing the "
+  playlist_is_empty: "This playlist is empty"
   your_playlists: "Your playlists"
   other_users_playlists: "Other users playlists"
   more_playlists_coming_soon: "Support for more than one playlist coming soon!"
   playlist_description_not_available: "Playlist description not available"
   you_need_to_login: "You need to login to create playlists"
+  you_dont_have_playlists: "You don't have playlists"
   # Station page
   artist_notfound: "Artist not found"
   album_notfound: "Album not found"
@@ -151,6 +153,7 @@ en:
   social_networks: "Social Networks"
   in_facebook: "in Facebook"
   sign_in_facebook: "Sign in with Facebook"
+  or: "or"
   # Social
   share_this: "share this!"
   share_this_artist: "share this artist in"
@@ -171,6 +174,8 @@ en:
   change_your_password: "Change your password"
   change_my_password: "Change my password"
   new_password: "New password"
+  password_confirmation: "Confirm password"
+  register_with_email: "Register with your email"
   #Musician Form
   musician_name: "Musician/Band name"
   musician_email: "Email"

@@ -104,12 +104,14 @@ es:
   new_playlist: "Nueva lista"
   delete_playlist_confirm: "Estás seguro que deseas borrar esta lista?"
   playlist_name: "Nombre de la lista de reproducción"
-  playlist_empty: "Lista de reproducción vacía: recorre álbumes en el catálogo para añadir canciones"
+  playlist_empty: "Lista de reproducción vacía: para añadir canciones recorre álbumes en el "
+  playlist_is_empty: "Esta lista de reproducción está vacía"
   your_playlists: "Tus listas"
   other_users_playlists: "Listas de otros usuarios"
   more_playlists_coming_soon: "Pronto permitiremos más de una lista!"
   playlist_description_not_available: "Lista sin descripción."
   you_need_to_login: "Necesitas ingresar para crear tus listas"
+  you_dont_have_playlists: "Aún no tienes listas de reproducción"
   # Station page
   artist_notfound: "Artista no encontrado"
   album_notfound: "Álbum no encontrado"
@@ -152,6 +154,7 @@ es:
   social_networks: "Redes Sociales"
   in_facebook: "en Facebook"
   sign_in_facebook: "Ingresa con Facebook"
+  or: "o"
   # Social
   share_this: "comparte!"
   share_this_artist: "comparte este artista en"
@@ -172,6 +175,8 @@ es:
   change_your_password: "Cambiar tu contraseña"
   change_my_password: "Cambiar mi contraseña"
   new_password: "Nueva contraseña"
+  password_confirmation: "Confirmar contraseña"
+  register_with_email: "Regístrate con tu correo electrónico"
   #Musician Form
   musician_name: "Nombre de la banda o músico"
   musician_email: "Correo Electrónico"

@@ -13,13 +13,19 @@
         = t(:you_dont_have_playlists)
     - else
       = t(:you_need_to_login)
-      %br
-      - if devise_mapping.omniauthable?
-        - resource_class.omniauth_providers.each do |provider|
-          %a{href: "#{omniauth_authorize_path(resource_name, provider)}", class: 'btn btn-social btn-facebook'}
-            %i.fa.fa-facebook
-            = t(:sign_in_facebook)
+      %p.authentication
+        %br
+        - if devise_mapping.omniauthable?
+          - resource_class.omniauth_providers.each do |provider|
+            %a{href: "#{omniauth_authorize_path(resource_name, provider)}", class: 'btn btn-social btn-facebook'}
+              %i.fa.fa-facebook
+              = t(:sign_in_facebook)
+        %br
+        = t(:or)
+        %br
+        = link_to t(:register_with_email), new_user_registration_path, class: 'btn whitebtn login_btn'
     - if policy(Playlist.new).create?
+      %br
       - if @user_playlists.count == 0
         =link_to t(:new_playlist), new_playlist_path, class: 'btn btn-success'
       - else
