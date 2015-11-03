@@ -19,7 +19,7 @@
         - else
           = image_tag( 'default_playlist.jpg' )
       .playlist_description
-        %h3.playlist_name
+        %h4.playlist_name
           = @playlist.name
         - unless @playlist.description.nil? || @playlist.description.empty?
           = simple_format(@playlist.description)
