@@ -19,13 +19,12 @@
         - else
           = image_tag( 'default_playlist.jpg' )
       .playlist_description
-        %br
-          %h3.playlist_name
-            = @playlist.name
-          - unless @playlist.description.nil? || @playlist.description.empty?
-            = simple_format(@playlist.description)
-          - else
-            = t(:playlist_description_not_available)
+        %h3.playlist_name
+          = @playlist.name
+        - unless @playlist.description.nil? || @playlist.description.empty?
+          = simple_format(@playlist.description)
+        - else
+          = t(:playlist_description_not_available)
   .col-md-4
     .playlist_artist_div
       #artist_summary.playlist_artist
