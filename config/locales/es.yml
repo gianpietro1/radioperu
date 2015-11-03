@@ -116,6 +116,7 @@ es:
   playlist_image: "Imagen de tu lista"
   playlist_updated: "Tu lista ha sido actualizada" 
   playlist_saved: "Tu lista ha sido creada"
+  minutes: "minutos"
   # Station page
   artist_notfound: "Artista no encontrado"
   album_notfound: "Álbum no encontrado"
