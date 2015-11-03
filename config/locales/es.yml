@@ -117,6 +117,7 @@ es:
   playlist_updated: "Tu lista ha sido actualizada" 
   playlist_saved: "Tu lista ha sido creada"
   minutes: "minutos"
+  private: "Privada"
   # Station page
   artist_notfound: "Artista no encontrado"
   album_notfound: "Álbum no encontrado"

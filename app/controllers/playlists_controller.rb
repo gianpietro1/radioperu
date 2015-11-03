@@ -5,9 +5,9 @@ class PlaylistsController < ApplicationController
   def index
     if current_user
       @user_playlists = current_user.playlists
-      @playlists = Playlist.all - @user_playlists
+      @playlists = Playlist.where(private: false) - @user_playlists
     else
-      @playlists = Playlist.all
+      @playlists = Playlist.where(private: false)
     end
   end
 
@@ -87,7 +87,7 @@ class PlaylistsController < ApplicationController
   private
 
     def playlist_params
-      params.require(:playlist).permit(:name, :description, :image)
+      params.require(:playlist).permit(:name, :description, :image, :private)
     end
 
 end

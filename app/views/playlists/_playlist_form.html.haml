@@ -15,6 +15,10 @@
           .current_file
             - file = URI(f.object.image.to_s).path.split('/').last.to_s
             = t(:current_file) + ': ' + (file.length > 0 ? file : "-").to_s
+      .form-group.margin-left-15
+        = f.label :private, class: 'checkbox' do
+          = f.check_box :private
+          = t(:private)
       .form_group.pull-right
         = link_to t(:cancel), playlists_path, class: "btn btn-danger"
         = f.submit t(:form_save), class: 'btn btn-success'
