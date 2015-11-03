@@ -882,6 +882,33 @@ span.catalogue_title a {
   overflow-y: auto;
 }
 
+.playlist_artist .artist-info {
+  width: 100%;
+  border-radius: 0;
+  border-bottom: 0;
+  height: 130px;
+  margin-top: 0;
+  padding: 3px;
+  border: 0;
+}
+
+.playlist_album .album-info {
+  width: 100%;
+  border-radius: 0;
+  border-top: 0;
+  margin-top: 0;
+  height: 94px;
+  border: 0;
+}
+
+.playlist_artist_div {
+  -webkit-box-shadow: 2px 2px 8px -1px rgba(0,0,0,0.52);
+  -moz-box-shadow: 2px 2px 8px -1px rgba(0,0,0,0.52);
+  box-shadow: 2px 2px 8px -1px rgba(0,0,0,0.52);
+  height: 222px;
+  padding-right: 10px;
+}
+
 .album_songs {
   /* width: 80%;*/
 }

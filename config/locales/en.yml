@@ -111,6 +111,10 @@ en:
   playlist_description_not_available: "Playlist description not available"
   you_need_to_login: "You need to login to create playlists"
   you_dont_have_playlists: "You don't have playlists"
+  playlist_description: "Playlist description"
+  playlist_image: "Playlist image"
+  playlist_updated: "Your playlist has been updated" 
+  playlist_saved: "Your playlist has been created"
   # Station page
   artist_notfound: "Artist not found"
   album_notfound: "Album not found"

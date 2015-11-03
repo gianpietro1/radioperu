@@ -11,7 +11,7 @@
 
 .row
   .col-md-1
-  .col-md-10
+  .col-md-6
     .clear_both.margin-top-10
       .playlist_image
         - if @playlist.image?
@@ -26,6 +26,14 @@
             = simple_format(@playlist.description)
           - else
             = t(:playlist_description_not_available)
+  .col-md-4
+    .playlist_artist_div
+      #artist_summary.playlist_artist
+      #album_summary.playlist_album    
+
+.row
+  .col-md-1
+  .col-md-10
     %div{"oncontextmenu"=>"return false", class: "margin-top-10"}
       %h5.playlist_title
         =t(:click_to_play_arrow_for_details)
@@ -53,6 +61,7 @@
                 %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.filename.file.basename + '#' + song.album.name + '#' + song.album.artist.name + '#' + ".mp3"}
                   = song.album.artist.name + " - " + song.name
 
+
 %script{:type=>"text/javascript"}
 
   var locale = "#{I18n.locale}";
@@ -78,5 +87,42 @@
   });
 
   function update_scroll(){
-  $('.playlist_scroll').scrollTo('.sm2_playing', { duration: 200 });
+  $('.playlist_scroll').scrollTo('.sm2_playing', { duration: 400 });
   }
+  update_scroll();
+  setInterval(update_scroll,60000);
+  
+  // Update artist & album partials
+
+  var locale = "#{I18n.locale}";
+
+  songtitle_old = 0
+  songtitle_new = 1
+  
+
+  function update_artist(){
+
+  
+  // Current song
+  songtitle_new = $("li.sm2_playing a:eq( 2 )").text().trim();
+  
+  if (songtitle_new != songtitle_old) {
+  // Get or format variables
+  artist = songtitle_new.substring(0, songtitle_new.indexOf(" - "));
+  song = songtitle_new.substring(songtitle_new.indexOf(" - ") + 3);
+  // Ajax call artist summary partial based on artist variable
+  $.ajax({data: { artist_name: artist }, type: 'get', url: "/" + locale + "/artist_summary", success: function(r) { $('#artist_summary').html(r); } });
+  // Ajax call album summary partial based on artist and song variable
+  $.ajax({data: { song_name: song, artist_name: artist }, type: 'get', url: "/" + locale + "/album_summary", success: function(r) { $('#album_summary').html(r); } });
+  }
+
+  songtitle_old = songtitle_new;
+
+  }
+
+
+  // Do updates of this periodically
+  
+  update_artist();
+  setInterval(update_artist,5000);
+  

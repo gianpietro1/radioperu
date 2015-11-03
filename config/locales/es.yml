@@ -112,6 +112,10 @@ es:
   playlist_description_not_available: "Lista sin descripción."
   you_need_to_login: "Necesitas ingresar para crear tus listas"
   you_dont_have_playlists: "Aún no tienes listas de reproducción"
+  playlist_description: "Descripción de tu lista"
+  playlist_image: "Imagen de tu lista"
+  playlist_updated: "Tu lista ha sido actualizada" 
+  playlist_saved: "Tu lista ha sido creada"
   # Station page
   artist_notfound: "Artista no encontrado"
   album_notfound: "Álbum no encontrado"
