@@ -89,7 +89,7 @@ private
   end
 
   def update_facebook_graph
-    url = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@artist.slug}&scrape=true&access_token=440598459358292|GVj1kcc9QwokzIRBDoNAkznYhQM"
+    url = "https://graph.facebook.com/?id=http://radioperu.pe/es/#{@artist.slug}&scrape=true&access_token=440598459358292|GVj1kcc9QwokzIRBDoNAkznYhQM"
     system("curl -X POST --insecure '#{url}'")
   end
 

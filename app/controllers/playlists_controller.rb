@@ -26,6 +26,7 @@ class PlaylistsController < ApplicationController
     authorize @playlist
     if @playlist.save
       flash[:notice] = t(:playlist_saved)
+      update_facebook_graph
       redirect_to playlists_path
     else
       flash[:error] = t(:playlist_create_error)
@@ -43,6 +44,7 @@ class PlaylistsController < ApplicationController
     authorize @playlist
     if @playlist.update_attributes(playlist_params)
       flash[:notice] = t(:playlist_updated)
+      update_facebook_graph
       redirect_to @playlist
     else
       flash[:error] = t(:playlist_update_error)
@@ -88,6 +90,11 @@ class PlaylistsController < ApplicationController
 
     def playlist_params
       params.require(:playlist).permit(:name, :description, :image, :private)
+    end
+
+    def update_facebook_graph
+      url = "https://graph.facebook.com/?id=http://radioperu.pe/es/playlists/#{@playlist.id}&scrape=true&access_token=440598459358292|GVj1kcc9QwokzIRBDoNAkznYhQM"
+      system("curl -X POST --insecure '#{url}'")
     end
 
 end

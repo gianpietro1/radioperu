@@ -89,7 +89,7 @@
                 %a.hide
               .pointer
                 - if song.name != ''
-                  =link_to t(:details), [song.album.artist,song.album,song], target: :blank
+                  =link_to t(:details), "/#{I18n.locale.to_s}/" + song.album.artist.slug + '/albums/' + song.album.slug + '/songs/' + song.slug, target: :blank
               - if song.filename.file
                 %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.filename.file.basename + '#' + song.album.name + '#' + song.album.artist.name + '#' + ".mp3"}
                   = song.album.artist.name + " - " + song.name

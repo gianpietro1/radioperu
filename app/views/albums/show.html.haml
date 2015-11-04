@@ -81,7 +81,7 @@
                     = link_to "", "javascript:;", class: "add_to_playlist btn btn-sm btn-danger glyphicon glyphicon-minus-sign checked", id: song.id                     
               .pointer
                 - if song.name != ''
-                  =link_to t(:details), [@artist,@album,song]
+                  =link_to t(:details), "/#{I18n.locale.to_s}/" + @artist.slug + '/albums/' + @album.slug + '/songs/' + song.slug
               - offset = ENV["SOUND_OFFSET"].to_i
               - if song.filename.file
                 %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.filename.file.basename + '#' + song.album.name + '#' + song.album.artist.name + '#' + ".mp3"}
