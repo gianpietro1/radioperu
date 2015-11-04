@@ -39,7 +39,7 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    @artist = Artist.create(artist_params)
+    @artist = current_user.artists.build(artist_params)
     authorize @artist
     if @artist.save
       flash[:notice] = t(:artist_saved)

@@ -22,7 +22,7 @@ class PlaylistsController < ApplicationController
   end
 
   def create
-    @playlist = current_user.playlists.create(playlist_params)
+    @playlist = current_user.playlists.build(playlist_params)
     authorize @playlist
     if @playlist.save
       flash[:notice] = t(:playlist_saved)
