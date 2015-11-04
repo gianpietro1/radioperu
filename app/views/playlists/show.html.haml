@@ -1,3 +1,14 @@
+- title @playlist.name + ' - ' + @playlist.user.name
+- if @playlist.image?
+  - set_meta_tags :og => {:title => (@playlist.name + ' - ' + @playlist.user.name) , :url => playlist_url(@playlist), :image => image_url(@playlist.cover), :description => @playlist.description}
+- else
+  - set_meta_tags :og => {:title => (@playlist.name + ' - ' + @playlist.user.name) , :url => playlist_url(@playlist), :description => @playlist.description}
+- if @playlist.description.nil? || @playlist.description.empty?
+  - set_meta_tags description: @playlist.name
+- else
+  - set_meta_tags description: @playlist.description
+- set_meta_tags keywords: %W[radioperu.pe radio peru radioperu musica peruana #{@playlist.name}]
+
 = render partial: 'playlists_header'
 
 .row
@@ -11,16 +22,27 @@
 
 .row
   .col-md-1
+  .col-md-10
+    .pull-left
+      %h3.playlist_name
+        = @playlist.name  
+    .pull-right  
+      .sharepage
+        %h5
+          = t(:share_this_playlist)
+        .pull-right
+          = social_share_button_tag((@playlist.name + " - " + @playlist.user.name + " " + t(:in_radioperu)), popup: "true", via: "radioperu_pe")
+
+.row
+  .col-md-1
   .col-md-6
-    .clear_both.margin-top-10
+    .clear_both
       .playlist_image
         - if @playlist.image?
           = image_tag( @playlist.image )
         - else
           = image_tag( 'default_playlist.jpg' )
       .playlist_info
-        %h4.playlist_name
-          = @playlist.name
         %h5
           = @playlist.songs.count.to_s + " " + t(:songs) + " / " +  @playlist.length + " " + t(:minutes)
       .playlist_description

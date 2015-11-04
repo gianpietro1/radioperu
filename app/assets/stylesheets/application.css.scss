@@ -37,6 +37,10 @@ body {
   clear: both;
 }
 
+.clear_right {
+  clear: right;
+}
+
 .resetfont {
   text-decoration: none !important;
   color: #3c3c33;
@@ -893,7 +897,7 @@ span.catalogue_title a {
   border-bottom: 0;
   height: 130px;
   margin-top: 0;
-  padding: 3px;
+  padding: 0 3px;
   border: 0;
 }
 
@@ -916,7 +920,7 @@ span.catalogue_title a {
   -webkit-box-shadow: 2px 2px 8px -1px rgba(0,0,0,0.52);
   -moz-box-shadow: 2px 2px 8px -1px rgba(0,0,0,0.52);
   box-shadow: 2px 2px 8px -1px rgba(0,0,0,0.52);
-  height: 222px;
+  height: 220px;
   padding-right: 10px;
 }
 
@@ -931,7 +935,7 @@ span.catalogue_title a {
   height: 200px;
 } 
 .playlist_description {
-  height: 150px;
+  height: 175px;
 }
 
 .album_mininfo, .artist_mininfo {
@@ -1820,6 +1824,10 @@ hr {
 .playlist_artist_div {
   height: 241px;
   margin-top: 13px;
+}
+
+.playlist_description, .playlist_info {
+  clear: both;
 }
 
 }
