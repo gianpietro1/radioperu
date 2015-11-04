@@ -27,7 +27,7 @@ class PlaylistsController < ApplicationController
     if @playlist.save
       flash[:notice] = t(:playlist_saved)
       update_facebook_graph
-      redirect_to playlists_path
+      redirect_to @playlist
     else
       flash[:error] = t(:playlist_create_error)
       render :new

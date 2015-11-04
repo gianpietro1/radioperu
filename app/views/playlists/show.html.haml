@@ -1,8 +1,8 @@
-- title @playlist.name + ' - ' + @playlist.user.name
+- title @playlist.name + ' - ' + (@playlist.user.name.presence || @playlist.user.email)
 - if @playlist.image?
-  - set_meta_tags :og => {:title => (@playlist.name + ' - ' + @playlist.user.name) , :url => playlist_url(@playlist), :image => image_url(@playlist.image), :description => @playlist.description}
+  - set_meta_tags :og => {:title => (@playlist.name + ' - ' + (@playlist.user.name.presence || @playlist.user.email)), :url => playlist_url(@playlist), :image => image_url(@playlist.image), :description => @playlist.description}
 - else
-  - set_meta_tags :og => {:title => (@playlist.name + ' - ' + @playlist.user.name) , :url => playlist_url(@playlist), :description => @playlist.description}
+  - set_meta_tags :og => {:title => (@playlist.name + ' - ' + (@playlist.user.name.presence || @playlist.user.email)) , :url => playlist_url(@playlist), :description => @playlist.description}
 - if @playlist.description.nil? || @playlist.description.empty?
   - set_meta_tags description: @playlist.name
 - else
@@ -31,7 +31,7 @@
         %h5
           = t(:share_this_playlist)
         .pull-right
-          = social_share_button_tag((@playlist.name + " - " + @playlist.user.name + " " + t(:in_radioperu)), popup: "true", via: "radioperu_pe")
+          = social_share_button_tag((@playlist.name + " - " + (@playlist.user.name.presence || @playlist.user.email) + " " + t(:in_radioperu)), popup: "true", via: "radioperu_pe")
 
 .row
   .col-md-1
@@ -44,7 +44,7 @@
           = image_tag( 'default_playlist.jpg' )
       .playlist_info
         %h5.bold
-          = t(:by) + " " + @playlist.user.name + ", " + @playlist.songs.count.to_s + " " + t(:songs) + " / " +  @playlist.length + " " + t(:minutes)
+          = t(:by) + " " + (@playlist.user.name.presence || @playlist.user.email) + ", " + @playlist.songs.count.to_s + " " + t(:songs) + " / " +  @playlist.length + " " + t(:minutes)
       .playlist_description
         - unless @playlist.description.nil? || @playlist.description.empty?
           = simple_format(@playlist.description)
@@ -53,6 +53,9 @@
   .col-md-4
     .playlist_artist_div
       #artist_summary.playlist_artist
+        .text-center.padding-20
+          %em
+            =t(:artist_info)
       #album_summary.playlist_album    
 
 .row
@@ -61,10 +64,14 @@
     %div{"oncontextmenu"=>"return false", class: "margin-top-10"}
       %h5.playlist_title
         =t(:click_to_play_arrow_for_details)
+        -if policy(@playlist).edit?
+          = " / " 
+          %span.glyphicon.glyphicon-minus-sign
+          = t(:remove_from_playlist)        
       %ul.playlist.playlist_scroll
         - if @playlist.songs.empty?
           %p
-            - if @playlist.user == current_user
+            - if policy(@playlist).edit?
               = t(:playlist_empty)
               = link_to t(:catalogue), artists_path
             - else

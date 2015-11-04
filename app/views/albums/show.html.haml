@@ -69,10 +69,17 @@
       %div{"oncontextmenu"=>"return false"}
         %ul.playlist
           %h5.playlist_title
-            =t(:click_to_play_arrow_for_details)
+            = t(:click_to_play_arrow_for_details)
+            -if current_user && current_user.playlists.count > 0
+              = " / " 
+              %span.glyphicon.glyphicon-plus-sign
+              = t(:add_to_playlist)
+              = " / " 
+              %span.glyphicon.glyphicon-minus-sign
+              = t(:remove_from_playlist)
           - @songs.each do |song|
             %li{id: "li"}
-              -if current_user && current_user.role == 'admin' && current_user.playlists.count > 0
+              -if current_user && current_user.playlists.count > 0
                 -unless song.in?(current_user.playlists.first.songs)
                   .playlist_add
                     = link_to "", "javascript:;", class: "add_to_playlist btn btn-sm btn-success glyphicon glyphicon-plus-sign", id: song.id 

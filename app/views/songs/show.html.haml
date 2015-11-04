@@ -44,6 +44,13 @@
       %ul.playlist.song-playlist
         %h4
           =t(:click_to_play)
+          -if current_user && current_user.playlists.count > 0
+            = " / " 
+            %span.glyphicon.glyphicon-plus-sign
+            = t(:add_to_playlist)
+            = " / " 
+            %span.glyphicon.glyphicon-minus-sign
+            = t(:remove_from_playlist)          
         %li{id: "li"}
           -if current_user && current_user.role == 'admin' && current_user.playlists.count > 0
             -if @song.in?(current_user.playlists.first.songs)

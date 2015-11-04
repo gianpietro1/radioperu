@@ -38,8 +38,9 @@
 
       <div class="pull-right user-info">
         <%if current_user %>
-          <%= t :greetings %> 
-          <%= (current_user.name || current_user.email) %> !
+          <%= t :greetings %>
+            <%= current_user.name.presence || current_user.email %> !
+          <%= link_to t(:my_account), edit_user_registration_path, class: 'btn btn-primary btn-sm' %>
           <%if current_user.role == 'admin'%>
             <%= link_to 'admin', '/admin', class: 'btn btn-primary btn-sm' %>
           <% end %>

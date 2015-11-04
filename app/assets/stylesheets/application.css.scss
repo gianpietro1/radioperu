@@ -75,6 +75,8 @@ body {
 .margin-top-40 { margin-top: 4.0em; }
 .margin-top-50 { margin-top: 5.0em; }
 
+.padding-20 {padding: 2.0em;}
+
 .line-height-00 { line-height: 0 }
 
 .bold { font-weight: bold }
@@ -120,8 +122,9 @@ body {
   background-color: white;
   padding: 5px 24px 40px 24px;
   margin: 8px 0px 15px 0px;
-  min-height: 865px;
+  min-height: 765px;
   border-radius: 10px;
+  height: auto;
 }
 
 .blackbtn {
@@ -221,6 +224,14 @@ textarea.form-control {
       margin-left: 135px;
   }
 }
+
+/* Devise */
+
+.devise {
+  min-height: 600px;
+  height: auto;
+}
+
 
 /* Social */
 
@@ -876,6 +887,37 @@ span.catalogue_title a {
   margin-bottom: 20px
 }
 
+.album_songs {
+  /* width: 80%;*/
+}
+
+.album_bio, .artist_bio, .playlist_description {
+  font-size: 1.0em;
+  font-weight: normal;
+  overflow: auto;
+  max-height: 200px;
+} 
+.playlist_description {
+  max-height: 175px;
+}
+
+.album_mininfo, .artist_mininfo {
+  margin-top: 10px;
+}
+
+.album_mininfo a, .artist_mininfo a {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+
+.album_nav {
+  height: 30px;
+}
+
+/* Playlists */
+
+
 .playlist_image {
   float:left;
   width: 220px;
@@ -924,39 +966,15 @@ span.catalogue_title a {
   padding-right: 10px;
 }
 
-.album_songs {
-  /* width: 80%;*/
-}
-
-.album_bio, .artist_bio, .playlist_description {
-  font-size: 1.0em;
-  font-weight: normal;
-  overflow: auto;
-  height: 200px;
-} 
-.playlist_description {
-  height: 175px;
-}
-
-.album_mininfo, .artist_mininfo {
-  margin-top: 10px;
-}
-
-.album_mininfo a, .artist_mininfo a {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  word-break: break-all;
-}
-
-.album_nav {
-  height: 30px;
-}
-
 .playlist_title {
   background: #99CCFF;
   padding: 5px;
   border-radius: 5px;
   font-family: 'Myriad Pro Semibold'
+}
+
+.user_playlists {
+  margin-bottom: 30px;
 }
 
 /* Edit forms */
@@ -1599,7 +1617,7 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 }
 
 .landing {
-  min-height: 750px;
+  /*min-height: 800px;*/
 }
 
 }
@@ -1843,7 +1861,7 @@ hr {
 }
 
 .landing {
-  min-height: 960px;
+  /* min-height: 960px; */
 }
 
 .logo img {
