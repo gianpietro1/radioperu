@@ -85,7 +85,9 @@
                     = link_to "", "javascript:;", class: "add_to_playlist btn btn-sm btn-success glyphicon glyphicon-plus-sign", id: song.id 
                 -else
                   .playlist_add
-                    = link_to "", "javascript:;", class: "add_to_playlist btn btn-sm btn-danger glyphicon glyphicon-minus-sign checked", id: song.id                     
+                    = link_to "", "javascript:;", class: "add_to_playlist btn btn-sm btn-danger glyphicon glyphicon-minus-sign checked", id: song.id                 
+              -else
+                %a.hide   
               .pointer
                 - if song.name != ''
                   =link_to t(:details), "/#{I18n.locale.to_s}/" + @artist.slug + '/albums/' + @album.slug + '/songs/' + song.slug
