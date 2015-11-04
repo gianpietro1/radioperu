@@ -898,8 +898,8 @@ span.catalogue_title a {
 }
 
 .playlist_artist .artist-info #artist-bio {
-  height: 130px;
-  margin-top: 4px;
+  height: 122px;
+  margin-top: 8px;
   font-size: 0.9em;
 }
 
@@ -930,6 +930,9 @@ span.catalogue_title a {
   overflow: auto;
   height: 200px;
 } 
+.playlist_description {
+  height: 150px;
+}
 
 .album_mininfo, .artist_mininfo {
   margin-top: 10px;

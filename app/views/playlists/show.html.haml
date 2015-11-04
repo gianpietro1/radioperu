@@ -18,11 +18,12 @@
           = image_tag( @playlist.image )
         - else
           = image_tag( 'default_playlist.jpg' )
-      .playlist_description
+      .playlist_info
         %h4.playlist_name
           = @playlist.name
         %h5
           = @playlist.songs.count.to_s + " " + t(:songs) + " / " +  @playlist.length + " " + t(:minutes)
+      .playlist_description
         - unless @playlist.description.nil? || @playlist.description.empty?
           = simple_format(@playlist.description)
         - else
@@ -114,7 +115,12 @@
 
   
   // Current song
+  
+  if ($("li.sm2_playing a:eq( 2 )").text() == "") {
+  songtitle_new = $("li.sm2_paused a:eq( 2 )").text().trim();
+  } else {
   songtitle_new = $("li.sm2_playing a:eq( 2 )").text().trim();
+  }
   
   if (songtitle_new != songtitle_old) {
   // Get or format variables
