@@ -43,8 +43,8 @@
         - else
           = image_tag( 'default_playlist.jpg' )
       .playlist_info
-        %h5
-          = @playlist.songs.count.to_s + " " + t(:songs) + " / " +  @playlist.length + " " + t(:minutes)
+        %h5.bold
+          = t(:by) + " " + @playlist.user.name + ", " + @playlist.songs.count.to_s + " " + t(:songs) + " / " +  @playlist.length + " " + t(:minutes)
       .playlist_description
         - unless @playlist.description.nil? || @playlist.description.empty?
           = simple_format(@playlist.description)
