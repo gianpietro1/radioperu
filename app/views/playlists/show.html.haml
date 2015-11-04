@@ -1,6 +1,6 @@
 - title @playlist.name + ' - ' + @playlist.user.name
 - if @playlist.image?
-  - set_meta_tags :og => {:title => (@playlist.name + ' - ' + @playlist.user.name) , :url => playlist_url(@playlist), :image => image_url(@playlist.cover), :description => @playlist.description}
+  - set_meta_tags :og => {:title => (@playlist.name + ' - ' + @playlist.user.name) , :url => playlist_url(@playlist), :image => image_url(@playlist.image), :description => @playlist.description}
 - else
   - set_meta_tags :og => {:title => (@playlist.name + ' - ' + @playlist.user.name) , :url => playlist_url(@playlist), :description => @playlist.description}
 - if @playlist.description.nil? || @playlist.description.empty?
