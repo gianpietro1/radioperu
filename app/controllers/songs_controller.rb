@@ -1,14 +1,14 @@
 class SongsController < ApplicationController
  
   def show
-    @album = Album.friendly.find(params[:album_id])
+    @artist = Artist.friendly.find(params[:artist_id])
+    @album = @artist.albums.friendly.find(params[:album_id])
     @song = @album.songs.friendly.find(params[:id])
     @songs = @album.songs
     unless @song.video == nil || @song.video == ''
       @video_id = VideoInfo.new(@song.video).video_id
     end
     authorize @song
-    @artist = @album.artist
   end
 
   def edit
