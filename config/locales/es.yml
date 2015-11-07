@@ -208,6 +208,11 @@ es:
   leave_blank: "(deja en blanco si no deseas cambiarla)"
   cancel_my_account: "Cancelar mi cuenta"
   edit_user: "Editar cuenta"
+  resend_confirmation_instructions: "Reenviar instrucciones de confirmación"
+  didnt_receive_confirmation_instructions: "No recibiste instrucciones para confirmar la cuenta?"
+  welcome: "Bienvenido/a"
+  confirm_with_link_below: "Confirma tu inscripción con el enlace a continuación:"
+  confirm_my_account: "Confirmar mi cuenta"
   #Musician Form
   musician_name: "Nombre de la banda o músico"
   musician_email: "Correo Electrónico"

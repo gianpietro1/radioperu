@@ -207,6 +207,11 @@ en:
   leave_blank: "leave blank if you don't want to change it"
   cancel_my_account: "Cancel my account"
   edit_user: "Edit user"
+  resend_confirmation_instructions: "Resend confirmation instructions"
+  didnt_receive_confirmation_instructions: "Didn't receive confirmation instructions"
+  welcome: "Welcome"
+  confirm_with_link_below: "Please confirm your account with the following button:"
+  confirm_my_account: "Confirmar my account"
   #Musician Form
   musician_name: "Musician/Band name"
   musician_email: "Email"
