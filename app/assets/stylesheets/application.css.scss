@@ -183,11 +183,8 @@ body {
 
 .slogan-animation {
   font-size: 1.6em;
-  float: left;
   color: #3c3c33;
   opacity: 0;
-  margin-left: 95px;
-  line-height: 0.5em
 }
 
 .slogan a {
@@ -199,9 +196,22 @@ body {
 
 .search {
   font-size: 1.0em;
-  float: right;
   padding-top: 6px;
-  margin-right: 100px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.search input {
+  border-radius: 2px;
+  border: 1px solid #606060;
+}
+
+
+.search_landing {
+  font-size: 0.9em;
+  padding-top: 6px;
+  text-align: center;
+  float: none;
 }
 
 .search-field {
@@ -217,12 +227,54 @@ textarea.form-control {
   color: white;
 }
 
+.mainnav li {
+  display: inline-block;
+  text-transform: lowercase;
+}
+
+.mainnav a {
+    display: block;
+    width: 300px;
+    border: 1px solid #ececec;
+    text-align: center;
+    font-size: 1.1em;
+    padding:4px;
+    color: #3c3333;
+}
+
+.mainnav a:hover,  {
+  text-decoration: none;
+  border: 1px solid #3c3333 !important;
+  font-weight: bold;
+}
+
+.main_highlighted {
+  font-weight: bold;
+  background-color: #3c3333;
+}
+
+.main_highlighted a {
+  color: #fff;
+}
+
+.mainnav {
+    list-style-type: none;
+    width: auto;
+    text-align: center;
+    margin-left: -50px;
+}
+
+.mobile {
+  display: none;
+}
+
 /* Browser-specific */
 
 @-moz-document url-prefix() {
   .logo {
-      margin-left: 135px;
   }
+
+
 }
 
 /* Devise */
@@ -317,15 +369,15 @@ textarea.form-control {
 }
 
 .social-timelines-inner-fb {
-  border: 1px solid #e8e8e8;
+  /*border: 1px solid #e8e8e8;*/
 }
 
 .social-timelines-inner-tw {
-  border: 1px solid #e8e8e8;
+  /*border: 1px solid #e8e8e8;*/
 }
 
 .social-timelines-inner-in {
-  border: 1px solid #e8e8e8;
+  /*border: 1px solid #e8e8e8;*/
 }
 
 .social-timelines-inner-in img {
@@ -371,29 +423,21 @@ textarea.form-control {
   box-shadow: 0 5px 3px -3px #777;
 }
 
-.radios {
-  width: 83%;
-  margin: 0 auto;
-}
-
 .station1,.station2,.station3,.station4,.station5 {
   display: block;
-  width: 19.5%;
-  height: 280px;
+  width: 100%;
+  height: 50px;
   float: left;
-  margin: 2px;
+  margin: 1px;
   text-align: center;
-  background-size: 250px;
   box-shadow: 0 2px 1px -1px #777;
 }
 
 .stationlink {
-  width: 97%;
-  height: 28%;
+  height: 50px;
   margin: auto;
   color: #f6f3e4;
-  margin-top: 120px;
-  padding: 10px;
+  margin-top: 9px;
 }
 
 .station1:hover,.station2:hover,.station3:hover,.station4:hover,.station5:hover {
@@ -404,6 +448,7 @@ textarea.form-control {
 
 .station1 {
     background: asset-url('station1b.jpg') no-repeat;
+    border-radius: 10px 10px 0 0;
 }
 
 .station2 {
@@ -420,15 +465,21 @@ textarea.form-control {
 
 .station5 {
     background: asset-url('station5b.jpg') no-repeat;
+    border-radius: 0 0 10px 10px;
+}
+
+.station1,.station2,.station3,.station4,.station5 {
+  background-size: 341px 300px;
 }
 
 .radiotitle {
-  font-size: 1.3em;
+  font-size: 1em;
   font-weight: bold;
 }
 
 .radiodescription {
-  font-size: 1.0em;
+  font-size: 0.9em;
+  line-height: 1em;
 }
 
 .welcome_div {
@@ -439,72 +490,49 @@ textarea.form-control {
   text-transform: lowercase;
 }
 
-.catalogue {
-  display: block;
-  width: 99.5%;
-  height: 70px;
-  background-color: #fff;
-  box-shadow: 0 5px 5px -3px #777;
-  border: 1px solid #e0e0e0;
-  color: #3c3c33;
+.option_title {
   text-transform: lowercase;
-  /*background: asset-url('catalogue.png') no-repeat left;
-  background-size: 75px 75px;
-  background-position: 10px;*/
-  text-align: center;
-  float: left;
+  letter-spacing: 2px;
+  font-family: 'Myriad Pro Semibold'
 }
 
-.catalogue h3 {
-  margin-top: 10px;
+.catalogue-container, .radios-container, .playlist-container {
+  height: 260px;
+  box-shadow: 0 5px 5px -3px #777;
+  border-radius: 10px;
 }
 
-.catalogue span {
-  color: #3c3c33;
+.catalogue-container, .playlist-container {
+  padding-top: 20%;
 }
 
-.catalogue:hover {
-  background-color: rgba(60, 60, 51, 0.3);
-  box-shadow: 0 10px 6px -6px #777;
-  color: #3c3c33;
-  z-index: 0;
+.playlist-container {
+  background: asset-url('playlist.jpg') no-repeat;
 }
 
-.catalogue h3 {
-    vertical-align: middle;
-    display: inline-block;
+.catalogue-container {
+  background: asset-url('catalogue.jpg') no-repeat;
 }
 
-.musician {
-  background: asset-url('musician.png') no-repeat left;
-  display: none;
-}
-
-.listener {
-  background: asset-url('listener.png') no-repeat left;
-}
-
-.listener, .musician {
-  display: none;
-  background-size: 75px 75px;
-  background-position: 10px;
-  float: left;
-  padding-left: 94px;
-  color: #3c3c33;
+.catalogue_link, .playlists_link {
+  display: block;
   height: 100px;
-  width: 195px;
-  line-height: 95px;
-  border: 1px solid #ececec;
+  margin: auto;
+  padding: 10px;
+  padding-top: 10%;
+  color: #fff;
+  background-color: rgba(255,255,255, 0.3);
+  border-radius: 10px;
+  text-align: center;
+  width: 70%;
+  font-weight: bolder;
 }
 
-.listener:hover, .musician:hover {
-  opacity: 0.9;
-  box-shadow: 0 10px 6px -6px #777;
-}
-
-.listener h5, .musician h5 {
-    vertical-align: middle;
-    display: inline-block;
+.catalogue_link:hover, .playlists_link:hover {
+  text-decoration: none;
+  z-index: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #3c3c33;
 }
 
 /* Radios */
@@ -787,7 +815,6 @@ h1.station_title {
 /* Artist */
 
 hr {
-  margin-top: 60px;
 }
 
 .artist_catalogue_title h4 {
@@ -1641,10 +1668,6 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 
 /* Welcome Screen */
 
-.station1,.station2,.station3,.station4,.station5 {
-  background-size: 180px 280px;
-}
-
 .landing {
   /*min-height: 800px;*/
 }
@@ -1670,23 +1693,20 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 
 @media screen and (max-width: 1292px) {
 
+/* General */
+
+.mainnav a {
+  width: 250px;
+  font-size: 1em;
+}
+
 /* Welcome page */
 
-.radios {
-  width: 100%;
-}
-
-.station1,.station2,.station3,.station4,.station5 {
-  width: 19%;
-}
-
-.catalogue {
- width: 97%;
- margin: 0 auto;
+h4.option_title {
+  font-size: 0.9em;
 }
 
 .musician {
-  width: 90%;
   padding-left: 40%;
   background-size: 40px 40px;
   background-position: 7px;
@@ -1698,6 +1718,10 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 
 .search {
   margin-right: 28px;
+}
+
+.search_landing {
+  font-size: 0.8em;
 }
 
 /* Radio Stations */
@@ -1722,11 +1746,6 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 
 /* Welcome page */
 
-.stationlink {
-  margin-top: 120px;
-  height: 30%;
-}
-
 .slogan-animation {
   margin-left: 0px;
   float: none;
@@ -1737,6 +1756,14 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
   margin-right: 0px;
   float: none;
   text-align: center;
+}
+
+.search_landing {
+  font-size: 0.7em;
+}
+
+.catalogue-container, .playlist-container {
+  padding-top: 30%;
 }
 
 /* Radio Stations */
@@ -1768,6 +1795,13 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 }
 
 @media screen and (max-width: 991px) {
+
+/* General */
+
+.mainnav a {
+  width: 220px;
+  font-size: 0.8em;
+}
 
 /* About */
 
@@ -1808,6 +1842,53 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
   text-align: center;
 }
 
+.catalogue-container, .radios-container, .playlist-container {
+  width: 400px;
+  text-align: center;
+  margin: auto auto 20px auto;
+  height: 100px;
+}
+
+.catalogue-container, .playlist-container {
+  padding-top: 15px;
+  background-size: 400px;
+}
+
+.playlist-container {
+  padding-top: 25px;
+}
+
+.catalogue_link, .playlists_link {
+  padding-top: 4%;
+  height: 47px;
+  width: 100%;
+  border-radius: 0;
+}
+
+.search_landing {
+  margin-top: 1px;
+}
+
+.station1, .station2, .station3, .station4, .station5 {
+  clear: none;
+  width: 78px;
+  height: 100px;
+  padding-top: 25px;
+  font-size: 0.9em;
+  background-size: 78px;
+}
+
+.radiodescription {
+  display: none;
+}
+
+.station1 {
+  border-radius: 10px 0 0 10px;
+}
+
+.station5 {
+  border-radius: 0 10px 10px 0;
+}
 /* Radio Stations */
 
 /*
@@ -1881,6 +1962,22 @@ hr {
 
 @media screen and (max-width: 768px) {
 
+/* General */
+
+.mainnav a {
+  width: 100px;
+  letter-spacing: 2px;
+  font-size: 0.7em;
+}
+
+.mobile {
+  display: block;
+}
+
+.desktop {
+  display: none;
+}
+
 /* Welcome page */
 
 @-moz-document url-prefix() {
@@ -1942,17 +2039,6 @@ hr {
 
 .radiodescription {
   font-size: 0.8em;
-}
-
-.stationlink {
-  width: 95%;
-  padding: 10px 2px;
-}
-
-.station1,.station2,.station3,.station4,.station5 {
-  margin: 1px;
-  height: 260px;
-  background-size: 180px 260px;
 }
 
 .social-timelines-inner {
@@ -2066,12 +2152,6 @@ h3.catalogue_title {
   width: 200px;
 }
 
-.catalogue {
-  height: 55px;
-  width: 97.5%;
-  margin-left: 1px;
-}
-
 .container-fluid {
   padding: 8px 10px;
 }
@@ -2119,29 +2199,27 @@ h3.catalogue_title {
   text-align: center;
 }
 
-.radiotitle {
-  font-size: 0.75em;
+.catalogue-container, .radios-container, .playlist-container {
+  width: 300px;
 }
 
-.radiodescription {
-  font-size: 0.55em;
+.catalogue-container, .playlist-container {
+  background-size: 300px;
 }
 
-.stationlink {
-  margin-top: 80px;
-  height: 53%;
-  padding: 10px 2px;
-  width: 100%;
+.catalogue_link, .playlists_link {
+  font-size: 0.8em;
 }
 
-.station1,.station2,.station3,.station4,.station5 {
-  height: 180px;
-  margin: 1px;
-  background-size: 180px 180px;
+.search_landing {
+}
+
+.station1, .station2, .station3, .station4, .station5 {
+  width: 58px;
 }
 
 .slogan-animation {
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 .logo {
@@ -2151,20 +2229,6 @@ h3.catalogue_title {
 .search input {
   width: 250px;
   text-align: center;
-}
-
-.catalogue h3 {
-  font-size: 1em;
-  padding-left: 13%;
-  padding-right: 10%;
-}
-
-.musician {
-  padding-left: 32%;
-}
-
-.musician h5 {
-  font-size: 1em;
 }
 
 /* Radio Stations */
@@ -2257,7 +2321,23 @@ h1.station_title {
 
 @media screen and (max-width: 360px) {
 
+/* General */
+
+.mainnav a {
+  width: 80px;
+  font-size: 0.6em
+}
+
 /* Welcome page */
+
+.catalogue-container, .radios-container, .playlist-container {
+  width: 270px;
+}
+
+.station1, .station2, .station3, .station4, .station5 {
+  width: 52px;
+  font-size: 0.8em;
+}
 
 .container-fluid {
   padding: 8px 2px;
@@ -2277,16 +2357,6 @@ h1.station_title {
 
 .social {
   margin-right: 10px;
-}
-
-.catalogue h3 {
-  font-size: 1.1em;
-  padding-left: 15%;
-}
-
-.musician {
-  font-size: 0.9em;
-  padding-left: 35%;
 }
 
 .album-summary {

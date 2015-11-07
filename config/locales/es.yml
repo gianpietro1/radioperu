@@ -22,9 +22,13 @@
 es:
   # Welcome page
   hello: "Hola mundo"
-  discover: "Descubre toda la música del Perú."
-  catalogue: "catálogo musical"
-  catalogue_description: "música a la carta de todos los géneros y épocas"
+  discover: "¿Cómo quieres descubrir la música del Perú?"
+  catalogue: "Catálogo musical"
+  catalogue_min: "catálogo"
+  playlists_min: "listas"
+  online_radios_min: "radios"
+  catalogue_description: "explora artistas y escucha sus álbumes"
+  playlists_description: "crea y comparte tus propios 'playlists'"
   register_as_listener: "regístrate como oyente"
   register_as_musician: "regístrate como músico"
   search_text: "Buscar Artistas, Álbumes y Canciones"
@@ -34,6 +38,7 @@ es:
   about: "sobre el proyecto"
   some_voices: "Algunas voces..."
   radioperu_in_social_networks: "radioperú.pe en redes sociales"
+  online_radios: "Radios en línea"
   # Artists
   artist_name: "Nombre del Artista"
   artist_city: "Ciudad de origen"
@@ -55,6 +60,7 @@ es:
   see_all: "Ver todos"
   artists_from_station: "Artistas de la estación"
   artist_bio_not_available: "Biografía no disponible."
+  back_to_catalogue: "volver al catálogo"
   # Albums
   add_album: "Añadir Álbum"
   album_name: "Nombre del Álbum"
@@ -168,6 +174,7 @@ es:
   or_else: "o de lo contrario"
   by: "Por"
   back: "volver"
+  operation_not_authorized: "No tienes los privilegios para acceder a dicho recurso."
   # Social
   share_this: "comparte!"
   share_this_artist: "comparte este artista en"

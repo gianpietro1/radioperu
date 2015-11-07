@@ -1,11 +1,23 @@
 .row
   .col-md-1
   .col-md-10
-    %h1.slogan
-      =link_to t(:catalogue).titleize, artists_path
+    %ul.mainnav.desktop
+      %li.option_title.main_highlighted
+        =link_to t(:catalogue), artists_path
+      %li.option_title
+        =link_to t(:online_radios), radio_path(Radio.all.shuffle.first)
+      %li.option_title
+        =link_to t(:playlists), playlists_path
+    %ul.mainnav.mobile
+      %li.option_title.main_highlighted
+        =link_to t(:catalogue_min), artists_path
+      %li.option_title
+        =link_to t(:online_radios_min), radio_path(Radio.all.shuffle.first)
+      %li.option_title
+        =link_to t(:playlists_min), playlists_path
+    %hr
     .search
       = text_field_tag :search, params[:search], placeholder: "#{t(:search_text)}", size: 50, class: 'search-field'
-    %hr
   .col-md-1
 
 %script{:type=>"text/javascript"}

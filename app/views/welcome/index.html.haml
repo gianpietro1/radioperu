@@ -8,33 +8,43 @@
 .row
   .col-md-1
   .col-md-10
-    %h2.slogan-animation
+    %h2.slogan-animation.text-center
       = t(:discover)
-    .search
-      = text_field_tag :search, params[:search], placeholder: "#{t(:search_text)}", size: 50, class: 'search-field'
   .col-md-1
 
 .row.margin-top-05
   .col-md-1
   .col-md-10
-    .radios
-      - (1..@radios.count).each do |i|
-        %a{ href: radio_path(id: i), class: "station#{i}" }
-          .stationlink
-            %span.radiotitle
-              =@radios.find_by(id:i).name.downcase
-            %br
-            %span.radiodescription
-              =@radios.find_by(id:i).description
-      %a.catalogue{ href: artists_path, data_description: t(:catalogue) }
-        %h3
-          = t(:catalogue)
-          %br
-          %span.small
-            = t(:catalogue_description)
+    .col-md-4
+      %h4.text-center.option_title
+        = t(:catalogue)
+      .catalogue-container
+        %a{ href: artists_path, data_description: t(:catalogue_description), class: "catalogue_link" }
+          = t(:catalogue_description)
+        .margin-top-20.search_landing
+          = text_field_tag :search, params[:search], placeholder: "#{t(:search_text)}", size: 35, class: 'search-field'
+
+    .col-md-4
+      %h4.text-center.option_title
+        = t(:online_radios)
+      .radios-container
+        - (1..@radios.count).each do |i|
+          %a{ href: radio_path(id: i), class: "station#{i} clear_both" }
+            .stationlink
+              .radiotitle.clear_both
+                =@radios.find_by(id:i).name.downcase
+              .radiodescription
+                =@radios.find_by(id:i).description
+    .col-md-4
+      %h4.text-center.option_title
+        = t(:playlists)
+      .playlist-container
+        %a{ href: playlists_path, data_description: t(:playlists), class: "playlists_link" }
+          = t(:playlists_description)
+
   .col-md-1
 
-.row.welcome_div.margin-top-20
+.row.margin-top-20
 
 .row.margin-top-05
   .social-timelines-outer
@@ -119,6 +129,6 @@
 
   });
 
-  $(".slogan-animation").animate({opacity: "1.0"}, 1000);
+  $(".slogan-animation").animate({opacity: "1.0"}, 1800);
 
 

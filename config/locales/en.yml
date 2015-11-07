@@ -22,9 +22,13 @@
 en:
   # Welcome page
   hello: "Hello world"
-  discover: "Discover all the music from Peru."
-  catalogue: "music catalogue"
-  catalogue_description: "'a la carte' music from all genres and times"
+  discover: "How do you want to discover the music from Peru?"
+  catalogue: "Music catalogue"
+  catalogue_min: "catalogue"
+  playlists_min: "playlists"
+  online_radios_min: "radios"
+  catalogue_description: "browse artists and listen to their albums"
+  playlists_description: "create and share your own playlists"
   register_as_listener: "register as a listener"
   register_as_musician: "register as a musician"
   search_text: "Search Artists, Albums and Songs"
@@ -34,6 +38,7 @@ en:
   about: "about the project"
   some_voices: "Some voices..."
   radioperu_in_social_networks: "radioperu.pe in social networks"
+  online_radios: "Online radios"
   # Artists
   artist_name: "Artist Name"
   artist_city: "City"
@@ -55,6 +60,7 @@ en:
   see_all: "See all"
   artists_from_station: "Artists from station"
   artist_bio_not_available: "Artist bio not available."
+  back_to_catalogue: "back to catalogue"
   # Albums
   add_album: "Add Album"
   album_name: "Album name"
@@ -167,6 +173,7 @@ en:
   or_else: "or else"
   by: "by"
   back: "back"
+  operation_not_authorized: "You don't have the privileges to perform that operation"
   # Social
   share_this: "share this!"
   share_this_artist: "share this artist in"

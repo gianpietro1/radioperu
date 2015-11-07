@@ -5,11 +5,13 @@ class ArtistsController < ApplicationController
   def index
     @artists = Artist.all
     authorize @artists
+    @catalogue = "general" 
   end
 
   def index_station
     @radio = Radio.find_by_id(params[:station_id])
     @artists = @radio.artists
+    @catalogue = "station" 
   end
 
   def show
@@ -17,6 +19,7 @@ class ArtistsController < ApplicationController
     authorize @artist
     @albums = @artist.albums
     @songs = @artist.songs
+    @catalogue = params[:catalogue] 
     if @artist.social_fb
       @facebook_id = @artist.social_fb[/.*\/(.*)/,1]
     end
