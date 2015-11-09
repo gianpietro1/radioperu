@@ -33,6 +33,16 @@ class UpdatesMailer < ApplicationMailer
         mail(to: 'contacto@radioperu.pe', subject: "Canción #{artist.name}-#{song.name} ha sido actualizada")
       end
 
+      def new_playlist_update(playlist)
+
+        setup_email
+
+        @playlist = playlist
+        @user = playlist.user
+ 
+        mail(to: 'contacto@radioperu.pe', subject: "Playlist #{@playlist.name}-#{@user.name} ha sido actualizado")
+      end
+
 private
 
   def setup_email

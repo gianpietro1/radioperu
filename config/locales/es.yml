@@ -128,6 +128,7 @@ es:
   artist_info: "Información sobre el artista"
   add_to_playlist: "para añadir a lista de reproducción"
   remove_from_playlist: "para borrar de lista de reproducción"
+  back_to_playlists: "volver a listas"
   # Station page
   artist_notfound: "Artista no encontrado"
   album_notfound: "Álbum no encontrado"

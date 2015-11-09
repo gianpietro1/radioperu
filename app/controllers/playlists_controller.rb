@@ -26,6 +26,7 @@ class PlaylistsController < ApplicationController
     authorize @playlist
     if @playlist.save
       flash[:notice] = t(:playlist_saved)
+      @playlist.send_update_email
       update_facebook_graph
       redirect_to @playlist
     else
@@ -44,6 +45,7 @@ class PlaylistsController < ApplicationController
     authorize @playlist
     if @playlist.update_attributes(playlist_params)
       flash[:notice] = t(:playlist_updated)
+      @playlist.send_update_email
       update_facebook_graph
       redirect_to @playlist
     else
