@@ -63,7 +63,7 @@ es:
   back_to_catalogue: "volver al catálogo"
   # Albums
   add_album: "Añadir Álbum"
-  album_name: "Nombre del Álbum (dos letras mínimo, / no permitido)"
+  album_name: "Nombre del Álbum (dos letras mínimo, '/' no permitido)"
   album_review: "Reseña"
   album_year: "Año de edición"
   album_format: "Formato"
