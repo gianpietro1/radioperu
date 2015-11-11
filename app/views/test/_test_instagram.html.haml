@@ -1,0 +1,15 @@
+#instafeed
+
+%script{:type=>"text/javascript"}
+
+  // Instagram
+  var feed = new Instafeed({
+  get: 'tagged',
+  tagName: 'radioperuenvivo',
+  userId: "2239742174",
+  sortBy: 'most-recent',
+  clientId: 'ff135ea2f8ea4b86bfb265fb69af2ce2',
+  resolution: 'standard_resolution',
+  limit: 1,
+  });
+  feed.run();

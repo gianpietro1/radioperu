@@ -812,6 +812,23 @@ h1.station_title {
   color: #93D3D7;
 }
 
+/* Live Concerts */
+
+.artist-info-live {
+  width: 100% !important;
+  margin-left: 0px !important;
+  height: 200px !important;
+}
+
+.radio_container_live {
+  height: 641px;
+}
+
+#concert_summary img {
+  width: 600px;
+  margin-top: 30px;
+}
+
 /* Artist */
 
 hr {
@@ -2235,6 +2252,14 @@ h3.catalogue_title {
   width: 250px;
   text-align: center;
 }
+
+/* Live Concerts */
+
+#concert_summary img {
+  width: 300px;
+  margin-top: 30px;
+}
+
 
 /* Radio Stations */
 

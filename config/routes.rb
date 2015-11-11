@@ -37,10 +37,12 @@ Rails.application.routes.draw do
     get 'artists/station/:station_id' => 'artists#index_station'
     get 'about' => 'about#index'
     get 'elproyecto' => 'about#index'
+    get 'test_instagram' => 'test#test_instagram'
     # for direct access to artists page and resources, have to be the last lines
     get ':id' => 'artists#show' 
     get ':artist_id/albums/:id' => 'albums#show'
     get ':artist_id/albums/:album_id/songs/:id' => 'songs#show'
+
   end
 
   get '/:locale' => 'welcome#index'

@@ -1,35 +1,59 @@
-%h2
-  Test Radioconciertos
-
-<script src="http://player.radiocdn.com/iframe.js?hash=056fcd16319e21611f5299d4e99663e8d953c477-118-41"></script>
-
-#artist
-#song
+.row
+  .col-md-12
+    .col-md-6.margin-top-10
+      .radio_container.radio_container_live
+        %h1.station_title
+          Prueba de RadioConciertos
+        .station_player
+          #player
+            %script{:type=>"text/javascript", :src=>"http://player.radiocdn.com/iframe.js?hash=056fcd16319e21611f5299d4e99663e8d953c477-118-41"}
+          #songtitle
+            #artist
+            #song
+          .pull-right
+            %span#share_song
+            %a{ href: "javascript:;", id: "share_facebook" }
+        #artist_summary.artist-info-live
+        #concert_summary
+          = image_tag( 'melissa_cabrera.jpg' )  
+    .col-md-6.margin-top-10
+      #photo
+        = render partial: 'test_instagram'
 
 = javascript_include_tag 'jquery.shoutcast.min.js'
+= javascript_include_tag 'instafeed.min.js'
 
 %script{:type=>"text/javascript"}
+
+  function update_photo(){
+  feed.run();
+  $.ajax({type: 'get', url: "/" + locale + "/test_instagram", success: function(r) { $('#photo').html(r); } });
+  }
 
   // Set variables
   var locale = "#{I18n.locale}";
   songtitle_old = 0
   songtitle_new = 1
   
-
   function update_artist(){
 
-  $.SHOUTcast({host: 'eclipse.wavestreamer.com',port: 9890}).stats(function(){
+  $.SHOUTcast({host: 'eclipse.wavestreamer.com',port: 9080}).stats(function(){
  
   songtitle_new = this.get('songtitle');
   
   if (songtitle_new != songtitle_old) {
   // Get or format variables
-  artist = songtitle_new.substring(0, this.get('songtitle').indexOf(" - "));
-  song = songtitle_new.substring(this.get('songtitle').indexOf(" - ") + 3);
+  //artist = songtitle_new.substring(0, this.get('songtitle').indexOf(" - "));
+  //song = songtitle_new.substring(this.get('songtitle').indexOf(" - ") + 3);
+  artist = 'Melissa Cabrera y Los Caparazones de La Comarca';
+  song = 'Concierto La Liga de las Bandas';
   }
+  // Ajax call artist summary partial based on artist variable
+  $.ajax({data: { artist_name: artist }, type: 'get', url: "/" + locale + "/artist_summary", success: function(r) { $('#artist_summary').html(r); } });
   // Append artist and song to player
   $('#artist').text(artist);
   $('#song').text(song);
+
   
   songtitle_old = songtitle_new;
   });
@@ -37,6 +61,5 @@
 
   
   update_artist();
-  setInterval(update_artist,5000);
-  
- 
+  setInterval(update_artist,5000);  
+  setInterval(update_photo,30000);  
