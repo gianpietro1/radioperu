@@ -1323,7 +1323,7 @@ ul.playlist li .timing {
  position:absolute;
  display:none;
  text-align:right;
- right:9.5em;
+ right:8.2em;
  top:1em;
  width:auto;
  height:2em;
@@ -1427,13 +1427,13 @@ div.pointer a {
  z-index: 100 !important;
  display: block !important;
  text-transform: lowercase;
- margin-top: 1px;
+ margin-right: 2px;
  font-size: 0.9em
 }
 
 div.playlist_add a {
  float: right;
- margin-left: 2px;
+ margin: -1px -5px 0px 0px;
  width: 25px;
  height: 25px;
  padding: 2px 0 0 0;
