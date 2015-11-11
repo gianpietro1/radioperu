@@ -8,8 +8,8 @@ class Album < ActiveRecord::Base
   belongs_to :genre
   belongs_to :format
   belongs_to :user
-  validates :name, length: {minimum: 2}
-  validates_format_of :name, {:without => /\//}
+  validates :name, length: {minimum: 2, message: "El nombre debe tener 2 letras mínimo"}
+  validates_format_of :name, {:without => /\//, message: "No se permiten '/' en el nombre"}
 
   translates :review
 
