@@ -63,7 +63,7 @@ en:
   back_to_catalogue: "back to catalogue"
   # Albums
   add_album: "Add Album"
-  album_name: "Album name"
+  album_name: "Album name (minimum 2 letters, slash not allowed)"
   album_review: "Review"
   album_year: "Edition year"
   album_format: "Format"

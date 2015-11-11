@@ -1,4 +1,10 @@
 = form_for [artist,album], :html => {:id => "album_form"}  do |f|  
+  - if album.errors.any?
+    .alert.alert-danger
+      %ul 
+        - album.errors.full_messages.each do |msg|
+          %li
+            = msg
   .row
     .col-md-6
       .form_group

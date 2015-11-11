@@ -8,12 +8,16 @@ class Album < ActiveRecord::Base
   belongs_to :genre
   belongs_to :format
   belongs_to :user
+  validates :name, length: {minimum: 2}
+  validates_format_of :name, {:without => /\//}
 
   translates :review
 
   mount_uploader :cover, CoverUploader
 
   before_validation :smart_add_url_protocol
+
+  after_save :change_folder_if_changed
 
   default_scope { order('year ASC') }
 
@@ -42,6 +46,16 @@ class Album < ActiveRecord::Base
 
   def send_update_email
     UpdatesMailer.new_album_update(self.artist,self).deliver
+  end
+
+  def change_folder_if_changed
+    if self.name_changed?
+      album_old = self.name_was
+      system("mkdir 'public/uploads/song/#{self.artist.name.to_s}/#{self.name.to_s}'")
+      self.songs.each do |song|
+       system("mv 'public/uploads/song/#{song.album.artist.name.to_s}/#{album_old}/#{song.filename.file.basename}.mp3' '#{song.filename.file.file}'")
+      end
+    end
   end
   
  protected
