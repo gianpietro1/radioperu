@@ -5,7 +5,6 @@ class Playlist < ActiveRecord::Base
 
   mount_uploader :image, PlaylistUploader
 
-
   def send_update_email
     UpdatesMailer.new_playlist_update(self).deliver
   end

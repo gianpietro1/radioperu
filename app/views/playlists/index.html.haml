@@ -4,74 +4,96 @@
 
 .row
   .col-md-1
-  .col-md-5
-    .user_playlists
-      %h4.playlist_name.text-center
-        = t(:your_playlists)
-      - if current_user
-        - if @user_playlists.first != nil
-          .table-responsive
-            %table.table-striped.table-bordered.table-condensed.text-center.margin-top-10
-              %thead
-                %tr
-                  %th.text-center
-                    =t(:playlist)
-                  %th.text-center
-                    =t(:songs)
-              %tbody
-                - @user_playlists.each do |playlist|
+  .col-md-10
+    .col-md-4
+      .user_playlists
+        %h4.playlist_name.text-center
+          = t(:your_playlists)
+        - if current_user
+          - if @user_playlists.first != nil
+            .table-responsive
+              %table.table-striped.table-bordered.table-condensed.text-center.margin-top-10
+                %thead
                   %tr
-                    %td
-                      = link_to playlist.name, playlist
-                    %td
-                      = playlist.songs.count
+                    %th.text-center
+                      =t(:playlist)
+                    %th.text-center
+                      =t(:songs)
+                %tbody
+                  - @user_playlists.each do |playlist|
+                    %tr
+                      %td
+                        = link_to playlist.name, playlist
+                      %td
+                        = playlist.songs.count
+          - else
+            = t(:you_dont_have_playlists)
         - else
-          = t(:you_dont_have_playlists)
-      - else
-        %p.text-center
-          = t(:you_need_to_login)
-        %p.authentication
           %p.text-center
-            - if devise_mapping.omniauthable?
-              - resource_class.omniauth_providers.each do |provider|
-                %a{href: "#{omniauth_authorize_path(resource_name, provider)}", class: 'btn btn-social btn-facebook'}
-                  %i.fa.fa-facebook
-                  = t(:sign_in_facebook)
-          %p.text-center
-            = t(:or_else)
-          %p.text-center
-            = link_to t(:sign_up), new_user_registration_path, class: 'btn whitebtn'
-            = t(:or)
-            = link_to t(:login), new_user_session_path, class: 'btn whitebtn'  
-            = t(:if_user_with_email)
-      - if policy(Playlist.new).create?
-        %br
-        - if @user_playlists.count == 0
-          =link_to t(:new_playlist), new_playlist_path, class: 'btn btn-success'
-        - else
-          .margin-top-10
-            %em
-              =t(:more_playlists_coming_soon)
-  .col-md-5
-    %h4.playlist_name.text-center
-      = t(:other_users_playlists)
-    .table-responsive
-      %table.table-striped.table-bordered.table-condensed.text-center.margin-top-10
-        %thead
-          %tr
-            %th.text-center
-              =t(:playlist)
-            %th.text-center
-              =t(:songs)
-            %th.text-center
-              =t(:by)
-        %tbody
-          - @playlists.each do |playlist|
+            = t(:you_need_to_login)
+          %p.authentication
+            %p.text-center
+              - if devise_mapping.omniauthable?
+                - resource_class.omniauth_providers.each do |provider|
+                  %a{href: "#{omniauth_authorize_path(resource_name, provider)}", class: 'btn btn-social btn-facebook'}
+                    %i.fa.fa-facebook
+                    = t(:sign_in_facebook)
+            %p.text-center
+              = t(:or_else)
+            %p.text-center
+              = link_to t(:sign_up), new_user_registration_path, class: 'btn whitebtn'
+              = t(:or)
+              = link_to t(:login), new_user_session_path, class: 'btn whitebtn'  
+              = t(:if_user_with_email)
+        - if policy(Playlist.new).create?
+          %br
+          - if @user_playlists.count == 0
+            =link_to t(:new_playlist), new_playlist_path, class: 'btn btn-success'
+          - else
+            .margin-top-10
+              %em
+                =t(:more_playlists_coming_soon)
+    .col-md-5
+      %h4.playlist_name.text-center
+        = t(:other_users_playlists)
+      .table-responsive
+        %table.table-striped.table-bordered.table-condensed.text-center.margin-top-10
+          %thead
             %tr
-              %td
-                = link_to playlist.name, playlist
-              %td
-                = playlist.songs.count
-              %td
-                = playlist.user.name.presence || playlist.user.email
+              %th.text-center
+                =t(:playlist)
+              %th.text-center
+                =t(:songs)
+              %th.text-center
+                =t(:by)
+          %tbody
+            - @playlists.each do |playlist|
+              %tr
+                %td
+                  = link_to playlist.name, playlist
+                %td
+                  = playlist.songs.count
+                %td
+                  = playlist.user.name.presence || playlist.user.email
+    .col-md-3
+      %h4.playlist_name.text-center
+        - @records = PlaylistSong.playlist_top_songs
+        = t(:top_selected_songs)
+      .table-responsive
+        %table.table-striped.table-bordered.table-condensed.text-center.margin-top-10
+          %thead
+            %tr
+              %th.text-center
+                =t(:song)
+              %th.text-center
+                =t(:ocurrences)
+          %tbody
+            - if @records != nil
+              - @records.each do |record|
+                %tr
+                  %td
+                    - song = Song.find(record[0])
+                    = link_to song.name, [song.album.artist,song.album,song]
+                  %td
+                    = record[1]
   .col-md-1
