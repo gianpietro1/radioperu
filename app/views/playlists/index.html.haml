@@ -85,7 +85,7 @@
           - if song != nil
             - artist = song.album.artist
             - album = song.album
-            %a{ href: '/' + I18n.locale.to_s + '/' + artist.slug + '/albums/' + album.slug + '/songs/' + song.slug, class: "playlist_all playlist_all_songs"}
+            %a{ href: '#', class: "playlist_all playlist_all_songs"}
               .playlist_thumb
                 - if artist.image?
                   = image_tag( artist.image.thumb )
