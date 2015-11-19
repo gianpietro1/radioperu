@@ -128,6 +128,8 @@ en:
   add_to_playlist: "Add to playlist"
   remove_from_playlist: "Remove from playlist"
   back_to_playlists: "back to playlists"
+  times: "times"
+  top_selected_songs: "Top selected songs"
   # Station page
   artist_notfound: "Artist not found"
   album_notfound: "Album not found"

@@ -9,23 +9,22 @@
       .user_playlists
         %h4.playlist_name.text-center
           = t(:your_playlists)
-        - if current_user
-          - if @user_playlists.first != nil
-            .table-responsive
-              %table.table-striped.table-bordered.table-condensed.text-center.margin-top-10
-                %thead
-                  %tr
-                    %th.text-center
-                      =t(:playlist)
-                    %th.text-center
-                      =t(:songs)
-                %tbody
-                  - @user_playlists.each do |playlist|
-                    %tr
-                      %td
-                        = link_to playlist.name, playlist
-                      %td
-                        = playlist.songs.count
+        -if current_user
+          -if @user_playlists.first != nil
+            -@user_playlists.each do |playlist|
+              %a{ href: '/' + I18n.locale.to_s + '/playlists/' + playlist.id.to_s, class: "playlist_all"}
+                .playlist_thumb
+                  -if playlist.image?
+                    = image_tag( playlist.image.thumb )
+                  -else
+                    = image_tag( 'default_album_thumb.jpg')
+                .playlist_summary
+                  %h5.bold
+                    = playlist.name
+                    %br
+                    = t(:by) + " " + (playlist.user.name.presence || playlist.user.email)
+                    %br
+                    = playlist.songs.count.to_s + " " + t(:songs) + " / " +  playlist.length + " " + t(:minutes)
           - else
             = t(:you_dont_have_playlists)
         - else
@@ -53,47 +52,46 @@
             .margin-top-10
               %em
                 =t(:more_playlists_coming_soon)
-    .col-md-5
-      %h4.playlist_name.text-center
-        = t(:other_users_playlists)
-      .table-responsive
-        %table.table-striped.table-bordered.table-condensed.text-center.margin-top-10
-          %thead
-            %tr
-              %th.text-center
-                =t(:playlist)
-              %th.text-center
-                =t(:songs)
-              %th.text-center
-                =t(:by)
-          %tbody
-            - @playlists.each do |playlist|
-              %tr
-                %td
-                  = link_to playlist.name, playlist
-                %td
-                  = playlist.songs.count
-                %td
-                  = playlist.user.name.presence || playlist.user.email
-    .col-md-3
+
+    .col-md-4
+      .user_playlists
+        %h4.playlist_name.text-center
+          = t(:other_users_playlists)
+        - @playlists.each do |playlist|
+          %a{ href: '/' + I18n.locale.to_s + '/playlists/' + playlist.id.to_s, class: "playlist_all"}
+            .playlist_thumb
+              -if playlist.image?
+                = image_tag( playlist.image.thumb )
+              -else
+                = image_tag( 'default_album_thumb.jpg')
+            .playlist_summary
+              %h5.bold
+                = playlist.name
+                %br
+                = t(:by) + " " + (playlist.user.name.presence || playlist.user.email) + ", " + playlist.songs.count.to_s + " " + t(:songs) + " / " +  playlist.length + " " + t(:minutes)
+                %br
+                - unless playlist.description.nil? || playlist.description.empty?
+                  = simple_format(truncate(playlist.description,length: 20))
+                - else
+                  = t(:playlist_description_not_available)
+
+    .col-md-4
       %h4.playlist_name.text-center
         - @records = PlaylistSong.playlist_top_songs
         = t(:top_selected_songs)
-      .table-responsive
-        %table.table-striped.table-bordered.table-condensed.text-center.margin-top-10
-          %thead
-            %tr
-              %th.text-center
-                =t(:song)
-              %th.text-center
-                =t(:ocurrences)
-          %tbody
-            - if @records != nil
-              - @records.each do |record|
-                %tr
-                  %td
-                    - song = Song.find(record[0])
-                    = link_to song.name, [song.album.artist,song.album,song]
-                  %td
-                    = record[1]
+      - if @records != nil
+        - @records.each do |record|
+          - song = Song.find(record[0])
+          - artist = song.album.artist
+          - album = song.album
+          %a{ href: '/' + I18n.locale.to_s + '/' + artist.slug + '/albums/' + album.slug + '/songs/' + song.slug, class: "playlist_all playlist_all_songs"}
+            .playlist_thumb
+              - if artist.image?
+                = image_tag( artist.image.thumb )
+              - else
+                = image_tag( 'default_artist_thumb.jpg' ) 
+            .playlist_summary
+              = song.name
+              %br
+              = record[1].to_s + " " + t(:times)
   .col-md-1

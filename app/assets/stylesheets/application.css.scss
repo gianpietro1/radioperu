@@ -1055,6 +1055,34 @@ span.catalogue_title a {
   margin-bottom: 30px;
 }
 
+.playlist_all {
+  display: block;
+  background-color: #fff;
+  color: #3c3c33;
+  min-height: 86px;
+  height:auto;
+  width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+
+.playlist_all:hover {
+  background-color: #eee;
+  text-decoration: none;
+}
+
+.playlist_all_songs {
+  font-size: 0.9em;
+  min-height: 54px;
+}
+
+
+.playlist_thumb {
+  padding: 2px 5px 2px 2px;
+  float: left;
+}
+
 /* Edit forms */
 
 .current_file {
@@ -1977,7 +2005,7 @@ hr {
   margin-top: 13px;
 }
 
-.playlist_description, .playlist_info {
+.playlist_description, .playlist_info, .playlist_all {
   clear: both;
 }
 
