@@ -75,4 +75,24 @@
                 - else
                   = t(:playlist_description_not_available)
 
+    .col-md-4
+      %h4.playlist_name.text-center
+        - @records = PlaylistSong.playlist_top_songs
+        = t(:top_selected_songs)
+      - if @records != nil
+        - @records.each do |record|
+          - song = Song.find(record[0])
+          - if song != nil
+            - artist = song.album.artist
+            - album = song.album
+            %a{ href: '/' + I18n.locale.to_s + '/' + artist.slug + '/albums/' + album.slug + '/songs/' + song.slug, class: "playlist_all playlist_all_songs"}
+              .playlist_thumb
+                - if artist.image?
+                  = image_tag( artist.image.thumb )
+                - else
+                  = image_tag( 'default_artist_thumb.jpg' ) 
+              .playlist_summary
+                = song.name
+                %br
+                = record[1].to_s + " " + t(:times)
   .col-md-1
