@@ -1065,8 +1065,6 @@ span.catalogue_title a {
   height:auto;
   width: 100%;
   word-wrap: break-word;
-  overflow-wrap: break-word;
-  word-break: break-all;
 }
 
 .playlist_all:hover {
@@ -1077,12 +1075,17 @@ span.catalogue_title a {
 .playlist_all_songs {
   font-size: 0.9em;
   min-height: 54px;
+  padding-top: 2px;
 }
 
 
 .playlist_thumb {
   padding: 2px 5px 2px 2px;
   float: left;
+}
+
+.playlist_all_songs .playlist_summary {
+  padding-top: 8px;
 }
 
 /* Edit forms */

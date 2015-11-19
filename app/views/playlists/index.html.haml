@@ -6,9 +6,9 @@
   .col-md-1
   .col-md-10
     .col-md-4
+      %h4.playlist_name.text-center
+        = t(:your_playlists)
       .user_playlists
-        %h4.playlist_name.text-center
-          = t(:your_playlists)
         -if current_user
           -if @user_playlists.first != nil
             -@user_playlists.each do |playlist|
@@ -54,9 +54,9 @@
                 =t(:more_playlists_coming_soon)
 
     .col-md-4
+      %h4.playlist_name.text-center
+        = t(:other_users_playlists)
       .user_playlists
-        %h4.playlist_name.text-center
-          = t(:other_users_playlists)
         - @playlists.each do |playlist|
           %a{ href: '/' + I18n.locale.to_s + '/playlists/' + playlist.id.to_s, class: "playlist_all"}
             .playlist_thumb
@@ -76,10 +76,10 @@
                   = t(:playlist_description_not_available)
 
     .col-md-4
+      %h4.playlist_name.text-center
+        = t(:top_selected_songs)
       .user_playlists
-        %h4.playlist_name.text-center
-          - @records = PlaylistSong.playlist_top_songs
-          = t(:top_selected_songs)
+        - @records = PlaylistSong.playlist_top_songs
         - if @records != nil
           - @records.each do |record|
             - song = Song.find(record["song_id"])
@@ -93,7 +93,5 @@
                   - else
                     = image_tag( 'default_artist_thumb.jpg' ) 
                 .playlist_summary
-                  = artist.name + " - " + song.name
-                  %br
-                  = record["counts"].to_s + " " + t(:times)
+                  = artist.name + " - " + song.name + " - " + record["counts"].to_s + " " + t(:times)
   .col-md-1
