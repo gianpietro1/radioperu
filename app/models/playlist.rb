@@ -3,6 +3,8 @@ class Playlist < ActiveRecord::Base
   has_many :songs, through: :playlist_songs
   belongs_to :user
 
+  default_scope  { order('updated_at DESC') }
+
   mount_uploader :image, PlaylistUploader
 
   def send_update_email

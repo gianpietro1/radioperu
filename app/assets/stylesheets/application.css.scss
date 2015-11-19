@@ -1053,6 +1053,8 @@ span.catalogue_title a {
 
 .user_playlists {
   margin-bottom: 30px;
+  max-height: 500px;
+  overflow: auto;
 }
 
 .playlist_all {
