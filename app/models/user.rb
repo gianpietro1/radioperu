@@ -3,6 +3,13 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :recoverable, :registerable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable, :omniauth_providers => [:facebook]
 
+  before_create :generate_auth_token
+  
+  has_many :artists
+  has_many :albums
+  has_many :songs
+  has_many :playlists, dependent: :destroy
+  
   def self.from_omniauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_initialize do |user|
         user.provider = auth.provider
@@ -15,11 +22,6 @@ class User < ActiveRecord::Base
       end
   end
 
-  has_many :artists
-  has_many :albums
-  has_many :songs
-  has_many :playlists, dependent: :destroy
-  
   def admin?
     role == 'admin'
   end
@@ -30,6 +32,13 @@ class User < ActiveRecord::Base
 
   def listener?
     role == 'listener'
+  end
+
+  def generate_auth_token
+   loop do
+    self.auth_token = SecureRandom.base64(64)
+    break unless User.find_by(auth_token: auth_token)
+   end
   end
 
 end

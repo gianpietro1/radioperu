@@ -32,7 +32,7 @@ class ArtistsController < ApplicationController
     @artist = Artist.where(Artist.arel_table[:name].matches(params[:artist_name].downcase)).first
     respond_with(@artist) do |format|
     format.html {render :partial => "artist_summary" }
-    end
+  end
   
   end
 

@@ -47,4 +47,14 @@ Rails.application.routes.draw do
 
   get '/:locale' => 'welcome#index'
 
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: [:index, :show]
+      resources :radios, only: [:index, :show]
+      resources :artists, only: [:index]
+      get 'artists/:artist_name' => 'artists#show'
+      get 'albums/:artist_name/:song_name' => 'albums#show'
+    end
+  end
+
 end
