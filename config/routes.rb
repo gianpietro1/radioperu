@@ -54,6 +54,7 @@ Rails.application.routes.draw do
       resources :artists, only: [:index]
       get 'artists/:artist_name' => 'artists#show'
       get 'albums/:artist_name/:song_name' => 'albums#show'
+      get 'radios/:id/programs' => 'programs#index'
     end
   end
 
