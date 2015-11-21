@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151120184032) do
+ActiveRecord::Schema.define(version: 20151121232154) do
 
   create_table "album_translations", force: :cascade do |t|
     t.integer  "album_id",   null: false
@@ -171,6 +171,7 @@ ActiveRecord::Schema.define(version: 20151120184032) do
     t.integer  "port"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "color"
   end
 
   create_table "song_translations", force: :cascade do |t|

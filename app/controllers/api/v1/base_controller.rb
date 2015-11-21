@@ -25,4 +25,9 @@ class Api::V1::BaseController < ApplicationController
      render json: {error: "Record not found", status: 404}, status: 404
    end
 
+   def app_version
+     version = 0.1
+     render json: {version: version}, status: 200
+   end
+
 end
