@@ -449,6 +449,7 @@ textarea.form-control {
 
 .station1 {
     background: asset-url('station1b.jpg') no-repeat;
+    border-radius: 10px 10px 0 0;
 }
 
 .station2 {
@@ -465,6 +466,7 @@ textarea.form-control {
 
 .station5 {
     background: asset-url('station5b.jpg') no-repeat;
+    border-radius: 0 0 10px 10px;
 }
 
 .station1,.station2,.station3,.station4,.station5 {
@@ -499,6 +501,7 @@ textarea.form-control {
 .catalogue-container, .radios-container, .playlist-container {
   height: 260px;
   box-shadow: 0 5px 5px -3px #777;
+  border-radius: 10px;
 }
 
 .catalogue-container, .playlist-container {
