@@ -22,7 +22,7 @@
 es:
   # Welcome page
   hello: "Hola mundo"
-  discover: "¿Cómo quieres descubrir la música del Perú?"
+  discover: "descubre toda la música del Perú."
   catalogue: "Catálogo musical"
   catalogue_min: "catálogo"
   playlists_min: "listas"

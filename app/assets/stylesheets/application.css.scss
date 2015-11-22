@@ -123,7 +123,6 @@ body {
   padding: 5px 24px 40px 24px;
   margin: 8px 0px 15px 0px;
   min-height: 765px;
-  border-radius: 10px;
   height: auto;
 }
 
@@ -153,7 +152,7 @@ body {
 .logo {
   margin-top: -40px;
   font-size: 4.4em;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-family: 'Myriad Pro Semibold';
 }
 
@@ -177,14 +176,16 @@ body {
 .slogan {
   float: left;
   color: #3c3c33;
-  font-size: 1.8em;
-  line-height: 1em
+  font-size: 1.6em;
+  line-height: 1em;
 }
 
 .slogan-animation {
   font-size: 1.6em;
   color: #3c3c33;
   opacity: 0;
+  letter-spacing: 3px;
+  font-family: 'Myriad Pro Semibold'
 }
 
 .slogan a {
@@ -448,7 +449,6 @@ textarea.form-control {
 
 .station1 {
     background: asset-url('station1b.jpg') no-repeat;
-    border-radius: 10px 10px 0 0;
 }
 
 .station2 {
@@ -465,7 +465,6 @@ textarea.form-control {
 
 .station5 {
     background: asset-url('station5b.jpg') no-repeat;
-    border-radius: 0 0 10px 10px;
 }
 
 .station1,.station2,.station3,.station4,.station5 {
@@ -500,7 +499,6 @@ textarea.form-control {
 .catalogue-container, .radios-container, .playlist-container {
   height: 260px;
   box-shadow: 0 5px 5px -3px #777;
-  border-radius: 10px;
 }
 
 .catalogue-container, .playlist-container {
@@ -1889,7 +1887,8 @@ h4.option_title {
 }
 
 .slogan-animation {
-  font-size: 1.5em;
+  font-size: 1.4em;
+  letter-spacing: 2px;
 }
 
 .slogan {
@@ -2277,6 +2276,7 @@ h3.catalogue_title {
 
 .slogan-animation {
   font-size: 1.1em;
+  letter-spacing: 1px;
 }
 
 .logo {
