@@ -87,7 +87,7 @@
               - artist = song.album.artist
               - album = song.album
               %a{ href: '/' + I18n.locale.to_s + '/' + artist.slug + '/albums/' + album.slug + '/songs/' + song.slug, class: "playlist_all playlist_all_songs", target: :blank}
-                .playlist_thumb
+                .playlist_thumb.playlist_songs_thumb
                   - if artist.image?
                     = image_tag( artist.image.thumb )
                   - else

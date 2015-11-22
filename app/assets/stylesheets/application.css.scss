@@ -1062,7 +1062,7 @@ span.catalogue_title a {
   display: block;
   background-color: #fff;
   color: #3c3c33;
-  min-height: 86px;
+  min-height: 70px;
   height:auto;
   width: 100%;
   word-wrap: break-word;
@@ -1079,10 +1079,17 @@ span.catalogue_title a {
   padding-top: 2px;
 }
 
-
 .playlist_thumb {
-  padding: 2px 5px 2px 2px;
+  padding: 8px 5px 2px 2px;
   float: left;
+}
+
+.playlist_songs_thumb {
+  padding-top: 0px !important;
+}
+
+.playlist_summary {
+  padding-top: 3px;
 }
 
 .playlist_all_songs .playlist_summary {
