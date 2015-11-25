@@ -88,6 +88,22 @@ class PlaylistsController < ApplicationController
     end
   end
 
+  def add_to_playlist_stats
+    song_id = Song.find(params[:song_played_id]).id
+    ip_address = params[:ip_address]
+    user_agent = params[:platform]
+    if current_user
+      user_id = current_user.id
+    else
+      user_id = nil
+    end
+    stat = PlaylistPlaystat.create(song_id: song_id, listened_at: Time.now, ip_address: ip_address, platform: user_agent, user_id: user_id)
+    stat.save!
+    respond_with() do |format|
+      format.html {render :partial => "add_to_playlist_stats" }
+    end
+  end
+
   private
 
     def playlist_params

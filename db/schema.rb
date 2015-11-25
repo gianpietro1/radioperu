@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151121232154) do
+ActiveRecord::Schema.define(version: 20151125213040) do
+
+  create_table "album_playstats", force: :cascade do |t|
+    t.integer  "song_id"
+    t.datetime "listened_at"
+    t.string   "ip_address"
+    t.string   "platform"
+    t.integer  "user_id"
+  end
+
+  add_index "album_playstats", ["song_id"], name: "index_album_playstats_on_song_id"
 
   create_table "album_translations", force: :cascade do |t|
     t.integer  "album_id",   null: false
@@ -109,6 +119,14 @@ ActiveRecord::Schema.define(version: 20151121232154) do
     t.integer "radio_id"
   end
 
+  create_table "playlist_playstats", force: :cascade do |t|
+    t.integer  "song_id"
+    t.datetime "listened_at"
+    t.string   "ip_address"
+    t.string   "platform"
+    t.integer  "user_id"
+  end
+
   create_table "playlist_songs", force: :cascade do |t|
     t.integer  "playlist_id"
     t.integer  "song_id"
@@ -172,6 +190,14 @@ ActiveRecord::Schema.define(version: 20151121232154) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "color"
+  end
+
+  create_table "song_playstats", force: :cascade do |t|
+    t.integer  "song_id"
+    t.datetime "listened_at"
+    t.string   "ip_address"
+    t.string   "platform"
+    t.integer  "user_id"
   end
 
   create_table "song_translations", force: :cascade do |t|

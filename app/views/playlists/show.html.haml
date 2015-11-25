@@ -100,7 +100,7 @@
                 - if song.name != ''
                   =link_to t(:details), "/#{I18n.locale.to_s}/" + song.album.artist.slug + '/albums/' + song.album.slug + '/songs/' + song.slug, target: :blank
               - if song.filename.file
-                %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.filename.file.basename + '#' + song.album.name + '#' + song.album.artist.name + '#' + ".mp3"}
+                %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.filename.file.basename + '#' + song.album.name + '#' + song.album.artist.name + '#' + ".mp3", id: song.id}
                   = song.album.artist.name + " - " + song.name
 
 
@@ -173,3 +173,13 @@
   update_artist();
   setInterval(update_artist,5000);
   
+  // Playing Stats
+
+  $.get("http://ipinfo.io", function(response) {
+  ip_address = response.ip;
+  }, "jsonp");
+  user_agent = navigator.userAgent;
+
+  $(document).on("justPlayed", function() {
+  $.ajax({data: { song_played_id: song_played_id, ip_address: ip_address, platform: user_agent }, type: 'post', url: "/" + locale + "/add_to_playlist_stats" });
+  });

@@ -20,6 +20,9 @@ Rails.application.routes.draw do
     end
     post 'add_to_playlist' => 'playlists#add_to_playlist'
     post 'remove_from_playlist' => 'playlists#remove_from_playlist'
+    post 'add_to_album_stats' => 'albums#add_to_album_stats'
+    post 'add_to_song_stats' => 'songs#add_to_song_stats'
+    post 'add_to_playlist_stats' => 'playlists#add_to_playlist_stats'
     get 'soymusico' => 'musician_forms#new'
     get 'artist_summary' => 'artists#artist_summary'
     get 'album_summary' => 'albums#album_summary'

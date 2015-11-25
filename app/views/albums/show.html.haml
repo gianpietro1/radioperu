@@ -93,7 +93,7 @@
                   =link_to t(:details), "/#{I18n.locale.to_s}/" + @artist.slug + '/albums/' + @album.slug + '/songs/' + song.slug
               - offset = ENV["SOUND_OFFSET"].to_i
               - if song.filename.file
-                %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.filename.file.basename + '#' + song.album.name + '#' + song.album.artist.name + '#' + ".mp3"}
+                %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.filename.file.basename + '#' + song.album.name + '#' + song.album.artist.name + '#' + ".mp3", id: song.id}
                   - if @songs.last.discnum && @songs.last.discnum > 1                 
                     - if song.track
                       = format('%02d', song.discnum).to_s + '-' + format('%02d', song.track).to_s + ' ' + song.name
@@ -156,4 +156,14 @@
   $.ajax({data: { song_id: song_id }, type: 'post', url: "/" + locale + "/add_to_playlist", success: function() { $('#'+song_id).addClass( "clicked btn-danger glyphicon-minus-sign").removeClass("btn-success glyphicon-plus-sign"); } });
   }
 
+  });
+
+  // Playing Stats
+  $.get("http://ipinfo.io", function(response) {
+  ip_address = response.ip;
+  }, "jsonp");
+  user_agent = navigator.userAgent;
+
+  $(document).on("justPlayed", function() {
+  $.ajax({data: { song_played_id: song_played_id, ip_address: ip_address, platform: user_agent }, type: 'post', url: "/" + locale + "/add_to_album_stats" });
   });
