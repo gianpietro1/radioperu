@@ -30,4 +30,9 @@ class Api::V1::BaseController < ApplicationController
      render json: {version: version}, status: 200
    end
 
+   def time
+     time = Time.now
+     render json: {current_time: time}, status: 200
+   end
+
 end

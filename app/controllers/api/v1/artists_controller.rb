@@ -5,12 +5,12 @@ class Api::V1::ArtistsController < Api::V1::BaseController
  
    def show
      artist = Artist.where(Artist.arel_table[:name].matches(params[:artist_name].downcase)).first
-     render json: artist.to_json, status: 200
+     render json: artist.to_json(:except => [ :created_at, :updated_at ]), status: 200
    end
  
    def index
      artists = Artist.all
-     render json: artists.to_json, status: 200
+     render json: artists.to_json(:except => [ :created_at, :updated_at ]), status: 200
    end
 
 end

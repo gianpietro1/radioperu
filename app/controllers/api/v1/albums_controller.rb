@@ -16,7 +16,7 @@ class Api::V1::AlbumsController < Api::V1::BaseController
       album = nil
     end
 
-    render json: album.to_json, status: 200
+    render json: album.to_json(:except => [ :created_at, :updated_at ]), status: 200
    end
 
 

@@ -55,7 +55,9 @@ Rails.application.routes.draw do
       get 'artists/:artist_name' => 'artists#show'
       get 'albums/:artist_name/:song_name' => 'albums#show'
       get 'radios/:id/programs' => 'programs#index'
+      get 'radios/:id/active_program' => 'programs#show'
       get 'app_version' => 'base#app_version'
+      get 'time' => 'base#time'
     end
   end
 

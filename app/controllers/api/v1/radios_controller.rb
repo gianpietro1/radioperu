@@ -5,12 +5,12 @@ class Api::V1::RadiosController < Api::V1::BaseController
  
    def show
      radio = Radio.find(params[:id])
-     render json: radio.to_json, status: 200
+     render json: radio.to_json(:except => [ :created_at, :updated_at ]), status: 200
    end
  
    def index
      radios = Radio.all
-     render json: radios.to_json, status: 200
+     render json: radios.to_json(:except => [ :created_at, :updated_at ]), status: 200
    end
 
 end
