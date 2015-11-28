@@ -275,9 +275,9 @@ function PagePlayer() {
     }
     if (o.nodeName.toLowerCase() !== 'li') {
       o = $('ul.playlist li:first').get(0)
-      return o.getElementsByTagName('a')[2];  // changed from return null to these lines to loop album
+      return o.getElementsByTagName('a')[2];  // glch, changed from return null to these lines to loop album
     } else {
-      return o.getElementsByTagName('a')[2];  // changed from 0 to 2 to match third "a"
+      return o.getElementsByTagName('a')[2];  // glch, changed from 0 to 2 to match third "a"
     }
   };
 
@@ -579,12 +579,13 @@ function PagePlayer() {
 
       // and decorate the link too, if needed
       self.initItem(o);
-
+      
       //glch addition
       //soundURL = o.href;
       soundURL = "http://" + window.location.host + smglch_hash1 + "/" + o.getAttribute('href').split('#')[4+smglch_offset] + "/" + encodeURIComponent((o.getAttribute('href').split('#')[3+smglch_offset])) + "/" + (o.getAttribute('href').split('#')[2+smglch_offset] + ".mp3");
 
-      thisSound = self.getSoundByObject(o);
+      thisSound = self.getSoundByObject(o)
+      song_played_id = o.id;
 
       if (thisSound) {
 
@@ -596,6 +597,10 @@ function PagePlayer() {
             if (thisSound.playState !== 1) {
               // not yet playing
               thisSound.play();
+              // glch addition for stats
+              $.event.trigger({
+                type: "justPlayed"
+              });
             } else {
               thisSound.togglePause();
             }
@@ -677,7 +682,10 @@ function PagePlayer() {
         }
         self.resetGraph.apply(thisSound);
         thisSound.play();
-
+        // glch addition for stats
+        $.event.trigger({
+          type: "justPlayed"
+        });
       }
 
       self.lastSound = thisSound; // reference for next call

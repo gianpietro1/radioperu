@@ -93,7 +93,7 @@
                   =link_to t(:details), "/#{I18n.locale.to_s}/" + @artist.slug + '/albums/' + @album.slug + '/songs/' + song.slug
               - offset = ENV["SOUND_OFFSET"].to_i
               - if song.filename.file
-                %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.filename.file.basename + '#' + song.album.name + '#' + song.album.artist.name + '#' + ".mp3"}
+                %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.filename.file.basename + '#' + song.album.name + '#' + song.album.artist.name + '#' + ".mp3", id: song.id}
                   - if @songs.last.discnum && @songs.last.discnum > 1                 
                     - if song.track
                       = format('%02d', song.discnum).to_s + '-' + format('%02d', song.track).to_s + ' ' + song.name
@@ -157,3 +157,40 @@
   }
 
   });
+
+  // Info for Stats
+
+  function get_userinfo(){
+  jQuery.ajax( { 
+  url: '//freegeoip.net/json/', 
+  type: 'POST', 
+  dataType: 'jsonp',
+  success: function(location) {
+  stats_ip_address = location.ip;
+  stats_country = location.country_name;
+  stats_city = location.city;
+  }
+  } );
+  user_agent = navigator.userAgent;
+  album_id = "#{@album.id}"
+  }
+
+  get_userinfo();
+
+  // Playing Stats
+
+  $(document).on("justPlayed", function() {
+
+  setTimeout(function(){
+  $.ajax({data: { song_played_id: song_played_id, ip_address: stats_ip_address, city: stats_city, country: stats_country, platform: user_agent }, type: 'post', url: "/" + locale + "/add_to_album_stats" });
+  },5000);
+
+  });
+
+  // Viewing Stats
+
+  function viewstat(){
+  $.ajax({data: { album_id: album_id, ip_address: stats_ip_address, city: stats_city, country: stats_country, platform: user_agent }, type: 'post', url: "/" + locale + "/add_to_album_views" });
+  }
+
+  setTimeout(viewstat,5000);

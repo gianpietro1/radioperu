@@ -1,5 +1,7 @@
 class SongsController < ApplicationController
  
+  respond_to :html, :js
+
   def show
     @artist = Artist.friendly.find(params[:artist_id])
     @album = @artist.albums.friendly.find(params[:album_id])
@@ -57,6 +59,41 @@ class SongsController < ApplicationController
     end
   end
 
+  def add_to_song_stats
+    song_id = params[:song_played_id].to_i
+    ip_address = params[:ip_address]
+    country = params[:country]
+    city = params[:city]
+    user_agent = params[:platform]
+    if current_user
+      user_id = current_user.id
+    else
+      user_id = nil
+    end
+    stat = SongPlaystat.create(song_id: song_id, listened_at: Time.now, ip_address: ip_address, platform: user_agent, user_id: user_id, country: country, city: city)
+    stat.save!
+    respond_with() do |format|
+      format.html {render :partial => "add_to_song_stats" }
+    end
+  end
+
+  def add_to_song_views
+    song_id = params[:song_id].to_i
+    ip_address = params[:ip_address]
+    country = params[:country]
+    city = params[:city]
+    user_agent = params[:platform]
+    if current_user
+      user_id = current_user.id
+    else
+      user_id = nil
+    end
+    stat = SongViewstat.create(song_id: song_id, viewed_at: Time.now, ip_address: ip_address, platform: user_agent, user_id: user_id, country: country, city: city)
+    stat.save!
+    respond_with() do |format|
+      format.html {render :partial => "add_to_song_views" }
+    end
+  end
 
   private
 
