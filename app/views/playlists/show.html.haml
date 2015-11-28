@@ -173,13 +173,39 @@
   update_artist();
   setInterval(update_artist,5000);
   
+  // Info for Stats
+
+  function get_userinfo(){
+  jQuery.ajax( { 
+  url: '//freegeoip.net/json/', 
+  type: 'POST', 
+  dataType: 'jsonp',
+  success: function(location) {
+  stats_ip_address = location.ip;
+  stats_country = location.country_name;
+  stats_city = location.city;
+  }
+  } );
+  user_agent = navigator.userAgent;
+  playlist_id = "#{@playlist.id}"
+  }
+  
+  get_userinfo();
+
   // Playing Stats
 
-  $.get("http://ipinfo.io", function(response) {
-  ip_address = response.ip;
-  }, "jsonp");
-  user_agent = navigator.userAgent;
-
   $(document).on("justPlayed", function() {
-  $.ajax({data: { song_played_id: song_played_id, ip_address: ip_address, platform: user_agent }, type: 'post', url: "/" + locale + "/add_to_playlist_stats" });
+
+  setTimeout(function(){
+  $.ajax({data: { song_played_id: song_played_id, ip_address: stats_ip_address, city: stats_city, country: stats_country, platform: user_agent }, type: 'post', url: "/" + locale + "/add_to_playlist_stats" });
+  },5000);
+
   });
+
+  // Viewing Stats
+
+  function viewstat(){
+  $.ajax({data: { playlist_id: playlist_id, ip_address: stats_ip_address, city: stats_city, country: stats_country, platform: user_agent }, type: 'post', url: "/" + locale + "/add_to_playlist_views" });
+  }
+
+  setTimeout(viewstat,5000);

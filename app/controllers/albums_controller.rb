@@ -103,18 +103,38 @@ class AlbumsController < ApplicationController
   end
 
   def add_to_album_stats
-    song_id = Song.find(params[:song_played_id]).id
+    song_id = params[:song_played_id].to_i
     ip_address = params[:ip_address]
+    country = params[:country]
+    city = params[:city]
     user_agent = params[:platform]
     if current_user
       user_id = current_user.id
     else
       user_id = nil
     end
-    stat = AlbumPlaystat.create(song_id: song_id, listened_at: Time.now, ip_address: ip_address, platform: user_agent, user_id: user_id)
+    stat = AlbumPlaystat.create(song_id: song_id, listened_at: Time.now, ip_address: ip_address, platform: user_agent, user_id: user_id, country: country, city: city)
     stat.save!
     respond_with() do |format|
       format.html {render :partial => "add_to_album_stats" }
+    end
+  end
+
+  def add_to_album_views
+    album_id = params[:album_id].to_i
+    ip_address = params[:ip_address]
+    country = params[:country]
+    city = params[:city]
+    user_agent = params[:platform]
+    if current_user
+      user_id = current_user.id
+    else
+      user_id = nil
+    end
+    stat = AlbumViewstat.create(album_id: album_id, viewed_at: Time.now, ip_address: ip_address, platform: user_agent, user_id: user_id, country: country, city: city)
+    stat.save!
+    respond_with() do |format|
+      format.html {render :partial => "add_to_album_views" }
     end
   end
 

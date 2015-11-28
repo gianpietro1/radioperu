@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125213040) do
+ActiveRecord::Schema.define(version: 20151128034816) do
 
   create_table "album_playstats", force: :cascade do |t|
     t.integer  "song_id"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20151125213040) do
     t.string   "ip_address"
     t.string   "platform"
     t.integer  "user_id"
+    t.string   "city"
+    t.string   "country"
   end
 
   add_index "album_playstats", ["song_id"], name: "index_album_playstats_on_song_id"
@@ -33,6 +35,18 @@ ActiveRecord::Schema.define(version: 20151125213040) do
 
   add_index "album_translations", ["album_id"], name: "index_album_translations_on_album_id"
   add_index "album_translations", ["locale"], name: "index_album_translations_on_locale"
+
+  create_table "album_viewstats", force: :cascade do |t|
+    t.integer  "album_id"
+    t.datetime "viewed_at"
+    t.string   "ip_address"
+    t.string   "platform"
+    t.integer  "user_id"
+    t.string   "city"
+    t.string   "country"
+  end
+
+  add_index "album_viewstats", ["album_id"], name: "index_album_viewstats_on_album_id"
 
   create_table "albums", force: :cascade do |t|
     t.string   "name"
@@ -60,6 +74,18 @@ ActiveRecord::Schema.define(version: 20151125213040) do
 
   add_index "artist_translations", ["artist_id"], name: "index_artist_translations_on_artist_id"
   add_index "artist_translations", ["locale"], name: "index_artist_translations_on_locale"
+
+  create_table "artist_viewstats", force: :cascade do |t|
+    t.integer  "artist_id"
+    t.datetime "viewed_at"
+    t.string   "ip_address"
+    t.string   "platform"
+    t.integer  "user_id"
+    t.string   "city"
+    t.string   "country"
+  end
+
+  add_index "artist_viewstats", ["artist_id"], name: "index_artist_viewstats_on_artist_id"
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
@@ -125,7 +151,11 @@ ActiveRecord::Schema.define(version: 20151125213040) do
     t.string   "ip_address"
     t.string   "platform"
     t.integer  "user_id"
+    t.string   "city"
+    t.string   "country"
   end
+
+  add_index "playlist_playstats", ["song_id"], name: "index_playlist_playstats_on_song_id"
 
   create_table "playlist_songs", force: :cascade do |t|
     t.integer  "playlist_id"
@@ -133,6 +163,18 @@ ActiveRecord::Schema.define(version: 20151125213040) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "playlist_viewstats", force: :cascade do |t|
+    t.integer  "playlist_id"
+    t.datetime "viewed_at"
+    t.string   "ip_address"
+    t.string   "platform"
+    t.integer  "user_id"
+    t.string   "city"
+    t.string   "country"
+  end
+
+  add_index "playlist_viewstats", ["playlist_id"], name: "index_playlist_viewstats_on_playlist_id"
 
   create_table "playlists", force: :cascade do |t|
     t.string   "name"
@@ -171,6 +213,18 @@ ActiveRecord::Schema.define(version: 20151125213040) do
 
   add_index "programs", ["radio_id"], name: "index_programs_on_radio_id"
 
+  create_table "radio_playstats", force: :cascade do |t|
+    t.integer  "song_id"
+    t.datetime "listened_at"
+    t.string   "ip_address"
+    t.string   "platform"
+    t.integer  "user_id"
+    t.string   "city"
+    t.string   "country"
+  end
+
+  add_index "radio_playstats", ["song_id"], name: "index_radio_playstats_on_song_id"
+
   create_table "radio_translations", force: :cascade do |t|
     t.integer  "radio_id",    null: false
     t.string   "locale",      null: false
@@ -198,7 +252,11 @@ ActiveRecord::Schema.define(version: 20151125213040) do
     t.string   "ip_address"
     t.string   "platform"
     t.integer  "user_id"
+    t.string   "city"
+    t.string   "country"
   end
+
+  add_index "song_playstats", ["song_id"], name: "index_song_playstats_on_song_id"
 
   create_table "song_translations", force: :cascade do |t|
     t.integer  "song_id",    null: false
@@ -210,6 +268,18 @@ ActiveRecord::Schema.define(version: 20151125213040) do
 
   add_index "song_translations", ["locale"], name: "index_song_translations_on_locale"
   add_index "song_translations", ["song_id"], name: "index_song_translations_on_song_id"
+
+  create_table "song_viewstats", force: :cascade do |t|
+    t.integer  "song_id"
+    t.datetime "viewed_at"
+    t.string   "ip_address"
+    t.string   "platform"
+    t.integer  "user_id"
+    t.string   "city"
+    t.string   "country"
+  end
+
+  add_index "song_viewstats", ["song_id"], name: "index_song_viewstats_on_song_id"
 
   create_table "songs", force: :cascade do |t|
     t.integer  "album_id"

@@ -109,8 +109,9 @@
   $.ajax({data: { song_name: song, artist_name: artist, radio_id: radio_id }, type: 'get', url: "/" + locale + "/share_song", success: function(r) { $('#share_song').html(r); } });
   // Update Program List
   $.ajax({data: { radio_id: radio_id },type: 'get', url: "/" + locale + "/program_index", success: function(r) { $('#station_schedule').html(r); } });
+  // Update Stats
+  setTimeout(update_stats,20000,artist,song);
   }
-
   songtitle_old = songtitle_new;
   });
   }
@@ -120,8 +121,27 @@
   $.ajax({data: { radio_id: radio_id },type: 'get', url: "/" + locale + "/program_index", success: function(r) { $('#station_schedule').html(r); } });
   }
 
+  function update_stats(artist,song){
+  // Playing Stats
+  if(song == $('#song').text()){
+  jQuery.ajax( { 
+  url: '//freegeoip.net/json/', 
+  type: 'POST', 
+  dataType: 'jsonp',
+  success: function(location) {
+  stats_ip_address = location.ip;
+  stats_country = location.country_name;
+  stats_city = location.city;
+  }
+  } );
+  user_agent = navigator.userAgent;
+  setTimeout(function(){
+  $.ajax({data: { song_name: song, artist_name: artist, ip_address: stats_ip_address, platform: user_agent, city: stats_city, country: stats_country }, type: 'post', url: "/" + locale + "/add_to_radio_stats" });
+  }, 5000);
+  }
+  }
+
   // Do updates of this periodically
-  
   update_artist();
   setInterval(update_artist,5000);
   
