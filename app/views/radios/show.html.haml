@@ -121,9 +121,9 @@
   $.ajax({data: { radio_id: radio_id },type: 'get', url: "/" + locale + "/program_index", success: function(r) { $('#station_schedule').html(r); } });
   }
 
-  function update_stats(artist,song){
-  // Playing Stats
-  if(song == $('#song').text()){
+  // Info for Stats
+
+  function get_userinfo(){
   jQuery.ajax( { 
   url: '//freegeoip.net/json/', 
   type: 'POST', 
@@ -135,6 +135,14 @@
   }
   } );
   user_agent = navigator.userAgent;
+  }
+
+  get_userinfo();
+
+  // Playing Stats
+
+  function update_stats(artist,song){
+  if( song == $('#song').text() ){
   setTimeout(function(){
   $.ajax({data: { song_name: song, artist_name: artist, ip_address: stats_ip_address, platform: user_agent, city: stats_city, country: stats_country }, type: 'post', url: "/" + locale + "/add_to_radio_stats" });
   }, 5000);
