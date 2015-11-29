@@ -145,7 +145,7 @@
   if( song == $('#song').text() ){
   setTimeout(function(){
   $.ajax({data: { song_name: song, artist_name: artist, ip_address: stats_ip_address, platform: user_agent, city: stats_city, country: stats_country }, type: 'post', url: "/" + locale + "/add_to_radio_stats" });
-  }, 5000);
+  }, 8000);
   }
   }
 

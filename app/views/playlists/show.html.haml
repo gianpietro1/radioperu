@@ -198,7 +198,7 @@
 
   setTimeout(function(){
   $.ajax({data: { song_played_id: song_played_id, ip_address: stats_ip_address, city: stats_city, country: stats_country, platform: user_agent }, type: 'post', url: "/" + locale + "/add_to_playlist_stats" });
-  },5000);
+  },8000);
 
   });
 
@@ -208,4 +208,4 @@
   $.ajax({data: { playlist_id: playlist_id, ip_address: stats_ip_address, city: stats_city, country: stats_country, platform: user_agent }, type: 'post', url: "/" + locale + "/add_to_playlist_views" });
   }
 
-  setTimeout(viewstat,5000);
+  setTimeout(viewstat,8000);
