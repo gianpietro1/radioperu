@@ -60,8 +60,8 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :show]
       resources :radios, only: [:index, :show]
       resources :artists, only: [:index]
-      get 'artists/:artist_name' => 'artists#show'
-      get 'albums/:artist_name/:song_name' => 'albums#show'
+      get 'artists/:artist_name' => 'artists#show', constraints: { artist_name: /[^\/]+/ }
+      get 'albums/:artist_name/:song_name' => 'albums#show', constraints: { artist_name: /[^\/]+/, song_name: /[^\/]+/ }
       get 'radios/:id/programs' => 'programs#index'
       get 'radios/:id/active_program' => 'programs#show'
       get 'app_version' => 'base#app_version'
