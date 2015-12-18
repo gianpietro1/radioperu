@@ -14,6 +14,7 @@
             %span#share_song
             %a{ href: "javascript:;", id: "share_facebook" }
         #artist_summary.artist-info-live
+        #album_summary
         #concert_summary
           = image_tag( 'melissa_cabrera.jpg' )  
     .col-md-6.margin-top-10
@@ -50,6 +51,8 @@
   }
   // Ajax call artist summary partial based on artist variable
   $.ajax({data: { artist_name: artist }, type: 'get', url: "/" + locale + "/artist_summary", success: function(r) { $('#artist_summary').html(r); } });
+  // Ajax call album summary partial based on artist and song variable
+  $.ajax({data: { song_name: song, artist_name: artist }, type: 'get', url: "/" + locale + "/album_summary", success: function(r) { $('#album_summary').html(r); } });
   // Append artist and song to player
   $('#artist').text(artist);
   $('#song').text(song);
