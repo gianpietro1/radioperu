@@ -43,10 +43,10 @@
   
   if (songtitle_new != songtitle_old) {
   // Get or format variables
-  //artist = songtitle_new.substring(0, this.get('songtitle').indexOf(" - "));
-  //song = songtitle_new.substring(this.get('songtitle').indexOf(" - ") + 3);
-  artist = 'Melissa Cabrera y Los Caparazones de La Comarca';
-  song = 'Concierto La Liga de las Bandas';
+  artist = songtitle_new.substring(0, this.get('songtitle').indexOf(" - "));
+  song = songtitle_new.substring(this.get('songtitle').indexOf(" - ") + 3);
+  // artist = 'Melissa Cabrera y Los Caparazones de La Comarca';
+  // song = 'Concierto La Liga de las Bandas';
   }
   // Ajax call artist summary partial based on artist variable
   $.ajax({data: { artist_name: artist }, type: 'get', url: "/" + locale + "/artist_summary", success: function(r) { $('#artist_summary').html(r); } });
