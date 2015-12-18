@@ -4,9 +4,9 @@ class Api::V1::AlbumsController < Api::V1::BaseController
    before_filter :authorize_user
  
    def show
-    artist = Artist.where(Artist.arel_table[:name].matches(params[:artist_name].downcase)).first
+    artist = Artist.where(Artist.arel_table[:name].matches(URI.unescape(params[:artist_name]).downcase)).first
     if artist
-      song = artist.songs.where(artist.songs.arel_table[:name].matches(params[:song_name].downcase)).first
+      song = artist.songs.where(artist.songs.arel_table[:name].matches(URI.unescape(params[:song_name]).downcase)).first
       if song
         album = song.album
       else
