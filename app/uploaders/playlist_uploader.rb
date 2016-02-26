@@ -47,8 +47,8 @@ class PlaylistUploader < CarrierWave::Uploader::Base
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
-  #   "something.jpg" if original_filename
-  # end
+  def filename
+    "#{model.user.name.to_s.split.join}-#{model.name.to_s.split.join}.#{file.extension}" if original_filename
+  end
 
 end

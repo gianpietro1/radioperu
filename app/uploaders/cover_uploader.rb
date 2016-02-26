@@ -49,7 +49,7 @@ class CoverUploader < CarrierWave::Uploader::Base
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   def filename
-    "#{model.artist.name.to_s.split.join}-#{model.name.to_s.split.join}.#{file.extension}" if original_filename
+    "#{model.artist.slug.to_s.split.join}-#{model.slug.to_s.split.join}.#{file.extension}" if original_filename
   end
 
 end

@@ -51,7 +51,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
   def filename
-    "#{model.name.to_s.split.join}.#{file.extension}" if original_filename
+    "#{model.slug.to_s.split.join}.#{file.extension}" if original_filename
   end
 
 end
