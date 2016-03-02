@@ -470,7 +470,7 @@ textarea.form-control {
 }
 
 .station1,.station2,.station3,.station4,.station5 {
-  background-size: 341px 300px;
+  background-size: 100% 300px;
   background-position-y: -111px;
 }
 
@@ -509,11 +509,11 @@ textarea.form-control {
 }
 
 .playlist-container {
-  background: asset-url('playlist.jpg') no-repeat;
+  background: asset-url('playlist.jpg') no-repeat 100%;
 }
 
 .catalogue-container {
-  background: asset-url('catalogue.jpg') no-repeat;
+  background: asset-url('catalogue.jpg') no-repeat 100%;
 }
 
 .catalogue_link, .playlists_link {
