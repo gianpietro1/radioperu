@@ -522,12 +522,13 @@ textarea.form-control {
   margin: auto;
   padding: 10px;
   padding-top: 10%;
-  color: #fff;
-  background-color: rgba(255,255,255, 0.3);
+  color: #333;
+  background-color: rgba(255,255,255, 0.5);
   border-radius: 10px;
   text-align: center;
   width: 70%;
   font-weight: bolder;
+  font-size:1em;
 }
 
 .catalogue_link:hover, .playlists_link:hover {

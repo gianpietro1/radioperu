@@ -15,14 +15,6 @@
 .row.margin-top-05
   .col-md-1
   .col-md-10
-    .col-md-4
-      %h4.text-center.option_title
-        = t(:catalogue)
-      .catalogue-container
-        %a{ href: artists_path, data_description: t(:catalogue_description), class: "catalogue_link" }
-          = t(:catalogue_description)
-        .margin-top-20.search_landing
-          = text_field_tag :search, params[:search], placeholder: "#{t(:search_text)}", size: 35, class: 'search-field'
 
     .col-md-4
       %h4.text-center.option_title
@@ -35,6 +27,16 @@
                 =@radios.find_by(id:i).name.downcase
               .radiodescription
                 =@radios.find_by(id:i).description
+                
+    .col-md-4
+      %h4.text-center.option_title
+        = t(:catalogue)
+      .catalogue-container
+        %a{ href: artists_path, data_description: t(:catalogue_description), class: "catalogue_link" }
+          = t(:catalogue_description)
+        .margin-top-20.search_landing
+          = text_field_tag :search, params[:search], placeholder: "#{t(:search_text)}", size: 35, class: 'search-field'
+
     .col-md-4
       %h4.text-center.option_title
         = t(:playlists)
