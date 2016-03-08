@@ -16,7 +16,7 @@
       .artist_catalogue_title
         %h4.pull-left
           =t(:random_artists_station) + " " + radio.id.to_s + " (#{radio.description})"
-        .pull-right.btn.btn-sm.whitebtn{class: "btn#{radio.id}" }
+        .pull-right.btn.whitebtn{class: "btn#{radio.id}" }
           = link_to t(:see_all), "artists/station/#{radio.id}", params[:radio]
       .row.clear_both.margin-bottom-10.artists_container{:id => "artist_container#{radio.id}"}
         - radio.artists.shuffle[0..9].each do |artist|

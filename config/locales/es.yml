@@ -158,8 +158,8 @@ es:
   program_delete_error: "Error al borrar el programa"
   edit: "[editar]"
   adminedit: "[editar admin]"
-  sponsor_available: "Patrocinio disponible para este programa - Informes: contacto @ radioperu.pe"
-  sponsor_available_catalogue: "Patrocinio disponible para el catálogo - Informes: contacto @ radioperu.pe"
+  sponsor_available: "Anuncie aquí - Informes: contacto@radioperu.pe"
+  sponsor_available_catalogue: "Anuncie aquí - Informes: contacto@radioperu.pe"
   peru_time: "Hora Actual en Perú"
   #Search Categories
   artists: "Artistas"
