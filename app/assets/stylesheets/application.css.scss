@@ -514,6 +514,7 @@ textarea.form-control {
 
 .catalogue-container, .playlist-container {
   padding-top: 20%;
+  background-size: cover;
 }
 
 .playlist-container {
@@ -1743,6 +1744,10 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 
 .landing {
   /*min-height: 800px;*/
+}
+
+.catalogue-container, .playlist-container {
+  padding-top: 15%;
 }
 
 }
