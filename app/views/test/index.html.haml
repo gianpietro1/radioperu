@@ -3,7 +3,7 @@
     .col-md-6.margin-top-10
       .radio_container.radio_container_live
         %h1.station_title
-          Prueba de RadioConciertos
+          Prueba de Radio
         .station_player
           #player
             %script{:type=>"text/javascript", :src=>"http://player.radiocdn.com/iframe.js?hash=056fcd16319e21611f5299d4e99663e8d953c477-118-41"}
@@ -16,7 +16,6 @@
         #artist_summary.artist-info-live
         #album_summary
         #concert_summary
-          = image_tag( 'melissa_cabrera.jpg' )  
     .col-md-6.margin-top-10
       #photo
         = render partial: 'test_instagram'
@@ -38,7 +37,7 @@
   
   function update_artist(){
 
-  $.SHOUTcast({host: 'eclipse.wavestreamer.com',port: 9080}).stats(function(){
+  $.SHOUTcast({host: 'eclipse.wavestreamer.com',port: 9890}).stats(function(){
  
   songtitle_new = this.get('songtitle');
   
