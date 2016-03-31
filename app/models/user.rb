@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :recoverable, :registerable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable, :omniauth_providers => [:facebook]
 
-  #before_create :generate_auth_token
+  before_create :generate_auth_token
   
   has_many :artists
   has_many :albums
@@ -11,6 +11,12 @@ class User < ActiveRecord::Base
   has_many :playlists, dependent: :destroy
   
   def self.from_omniauth(auth)
+    if self.where(email: auth.info.email).exists?
+      user = self.where(email: auth.info.email).first
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.save!
+    else
       where(provider: auth.provider, uid: auth.uid).first_or_initialize do |user|
         user.provider = auth.provider
         user.uid = auth.uid
@@ -20,6 +26,7 @@ class User < ActiveRecord::Base
         user.skip_confirmation!
         user.save!
       end
+    end
   end
 
   def admin?
