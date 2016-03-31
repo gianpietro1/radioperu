@@ -124,16 +124,16 @@
   // Info for Stats
 
   function get_userinfo(){
-  jQuery.ajax( { 
-  url: '//freegeoip.net/json/', 
-  type: 'POST', 
+  $.ajax( { 
+  url: '//geoip.nekudo.com/api/', 
+  type: 'GET', 
   dataType: 'jsonp',
   success: function(location) {
   stats_ip_address = location.ip;
-  stats_country = location.country_name;
+  stats_country = location.country.name;
   stats_city = location.city;
   }
-  } );
+  });
   user_agent = navigator.userAgent;
   }
 
