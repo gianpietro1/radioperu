@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
       user.provider = auth.provider
       user.uid = auth.uid
       user.save!
+      return user
     else
       where(provider: auth.provider, uid: auth.uid).first_or_initialize do |user|
         user.provider = auth.provider
