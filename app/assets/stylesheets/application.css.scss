@@ -307,6 +307,15 @@ textarea.form-control {
   padding: 10px;
 }
 
+.go-login-button {
+  margin-top: 5px;
+}
+
+.go-login-button .btn-social {
+  min-width: 182.05px;
+}
+
+
 /* Browser-specific */
 
 @-moz-document url-prefix() {
