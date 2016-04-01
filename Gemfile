@@ -110,6 +110,7 @@ gem 'meta-tags'
 # Facebook login
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-google'
 
 # Capistrano
 gem 'capistrano', '~> 3.1.0'

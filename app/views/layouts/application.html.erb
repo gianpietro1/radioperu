@@ -27,6 +27,7 @@
 
   <div class="container-fluid">
 
+
     <div class="row container-top">
       <div class="pull-left language">
         <% if I18n.locale == :es %>
@@ -49,7 +50,12 @@
           <% end %>
         <% else %>
           <%= link_to (t :register_as_musician), '/soymusico', class: 'btn blackbtn' %>        
-          <%= link_to (t :login), new_user_session_path, class: 'btn blackbtn login_btn' %>
+          <script>
+            $("#opaque-cover").css('display','block');
+          </script>
+          <!--
+            <%= link_to (t :login), new_user_session_path, class: 'btn blackbtn login_btn' %>
+          -->
         <% end %>
 
       </div>

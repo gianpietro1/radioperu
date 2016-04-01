@@ -21,6 +21,7 @@
 
 es:
   # Welcome page
+  login_message: "Hola! Ingresa para descubrir toda la música del Perú!"
   hello: "Hola mundo"
   discover: "descubre toda la música del Perú."
   catalogue: "Catálogo musical"
