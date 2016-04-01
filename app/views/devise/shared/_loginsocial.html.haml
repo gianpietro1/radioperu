@@ -1,0 +1,9 @@
+- if devise_mapping.omniauthable?
+  .fb-login-button
+    %a{href: user_omniauth_authorize_path(:facebook), class:"btn btn-social btn-facebook"}
+      %i{class:"fa fa-facebook"}
+      = t(:sign_in_facebook)
+  .go-login-button
+    %a{href: user_omniauth_authorize_path(:google_oauth2), class:"btn btn-social btn-google"}
+      %i{class:"fa fa-google-plus"}
+      = t(:sign_in_google)
