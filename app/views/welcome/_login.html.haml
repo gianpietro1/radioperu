@@ -8,7 +8,7 @@
 			= render "devise/shared/loginsocial"
 			.social_disclaimer.bold
 				= t(:social_disclaimer)
-			%button.btn.btn-sm.pull-right{id:'switch_to_email'}
+			%button.btn.btn-sm.btn-info.pull-right{id:'switch_to_email'}
 				= t(:switch_to_email)
 		.popup-email
 			%p.small.bold.text-center.login_type_msg
@@ -31,7 +31,7 @@
 					= link_to t(:sign_up), new_registration_path(:user)
 					%br
 					= link_to t(:didnt_receive_confirmation_instructions), new_confirmation_path(:user)
-			%button.btn.btn-sm.pull-right{id:'switch_to_social'}
+			%button.btn.btn-sm.btn-info.pull-right{id:'switch_to_social'}
 				= t(:switch_to_social)
 
 %script{:type=>"text/javascript"}
