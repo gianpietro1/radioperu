@@ -134,7 +134,7 @@ body {
 
 .landing {
   background-color: white;
-  padding: 5px 24px 40px 24px;
+  padding: 1px 24px 40px 24px;
   margin: 8px 0px 15px 0px;
   min-height: 765px;
   min-height: 95vh;
@@ -302,21 +302,19 @@ textarea.form-control {
  background-color: rgba(0,0,0,0.75);
  margin-left:-25px;
  margin-top:-8px;
+ padding-bottom: 2px;
  position: fixed;
 }
 
 #login-block {
   margin: 0 auto;
-  margin-top: 150px;
-  border: 1px solid #3c3c33;
+  margin-top: 210px;
   border-radius: 10px;
   width: 700px;
-  height: 310px;
   z-index: 1000;
   background-color: white;
-  padding: 5px;
-  padding-top: 15px;
-  border: 5px solid #3c3333;
+  padding: 0;
+  border: 5px solid #202020;
 }
 
 .go-login-button {
@@ -336,7 +334,7 @@ textarea.form-control {
 }
 
 .popup-social {
-  border-right: 1px solid #3c3c33;
+  border-right: 1px solid #b0b0b0;
 }
 
 .msg {
@@ -357,14 +355,17 @@ textarea.form-control {
 }
 
 .login_msg {
-  font-size: 1.2em
+  font-size: 1.2em;
+  font-weight: normal;
+  margin:0;
+  background-color: #202020;
+  color: white;
 }
 
 .login_type_msg {
   font-size: 0.9em;
   width: 80%;
-  margin: 0px auto;
-  margin-bottom: 8px;
+  margin: 4px auto 4px auto;
 }
 
 #switch_to_social, #switch_to_email {
@@ -2135,14 +2136,15 @@ hr {
 /* Login Popup */
 
 #opaque-cover {
-  margin-left: 0;
+  /*margin-left: 0;*/
 }
 
 #login-block {
-  margin-top: 80px;
+  margin-top: 200px;
   width: 80%;
   height: auto;
   border-radius: none;
+  padding-bottom: 2px;
 }
 
 .popup-social, .popup-email {
@@ -2150,6 +2152,9 @@ hr {
   height: auto;
   clear: both;
   border: none;
+  padding:0;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 .popup-social {
@@ -2159,13 +2164,18 @@ hr {
   display:none;
 }
 
+.popuplinks a {
+  font-size: 0.9em
+}
+
 .login_msg {
-  font-size: 0.9em;
+  font-size: 0.95em;
   margin-bottom: 0;
+  padding: 1px;
 }
 
 .login_type_msg {
-  font-size: 0.7em;
+  font-size: 0.75em;
   width: 100%;
 }
 
@@ -2356,6 +2366,20 @@ h3.catalogue_title {
 }
 
 @media screen and (max-width: 524px) {
+
+/* Login Popup */
+
+#opaque-cover {
+  margin-left:-10px;
+}
+
+#login-block {
+  margin-top: 175px;
+}
+
+.login_msg {
+  font-size: 0.85em;
+}
 
 /* Social */
 .sharepage h5 {
@@ -2564,6 +2588,12 @@ h1.station_title {
 
 @media screen and (max-width: 360px) {
 
+/* Login Popup */
+
+#opaque-cover {
+  margin-left:-1px;
+}
+
 /* General */
 
 .mainnav a {
@@ -2620,7 +2650,7 @@ h1.station_title {
 }
 
 .landing {
-  padding: 5px 10px 40px 24px;
+  padding: 1px 10px 40px 24px;
 }
 
 .radio_container {

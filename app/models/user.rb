@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
         user.password = Devise.friendly_token[0,20]
         user.skip_confirmation!
         user.save!
+        # send_update_email(user)
       end
     end
   end
@@ -40,6 +41,10 @@ class User < ActiveRecord::Base
 
   def listener?
     role == 'listener'
+  end
+
+  def self.send_update_email(user)
+    UpdatesMailer.new_user_update(user).deliver
   end
 
   def generate_auth_token
