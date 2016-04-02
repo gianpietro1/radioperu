@@ -221,6 +221,8 @@ es:
   social_disclaimer: "Radioperú.pe no tendrá acceso alguno a tu información privada ni control alguno en tus redes."
   login_social: "De manera rápida y segura vía alguna de las siguientes redes sociales"
   login_email: "Vía correo electrónico, previo registro"
+  switch_to_email: "ingresar por correo"
+  switch_to_social: "ingresar por redes"
   #Musician Form
   musician_name: "Nombre de la banda o músico"
   musician_email: "Correo Electrónico"
