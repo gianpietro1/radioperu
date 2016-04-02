@@ -1,5 +1,31 @@
 #opaque-cover
-  #login-block
-    = t :login_message
-    = render "devise/shared/loginsocial"
-
+	#login-block
+		%p.text-center.bold.login_msg
+			= t :login_message
+		.popup-social.text-center
+			%p.small.bold.login_type_msg
+				= t(:login_social)
+			= render "devise/shared/loginsocial"
+			.social_disclaimer.bold
+				= t(:social_disclaimer)
+		.popup-email
+			%p.small.bold.text-center.login_type_msg
+				= t(:login_email)
+			= form_tag session_path(:user) do
+				.form-group
+					= text_field_tag 'user[email]', "", class:"form-control", placeholder: t(:email)
+				.form-group
+					= password_field_tag 'user[password]', "", class:"form-control", placeholder: t(:password)
+				.clearfix
+					.small.float-right
+						= check_box_tag 'user[remember_me]'
+						= label_tag 'user[remember_me]', t(:remember_me)
+					.float-left
+						%button{class:"btn btn-sm btn-success", width:"150px"}
+							= t(:login)
+				%p.small.margin-top-05
+					= link_to t(:forgot_password), new_password_path(:user)
+					%br
+					= link_to t(:sign_up), new_registration_path(:user)
+					%br
+					= link_to t(:didnt_receive_confirmation_instructions), new_confirmation_path(:user)

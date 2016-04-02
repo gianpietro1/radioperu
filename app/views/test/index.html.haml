@@ -20,13 +20,15 @@
       #photo
         = render partial: 'test_instagram'
 
+
+
 = javascript_include_tag 'jquery.shoutcast.min.js'
 = javascript_include_tag 'instafeed.min.js'
 
-= render partial: "welcome/login"
-
 %script{:type=>"text/javascript"}
 
+  $("#opaque-cover").show();
+  
   function update_photo(){
   feed.run();
   $.ajax({type: 'get', url: "/" + locale + "/test_instagram", success: function(r) { $('#photo').html(r); } });

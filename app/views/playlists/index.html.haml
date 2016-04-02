@@ -30,16 +30,7 @@
         - else
           %p.text-center
             = t(:you_need_to_login)
-          %p.authentication
-            %p
-              = render "devise/shared/loginsocial"
-            %p
-              = t(:or_else)
-            %p
-              = link_to t(:sign_up), new_user_registration_path, class: 'btn whitebtn'
-              = t(:or)
-              = link_to t(:login), new_user_session_path, class: 'btn whitebtn'  
-              = t(:if_user_with_email)
+            
         - if policy(Playlist.new).create?
           %br
           - if @user_playlists.count == 0

@@ -12,11 +12,29 @@ class ApplicationController < ActionController::Base
   rescue_from Pundit::NotAuthorizedError do |exception|
    redirect_to root_url, alert: t(:operation_not_authorized)
   end
-  
+
+  after_filter :store_location
+
+  def store_location
+   if (!request.fullpath.match("/users") &&
+    !request.xhr?) # don't store ajax calls
+    session[:previous_url] = request.fullpath
+   end
+  end
+
+  def after_sign_in_path_for(resource)
+    session[:previous_url] || root_path
+  end
+
+  def after_update_path_for(resource)
+    session[:previous_url] || root_path
+  end
+
+
   def default_url_options(options = {})
    { locale: I18n.locale }.merge options
   end
-  
+
   protected
      
   def configure_permitted_parameters

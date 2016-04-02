@@ -34,6 +34,14 @@
 
 /* General styles */
 
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
 body {
   font-family: 'Myriad Pro Regular', Helvetica;
   font-size: 16px;
@@ -129,6 +137,7 @@ body {
   padding: 5px 24px 40px 24px;
   margin: 8px 0px 15px 0px;
   min-height: 765px;
+  min-height: 95vh;
   height: auto;
 }
 
@@ -283,11 +292,14 @@ textarea.form-control {
   display: none;
 }
 
+/* Login Popup */
+
 #opaque-cover {
+ display: none;
  width: 100%;
  height: 100%;
  z-index: 900;
- background-color: rgba(0,0,0,0.9);
+ background-color: rgba(0,0,0,0.75);
  margin-left:-25px;
  margin-top:-8px;
  position: fixed;
@@ -298,13 +310,15 @@ textarea.form-control {
   top: 50%;
   left: 50%;
   border: 1px solid #3c3c33;
-  border-radius: 5%;
-  width: 400px;
-  height: 300px;
+  border-radius: 10px;
+  width: 700px;
+  height: 310px;
   z-index: 1000;
   background-color: white;
   transform: translate(-50%, -50%);
-  padding: 10px;
+  padding: 5px;
+  padding-top: 15px;
+  border: 5px solid #3c3333;
 }
 
 .go-login-button {
@@ -313,6 +327,44 @@ textarea.form-control {
 
 .go-login-button .btn-social {
   min-width: 182.05px;
+}
+
+.popup-social, .popup-email {
+  width: 50%;
+  height: 230px;
+  float: left;
+  padding: 10px;
+}
+
+.popup-social {
+  border-right: 1px solid #3c3c33;
+}
+
+.msg {
+  position:relative;
+  z-index: 1100 !important; /* alerts on top of opaque background */
+}
+
+.social_disclaimer {
+  font-size: 0.8em;
+  font-style: italic;
+  margin: 20px auto;
+  width: 80%;
+}
+
+.login_input {
+  width: 100%;
+}
+
+.login_msg {
+  font-size: 1.2em
+}
+
+.login_type_msg {
+  font-size: 0.9em;
+  max-width: 80%;
+  margin: 0px auto;
+  margin-bottom: 8px;
 }
 
 /* Browser-specific */
@@ -1780,10 +1832,6 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 
 /* Welcome Screen */
 
-.landing {
-  /*min-height: 800px;*/
-}
-
 .catalogue-container, .playlist-container {
   padding-top: 15%;
 }
@@ -2079,6 +2127,37 @@ hr {
 }
 
 @media screen and (max-width: 768px) {
+
+/* Login Popup */
+
+#opaque-cover {
+ margin-left: 0;
+}
+
+#login-block {
+  width: 70%;
+  height: auto;
+}
+
+.popup-social, .popup-email {
+  width: 100%;
+  height: auto;
+  clear: both;
+  border: none;
+}
+
+.popup-social {
+  border-bottom: 1px solid #3c3c33;
+}
+
+.login_msg {
+  font-size: 1em
+}
+
+.login_type_msg {
+  font-size: 0.8em;
+  max-width: 90%;
+}
 
 /* General */
 

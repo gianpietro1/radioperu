@@ -21,7 +21,7 @@
 
 en:
   # Welcome page
-  login_message: "Hi! Login to discover all the music from Peru!"
+  login_message: "Login and discover all the music from Peru!"
   hello: "Hello world"
   discover: "discover all the music from Peru."
   catalogue: "Music catalogue"
@@ -217,6 +217,9 @@ en:
   welcome: "Welcome"
   confirm_with_link_below: "Please confirm your account with the following button:"
   confirm_my_account: "Confirmar my account"
+  social_disclaimer: "Radioperu.pe will never have access to your private information or any control over your social networks."
+  login_social: "Login using social networks"
+  login_email: "Login using your email"
   #Musician Form
   musician_name: "Musician/Band name"
   musician_email: "Email"
