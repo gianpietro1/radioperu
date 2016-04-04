@@ -12,10 +12,7 @@
   .col-md-1
   .col-md-10
     .pull-left
-      -if @catalogue == 'station'
-        = link_to t(:back_to_catalogue), "/#{I18n.locale}/artists/station/#{@artist.genre.radio.id}", class: 'btn btn-info'
-      -else
-        = link_to t(:back_to_catalogue), artists_path, class: 'btn btn-info'
+      = link_to t(:back_to_catalogue), artists_path, class: 'btn btn-info'
     .pull-right
       - if policy(@artist).edit?
         =link_to t(:edit_artist), edit_artist_path(@artist), class: 'btn btn-warning'

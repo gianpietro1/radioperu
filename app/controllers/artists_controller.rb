@@ -9,9 +9,22 @@ class ArtistsController < ApplicationController
   end
 
   def index_station
-    @radio = Radio.find_by_id(params[:station_id])
-    @artists = @radio.artists
-    @catalogue = "station" 
+    @radio = Radio.find_by_id(params[:radio_id])
+    @artists_station = @radio.artists
+    @catalogue = "station"
+    respond_with() do |format|
+    format.html {render :partial => "index_station" }
+    end
+  end
+
+  def index_station_summary
+    @radio = Radio.find_by_id(params[:pre_radio_id])
+    @artists_summary = @radio.artists.shuffle[0..9]
+    @catalogue = "general" 
+    respond_with() do |format|
+    format.html {render :partial => "index_station_summary" }
+    end
+    puts @artists_summary
   end
 
   def show
@@ -32,8 +45,7 @@ class ArtistsController < ApplicationController
     @artist = Artist.where(Artist.arel_table[:name].matches(params[:artist_name].downcase)).first
     respond_with(@artist) do |format|
     format.html {render :partial => "artist_summary" }
-  end
-  
+    end
   end
 
   def new
