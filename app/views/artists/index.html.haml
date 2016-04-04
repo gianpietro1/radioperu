@@ -39,17 +39,15 @@
   $.ajax({data: { radio_id: radio_id }, type: 'get', url: "/" + locale + "/get_station_artists", success: function(r) { $('#artist_container'+radio_id).hide().html(r).fadeIn('slow'); } });
 
   // Ajax hide the partial from the previous radio_id
-  if(radio_id !== pre_radio_id){$.ajax({data: { pre_radio_id: pre_radio_id }, type: 'get', url: "/" + locale + "/get_station_summary", success: function(r) { $('#artist_container'+pre_radio_id).hide().html(r).fadeIn('slow'); } });
-  }
-
+  if(radio_id !== pre_radio_id){$.ajax({data: { pre_radio_id: pre_radio_id }, type: 'get', url: "/" + locale + "/get_station_summary", success: function(r) { $('#artist_container'+pre_radio_id).hide().html(r).fadeIn('slow'); }}).done(function() {
   fix_scroll(radio_id);
+  });
+  }
 
   }
 
   function fix_scroll(radio_id){
-  $('html, body').animate({
-  scrollTop: $('#artist_container'+radio_id).offset().top - 40
-  }, 'slow');
+  $('body').scrollTo('#artist_container'+radio_id,{duration:'slow', offsetTop : '0'});
   }
 
   $("[id^=btn]").click(function() {
