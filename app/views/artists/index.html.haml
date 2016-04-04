@@ -49,8 +49,13 @@
   
   var radio_id = this.id.match(/\d+/)[0];
 
+  $('html, body').animate({
+  scrollTop: $('#artist_container'+radio_id).offset().top - 40
+  }, 'slow');
+
   refresh_artists(radio_id,pre_radio_id);
 
   pre_radio_id = radio_id;
+
 
   });
