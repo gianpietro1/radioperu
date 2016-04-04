@@ -44,6 +44,11 @@
 
   }
 
+  function fix_scroll(radio_id){
+  $('html, body').animate({
+  scrollTop: $('#artist_container'+radio_id).offset().top - 40
+  }, 'slow');
+  }
 
   $("[id^=btn]").click(function() {
   
@@ -53,8 +58,7 @@
 
   pre_radio_id = radio_id;
 
-  $('html, body').animate({
-  scrollTop: $('#artist_container'+radio_id).offset().top - 40
-  }, 'slow');
-  
+  setTimeout(fix_scroll(radio_id),1000);
+
   });
+
