@@ -1,0 +1,17 @@
+= t(:artist_city) + ": "
+= @artist.city
+\
+= t(:artist_url) + ": "
+-if @artist.external_url
+  = link_to @artist.external_url, @artist.external_url, :target => "_blank"
+- else
+  \-
+\
+= t(:genre) + ": "
+- unless @artist.genre.nil?
+  = @artist.genre.name
+\  
+- unless @artist.bio.nil? || @artist.bio.empty?
+  = simple_format(@artist.bio)
+- else
+  = t(:artist_bio_not_available)
