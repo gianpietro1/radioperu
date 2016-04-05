@@ -83,7 +83,7 @@
     .col-md-12
       .form_group.pull-right
         - if @album.persisted?
-          = link_to t(:cancel), [@artist,@album], class: "btn btn-danger"
+          = link_to t(:cancel), "/#{I18n.locale.to_s}/" + artist.slug + "/albums/" + album.slug, class: "btn btn-danger"
         - else
-          = link_to t(:cancel), [@artist], class: "btn btn-danger"
+          = link_to t(:cancel), "/#{I18n.locale.to_s}/" + artist.slug, class: "btn btn-danger"
         = f.submit t(:form_save), class: 'btn btn-success'

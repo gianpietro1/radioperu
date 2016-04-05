@@ -77,7 +77,7 @@ class ArtistsController < ApplicationController
       flash[:notice] = t(:artist_updated)
       @artist.send_update_email
       update_facebook_graph
-      redirect_to @artist
+      redirect_to ("/#{I18n.locale.to_s}/" + @artist.slug)
     else
       flash[:error] = t(:artist_update_error)
       render :edit

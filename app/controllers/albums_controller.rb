@@ -75,7 +75,7 @@ class AlbumsController < ApplicationController
       @album.send_update_email
       update_facebook_graph
       flash[:notice] = t(:album_updated)
-      redirect_to [@artist,@album]
+      redirect_to ("/#{I18n.locale.to_s}/" + @artist.slug + '/albums/' + @album.slug)
     else
       flash[:error] = t(:album_update_error)
       render :edit
