@@ -16,10 +16,8 @@ class Api::V1::AlbumsController < Api::V1::BaseController
       album = nil
     end
 
-    # Only log if Android
-    if request.env['HTTP_USER_AGENT'].downcase.match(/android/)
-      MyLog.log.info "Looking for artist " + params[:artist_name] + " with song " + params[:song_name]
-    end
+    # Pending: only log if Android / iPhone
+    MyLog.log.info "Searching album: " + params[:artist_name] + " - " + params[:song_name]
     
     render json: album.to_json(:except => [ :created_at, :updated_at ]), status: 200
    end

@@ -6,8 +6,8 @@ class Api::V1::ArtistsController < Api::V1::BaseController
    def show
     artist = Artist.where(Artist.arel_table[:name].matches(params[:artist_name].downcase)).first
 
-    # Only log if iPhone
-    MyLog.log.info "Looking for artist " + params[:artist_name]
+    # Pending: only log if Android / iPhone
+    MyLog.log.info "Searching artist: " + params[:artist_name]
 
     render json: artist.to_json(:except => [ :created_at, :updated_at ]), status: 200
    end
