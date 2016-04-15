@@ -6,8 +6,8 @@ class Api::V1::ArtistsController < Api::V1::BaseController
    def show
     artist = Artist.where(Artist.arel_table[:name].matches(params[:artist_name].downcase)).first
 
-    MyLog.log.info "NEW REQUEST FROM " + self.request.env["REMOTE_ADDR"] + " - " + self.request.env["HTTP_USER_AGENT"]
-    MyLog.log.info "Searching artist: " + params[:artist_name]
+    userinfo = self.request.env["REMOTE_ADDR"] + " - " + self.request.env["HTTP_USER_AGENT"]
+    MyLog.log.info userinfo + " - Searching artist: " + params[:artist_name]
 
     render json: artist.to_json(:except => [ :created_at, :updated_at ]), status: 200
    end

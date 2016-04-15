@@ -16,7 +16,8 @@ class Api::V1::AlbumsController < Api::V1::BaseController
       album = nil
     end
 
-    MyLog.log.info "Searching album: " + params[:artist_name] + " - " + params[:song_name]
+    userinfo = self.request.env["REMOTE_ADDR"] + " - " + self.request.env["HTTP_USER_AGENT"]
+    MyLog.log.info userinfo + " - Searching album: " + params[:artist_name] + " - " + params[:song_name]
     
     render json: album.to_json(:except => [ :created_at, :updated_at ]), status: 200
    end
