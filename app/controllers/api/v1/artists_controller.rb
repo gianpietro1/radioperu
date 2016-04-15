@@ -5,7 +5,13 @@ class Api::V1::ArtistsController < Api::V1::BaseController
  
    def show
      artist = Artist.where(Artist.arel_table[:name].matches(params[:artist_name].downcase)).first
-     render json: artist.to_json(:except => [ :created_at, :updated_at ]), status: 200
+
+    # Only log if iPhone
+    if request.env['HTTP_USER_AGENT'].downcase.match(/iphone/)
+      MyLog.log.info "Looking for artist " + params[:artist_name]
+    end
+
+    render json: artist.to_json(:except => [ :created_at, :updated_at ]), status: 200
    end
  
    def index
