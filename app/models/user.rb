@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :albums
   has_many :songs
   has_many :playlists, dependent: :destroy
+  has_many :comments, dependent: :destroy
   
   def self.from_omniauth(auth)
     if self.where(email: auth.info.email).exists?

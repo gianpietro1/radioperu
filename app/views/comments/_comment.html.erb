@@ -1,0 +1,16 @@
+<%= content_tag :div, class: 'media comments', id: "comment-#{comment.id}" do %>
+      <%= link_to '#', class: 'pull-left' do %>
+      <% end %>
+      <div class="media-body">
+        <small>
+          <%= comment.user.name %>
+          <%= t(:commented) %>
+          <%= t(:at_time) %>
+          <%= I18n.localize(comment.created_at, :format => '%d %B %Y %r') %>  
+          <% if policy(comment).destroy? %>
+            | <%= link_to t(:delete), [@commentable, comment], method: :delete, remote: true %>
+          <% end %>
+        </small>
+          <p><%= comment.body %></p>
+      </div>
+<% end %>

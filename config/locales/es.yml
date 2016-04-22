@@ -223,6 +223,13 @@ es:
   login_email: "Vía correo electrónico, previo registro"
   switch_to_email: "ingresar por correo"
   switch_to_social: "ingresar por redes"
+  #Comments
+  comments: "Comentarios"
+  enter_comment: "ingresa tu comentario"
+  submit: "enviar"
+  at_time: "el"
+  commented: "comentó"
+  delete: "borrar"
   #Musician Form
   musician_name: "Nombre de la banda o músico"
   musician_email: "Correo Electrónico"

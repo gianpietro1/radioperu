@@ -11,6 +11,8 @@ class Artist < ActiveRecord::Base
   belongs_to :genre
   has_many :albums, dependent: :destroy
   has_many :songs, :through => :albums, dependent: :destroy
+  has_many :comments, as: :commentable
+
   
   mount_uploader :image, ImageUploader
 

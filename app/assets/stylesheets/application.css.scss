@@ -1096,6 +1096,29 @@ span.catalogue_title a {
   height: 30px;
 }
 
+
+/* Comments */
+
+.new_comment textarea.form-control {
+  height: 100px;
+}
+
+.comments {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 5px;
+  word-wrap: break-word;
+}
+
+.js-comments {
+  max-height: 500px;
+  overflow: auto;
+}
+
+.comment_block {
+  margin-top: 20px;
+}
+
 /* Playlists */
 
 
