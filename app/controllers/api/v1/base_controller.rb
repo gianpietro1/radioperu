@@ -26,7 +26,7 @@ class Api::V1::BaseController < ApplicationController
    end
 
    def app_version
-     version = 0.1
+     version = 0.2
      render json: {version: version}, status: 200
    end
 
