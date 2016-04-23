@@ -37,4 +37,8 @@
   .row.margin-top-10
     .form_group
       = f.submit t(:form_save), class: 'btn btn-success'
-      = link_to t(:cancel), "/#{I18n.locale.to_s}/" + artist.slug, class: "btn btn-danger"
+      - if artist.slug
+        = link_to t(:cancel), "/#{I18n.locale.to_s}/" + artist.slug, class: "btn btn-danger"
+      - else
+        = link_to t(:cancel), artists_path, class: "btn btn-danger"
+

@@ -65,7 +65,7 @@
             %a.hide
           %a.hide
           - offset = ENV["SOUND_OFFSET"].to_i
-          %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + @song.filename.file.basename + '#' + @song.album.name + '#' + @song.album.artist.name + '#' + ".mp3", id: @song.id}
+          %a{ href: ('##')*offset + "password" + '##' + rand(0..43254735465623).to_s + '##' + @song.filename.file.basename + '##' + @song.album.name + '##' + @song.album.artist.name + '##' + ".mp3", id: @song.id}
             - if @songs.last.discnum && @songs.last.discnum > 1                 
               - if @song.track
                 = format('%02d', @song.discnum).to_s + '-' + format('%02d', @song.track).to_s + ' ' + @song.name

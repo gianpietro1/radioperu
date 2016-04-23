@@ -87,7 +87,7 @@
                 %a.hide
                 %a.hide
                 - jingle = Album.find_by(user_id: 1, name: 'locuciones').songs.shuffle.first
-                %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + jingle.filename.file.basename + '#' + jingle.album.name + '#' + jingle.album.artist.name + '#' + ".mp3"}
+                %a{ href: ('##')*offset + "password" + '##' + rand(0..43254735465623).to_s + '##' + jingle.filename.file.basename + '##' + jingle.album.name + '##' + jingle.album.artist.name + '##' + ".mp3"}
                   = jingle.album.artist.name + " - " + jingle.name
             - i += 1
             %li{id: "li", class: "#{song.id}"}
@@ -100,7 +100,7 @@
                 - if song.name != ''
                   =link_to t(:details), "/#{I18n.locale.to_s}/" + song.album.artist.slug + '/albums/' + song.album.slug + '/songs/' + song.slug, target: :blank
               - if song.filename.file
-                %a{ href: ('#')*offset + "password" + '#' + rand(0..43254735465623).to_s + '#' + song.filename.file.basename + '#' + song.album.name + '#' + song.album.artist.name + '#' + ".mp3", id: song.id}
+                %a{ href: ('##')*offset + "password" + '##' + rand(0..43254735465623).to_s + '##' + song.filename.file.basename + '##' + song.album.name + '##' + song.album.artist.name + '##' + ".mp3", id: song.id}
                   = song.album.artist.name + " - " + song.name
 
 
