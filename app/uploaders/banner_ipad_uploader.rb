@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class BannerUploader < CarrierWave::Uploader::Base
+class BannerIpadUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -13,7 +13,7 @@ class BannerUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/images/banners"
+    "uploads/images/banners/ipad"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
@@ -25,7 +25,7 @@ class BannerUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  process :resize_to_fill => [169,208]
+  process :resize_to_fill => [170,70]
   #
   # def scale(width, height)
   #   # do something

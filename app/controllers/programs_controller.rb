@@ -54,7 +54,7 @@ class ProgramsController < ApplicationController
   private
 
     def program_params
-      params.require(:program).permit(:name, :description, :owner, :image, :banner, :days_array, :program_start, :program_end)
+      params.require(:program).permit(:name, :description, :owner, :image, :banner, :banner_android, :banner_ipad, :banner_iphone, :banner_link, :days_array, :program_start, :program_end)
     end
 
 end

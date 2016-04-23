@@ -14,6 +14,21 @@
     = f.file_field :banner, class: 'form-control'
     = f.hidden_field :banner_cache
   .form_group
+    = f.label t(:program_banner_android)
+    = f.file_field :banner_android, class: 'form-control'
+    = f.hidden_field :banner_android_cache
+  .form_group
+    = f.label t(:program_banner_iphone)
+    = f.file_field :banner_iphone, class: 'form-control'
+    = f.hidden_field :banner_iphone_cache
+  .form_group
+    = f.label t(:program_banner_ipad)
+    = f.file_field :banner_ipad, class: 'form-control'
+    = f.hidden_field :banner_ipad_cache
+  .form_group
+    = f.label t(:program_banner_link)
+    = f.text_field :banner_link, class: 'form-control', placeholder: 'http://www.example.com'
+  .form_group
     = f.label t(:program_start)
     = f.time_field :program_start, class: 'form-control'
   .form_group

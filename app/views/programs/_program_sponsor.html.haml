@@ -5,7 +5,10 @@
     llega gracias a:
 .radiosponsor-image
   - if @active_program
-    - if @active_program.banner?
+    - if @active_program.banner? && @active_program.banner_link?
+      %a{href:@active_program.banner_link, class:"program_banner_link", target: "_blank"}
+        = image_tag( @active_program.banner )
+    - elsif @active_program.banner?
       = image_tag( @active_program.banner )
     - else
       %div{:class => "default-sponsor default-sponsor-#{@radio.id}"}

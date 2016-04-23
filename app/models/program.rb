@@ -7,6 +7,8 @@ class Program < ActiveRecord::Base
 
   mount_uploader :image, ProgramImageUploader
   mount_uploader :banner, BannerUploader
-
+  mount_uploader :banner_android, BannerAndroidUploader
+  mount_uploader :banner_iphone, BannerIphoneUploader
+  mount_uploader :banner_ipad, BannerIpadUploader
 
 end

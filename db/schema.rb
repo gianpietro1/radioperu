@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151128034816) do
+ActiveRecord::Schema.define(version: 20160423185446) do
 
   create_table "album_playstats", force: :cascade do |t|
     t.integer  "song_id"
@@ -102,6 +102,17 @@ ActiveRecord::Schema.define(version: 20151128034816) do
   end
 
   add_index "artists", ["slug"], name: "index_artists_on_slug"
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "user_id"
+  end
+
+  add_index "comments", ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
 
   create_table "format_translations", force: :cascade do |t|
     t.integer  "format_id",  null: false
@@ -209,6 +220,10 @@ ActiveRecord::Schema.define(version: 20151128034816) do
     t.time    "program_end"
     t.string  "banner"
     t.text    "days_array"
+    t.string  "banner_android"
+    t.string  "banner_iphone"
+    t.string  "banner_ipad"
+    t.string  "banner_link"
   end
 
   add_index "programs", ["radio_id"], name: "index_programs_on_radio_id"
