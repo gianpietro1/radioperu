@@ -1,3 +1,6 @@
+%script
+  $("#opaque-cover").remove();
+
 - if I18n.locale == :es
   - set_meta_tags :og => {:title => 'radioperu.pe', :url => root_url, :description => 'descubre toda la música del Perú', :image => image_url('estacionesfblink.png') }
 - elsif I18n.locale == :en
