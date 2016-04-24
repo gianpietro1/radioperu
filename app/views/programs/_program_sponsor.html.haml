@@ -7,10 +7,8 @@
   - if @active_program
     - if @active_program.banner? && @active_program.banner_link?
       %a{href:@active_program.banner_link, class:"program_banner_link", target: "_blank"}
-        = image_tag( @active_program.banner )
+        = image_tag( @active_program.banner, :class => "program_banner_image"  )
     - elsif @active_program.banner?
       = image_tag( @active_program.banner )
     - else
-      %div{:class => "default-sponsor default-sponsor-#{@radio.id}"}
-        %em
-          = t(:sponsor_available)
+      = image_tag( 'pc_ad.png', :class => "program_banner_image" )

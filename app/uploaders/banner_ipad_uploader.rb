@@ -25,7 +25,7 @@ class BannerIpadUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  process :resize_to_fill => [170,70]
+  process :resize_to_fill => [640,100]
   #
   # def scale(width, height)
   #   # do something

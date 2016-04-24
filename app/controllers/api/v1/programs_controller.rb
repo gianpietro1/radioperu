@@ -10,7 +10,7 @@ class Api::V1::ProgramsController < Api::V1::BaseController
 
    def index
      programs = Radio.find(params[:id]).programs
-     render json: programs.to_json, status: 200
+     render json: programs.to_json(:except => [ :banner, :banner_link, :banner_android, :banner_iphone, :banner_ipad ]), status: 200
    end
 
 end
