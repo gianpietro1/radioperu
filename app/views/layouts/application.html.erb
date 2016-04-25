@@ -7,7 +7,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="alternate" href="http://radioperu.pe/en" hreflang="en" />
-  <%= favicon_link_tag %>
+  <%= favicon_link_tag 'favicon.ico' %>
   <%= display_meta_tags :site => 'radioperu.pe' %>
   <%= csrf_meta_tags %>
   <%= render partial: "partials/google_analytics" %>
@@ -89,11 +89,15 @@
           <div class="about_link">
             <%= link_to t(:about), elproyecto_path %>
           </div>
-        </div>        
-        <div class="pull-right social">
+        </div>
+          <div class="pull-left social">
             <%= link_to image_tag("facebook.png", :alt => 'facebook'), 'https://www.facebook.com/radioperu.pe', class: "facebook", :target => "_blank" %>
             <%= link_to image_tag("twitter.png", :alt => 'twitter'), 'https://twitter.com/radioperu_pe', class: "twitter", :target => "_blank" %>
             <%= link_to image_tag("instagram.png", :alt => 'instagram'), 'https://instagram.com/radioperu.pe', class: "instagram", :target => "_blank" %>
+          </div>
+        <div class="pull-right apps">
+            <%= link_to image_tag("google-play-badge.png", :alt => 'android'), 'https://play.google.com/store/apps/details?id=pe.radioperu.radioperupe&hl=es', class: "android", :target => "_blank" %>   
+            <%= link_to image_tag("app-store-badge.svg", :alt => 'iphone'), 'https://itunes.apple.com/pe/app/radioperu.pe/id1086467610?ign-mpt=uo%3D5', class: "iphone", :target => "_blank" %>            
 
             <%# 
               <%= link_to image_tag("email.png", :alt => 'email'), 'mailto:contacto@radioperu.pe', class: "email" %>

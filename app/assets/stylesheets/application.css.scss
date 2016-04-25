@@ -218,6 +218,22 @@ body {
 
 }
 
+.social .facebook {
+  margin-left: 5px;
+}
+
+.apps {
+  margin-top: -5px;
+}
+
+.apps .android img {
+  height: 50px; 
+}
+
+.apps .iphone img {
+  height: 35px; 
+}
+
 .search {
   font-size: 1.0em;
   padding-top: 6px;
@@ -2258,6 +2274,14 @@ hr {
   height: 34px; 
 }
 
+.apps .android img {
+  height: 40px; 
+}
+
+.apps .iphone img {
+  height: 30px; 
+}
+
 .logo {
   margin-top: 8px;
   font-size: 4em
@@ -2448,6 +2472,18 @@ h3.catalogue_title {
 .social .email img {
   width: 29px;
   height: 29px; 
+}
+
+.apps {
+  margin-top: -3px;
+}
+
+.apps .android img {
+  height: 30px; 
+}
+
+.apps .iphone img {
+  height: 20px; 
 }
 
 .language {
