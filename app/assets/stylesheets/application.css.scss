@@ -231,7 +231,7 @@ body {
 }
 
 .apps .iphone img {
-  height: 35px; 
+  height: 33px; 
 }
 
 .search {
@@ -2279,7 +2279,7 @@ hr {
 }
 
 .apps .iphone img {
-  height: 30px; 
+  height: 27px; 
 }
 
 .logo {
@@ -2457,16 +2457,19 @@ h3.catalogue_title {
 .social .facebook img {
   width: 25px;
   height: 25px; 
+
 }
 
 .social .twitter img {
   width: 23px;
   height: 23px; 
+  margin-left: -2px;
 }
 
 .social .instagram img {
   width: 23px;
   height: 23px; 
+  margin-left: -2px;
 }
 
 .social .email img {
@@ -2475,15 +2478,17 @@ h3.catalogue_title {
 }
 
 .apps {
-  margin-top: -3px;
+  margin-top: -2px;
 }
 
 .apps .android img {
-  height: 30px; 
+  height: 25px; 
 }
 
 .apps .iphone img {
-  height: 20px; 
+  height: 17px; 
+  margin-left: -4px;
+  clear: both;
 }
 
 .language {
