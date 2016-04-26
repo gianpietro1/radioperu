@@ -1,7 +1,7 @@
 require 'digest/sha2' 
 class UpdatesMailer < ApplicationMailer
   
-  default from: "contacto@radioperu.pe" 
+  default from: "postmaster@radioperu.pe" 
       
       def new_artist_update(artist)
  
