@@ -17,7 +17,7 @@
       - if policy(@song).destroy?   
         =link_to t(:delete_song), [@artist,@album,@song], method: :delete, class: 'btn btn-danger', data: { confirm: t(:delete_song_confirm) }
       - if (current_user && current_user.admin?)
-        =link_to 'clic-derecho,grabar-enlace', "/uploads/song/#{@artist.name}/#{@album.slug}/#{@song.filename.file.basename}.mp3" , class: 'btn btn-info'
+        =link_to 'clic-derecho,grabar-enlace', "/uploads/song/#{@artist.name}/#{@album.name}/#{@song.filename.file.basename}.mp3" , class: 'btn btn-info'
     
 .row
   .col-md-1
