@@ -34,7 +34,7 @@
     .col-md-4
       %h4.text-center.option_title.promo_title
         = t(:anuncio)    
-      %h4.text-center.option_title.catalogue_title
+      %h4.text-center.option_title.catalogue-container-title
         = t(:catalogue)
       .promo
         %a{ href: 'http://radioperu.pe/radios/3', class: "promo_link" }
@@ -141,5 +141,5 @@
   $(".slogan-animation").animate({opacity: "1.0"}, 1800);
 
   $( ".promo,.promo_title" ).delay(5000).fadeOut("slow", function() {
-  $( ".catalogue-container,.catalogue_title" ).fadeIn("slow");
+  $( ".catalogue-container,.catalogue-container-title" ).fadeIn("slow");
   });
