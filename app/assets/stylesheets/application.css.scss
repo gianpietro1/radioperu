@@ -617,13 +617,13 @@ textarea.form-control {
   font-family: 'Myriad Pro Semibold'
 }
 
-.catalogue-container, .radios-container, .playlist-container {
+.catalogue-container, .radios-container, .playlist-container, .promo_link {
   height: 260px;
   box-shadow: 0 5px 5px -3px #777;
   border-radius: 10px;
 }
 
-.catalogue-container, .playlist-container {
+.catalogue-container, .playlist-container, .promo_link {
   padding-top: 15%;
   background-size: cover !important;
 }
@@ -656,6 +656,20 @@ textarea.form-control {
   z-index: 0;
   background-color: rgba(255, 255, 255, 0.7);
   color: #3c3c33;
+}
+
+.promo {
+
+}
+
+.promo_link {
+  display: block;
+  background: asset-url('melcochita-noloescuchen.jpg') no-repeat 100%;
+  background-size: 100% 100% !important;
+}
+
+.catalogue-container, .catalogue_title {
+  display: none;
 }
 
 /* Radios */
@@ -1861,7 +1875,7 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 
 /* Welcome Screen */
 
-.catalogue-container, .playlist-container {
+.catalogue-container, .playlist-container, .promo_link {
   padding-top: 15%;
 }
 
@@ -1955,7 +1969,7 @@ h4.option_title {
   font-size: 0.7em;
 }
 
-.catalogue-container, .playlist-container {
+.catalogue-container, .playlist-container, .promo_link {
   padding-top: 30%;
 }
 
@@ -2036,14 +2050,14 @@ h4.option_title {
   text-align: center;
 }
 
-.catalogue-container, .radios-container, .playlist-container {
+.catalogue-container, .radios-container, .playlist-container, .promo_link {
   width: 400px;
   text-align: center;
   margin: auto auto 20px auto;
   height: 100px;
 }
 
-.catalogue-container, .playlist-container {
+.catalogue-container, .playlist-container, .promo_link {
   padding-top: 15px;
   background-size: 400px;
 }
@@ -2514,7 +2528,7 @@ h3.catalogue_title {
   margin: 0 auto;
 }
 
-.catalogue-container, .playlist-container {
+.catalogue-container, .playlist-container, .promo_link {
   background-size: 300px;
 }
 
@@ -2656,7 +2670,7 @@ h1.station_title {
 
 /* Welcome page */
 
-.catalogue-container, .radios-container, .playlist-container {
+.catalogue-container, .radios-container, .playlist-container, .promo_link {
   width: 270px;
 }
 
