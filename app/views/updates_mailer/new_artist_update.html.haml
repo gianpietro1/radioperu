@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 .row
   .artist_div
-    .artist_divleft
-      .artist_imageinfo
-        - if @artist.image?
-          = image_tag( @artist.image )
-        - else
-          = image_tag( 'default_artist.jpg' )
+    =link_to @artist.name, root_url + "/" + @artist.slug
     .artist_divright
       %strong
         = t(:artist_city) + ": "

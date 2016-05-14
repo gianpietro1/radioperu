@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 .row
-  .album_image
-    - if @playlist.image?
-      = image_tag( @playlist.image )
   .album_bio
     %br
       - unless @playlist.description.nil? || @playlist.description.empty?

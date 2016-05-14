@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 .row
-  .album_image
-    - if @album.cover?
-      = image_tag( @album.cover )
-    - else
-      = image_tag( 'default_album.jpg' )
+  =link_to @album.name, root_url + "/" + @artist.slug + '/albums/' + @album.slug
   .album_mininfo
     %strong
       = t(:album_year) + ": "
