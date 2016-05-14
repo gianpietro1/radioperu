@@ -50,6 +50,7 @@ Radio.find_by_id(5).genres.create(name:"Fusión Instrumental")
 Radio.find_by_id(4).genres.create(name:"Reggaetón")
 Radio.find_by_id(4).genres.create(name:"Pop Urbano")
 Radio.find_by_id(4).genres.create(name:"Latin Pop")
+Radio.find_by_id(3).genres.create(name:"Bugalú")
 
 Genre.find_by_id(1).set_translations(:en => { :name => 'Creole' }, :es => { :name => 'Criollo'})
 Genre.find_by_id(2).set_translations(:en => { :name => 'Trova' }, :es => { :name => 'Trova'})
@@ -83,6 +84,7 @@ Genre.find_by_id(29).set_translations(:en => { :name => 'Instrumental Fusion' },
 Genre.find_by_id(30).set_translations(:en => { :name => 'Reggaeton' }, :es => { :name => 'Reggaetón'})
 Genre.find_by_id(31).set_translations(:en => { :name => 'Urban Pop' }, :es => { :name => 'Pop Urbano'})
 Genre.find_by_id(32).set_translations(:en => { :name => 'Latin Pop' }, :es => { :name => 'Latin Pop'})
+Genre.find_by_id(33).set_translations(:en => { :name => 'Boogaloo' }, :es => { :name => 'Bugalú'})
 
 Genre.find_by_id(1).set_translations(:en => { :name => 'Creole' }, :es => { :name => 'Criollo'})
 Genre.find_by_id(2).set_translations(:en => { :name => 'Trova' }, :es => { :name => 'Trova'})
@@ -116,6 +118,7 @@ Genre.find_by_id(29).set_translations(:en => { :name => 'Instrumental Fusion' },
 Genre.find_by_id(30).set_translations(:en => { :name => 'Reggaeton' }, :es => { :name => 'Reggaetón'})
 Genre.find_by_id(31).set_translations(:en => { :name => 'Urban Pop' }, :es => { :name => 'Pop Urbano'})
 Genre.find_by_id(32).set_translations(:en => { :name => 'Latin Pop' }, :es => { :name => 'Latin Pop'})
+Genre.find_by_id(33).set_translations(:en => { :name => 'Boogaloo' }, :es => { :name => 'Bugalú'})
 
 I18n.locale = "es"
 Format.create(name:"CD")
