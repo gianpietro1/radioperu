@@ -28,7 +28,7 @@
 
   <div class="container-fluid">
 
-    <%= render partial: "welcome/login" %>
+    <%= render partial: "welcome/login" %>  
 
     <div class="row container-top">
       <div class="pull-left language">
@@ -49,16 +49,10 @@
           <% end %>
           <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm' do %>
             <span class="glyphicon glyphicon-log-out"></span>
-          <script>
-            $("#opaque-cover").remove();
-          </script>
           <% end %>
         <% else %>
           <%= link_to (t :register_as_musician), '/soymusico', class: 'btn blackbtn' %>        
           <%= link_to (t :login), new_user_session_path, class: 'btn blackbtn login_btn' %>
-          <script>
-            $("#opaque-cover").show();
-          </script>
         <% end %>
 
       </div>
@@ -112,6 +106,15 @@
           <span class="logotext">radioperu.pe</span>
         </h1>
       </div>     
+
+    <%unless current_user %>
+
+     <script>
+      $("#opaque-cover").show();
+     </script>
+
+    <% end %>
+
 
     <%= yield %>
 
