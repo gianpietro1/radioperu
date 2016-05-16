@@ -57,7 +57,6 @@ class Song < ActiveRecord::Base
       TagLib::FileRef.open(songpath) do |fileref|
         unless fileref.null?
           properties = fileref.audio_properties
-          system("convmv -f utf-8 -t utf-8 --nfc --notest '#{songpath}'") 
           if properties.bitrate != 128
             system("avconv -i '#{songpath}' -c:a libmp3lame -y -vn -b:a 128k -vsync 2 '#{songpath[0..-5] + '-temp' + '.mp3'}'")
             system("mv '#{songpath[0..-5] + '-temp' + '.mp3'}' '#{songpath}'")
@@ -116,7 +115,6 @@ class Song < ActiveRecord::Base
       end
 
       self.update_attributes(id3: false, name: song_hash[:name], track: song_hash[:track], discnum: song_hash[:discnum])
-
 
     end
   end
