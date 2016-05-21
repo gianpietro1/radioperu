@@ -32,12 +32,12 @@
                 =@radios.find_by(id:i).description
                 
     .col-md-4
-      %h4.text-center.option_title.promo_title
-        = t(:anuncio)    
+      /%h4.text-center.option_title.promo_title
+      /  = t(:anuncio)    
       %h4.text-center.option_title.catalogue-container-title
         = t(:catalogue)
-      .promo
-        %a{ href: 'http://radioperu.pe/radios/3', class: "promo_link" }
+      /.promo
+      /  %a{ href: 'http://radioperu.pe/radios/3', class: "promo_link" }
       .catalogue-container
         %a{ href: artists_path, data_description: t(:catalogue_description), class: "catalogue_link" }
           = t(:catalogue_description)
@@ -140,6 +140,6 @@
 
   $(".slogan-animation").animate({opacity: "1.0"}, 1800);
 
-  $( ".promo,.promo_title" ).delay(4000).fadeOut("slow", function() {
-  $( ".catalogue-container,.catalogue-container-title" ).fadeIn("slow");
-  });
+  /$( ".promo,.promo_title" ).delay(4000).fadeOut("slow", function() {
+  /$( ".catalogue-container,.catalogue-container-title" ).fadeIn("slow");
+  /});
