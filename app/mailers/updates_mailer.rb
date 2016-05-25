@@ -52,6 +52,16 @@ class UpdatesMailer < ApplicationMailer
         mail(to: 'contacto@radioperu.pe', subject: "Nuevo usuario - #{@user.email}")
       end
 
+      def new_comment_update(user,comment)
+
+        setup_email
+ 
+        @user = user
+        @comment = comment
+
+        mail(from: "Radioperú.pe <contacto@radioperu.pe>", to: @user.email, subject: "Nuevo comentario en tu espacio")
+      end
+
 private
 
   def setup_email

@@ -15,6 +15,7 @@ class CommentsController < ApplicationController
 
     if @comment.save
       flash[:notice] = "Comment was saved"
+      @comment.send_update_email
     else
       flash[:error] = "There was an error saving the comment. Please try again."
     end
