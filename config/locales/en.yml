@@ -220,6 +220,13 @@ en:
   social_disclaimer: "Radioperu.pe will never have access to your private information or any control over your social networks."
   login_social: "Login using social networks"
   login_email: "Login using your email"
+  #Comments
+  comments: "Comments"
+  enter_comment: "enter comment"
+  submit: "submit"
+  at_time: "at"
+  commented: "commented"
+  delete: "delete"
   #Musician Form
   musician_name: "Musician/Band name"
   musician_email: "Email"

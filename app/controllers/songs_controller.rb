@@ -7,6 +7,8 @@ class SongsController < ApplicationController
     @album = @artist.albums.friendly.find(params[:album_id])
     @song = @album.songs.friendly.find(params[:id])
     @songs = @album.songs
+    @comments = @song.comments
+    @commentable = @song
     unless @song.video == nil || @song.video == ''
       @video_id = VideoInfo.new(@song.video).video_id
     end

@@ -75,6 +75,17 @@
               %br
               .small
                 = album.year
+    .comment_block.clear_both.clear_fix
+      %h4
+        = t(:comments)
+      - if current_user
+        .new-comment
+          = render partial: "comments/form", locals: { commentable: @commentable }
+      - else
+        %i
+          =t(:you_must_sign_in_to_comment)
+      .js-comments
+        = render partial: 'comments/comment', collection: @comments
   .col-md-3.social_networks.text-center
     - if @facebook_id && @facebook_id != ''
       %h4.bold.clear_both

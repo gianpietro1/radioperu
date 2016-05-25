@@ -90,6 +90,17 @@
           = t(:video_not_available)
         - else
           %iframe{:allowscriptaccess => "always", :allowFullScreen => "true", :frameborder => "0", :height => "430", :src => "http://www.youtube.com/embed/#{@video_id}", :title => "YouTube video player", :width => "640"}
+    .comment_block.clear_both
+      %h4
+        = t(:comments)
+      - if current_user
+        .new-comment
+          = render partial: "comments/form", locals: { commentable: @commentable }
+      - else
+        %i
+          =t(:you_must_sign_in_to_comment)
+      .js-comments
+        = render partial: 'comments/comment', collection: @comments
     
   .col-md-4
     %h4
@@ -99,6 +110,7 @@
         = t(:lyrics_not_available)
       - else
         = @song.lyrics.gsub(/(?:\n\r?|\r\n?)/, "<br>").html_safe 
+
 
 = render partial: 'sponsors/sponsorbanner'
 

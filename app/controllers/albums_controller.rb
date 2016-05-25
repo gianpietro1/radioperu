@@ -7,6 +7,8 @@ class AlbumsController < ApplicationController
     @album = @artist.albums.friendly.find(params[:id])
     authorize @album
     @songs = @album.songs.all
+    @comments = @album.comments
+    @commentable = @album
     if @artist.social_fb
       @facebook_id = @artist.social_fb[/.*\/(.*)/,1]
     end

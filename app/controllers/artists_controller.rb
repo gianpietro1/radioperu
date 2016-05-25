@@ -32,6 +32,8 @@ class ArtistsController < ApplicationController
     authorize @artist
     @albums = @artist.albums
     @songs = @artist.songs
+    @comments = @artist.comments
+    @commentable = @artist
     @catalogue = params[:catalogue] 
     if @artist.social_fb
       @facebook_id = @artist.social_fb[/.*\/(.*)/,1]
@@ -124,6 +126,15 @@ private
   def update_facebook_graph
     url = "https://graph.facebook.com/?id=http://radioperu.pe/es/artists/#{@artist.slug}&scrape=true&access_token=440598459358292|GVj1kcc9QwokzIRBDoNAkznYhQM"
     system("curl -X POST --insecure '#{url}'")
+  end
+
+  def find_commentable
+    params.each do |name, value|
+      if name =~ /(.+)_id$/
+        return $1.classify.constantize.find(value)
+      end
+    end
+    nil
   end
 
 end
