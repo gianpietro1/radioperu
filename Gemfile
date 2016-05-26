@@ -111,6 +111,11 @@ gem 'meta-tags'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem "omniauth-google-oauth2"
+# Nested comments
+gem 'ancestry'
+# Delayed jobs
+gem 'daemons'
+gem 'delayed_job_active_record'
 
 # Capistrano
 gem 'capistrano', '~> 3.1.0'

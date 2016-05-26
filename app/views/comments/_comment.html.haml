@@ -1,0 +1,22 @@
+= content_tag :div, class: 'media comments', id: "comment-#{comment.id}" do
+  .media-body
+    %small
+      = comment.user.name
+      = t(:commented)
+      = t(:at_time)
+      = I18n.localize(comment.created_at, :format => '%d %B %Y %r')
+      - if policy(comment).destroy?
+        | #{link_to t(:delete), [@commentable, comment], method: :delete, remote: true}
+    .comment-body
+      = comment.body
+    .replies
+      %a.reply{href:'javascript:;',id:"reply-#{comment.id}"}
+        =t(:reply)
+      .reply-field.clearfix{:id => "reply-field-#{comment.id}"}
+        .reply-text.pull-left
+          = text_field_tag "Respuesta", "", class:"form-control", id: "reply-body-#{comment.id}", placeholder: "Ingrese su respuesta"
+        .reply-button.pull-left
+          %button.submit.btn.btn-sm.btn-success{type:'submit',:id => "submit-#{comment.id}"}
+            =t(:submit)
+      %ul{:id => "replies-#{comment.id}"}
+        = render partial: 'comments/comment', collection: comment.children

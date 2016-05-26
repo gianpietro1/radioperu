@@ -227,6 +227,7 @@ en:
   at_time: "at"
   commented: "commented"
   delete: "delete"
+  reply: "reply"
   #Musician Form
   musician_name: "Musician/Band name"
   musician_email: "Email"

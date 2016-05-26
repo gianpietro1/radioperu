@@ -20,3 +20,29 @@
 //= require social-share-button
 //= require soundmanager2/soundmanager2-nodebug-jsmin
 //= require_tree .
+
+$(document).ready(function(){
+
+  $(".js-comments").on("click",".reply",function() {
+  var comment_id = $(this).attr('id').replace(/reply-/i, "");
+  $("#reply-field-"+comment_id).show();
+  $("#reply-body-"+comment_id).focus();
+  });
+
+  $(".js-comments").on("click",".submit",function() {
+  
+  var parent_id = $(this).attr('id').replace(/submit-/i, "");
+  var body = $("#reply-body-"+parent_id).val();
+  
+  $.ajax(
+  {data: { parent_id: parent_id, body: body }, type: 'post', url: "/create_reply",
+  success: function(r) { 
+  $('.js-comments').html(r);
+  } 
+  }
+  );
+
+  });
+
+
+});

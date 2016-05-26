@@ -230,6 +230,7 @@ es:
   at_time: "el"
   commented: "comentó"
   delete: "borrar"
+  reply: "responder"
   #Musician Form
   musician_name: "Nombre de la banda o músico"
   musician_email: "Correo Electrónico"

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+%p
+  Tienes una nueva respuesta de 
+  %span
+    = @user.name + " a uno de tus comentarios."
+%p
+  = "Revísala "
+  - if @comment.commentable_type == "Artist"
+    - @artist = Artist.find(@comment.commentable_id)
+    =link_to 'aquí', root_url + "/" + @artist.slug
+  - elsif @comment.commentable_type == "Album"
+    - @album = Album.find(@comment.commentable_id)
+    - @artist = @album.artist
+    =link_to 'aquí', root_url + "/" + @artist.slug + '/albums/' + @album.slug 
+  - elsif @comment.commentable_type == "Song"
+    - @song = Song.find(@comment.commentable_id)
+    - @album = @song.album
+    - @artist = @song.album.artist
+    =link_to 'aquí', root_url + "/" + @artist.slug + '/albums/' + @album.slug + '/songs/' + @song.slug

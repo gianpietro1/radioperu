@@ -1142,20 +1142,52 @@ span.catalogue_title a {
 }
 
 .comments {
-  background-color: #f0f0f0;
-  border-radius: 5px;
-  padding: 5px;
+  border-radius: 10px;
   word-wrap: break-word;
+}
+
+.comments .media-body {
+  background-color: #fafafa;
+  padding: 5px;
+}
+
+.replies {
+  border-left: 3px solid #f0f0f0;
+}
+
+.replies a {
+  font-size: 0.8em;
+}
+
+.reply-field {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 100%;
+}
+
+.reply-text {
+  margin-right: 5px;
+  width: 80%;
+}
+
+.reply-text .form-control {
+  height: 31px;
 }
 
 .js-comments {
   max-height: 500px;
   overflow: auto;
+  list-style: none;
 }
 
 .comment_block {
   margin-top: 20px;
 }
+
+.reply-field {
+  display: none;
+}
+
 
 /* Playlists */
 
@@ -1937,6 +1969,10 @@ src: local('Myriad Pro Bold'), asset-url('fonts/MYRIADPRO-BOLD.woff') format('wo
 @media screen and (max-width: 1292px) {
 
 /* General */
+
+#loading {
+  display: none
+}
 
 .mainnav a {
   width: 250px;

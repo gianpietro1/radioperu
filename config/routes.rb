@@ -14,18 +14,21 @@ Rails.application.routes.draw do
     devise_for :users, skip: [:omniauth_callbacks]
     resources :playlists
     resources :artists do
-      resources :comments, only: [:create, :destroy]
-      resources :albums, except: [:index] do
+      resources :comments, only: [:new, :create, :destroy]
+      resources :albums, except: [:index] do      
+        resources :comments, only: [:new, :create, :destroy] 
         resources :songs, except: [:index] do
+         resources :comments, only: [:new, :create, :destroy] 
         end
       end
     end
     resources :albums, only: [:show] do
-      resources :comments, only: [:create, :destroy] 
+      resources :comments, only: [:new, :create, :destroy]
     end
     resources :songs, only: [:show] do
-      resources :comments, only: [:create, :destroy]
+      resources :comments, only: [:new, :create, :destroy]
     end
+    post 'create_reply' => 'comments#create_reply'
     post 'add_to_playlist' => 'playlists#add_to_playlist'
     post 'remove_from_playlist' => 'playlists#remove_from_playlist'
     post 'add_to_album_stats' => 'albums#add_to_album_stats'

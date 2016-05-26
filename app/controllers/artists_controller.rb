@@ -32,7 +32,7 @@ class ArtistsController < ApplicationController
     authorize @artist
     @albums = @artist.albums
     @songs = @artist.songs
-    @comments = @artist.comments
+    @comments = @artist.comments.roots
     @commentable = @artist
     @catalogue = params[:catalogue] 
     if @artist.social_fb
@@ -77,7 +77,7 @@ class ArtistsController < ApplicationController
     authorize @artist
     if @artist.update_attributes(artist_params)
       flash[:notice] = t(:artist_updated)
-      @artist.send_update_email
+      @artist.delay(run_at: 10.seconds.from_now).send_update_email
       update_facebook_graph
       redirect_to ("/#{I18n.locale.to_s}/" + @artist.slug)
     else

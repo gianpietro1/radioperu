@@ -1,6 +1,8 @@
 <% if @comment.valid? %>
-  $('.js-comments').prepend("<%= escape_javascript(render(@comment)) %>");
+	 $('#loading').show();
+   $('.js-comments').prepend("<%= escape_javascript(render(@comment)) %>");
    $('.new-comment').html("<%= escape_javascript(render partial: 'comments/form', locals: { commentable: @commentable, comment: @new_comment }) %>");
+   $('#loading').hide();
 <% else %>
   $('.new-comment').html("<%= escape_javascript(render partial: 'comments/form', locals: { commentable: @commentable, comment: @comment }) %>");
 <% end %>

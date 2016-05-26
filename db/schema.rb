@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160423185446) do
+ActiveRecord::Schema.define(version: 20160525221901) do
 
   create_table "album_playstats", force: :cascade do |t|
     t.integer  "song_id"
@@ -110,9 +110,27 @@ ActiveRecord::Schema.define(version: 20160423185446) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.integer  "user_id"
+    t.string   "ancestry"
   end
 
+  add_index "comments", ["ancestry"], name: "index_comments_on_ancestry"
   add_index "comments", ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
+
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer  "priority",   default: 0, null: false
+    t.integer  "attempts",   default: 0, null: false
+    t.text     "handler",                null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
 
   create_table "format_translations", force: :cascade do |t|
     t.integer  "format_id",  null: false

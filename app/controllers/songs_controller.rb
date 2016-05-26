@@ -7,7 +7,7 @@ class SongsController < ApplicationController
     @album = @artist.albums.friendly.find(params[:album_id])
     @song = @album.songs.friendly.find(params[:id])
     @songs = @album.songs
-    @comments = @song.comments
+    @comments = @song.comments.roots
     @commentable = @song
     unless @song.video == nil || @song.video == ''
       @video_id = VideoInfo.new(@song.video).video_id
@@ -37,7 +37,7 @@ class SongsController < ApplicationController
       rescue
         @song.update_attributes(video: nil)
       end
-      @song.send_update_email
+      @song.delay(run_at: 10.seconds.from_now).send_update_email
       update_facebook_graph
       redirect_to [@artist,@album,@song]
     else
