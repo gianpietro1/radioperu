@@ -50,7 +50,7 @@ class AlbumsController < ApplicationController
     authorize @album
     if @album.save
       @album.update_attributes(user_id: @artist.user_id)
-      @album.delay(run_at: 10.seconds.from_now).send_update_email
+      @album.delay(run_at: 1.minute.from_now).send_update_email
       update_facebook_graph
       if @album.genre_id == nil
         @album.genre_id = @artist.genre_id
@@ -74,7 +74,7 @@ class AlbumsController < ApplicationController
     @album = @artist.albums.friendly.find(params[:id])
     authorize @album
     if @album.update_attributes(album_params)      
-      @album.delay(run_at: 10.seconds.from_now).send_update_email
+      @album.delay(run_at: 1.minute.from_now).send_update_email
       update_facebook_graph
       flash[:notice] = t(:album_updated)
       redirect_to ("/#{I18n.locale.to_s}/" + @artist.slug + '/albums/' + @album.slug)

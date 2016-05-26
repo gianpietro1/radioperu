@@ -77,7 +77,7 @@ class ArtistsController < ApplicationController
     authorize @artist
     if @artist.update_attributes(artist_params)
       flash[:notice] = t(:artist_updated)
-      @artist.delay(run_at: 10.seconds.from_now).send_update_email
+      @artist.delay(run_at: 1.minute.from_now).send_update_email
       update_facebook_graph
       redirect_to ("/#{I18n.locale.to_s}/" + @artist.slug)
     else

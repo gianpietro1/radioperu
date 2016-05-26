@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
 
     if @comment.save
       flash[:notice] = "Comment was saved"
-      @comment.delay(run_at: 10.seconds.from_now).send_update_email
+      @comment.delay(run_at: 1.minute.from_now).send_update_email
     else
       flash[:error] = "There was an error saving the comment. Please try again."
     end
@@ -36,7 +36,7 @@ class CommentsController < ApplicationController
 
     if @comment.save
       flash[:notice] = "Comment was saved"
-		  @comment.delay(run_at: 10.seconds.from_now).send_update_email_reply
+		  @comment.delay(run_at: 1.minute.from_now).send_update_email_reply
 	    else
       flash[:error] = "There was an error saving the comment. Please try again."
     end
