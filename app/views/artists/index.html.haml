@@ -19,14 +19,14 @@
         .pull-right.btn.whitebtn{id: "btn#{radio.id}" }
           = t(:see_all)
       .row.clear_both.margin-bottom-10.artists_container{:id => "artist_container#{radio.id}"}
-        - radio.artists.shuffle[0..9].each do |artist|
+        - radio.artists.shuffle[0..13].each do |artist|
           %a{ href: artist.slug + "?catalogue=#{@catalogue}", class: "artist_thumb text-center"}
             - if artist.image?
-              = image_tag( artist.image.thumb )
+              = image_tag( artist.image.midsize )
             - else
-              = image_tag( 'default_artist_thumb.jpg' )    
-            %p      
-            = artist.name
+              = image_tag( 'default_artist_midsize.jpg' )    
+            .artist_thumb_name 
+              = artist.name
   .col-md-1
 
 %script

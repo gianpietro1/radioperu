@@ -45,8 +45,10 @@
         - else
           = image_tag( 'default_playlist.jpg' )
       .playlist_info
-        %h5.bold
-          = t(:by) + " " + (@playlist.user.name.presence || @playlist.user.email) + ", " + @playlist.songs.count.to_s + " " + t(:songs) + " / " +  @playlist.length + " " + t(:minutes)
+        = t(:by) + " " + (@playlist.user.name.presence || @playlist.user.email) + ", " + @playlist.songs.count.to_s + " " + t(:songs) + " / " +  @playlist.length + " " + t(:minutes)
+      .page-views
+        %i{class:"fa fa-eye"}
+        = @pageviews
       .playlist_description
         - unless @playlist.description.nil? || @playlist.description.empty?
           = simple_format(@playlist.description)
@@ -208,4 +210,4 @@
   $.ajax({data: { playlist_id: playlist_id, ip_address: stats_ip_address, city: stats_city, country: stats_country, platform: user_agent }, type: 'post', url: "/" + locale + "/add_to_playlist_views" });
   }
 
-  setTimeout(viewstat,8000);
+  setTimeout(viewstat,5000);

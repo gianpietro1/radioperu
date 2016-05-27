@@ -132,4 +132,4 @@
   function viewstat(){
   $.ajax({data: { artist_id: artist_id, ip_address: stats_ip_address, city: stats_city, country: stats_country, platform: user_agent }, type: 'post', url: "/" + locale + "/add_to_artist_views" });}
 
-  setTimeout(viewstat,8000);
+  setTimeout(viewstat,5000);

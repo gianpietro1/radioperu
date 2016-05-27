@@ -1039,18 +1039,25 @@ span.catalogue_title a {
 
 .artist_thumb {
   display: block;
-  padding: 15px 10px;
-  padding-bottom: 5px;
-  width: 160px;
-  height: 124px;
+  width: 120px;
+  height: 120px;
   float: left;
-  border: 1px solid #3c3333;
   color: #3c3333;
   margin-right: 10px;
   word-wrap: break-word;
   font-size: 14px;
   margin-top: 10px;
   line-height: 1.1;
+  position: relative;
+}
+
+.artist_thumb_name {
+  width: 100%;
+  position: absolute;
+  background-color: rgba(0,0,0,0.5);
+  bottom: 0;
+  padding: 2px;
+  color: white;
 }
 
 .artist_thumb:hover {
@@ -1058,6 +1065,7 @@ span.catalogue_title a {
   font-family: 'Myriad Pro Semibold';
   box-shadow: 0 5px 3px -3px #777;
   color: #3c3333;
+  opacity: 0.8;
 }
 
 .artist_albums {
@@ -1116,8 +1124,9 @@ span.catalogue_title a {
   overflow: auto;
   max-height: 205px;
 } 
+
 .playlist_description {
-  max-height: 175px;
+  max-height: 159px;
 }
 
 .artist_album_summary {
@@ -1297,6 +1306,12 @@ span.catalogue_title a {
 
 .playlist_all_songs .playlist_summary {
   padding-top: 8px;
+}
+
+.playlist_info {
+  font-size: 0.9em;
+  font-weight: bold;
+  font-style: italic;
 }
 
 /* Edit forms */
@@ -2703,7 +2718,6 @@ h1.station_title {
 /* Artist catalogue */
 
 .artist_thumb {
-  width: 129px;
   font-size: 11px;
 }
 

@@ -11,6 +11,10 @@ class Playlist < ActiveRecord::Base
     UpdatesMailer.new_playlist_update(self).deliver
   end
 
+  def views
+    PlaylistViewstat.where(playlist_id: self.id).count
+  end
+
   def length
     @length = 0
     self.songs.each do |song|
