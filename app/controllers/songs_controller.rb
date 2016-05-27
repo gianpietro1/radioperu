@@ -9,6 +9,7 @@ class SongsController < ApplicationController
     @songs = @album.songs
     @comments = @song.comments.roots
     @commentable = @song
+    @pageviews = @song.views
     unless @song.video == nil || @song.video == ''
       @video_id = VideoInfo.new(@song.video).video_id
     end

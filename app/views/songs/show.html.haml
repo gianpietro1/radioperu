@@ -76,6 +76,9 @@
                 = format('%02d', @song.track).to_s + ' ' + @song.name
               - elsif @song.name
                 = '00' + ' ' + @song.name
+    .page-views
+      %i{class:"fa fa-eye"}
+      = @pageviews
     - unless @song.review.nil? || @song.review.empty?
       %h4
         =t(:song_review)      

@@ -59,7 +59,11 @@ class Album < ActiveRecord::Base
       end
     end
   end
-  
+
+  def views
+    AlbumViewstat.where(album_id: self.id).count
+  end
+
  protected
 
   def smart_add_url_protocol

@@ -38,27 +38,31 @@
           = image_tag( @artist.image )
         - else
           = image_tag( 'default_artist.jpg' )  
-      .artist_mininfo    
-        %strong
-          = t(:artist_city) + ": "
-        = @artist.city
-        %br
-        %strong
-          = t(:artist_url) + ": "
-          -if @artist.external_url
-            = link_to @artist.external_url, @artist.external_url, :target => "_blank"
+      .artist_album_summary
+        .artist_mininfo
+          .page-views
+            %i{class:"fa fa-eye"}
+            = @pageviews
+          %strong
+            = t(:artist_city) + ": "
+          = @artist.city
+          %br
+          %strong
+            = t(:artist_url) + ": "
+            -if @artist.external_url
+              = link_to @artist.external_url, @artist.external_url, :target => "_blank"
+            - else
+              \-
+          %br
+          %strong
+            = t(:genre) + ": "
+          - unless @artist.genre.nil?
+            = @artist.genre.name
+        .artist_bio.margin-top-05
+          - unless @artist.bio.nil? || @artist.bio.empty?
+            = simple_format(@artist.bio)
           - else
-            \-
-        %br
-        %strong
-          = t(:genre) + ": "
-        - unless @artist.genre.nil?
-          = @artist.genre.name
-      .artist_bio.margin-top-05
-        - unless @artist.bio.nil? || @artist.bio.empty?
-          = simple_format(@artist.bio)
-        - else
-          = t(:artist_bio_not_available)
+            = t(:artist_bio_not_available)
     .artists_albums.clear_both
       %h4.bold.clear_both
         = t(:albums)      

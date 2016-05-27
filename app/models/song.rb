@@ -40,6 +40,10 @@ class Song < ActiveRecord::Base
     PlaylistSong.where(playlist_id: playlist_id, song_id: self.id).delete_all
   end
 
+  def views
+    SongViewstat.where(song_id: self.id).count
+  end
+
 
   private
 

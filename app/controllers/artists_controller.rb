@@ -35,6 +35,7 @@ class ArtistsController < ApplicationController
     @comments = @artist.comments.roots
     @commentable = @artist
     @catalogue = params[:catalogue] 
+    @pageviews = @artist.views
     if @artist.social_fb
       @facebook_id = @artist.social_fb[/.*\/(.*)/,1]
     end

@@ -9,6 +9,7 @@ class AlbumsController < ApplicationController
     @songs = @album.songs.all
     @comments = @album.comments.roots
     @commentable = @album
+    @pageviews = @album.views
     if @artist.social_fb
       @facebook_id = @artist.social_fb[/.*\/(.*)/,1]
     end

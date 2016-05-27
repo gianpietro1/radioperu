@@ -41,26 +41,29 @@
           = image_tag( @album.cover )
         - else
           = image_tag( 'default_album.jpg' )
-      .album_mininfo
-        %strong
-          = t(:album_year) + ": "
-        = @album.year
-        %br
-        %strong
-          = t(:album_format) + ": "
-        - if @album.format
-          = @album.format.name
-        %br
-        %strong
-          = t(:genre) + ": "
-        = @album.genre.name
-        %br
-        %strong
-        - unless @album.buylink.nil? || @album.buylink.empty?
-          = t(:buylink) + ": "
-          = link_to @album.buylink, @album.buylink, :target => "_blank"
-      .album_bio
-        %br
+      .artist_album_summary
+        .album_mininfo
+          .page-views
+            %i{class:"fa fa-eye"}
+            = @pageviews
+          %strong
+            = t(:album_year) + ": "
+          = @album.year
+          %br
+          %strong
+            = t(:album_format) + ": "
+          - if @album.format
+            = @album.format.name
+          %br
+          %strong
+            = t(:genre) + ": "
+          = @album.genre.name
+          %br
+          %strong
+          - unless @album.buylink.nil? || @album.buylink.empty?
+            = t(:buylink) + ": "
+            = link_to @album.buylink, @album.buylink, :target => "_blank"
+        .album_bio.margin-top-05
           - unless @album.review.nil? || @album.review.empty?
             = simple_format(@album.review)
           - else

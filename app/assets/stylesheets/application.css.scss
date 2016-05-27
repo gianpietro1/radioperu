@@ -1114,14 +1114,18 @@ span.catalogue_title a {
   font-size: 1.0em;
   font-weight: normal;
   overflow: auto;
-  max-height: 200px;
+  max-height: 205px;
 } 
 .playlist_description {
   max-height: 175px;
 }
 
+.artist_album_summary {
+  max-height: 300px;
+  overflow: hidden;
+}
+
 .album_mininfo, .artist_mininfo {
-  margin-top: 10px;
 }
 
 .album_mininfo a, .artist_mininfo a {
@@ -2404,7 +2408,6 @@ hr {
 
 
 .album-info, .artist-info {
-  overflow: auto
 }
 
 
@@ -2441,9 +2444,14 @@ h3.catalogue_title {
   width: 100%;
 }
 
+.artist_album_summary {
+ height: auto;
+ overflow: visible;
+ clear:both;
+}
+
 .album_bio, .artist_bio {
   height: auto;
-  max-height: 200px;
 }
 
 .floating-ad {

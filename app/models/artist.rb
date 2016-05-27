@@ -35,6 +35,10 @@ class Artist < ActiveRecord::Base
     return array.max
   end
 
+  def views
+    ArtistViewstat.where(artist_id: self.id).count
+  end
+
 protected
 
   def smart_add_url_protocol
