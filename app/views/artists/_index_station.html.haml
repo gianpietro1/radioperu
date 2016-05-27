@@ -1,8 +1,8 @@
 - @artists_station.each do |artist|
-  %a{ href: "/#{I18n.locale.to_s}/" + artist.slug + "?catalogue=#{@catalogue}", class: "artist_thumb text-center"}
-    - if artist.image?
-      = image_tag( artist.image.thumb )
-    - else
-      = image_tag( 'default_artist_thumb.jpg' )    
-    %p      
-    = artist.name
+	%a{ href: "/#{I18n.locale.to_s}/" + artist.slug + "?catalogue=#{@catalogue}", class: "artist_thumb text-center"}
+		- if artist.image?
+			= image_tag( artist.image.midsize )
+		- else
+			= image_tag( 'default_artist_midsize.jpg' )    
+		.artist_thumb_name 
+			= artist.name

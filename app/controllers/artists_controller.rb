@@ -19,7 +19,7 @@ class ArtistsController < ApplicationController
 
   def index_station_summary
     @radio = Radio.find_by_id(params[:pre_radio_id])
-    @artists_summary = @radio.artists.shuffle[0..9]
+    @artists_summary = @radio.artists.shuffle[0..13]
     @catalogue = "general" 
     respond_with() do |format|
     format.html {render :partial => "index_station_summary" }
