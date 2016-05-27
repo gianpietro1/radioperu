@@ -9,6 +9,7 @@ class PlaylistsController < ApplicationController
     else
       @playlists = Playlist.where(private: false)
     end
+    @records = PlaylistSong.playlist_top_songs
   end
 
   def show
