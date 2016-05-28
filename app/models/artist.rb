@@ -39,6 +39,20 @@ class Artist < ActiveRecord::Base
     ArtistViewstat.where(artist_id: self.id).count
   end
 
+  def plays
+   plays = {}
+   plays[:playlist] = []
+   plays[:catalogue] = []
+   plays[:catalogue] = []
+   plays[:radio] = []
+   self.songs.each do |song|
+    plays[:playlist] << [song.name + " - " + song.album.name,song.playlist_playstats.count] unless song.playlist_playstats.empty?
+    plays[:catalogue] << [song.name + " - " + song.album.name,song.album_playstats.count+song.song_playstats.count] unless song.album_playstats.count+song.song_playstats.count == 0
+    plays[:radio] << [song.name + " - " + song.album.name,song.radio_playstats.count] unless song.radio_playstats.empty?
+  end
+   return plays
+  end
+
 protected
 
   def smart_add_url_protocol

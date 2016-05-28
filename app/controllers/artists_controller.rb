@@ -118,6 +118,12 @@ class ArtistsController < ApplicationController
     end
   end
 
+  def stats
+    @artist = Artist.friendly.find(params[:artist_id])
+    @plays = @artist.plays
+    @top_plays_playlist = @plays[:playlist]
+  end
+
 private
 
   def artist_params

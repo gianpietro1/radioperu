@@ -5,11 +5,11 @@ User.create!([
 ])
 
 Radio.create([
-  {player: "http://player.radiocdn.com/iframe.js?hash=b1186bab4c3575dae59ba0cb42ba4a06abc52cf3-118-41", host: "delicious.wavestreamer.com", port: 3556},
+  {player: "http://player.radiocdn.com/iframe.js?hash=b1186bab4c3575dae59ba0cb42ba4a06abc52cf3-118-41", host: "stereo.wavestreamer.com", port: 3556},
   {player: "http://player.radiocdn.com/iframe.js?hash=de2fa7aa3279d4bef0ae03010d0b3a0fba32c926-118-41", host: "knight.wavestreamer.com", port: 9478},
-  {player: "http://player.radiocdn.com/iframe.js?hash=4d6c75a8560f4960f5b5488cb73137151af78a1e-118-41", host: "delicious.wavestreamer.com", port: 2146},
+  {player: "http://player.radiocdn.com/iframe.js?hash=4d6c75a8560f4960f5b5488cb73137151af78a1e-118-41", host: "majestic.wavestreamer.com", port: 2146},
   {player: "http://player.radiocdn.com/iframe.js?hash=5fd8f059ce3ed62bb42b0a1ba74a09c5245c2c1e-118-41", host: "knight.wavestreamer.com", port: 9214},
-  {player: "http://player.radiocdn.com/iframe.js?hash=61346ceae3b02d00ec378fb796565f0990eadc55-118-41", host: "delicious.wavestreamer.com", port: 4639}
+  {player: "http://player.radiocdn.com/iframe.js?hash=61346ceae3b02d00ec378fb796565f0990eadc55-118-41", host: "smoke.wavestreamer.com", port: 9781}
 ])
 
 Radio.find_by_id(1).set_translations(:en => { :name => 'Station 1', :description => 'coast & folk' }, :es => { :name => 'Estación 1', :description => 'costeña y canción'} )

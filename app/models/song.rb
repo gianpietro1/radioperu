@@ -12,9 +12,15 @@ class Song < ActiveRecord::Base
   belongs_to :album
   belongs_to :genre
   belongs_to :user
+  belongs_to :artist
+  delegate :artist, :to => :album, :allow_nil => true
   has_many :playlist_songs, dependent: :destroy
   has_many :playlists, through: :playlist_songs
   has_many :comments, as: :commentable, dependent: :destroy
+  has_many :playlist_playstats, dependent: :destroy
+  has_many :album_playstats, dependent: :destroy
+  has_many :song_playstats, dependent: :destroy
+  has_many :radio_playstats, dependent: :destroy
 
   mount_uploader :filename, FilenameUploader
 

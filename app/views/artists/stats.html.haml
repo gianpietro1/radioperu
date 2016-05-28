@@ -1,0 +1,25 @@
+.stats_title
+	= t(:stats_for) + " " + @artist.name
+%br
+.row
+	.col-md-12.clearfix
+		.stats_content
+			.catalogue_stats.stats
+				.text-center
+					= t(:top_stats_catalogue)
+				#catalogue_chart
+			.playlist_stats.stats
+				.text-center
+					= t(:top_stats_playlist)
+				#playlist_chart
+			.radio_stats.stats
+				.text-center
+					= t(:top_stats_radio)
+				#radio_chart
+
+
+
+%script{:type=>"text/javascript"}
+	playlist_stats = #{@plays[:playlist].to_json.html_safe}
+	var catalogue_stats = #{@plays[:catalogue].to_json.html_safe}	
+	var radio_stats = #{@plays[:radio].to_json.html_safe}	

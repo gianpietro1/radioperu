@@ -1314,6 +1314,25 @@ span.catalogue_title a {
   font-style: italic;
 }
 
+/* Stats */
+
+.stats {
+  float:left;
+  padding: 10px;
+}
+
+.stats_content {
+  text-align: left;
+  font-size: 1.2em
+}
+
+.stats_title {
+  text-align: center;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+
 /* Edit forms */
 
 .current_file {

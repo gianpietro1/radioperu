@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     devise_for :users, skip: [:omniauth_callbacks]
     resources :playlists
     resources :artists do
+      get 'stats' => 'admin#index'
       resources :comments, only: [:new, :create, :destroy]
       resources :albums, except: [:index] do      
         resources :comments, only: [:new, :create, :destroy] 
@@ -63,7 +64,7 @@ Rails.application.routes.draw do
     get ':id' => 'artists#show' 
     get ':artist_id/albums/:id' => 'albums#show'
     get ':artist_id/albums/:album_id/songs/:id' => 'songs#show'
-
+    get ':artist_id/stats' => 'artists#stats'
   end
 
   get '/:locale' => 'welcome#index'
