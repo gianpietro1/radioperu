@@ -62,6 +62,9 @@ es:
   artists_from_station: "Artistas de la estación"
   artist_bio_not_available: "Biografía no disponible."
   back_to_catalogue: "volver al catálogo"
+  programs: "Programas"
+  edit_dj: "Editar DJ"
+  add_program: "Añadir Programa"
   # Albums
   add_album: "Añadir Álbum"
   album_name: "Nombre del Álbum (dos letras mínimo, '/' no permitido)"
@@ -84,6 +87,8 @@ es:
   click_to_play: "Clic para reproducir o parar"
   album_review_not_available: "Reseña del álbum no disponible."
   buylink: "Enlace de compra"
+  edit_program: "Editar Programa"
+  delete_program: "Borrar Programa"
   # Songs
   add_song: "Añadir canción"
   remove_song: "Borrar canción"
@@ -104,6 +109,10 @@ es:
   video_not_available: "Video no disponible"
   song_updated: "Canción actualizada existosamente."
   details: "detalles"
+  edit_episode: "Editar Episodio"
+  delete_episode: "Borrar Episodio"
+  episode_number: "Episodio número"
+  episode_name: "Nombre del episodio"
   #Playlists
   playlist: "Lista de reproducción"
   playlists: "Listas de reproducción"
@@ -186,6 +195,9 @@ es:
   share_this_album: "comparte este álbum en"
   share_this_song: "comparte esta canción en"
   share_this_playlist: "comparte esta lista en"
+  share_this_dj: "comparte este dj en"
+  share_this_program: "comparte este programa en"
+  share_this_episode: "comparte este episodio en"
   radioperu_about: "Sobre el proyecto radioperu.pe"
   in_radioperu: "en #radioperu"
   # Devise

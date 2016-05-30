@@ -63,7 +63,9 @@ Rails.application.routes.draw do
     # for direct access to artists page and resources, have to be the last lines
     get ':id' => 'artists#show' 
     get ':artist_id/albums/:id' => 'albums#show'
+    get ':artist_id/programs/:id' => 'albums#show'
     get ':artist_id/albums/:album_id/songs/:id' => 'songs#show'
+    get ':artist_id/programs/:album_id/episode/:id' => 'songs#show'
     get ':artist_id/stats' => 'artists#stats'
   end
 

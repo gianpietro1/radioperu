@@ -15,8 +15,12 @@
       = link_to t(:back_to_catalogue), artists_path, class: 'btn btn-info'
     .pull-right
       - if policy(@artist).edit?
-        =link_to t(:edit_artist), edit_artist_path(@artist), class: 'btn btn-warning'
-        =link_to t(:add_album), new_artist_album_path(@artist), class: 'btn btn-success'
+        -if @artist.profile_type == 'musician'
+          =link_to t(:edit_artist), edit_artist_path(@artist), class: 'btn btn-warning'
+          =link_to t(:add_album), new_artist_album_path(@artist), class: 'btn btn-success'
+        -else
+          =link_to t(:edit_dj), edit_artist_path(@artist), class: 'btn btn-warning'
+          =link_to t(:add_program), new_artist_album_path(@artist), class: 'btn btn-success'
       - if policy(@artist).destroy?
         =link_to t(:delete_artist), @artist, method: :delete, class: 'btn btn-danger', data: { confirm: t(:delete_artist_confirm) }
 
@@ -29,7 +33,10 @@
           = @artist.name
       .sharepage.pull-right
         %h5
-          = t(:share_this_artist)
+          - if @artist.profile_type == 'musician'
+            = t(:share_this_artist)
+          - else
+            = t(:share_this_dj)
         .pull-right
           = social_share_button_tag((@artist.name + " " + t(:in_radioperu)), popup: "true", via: "radioperu_pe")
     .clear_both
@@ -65,20 +72,36 @@
             = t(:artist_bio_not_available)
     .artists_albums.clear_both
       %h4.bold.clear_both
-        = t(:albums)      
+        - if @artist.profile_type == 'musician'
+          = t(:albums)      
+        - else
+          = t(:programs)
       - @albums.each do |album|
         .row
-          %a{ href: '/' + I18n.locale.to_s + '/' + @artist.slug + '/albums/' + album.slug, class: "artist_album"}
-            .artist_album_thumb
-              -if album.cover?
-                = image_tag( album.cover.thumb )
-              -else
-                = image_tag( 'default_album_thumb.jpg')
-            .artist_album_info
-              = album.name
-              %br
-              .small
-                = album.year
+          - if @artist.profile_type == 'musician'
+            %a{ href: '/' + I18n.locale.to_s + '/' + @artist.slug + '/albums/' + album.slug, class: "artist_album"}
+              .artist_album_thumb
+                -if album.cover?
+                  = image_tag( album.cover.thumb )
+                -else
+                  = image_tag( 'default_album_thumb.jpg')
+              .artist_album_info
+                = album.name
+                %br
+                .small
+                  = album.year
+          - else
+            %a{ href: '/' + I18n.locale.to_s + '/' + @artist.slug + '/programs/' + album.slug, class: "artist_album"}
+              .artist_album_thumb
+                -if album.cover?
+                  = image_tag( album.cover.thumb )
+                -else
+                  = image_tag( 'default_album_thumb.jpg')
+              .artist_album_info
+                = album.name
+                %br
+                .small
+                  = album.year
     .comment_block.clear_both.clear_fix
       %h4
         = t(:comments)

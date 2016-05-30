@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160525221901) do
+ActiveRecord::Schema.define(version: 20160530024027) do
 
   create_table "album_playstats", force: :cascade do |t|
     t.integer  "song_id"
@@ -93,12 +93,13 @@ ActiveRecord::Schema.define(version: 20160525221901) do
     t.string   "city"
     t.string   "external_url"
     t.boolean  "active",       default: true
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.integer  "genre_id"
     t.integer  "user_id"
     t.string   "slug"
     t.string   "social_fb"
+    t.string   "profile_type", default: "musician"
   end
 
   add_index "artists", ["slug"], name: "index_artists_on_slug"

@@ -62,6 +62,9 @@ en:
   artists_from_station: "Artists from station"
   artist_bio_not_available: "Artist bio not available."
   back_to_catalogue: "back to catalogue"
+  programs: "Programs"
+  edit_dj: "Edit DJ"
+  add_program: "Add Program"
   # Albums
   add_album: "Add Album"
   album_name: "Album name (minimum 2 letters, slash not allowed)"
@@ -84,6 +87,8 @@ en:
   click_to_play: "Click to play or stop"
   buylink: "Buy Link"
   album_review_not_available: "Album review not available."
+  edit_program: "Edit Program"
+  delete_program: "Delete Program"
   # Songs
   add_song: "Add song"
   remove_song: "Delete song"
@@ -104,6 +109,10 @@ en:
   video_not_available: "Video not available"
   song_updated: "Song updated successfully"
   details: "details"
+  edit_episode: "Edit Episode"
+  delete_episode: "Delete Episode"
+  episode_number: "Episode number"
+  episode_name: "Episode name"
   #Playlists
   playlist: "playlist"
   playlists: "playlists"
@@ -185,6 +194,9 @@ en:
   share_this_album: "share this album in"
   share_this_song: "share this song in"
   share_this_playlist: "share this playlist in"
+  share_this_dj: "share this dj in"
+  share_this_program: "share this program in"
+  share_this_episode: "share this episode in"
   radioperu_about: "About the radioperu.pe project"
   in_radioperu: "in #radioperu"
   # Devise

@@ -13,9 +13,15 @@
   .col-md-10
     .pull-right
       - if policy(@song).edit?
-        =link_to t(:edit_song), edit_artist_album_song_path(@artist,@album,@song), class: 'btn btn-warning'
+        - if @artist.profile_type == 'musician'
+          =link_to t(:edit_song), edit_artist_album_song_path(@artist,@album,@song), class: 'btn btn-warning'
+        - else
+          =link_to t(:edit_episode), edit_artist_album_song_path(@artist,@album,@song), class: 'btn btn-warning'
       - if policy(@song).destroy?   
-        =link_to t(:delete_song), [@artist,@album,@song], method: :delete, class: 'btn btn-danger', data: { confirm: t(:delete_song_confirm) }
+        - if @artist.profile_type == 'musician'
+          =link_to t(:delete_song), [@artist,@album,@song], method: :delete, class: 'btn btn-danger', data: { confirm: t(:delete_song_confirm) }
+        - else 
+          =link_to t(:delete_episode), [@artist,@album,@song], method: :delete, class: 'btn btn-danger', data: { confirm: t(:delete_song_confirm) }
       - if (current_user && current_user.admin?)
         =link_to 'clic-derecho,grabar-enlace', "/uploads/song/#{@artist.name}/#{@album.name}/#{@song.filename.file.basename}.mp3" , class: 'btn btn-info'
     
@@ -34,7 +40,10 @@
           = ' - ' + @song.name
     .sharepage.pull-right
       %h5
-        = t(:share_this_song)
+        - if @artist.profile_type == 'musician'
+          = t(:share_this_song)
+        - else
+          = t(:share_this_episode)
       .pull-right
         = social_share_button_tag((@artist.name + " - " + @song.name + " " + t(:in_radioperu)), popup: "true", via: "radioperu_pe")
   .col-md-1
@@ -104,15 +113,16 @@
           =t(:you_must_sign_in_to_comment)
       .js-comments
         = render partial: 'comments/comment', collection: @comments
-    
-  .col-md-4
-    %h4
-      =t(:song_lyrics)
-    %p.margin-top-05
-      - if @song.lyrics.nil? || @song.lyrics.empty?
-        = t(:lyrics_not_available)
-      - else
-        = @song.lyrics.gsub(/(?:\n\r?|\r\n?)/, "<br>").html_safe 
+
+  - if @artist.profile_type == 'musician'
+    .col-md-4
+      %h4
+        =t(:song_lyrics)
+      %p.margin-top-05
+        - if @song.lyrics.nil? || @song.lyrics.empty?
+          = t(:lyrics_not_available)
+        - else
+          = @song.lyrics.gsub(/(?:\n\r?|\r\n?)/, "<br>").html_safe 
 
 
 = render partial: 'sponsors/sponsorbanner'

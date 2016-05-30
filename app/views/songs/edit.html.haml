@@ -3,19 +3,29 @@
 .row
   .col-md-1
   .col-md-10
-    %h3 
-      = t(:edit_song)
+    %h3
+      - if @artist.profile_type == 'musician'
+        = t(:edit_song)
+      - else
+        = t(:edit_episode)
     = form_for [@artist,@album,@song] do |f|
       .row
         .col-md-6
+          - if @artist.profile_type == 'musician'
+            .form_group
+              = f.label t(:song_discnum)
+              = f.text_field :discnum, class: 'form-control'
           .form_group
-            = f.label t(:song_discnum)
-            = f.text_field :discnum, class: 'form-control'
-          .form_group
-            = f.label t(:song_track)
+            - if @artist.profile_type == 'musician'
+              = f.label t(:song_track)
+            - else
+              = f.label t(:episode_number)
             = f.text_field :track, class: 'form-control'
           .form_group
-            = f.label t(:song_name)
+            - if @artist.profile_type == 'musician'
+              = f.label t(:song_name)
+            - else
+              = f.label t(:episode_name)
             = f.text_field :name, class: 'form-control'
           .form_group
             = f.label t(:song_review)
@@ -34,9 +44,10 @@
           .form_group
             = f.label t(:song_video)
             = f.text_field :video, class: 'form-control'
-          .form_group
-            = f.label t(:song_lyrics)
-            = f.text_area :lyrics, class: 'form-control'      
+          - if @artist.profile_type == 'musician'
+            .form_group
+              = f.label t(:song_lyrics)
+              = f.text_area :lyrics, class: 'form-control'      
       .row.margin-top-10
         = f.submit t(:form_save), class: 'btn btn-success'
         = link_to t(:cancel), [@artist,@album,@song], class: "btn btn-danger"
