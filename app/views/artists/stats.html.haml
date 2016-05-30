@@ -20,6 +20,19 @@
 
 
 %script{:type=>"text/javascript"}
-	playlist_stats = #{@plays[:playlist].to_json.html_safe}
+	var playlist_stats = #{@plays[:playlist].to_json.html_safe}
 	var catalogue_stats = #{@plays[:catalogue].to_json.html_safe}	
 	var radio_stats = #{@plays[:radio].to_json.html_safe}	
+	var empty_stats = [["No se tienen datos",0]];
+
+	if (radio_stats.length == 0) {
+	radio_stats = empty_stats;
+	}
+
+	if (catalogue_stats.length == 0) {
+	catalogue_stats = empty_stats;
+	}
+
+	if (playlist_stats.length == 0) {
+	playlist_stats = empty_stats;
+	}

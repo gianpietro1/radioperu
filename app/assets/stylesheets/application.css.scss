@@ -1332,6 +1332,9 @@ span.catalogue_title a {
   font-weight: bold;
 }
 
+.google-visualization-table-tr-head {
+  height: 24px !important;
+}
 
 /* Edit forms */
 
@@ -2281,7 +2284,16 @@ hr {
   clear: both;
 }
 
+/* Stats */
+
+.stats {
+  float: none;
+  clear: both !important;
 }
+
+}
+
+
 
 @media screen and (max-width: 768px) {
 

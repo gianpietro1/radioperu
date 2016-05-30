@@ -12,4 +12,8 @@ class ArtistPolicy < ApplicationPolicy
     create?
   end
 
+  def stats?
+    update?
+  end
+
 end

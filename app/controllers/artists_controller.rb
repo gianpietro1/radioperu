@@ -122,6 +122,7 @@ class ArtistsController < ApplicationController
     @artist = Artist.friendly.find(params[:artist_id])
     @plays = @artist.plays
     @top_plays_playlist = @plays[:playlist]
+    authorize @artist
   end
 
 private
