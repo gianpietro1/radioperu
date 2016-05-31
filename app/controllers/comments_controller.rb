@@ -14,10 +14,10 @@ class CommentsController < ApplicationController
     @new_comment = Comment.new
 
     if @comment.save
-      flash[:notice] = "Comment was saved"
+      flash[:notice] = "Comentario guardado."
       @comment.delay(run_at: 1.minute.from_now).send_update_email
     else
-      flash[:error] = "There was an error saving the comment. Please try again."
+      flash[:error] = "Hubo un error al comentar, por favor inténtalo otra vez."
     end
 
     respond_with(@comment) do |format|
@@ -35,10 +35,10 @@ class CommentsController < ApplicationController
     @comments = @commentable.comments.roots
 
     if @comment.save
-      flash[:notice] = "Comment was saved"
+      flash[:notice] = "Respuesta guardada."
 		  @comment.delay(run_at: 1.minute.from_now).send_update_email_reply
 	    else
-      flash[:error] = "There was an error saving the comment. Please try again."
+      flash[:error] = "Hubo un error al comentar, por favor inténtalo otra vez."
     end
 
     respond_with(@comments) do |format|
