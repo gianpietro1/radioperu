@@ -1,7 +1,10 @@
 = content_tag :div, class: 'media comments', id: "comment-#{comment.id}" do
   .media-body
     %small
-      = comment.user.name
+      - if comment.user.name == nil || comment.user.name == ''
+        = comment.user.email
+      - else
+        = comment.user.name 
       = t(:commented)
       = t(:at_time)
       = I18n.localize(comment.created_at, :format => '%d %B %Y %r')
