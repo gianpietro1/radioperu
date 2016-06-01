@@ -34,7 +34,7 @@
         - if policy(Playlist.new).create?
           %br
           - if @user_playlists.count == 0
-            =link_to t(:new_playlist), new_user_playlist_path, class: 'btn btn-success'
+            =link_to t(:new_playlist), new_user_playlist_path(current_user), class: 'btn btn-success'
           - else
             .margin-top-10
               %em
@@ -44,23 +44,24 @@
       %h4.playlist_name.text-center
         = t(:other_users_playlists)
       .user_playlists
-        - @playlists.each do |playlist|
-          %a{ href: '/' + I18n.locale.to_s + '/users/' + current_user.id.to_s + '/playlists/' + playlist.slug, class: "playlist_all"}
-            .playlist_thumb
-              -if playlist.image?
-                = image_tag( playlist.image.thumb )
-              -else
-                = image_tag( 'default_album_thumb.jpg')
-            .playlist_summary
-              %h5.bold
-                = playlist.name
-                %br
-                = t(:by) + " " + (playlist.user.name.presence || playlist.user.email) + ", " + playlist.songs.count.to_s + " " + t(:songs) + " / " +  playlist.length + " " + t(:minutes)
-                %br
-                - unless playlist.description.nil? || playlist.description.empty?
-                  = simple_format(truncate(playlist.description,length: 20))
-                - else
-                  = t(:playlist_description_not_available)
+        -if current_user
+          - @playlists.each do |playlist|
+            %a{ href: '/' + I18n.locale.to_s + '/users/' + current_user.id.to_s + '/playlists/' + playlist.slug, class: "playlist_all"}
+              .playlist_thumb
+                -if playlist.image?
+                  = image_tag( playlist.image.thumb )
+                -else
+                  = image_tag( 'default_album_thumb.jpg')
+              .playlist_summary
+                %h5.bold
+                  = playlist.name
+                  %br
+                  = t(:by) + " " + (playlist.user.name.presence || playlist.user.email) + ", " + playlist.songs.count.to_s + " " + t(:songs) + " / " +  playlist.length + " " + t(:minutes)
+                  %br
+                  - unless playlist.description.nil? || playlist.description.empty?
+                    = simple_format(truncate(playlist.description,length: 20))
+                  - else
+                    = t(:playlist_description_not_available)
 
     .col-md-4
       %h4.playlist_name.text-center

@@ -7,13 +7,16 @@
   = "Revísala "
   - if @comment.commentable_type == "Artist"
     - @artist = Artist.find(@comment.commentable_id)
-    =link_to 'aquí', root_url + "/" + @artist.slug
+    =link_to 'aquí', root_url + "/" + @artist.slug + "#comment-" + @comment.id.to_s
   - elsif @comment.commentable_type == "Album"
     - @album = Album.find(@comment.commentable_id)
     - @artist = @album.artist
-    =link_to 'aquí', root_url + "/" + @artist.slug + '/albums/' + @album.slug 
+    =link_to 'aquí', root_url + "/" + @artist.slug + '/albums/' + @album.slug + "#comment-" + @comment.id.to_s
   - elsif @comment.commentable_type == "Song"
     - @song = Song.find(@comment.commentable_id)
     - @album = @song.album
     - @artist = @song.album.artist
-    =link_to 'aquí', root_url + "/" + @artist.slug + '/albums/' + @album.slug + '/songs/' + @song.slug
+    =link_to 'aquí', root_url + "/" + @artist.slug + '/albums/' + @album.slug + '/songs/' + @song.slug + "#comment-" + @comment.id.to_s
+  - elsif @comment.commentable_type == "Playlist"
+    - @playlist = Playlist.find(@comment.commentable_id)
+    =link_to 'aquí', root_url + "users/" + @playlist.user.id.to_s + '/playlists/' + @playlist.slug + "#comment-" + @comment.id.to_s

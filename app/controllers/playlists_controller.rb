@@ -32,7 +32,7 @@ class PlaylistsController < ApplicationController
       flash[:notice] = t(:playlist_saved)
       @playlist.send_update_email
       update_facebook_graph
-      redirect_to @playlist
+      redirect_to [current_user,@playlist]
     else
       flash[:error] = t(:playlist_create_error)
       render :new
@@ -51,7 +51,7 @@ class PlaylistsController < ApplicationController
       flash[:notice] = t(:playlist_updated)
       @playlist.send_update_email
       update_facebook_graph
-      redirect_to @playlist
+      redirect_to [current_user,@playlist]
     else
       flash[:error] = t(:playlist_update_error)
       render :edit
