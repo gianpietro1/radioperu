@@ -40,12 +40,12 @@ class PlaylistsController < ApplicationController
   end
 
   def edit
-    @playlist = Playlist.find(params[:id])
+    @playlist = Playlist.friendly.find(params[:id])
     authorize @playlist
   end
 
   def update
-    @playlist = Playlist.find(params[:id])
+    @playlist = Playlist.friendly.find(params[:id])
     authorize @playlist
     if @playlist.update_attributes(playlist_params)
       flash[:notice] = t(:playlist_updated)
@@ -59,7 +59,7 @@ class PlaylistsController < ApplicationController
   end
 
   def destroy
-    @playlist = Playlist.find(params[:id])
+    @playlist = Playlist.friendly.find(params[:id])
     authorize @playlist
     if @playlist.destroy
       flash[:notice] = t(:playlist_destroyed)
