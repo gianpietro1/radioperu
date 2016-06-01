@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160530024027) do
+ActiveRecord::Schema.define(version: 20160601142658) do
 
   create_table "album_playstats", force: :cascade do |t|
     t.integer  "song_id"
@@ -214,7 +214,10 @@ ActiveRecord::Schema.define(version: 20160530024027) do
     t.string   "image"
     t.text     "description"
     t.boolean  "private",     default: false
+    t.string   "slug"
   end
+
+  add_index "playlists", ["slug"], name: "index_playlists_on_slug"
 
   create_table "program_translations", force: :cascade do |t|
     t.integer  "program_id",  null: false

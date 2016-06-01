@@ -1,8 +1,8 @@
 - title @playlist.name + ' - ' + (@playlist.user.name.presence || @playlist.user.email)
 - if @playlist.image?
-  - set_meta_tags :og => {:title => (@playlist.name + ' - ' + (@playlist.user.name.presence || @playlist.user.email)), :url => playlist_url(@playlist), :image => image_url(@playlist.image), :description => @playlist.description}
+  - set_meta_tags :og => {:title => (@playlist.name + ' - ' + (@playlist.user.name.presence || @playlist.user.email)), :url => user_playlist_url(@playlist.user,@playlist), :image => image_url(@playlist.image), :description => @playlist.description}
 - else
-  - set_meta_tags :og => {:title => (@playlist.name + ' - ' + (@playlist.user.name.presence || @playlist.user.email)) , :url => playlist_url(@playlist), :description => @playlist.description}
+  - set_meta_tags :og => {:title => (@playlist.name + ' - ' + (@playlist.user.name.presence || @playlist.user.email)) , :url => user_playlist_url(@playlist.user,@playlist), :description => @playlist.description}
 - if @playlist.description.nil? || @playlist.description.empty?
   - set_meta_tags description: @playlist.name
 - else
@@ -18,9 +18,9 @@
       = link_to t(:back_to_playlists), playlists_path, class: "btn btn-info"
     .pull-right
       - if policy(@playlist).edit?
-        =link_to t(:edit_playlist), edit_playlist_path(@playlist), class: 'btn btn-warning'
+        =link_to t(:edit_playlist), edit_user_playlist_path(@playlist.user,@playlist), class: 'btn btn-warning'
       - if policy(@playlist).destroy?
-        =link_to t(:delete_playlist), @playlist, method: :delete, class: 'btn btn-danger', data: { confirm: t(:delete_playlist_confirm) }
+        =link_to t(:delete_playlist), [@playlist.user,@playlist], method: :delete, class: 'btn btn-danger', data: { confirm: t(:delete_playlist_confirm) }
 
 .row
   .col-md-1
@@ -105,6 +105,20 @@
                 %a{ href: ('##')*offset + "password" + '##' + rand(0..43254735465623).to_s + '##' + song.filename.file.basename + '##' + song.album.name + '##' + song.album.artist.name + '##' + ".mp3", id: song.id}
                   = song.album.artist.name + " - " + song.name
 
+.row
+  .col-md-1
+  .col-md-10
+    .comment_block.clear_both
+    %h4
+      = t(:comments)
+    - if current_user
+      .new-comment
+        = render partial: "comments/form", locals: { commentable: @commentable }
+    - else
+      %i
+        =t(:you_must_sign_in_to_comment)
+    .js-comments
+      = render partial: 'comments/comment', collection: @comments
 
 %script{:type=>"text/javascript"}
 

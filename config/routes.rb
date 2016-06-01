@@ -12,7 +12,10 @@ Rails.application.routes.draw do
     end
     resources :musician_forms, only: [:new, :create]
     devise_for :users, skip: [:omniauth_callbacks]
-    resources :playlists
+    resources :users, only: [:show] do
+      resources :playlists, except: [:index]
+    end
+    resources :playlists, only: [:index]
     resources :artists do
       get 'stats' => 'admin#index'
       resources :comments, only: [:new, :create, :destroy]
@@ -27,6 +30,9 @@ Rails.application.routes.draw do
       resources :comments, only: [:new, :create, :destroy]
     end
     resources :songs, only: [:show] do
+      resources :comments, only: [:new, :create, :destroy]
+    end
+    resources :playlists, only: [:show] do
       resources :comments, only: [:new, :create, :destroy]
     end
     post 'create_reply' => 'comments#create_reply'

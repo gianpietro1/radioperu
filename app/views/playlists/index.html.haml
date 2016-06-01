@@ -12,7 +12,7 @@
         -if current_user
           -if @user_playlists.first != nil
             -@user_playlists.each do |playlist|
-              %a{ href: '/' + I18n.locale.to_s + '/playlists/' + playlist.id.to_s, class: "playlist_all"}
+              %a{ href: '/' + I18n.locale.to_s + '/users/' + current_user.id.to_s + '/playlists/' + playlist.slug, class: "playlist_all"}
                 .playlist_thumb
                   -if playlist.image?
                     = image_tag( playlist.image.thumb )
@@ -34,7 +34,7 @@
         - if policy(Playlist.new).create?
           %br
           - if @user_playlists.count == 0
-            =link_to t(:new_playlist), new_playlist_path, class: 'btn btn-success'
+            =link_to t(:new_playlist), new_user_playlist_path, class: 'btn btn-success'
           - else
             .margin-top-10
               %em
@@ -45,7 +45,7 @@
         = t(:other_users_playlists)
       .user_playlists
         - @playlists.each do |playlist|
-          %a{ href: '/' + I18n.locale.to_s + '/playlists/' + playlist.id.to_s, class: "playlist_all"}
+          %a{ href: '/' + I18n.locale.to_s + '/users/' + current_user.id.to_s + '/playlists/' + playlist.slug, class: "playlist_all"}
             .playlist_thumb
               -if playlist.image?
                 = image_tag( playlist.image.thumb )

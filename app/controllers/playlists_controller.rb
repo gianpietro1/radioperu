@@ -13,8 +13,10 @@ class PlaylistsController < ApplicationController
   end
 
   def show
-    @playlist = Playlist.find(params[:id])
+    @playlist = Playlist.friendly.find(params[:id])
     @pageviews = @playlist.views
+    @comments = @playlist.comments.roots
+    @commentable = @playlist
     authorize @playlist
   end
 
