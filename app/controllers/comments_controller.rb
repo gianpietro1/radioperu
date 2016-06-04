@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
 
     if @comment.save
       flash[:notice] = "Comentario guardado."
-      @comment.delay(run_at: 1.minute.from_now).send_update_email
+      @comment.send_update_email
     else
       flash[:error] = "Hubo un error al comentar, por favor inténtalo otra vez."
     end
