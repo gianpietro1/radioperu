@@ -12,7 +12,7 @@
         -if current_user
           -if @user_playlists.first != nil
             -@user_playlists.each do |playlist|
-              %a{ href: '/' + I18n.locale.to_s + '/users/' + current_user.id.to_s + '/playlists/' + playlist.slug, class: "playlist_all"}
+              %a{ href: '/' + I18n.locale.to_s + '/users/' + playlist.user_id.to_s + '/playlists/' + playlist.slug, class: "playlist_all"}
                 .playlist_thumb
                   -if playlist.image?
                     = image_tag( playlist.image.thumb )
@@ -46,7 +46,7 @@
       .user_playlists
         -if current_user
           - @playlists.each do |playlist|
-            %a{ href: '/' + I18n.locale.to_s + '/users/' + current_user.id.to_s + '/playlists/' + playlist.slug, class: "playlist_all"}
+            %a{ href: '/' + I18n.locale.to_s + '/users/' + playlist.user_id.to_s + '/playlists/' + playlist.slug, class: "playlist_all"}
               .playlist_thumb
                 -if playlist.image?
                   = image_tag( playlist.image.thumb )
