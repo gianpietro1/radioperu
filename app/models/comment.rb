@@ -7,14 +7,14 @@ class Comment < ActiveRecord::Base
 
   def send_update_email
     unless self.commentable_type == 'Playlist'
-      UpdatesMailer.delay(run_at: 10.seconds.from_now).new_comment_update(self.user,self.commentable.user,self)
+      UpdatesMailer.new_comment_update(self.user,self.commentable.user,self).deliver
     else
-      UpdatesMailer.delay(run_at: 10.seconds.from_now).new_comment_playlist_update(self.user,self.commentable.user,self)
+      UpdatesMailer.new_comment_playlist_update(self.user,self.commentable.user,self).deliver
     end
   end
 
   def send_update_email_reply
-    UpdatesMailer.delay(run_at: 10.seconds.from_now).new_reply_update(self.user,self.parent.user,self)
+    UpdatesMailer.new_reply_update(self.user,self.parent.user,self).deliver
   end
 
 end
