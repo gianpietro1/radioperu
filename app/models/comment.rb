@@ -6,7 +6,11 @@ class Comment < ActiveRecord::Base
   default_scope  { order('updated_at DESC') }
 
   def send_update_email
-    UpdatesMailer.new_comment_update(self.user,self.commentable.user,self).deliver
+    unless self.commentable_type == 'Playlist'
+      UpdatesMailer.new_comment_update(self.user,self.commentable.user,self).deliver
+    else
+      UpdatesMailer.new_comment_playlist_update(self.user,self.commentable.user,self).deliver
+    end
   end
 
   def send_update_email_reply

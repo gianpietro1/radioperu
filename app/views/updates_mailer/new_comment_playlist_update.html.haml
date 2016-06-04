@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+%p
+  ¡Tienes un nuevo comentario de 
+  %span
+    = @user.name + " en tu lista!"
+%p
+  = "Revísalo "
+  - @playlist = Playlist.find(@comment.commentable_id)
+  =link_to 'aquí', root_url + "/users/" + @playlist.user_id.to_s + '/playlists/' + @playlist.slug + "#comment-" + @comment.id.to_s

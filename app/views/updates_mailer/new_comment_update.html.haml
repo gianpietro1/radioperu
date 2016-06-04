@@ -2,10 +2,7 @@
 %p
   ¡Tienes un nuevo comentario de 
   %span
-    - if @comment.commentable_type == "Playlist"
-      = @user.name + " en tu lista!"
-    - else
-      = @user.name + " en tu espacio!"
+    = @user.name + " en tu espacio!"
 %p
   = "Revísalo "
   - if @comment.commentable_type == "Artist"
@@ -20,6 +17,3 @@
     - @album = @song.album
     - @artist = @song.album.artist
     =link_to 'aquí', root_url + "/" + @artist.slug + '/albums/' + @album.slug + '/songs/' + @song.slug + "#comment-" + @comment.id.to_s
-  - elsif @comment.commentable_type == "Playlist"
-    - @playlist = Playlist.find(@comment.commentable_id)
-    =link_to 'aquí', root_url + "/users/" + @playlist.user_id.to_s + '/playlists/' + @playlist.slug + "#comment-" + @comment.id.to_s

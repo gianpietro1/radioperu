@@ -60,11 +60,19 @@ class UpdatesMailer < ApplicationMailer
         @page_admin = page_admin
         @comment = comment
 
-        if @comment.commentable_type == 'Playlist'
-          mail(from: "Radioperú.pe <contacto@radioperu.pe>", to: @page_admin.email, subject: "Nuevo comentario en tu lista")
-        else
-          mail(from: "Radioperú.pe <contacto@radioperu.pe>", to: @page_admin.email, subject: "Nuevo comentario en tu espacio")          
-        end
+        mail(from: "Radioperú.pe <contacto@radioperu.pe>", to: @page_admin.email, subject: "Nuevo comentario en tu espacio")          
+
+      end
+
+      def new_comment_playlist_update(user,page_admin,comment)
+
+        setup_email
+ 
+        @user = user
+        @page_admin = page_admin
+        @comment = comment
+
+        mail(from: "Radioperú.pe <contacto@radioperu.pe>", to: @page_admin.email, subject: "Nuevo comentario en tu lista")
 
       end
 
