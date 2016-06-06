@@ -26,6 +26,12 @@ class Song < ActiveRecord::Base
 
   default_scope { order('discnum ASC', 'track ASC') }
 
+  #scope :top5,
+  #  select("songs.id, OTHER_ATTRS_YOU_NEED, count(listens.id) AS listens_count").
+  #  joins(:listens).
+  #  group("songs.id").
+  #  order("listens_count DESC").
+  #  limit(5)
 
   extend FriendlyId
   friendly_id :name, :use => :scoped, :scope => :album

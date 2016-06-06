@@ -38,7 +38,7 @@ class SongsController < ApplicationController
       rescue
         @song.update_attributes(video: nil)
       end
-      @song.delay(run_at: 1.minute.from_now).send_update_email
+      @song.send_update_email
       update_facebook_graph
       redirect_to [@artist,@album,@song]
     else
