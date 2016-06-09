@@ -65,7 +65,7 @@ Rails.application.routes.draw do
     get 'about' => 'about#index'
     get 'elproyecto' => 'about#index'
     get 'test_instagram' => 'test#test_instagram'
-    # get 'convocatoria' => 'welcome#convocatoria'
+    get 'privacy_policy' => 'welcome#privacy_policy'
     # for direct access to artists page and resources, have to be the last lines
     get ':id' => 'artists#show' 
     get ':artist_id/albums/:id' => 'albums#show'

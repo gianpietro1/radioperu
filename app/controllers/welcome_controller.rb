@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
     @radios = Radio.all
   end
 
-  def convocatoria
+  def privacy_policy
   end
 
 end

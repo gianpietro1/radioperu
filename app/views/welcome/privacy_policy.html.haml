@@ -1,0 +1,106 @@
+%script
+  $("#opaque-cover").remove();
+
+- title 'convocatoria'
+- set_meta_tags :og => {:title => 'Radioperú.pe - Convocatoria de DJs', :description => '¿Te gusta nuestra misión y conoces sobre música hecha en el Perú?', :url => 'http://radioperu.pe/convocatoria', :image => image_url('estacionesfblink.png') }
+- set_meta_tags description: "¿Te gusta nuestra misión y conoces sobre música hecha en el Perú?"
+
+.row.margin-top-15
+  .col-md-1
+  .col-md-10
+    - if I18n.locale == :en
+      %h3 Privacy Policy
+      %p Last updated: June 09, 2016
+      %p Radioperú.pe ("us", "we", or "our") operates the http://radioperu.pe website (the "Service").
+      %p This page informs you of our policies regarding the collection, use and disclosure of Personal Information when you use our Service.
+      %p We will not use or share your information with anyone except as described in this Privacy Policy.
+      %p We use your Personal Information for providing and improving the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, accessible at http://radioperu.pe
+      %p
+        %strong Information Collection And Use
+      %p While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to, your email address, name ("Personal Information").
+      %p
+        %strong Log Data
+      %p We may also collect information that your browser sends whenever you visit our Service ("Log Data"). This Log Data may include information such as your computer's Internet Protocol ("IP") address, browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages and other statistics.
+      %p In addition, we may use third party services such as Google Analytics that collect, monitor and analyze this type of information in order to increase our Service's functionality. These third party service providers have their own privacy policies addressing how they use such information.
+      %p
+        %strong Cookies
+      %p Cookies are files with small amount of data, which may include an anonymous unique identifier. Cookies are sent to your browser from a web site and stored on your computer's hard drive.
+      %p We use "cookies" to collect information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service.
+      %p
+        %strong Service Providers
+      %p We may employ third party companies and individuals to facilitate our Service, to provide the Service on our behalf, to perform Service-related services or to assist us in analyzing how our Service is used.
+      %p These third parties have access to your Personal Information only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.
+      %p
+        %strong Communications
+      %p We may use your Personal Information to contact you with newsletters, marketing or promotional materials and other information that may be of interest to you. You may opt out of receiving any, or all, of these communications from us by following the unsubscribe link or instructions provided in any email we send.
+      %p
+        %strong Compliance With Laws
+      %p We will disclose your Personal Information where required to do so by law or subpoena or if we believe that such action is necessary to comply with the law and the reasonable requests of law enforcement or to protect the security or integrity of our Service.
+      %p
+        %strong Security
+      %p The security of your Personal Information is important to us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Information, we cannot guarantee its absolute security.
+      %p
+        %strong International Transfer
+      %p Your information, including Personal Information, may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from your jurisdiction.
+      %p If you are located outside Peru and choose to provide information to us, please note that we transfer the information, including Personal Information, to Peru and process it there.
+      %p Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.
+      %p
+        %strong Links To Other Sites
+      %p Our Service may contain links to other sites that are not operated by us. If you click on a third party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit.
+      %p We have no control over, and assume no responsibility for the content, privacy policies or practices of any third party sites or services.
+      %p
+        %strong Changes To This Privacy Policy
+      %p We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
+      %p You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
+      %p
+        %strong Contact Us
+      %p If you have any questions about this Privacy Policy, please contact us.
+
+    - elsif I18n.locale == :es
+
+      %h3 Política de privacidad
+      %p Última actualización: 09 junio, el año 2016
+      %p Radioperú.pe ( "nosotros" o "nuestro") opera el sitio web http://radioperu.pe (el "Servicio").
+      %p Esta página le informa de nuestras políticas con respecto a la recopilación, uso y divulgación de información personal cuando utiliza nuestro servicio.
+      %p No vamos a usar o compartir su información con nadie, excepto como se describe en esta Política de Privacidad.
+      %p Utilizamos su información personal para proporcionar y mejorar el servicio. Al utilizar el Servicio, acepta la recopilación y uso de información de acuerdo con esta política. A menos que se defina lo contrario en esta Política de Privacidad, los términos utilizados en esta política de privacidad tienen los mismos significados que en nuestros términos y condiciones, accesible en http://radioperu.pe
+      %p
+        %strong Recopilación y uso
+      %p Durante el uso de nuestro servicio, nos puede pedir que nos proporcione cierta información de identificación personal que se puede utilizar para contactar o identificarlo. La información de identificación puede incluir, pero no se limitan a, su dirección de correo electrónico y nombre ( "Información Personal").
+      %p
+        %strong Registro de Datos
+      %p Nosotros también podemos recopilar información que su navegador envía cada vez que visita nuestro Servicio ( "Datos de Registro"). Este registro de datos puede incluir información como el Protocolo de su ordenador a Internet ( "IP"), tipo de navegador, la versión del navegador, las páginas de nuestro servicio que usted visita, la hora y la fecha de su visita, el tiempo dedicado a esas páginas y otras estadísticas.
+      %p Además, puede utilizar los servicios de terceros, como Google Analytics, que consiste en recopilar, vigilar y analizar este tipo de información con el fin de aumentar la funcionalidad de nuestro servicio. Estos terceros proveedores de servicios tienen sus propias políticas de privacidad frente a la forma en que utilizan dicha información.
+      %p
+        %strong Cookies
+      %p Son archivos con pequeña cantidad de datos, que pueden incluir un identificador único anónimo. Las cookies se envían a su navegador desde un sitio web y se almacenan en el disco duro de su ordenador.
+      %p Utilizamos "cookies" para recoger información. Se puede indicar a su navegador para rechazar todas las cookies o para indicar cuándo se envía una cookie. Sin embargo, si usted no acepta las cookies, es posible que no pueda utilizar algunas partes de nuestro servicio.
+      %p
+        %strong Proveedores de Servicios
+      %p Podemos emplear terceras empresas e individuos para facilitar nuestro servicio, para proporcionar el servicio en nuestro nombre, para llevar a cabo servicios relacionados con el servicio o para que nos ayude en el análisis de cómo se utiliza nuestro servicio.
+      %p Estos terceros tienen acceso a su información personal únicamente para llevar a cabo estas tareas en nuestro nombre y están obligados a no revelar o utilizarlo para cualquier otro propósito.
+      %p
+        %strong Comunicaciones
+      %p Podemos utilizar su información personal para contactarlo con boletines informativos, material promocional y otra información que pueda ser de interés para usted. Usted puede optar por no recibir ninguna, o la totalidad, de estas comunicaciones de nosotros, siguiendo el enlace para darse de baja o instrucciones que constan en cualquier correo electrónico que le enviamos.
+      %p
+        %strong Cumplimiento de las leyes
+      %p Vamos a revelar su información personal sólo cuando sea requerido por ley o citación o si creemos que dicha acción es necesaria para cumplir con la ley y las solicitudes razonables de aplicación de la ley o para proteger la seguridad o integridad de nuestro servicio.
+      %p
+        %strong Seguridad
+      %p La seguridad de su información personal es importante para nosotros, pero recuerde que ningún método de transmisión a través de Internet, o método de almacenamiento electrónico es 100% seguro. Si bien nos esforzamos por utilizar medios comercialmente aceptables para proteger su información personal, no podemos garantizar su seguridad absoluta.
+      %p
+        %strong Transferencia internacional
+      %p Su información, incluyendo información personal, puede ser transferido a - y se mantiene en - equipos que se encuentran fuera de su estado, provincia, país u otra jurisdicción gubernamental donde las leyes de protección de datos pueden diferir de los de su jurisdicción.
+      %p Si se encuentra fuera del Perú y elige proporcionar información a nosotros, por favor, tenga en cuenta que transferimos la información, incluyendo información personal, al Perú y procesarlo allí.
+      %p Su consentimiento a esta política de privacidad seguido de su presentación de dicha información representa la aceptación de la transferencia.
+      %p
+        %strong Vínculos con otros sitios
+      %p Nuestro Servicio puede contener enlaces a otros sitios que no son operados por nosotros. Si hace clic en un vínculo de un tercero, se le dirigirá al sitio de dicho tercero. Le recomendamos que revise la política de privacidad de cada sitio que visita.
+      %p No tenemos ningún control sobre, y no asume ninguna responsabilidad por el contenido, políticas o prácticas de privacidad de los sitios o servicios de terceros.
+      %p
+        %strong Cambios en esta política de privacidad
+      %p Podemos actualizar nuestra política de privacidad de vez en cuando. Le notificaremos de cualquier cambio mediante la publicación de la nueva política de privacidad en esta página.
+      %p Se le aconseja revisar esta política de privacidad periódicamente para cualquier cambio. 
+      %p
+        %strong Contáctese con nosotros
+      %p Si usted tiene alguna pregunta sobre esta Política de Privacidad, por favor, póngase en contacto con nosotros.
