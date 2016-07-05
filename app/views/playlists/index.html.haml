@@ -30,6 +30,20 @@
         - else
           %p.text-center
             = t(:you_need_to_login)
+            .logins.text-center
+              .fb-login-button
+                %a{href: user_omniauth_authorize_path(:facebook), class:"btn btn-social btn-facebook"}
+                  %i{class:"fa fa-facebook"}
+                  = t(:sign_in_facebook)
+              .go-login-button
+                %a{href: user_omniauth_authorize_path(:google_oauth2), class:"btn btn-social btn-google"}
+                  %i{class:"fa fa-google-plus"}
+                  = t(:sign_in_google)
+              .email-login-button
+                %a{href: new_user_session_path, class:"btn btn-social btn-default"}
+                  %i{class:"fa fa-envelope"}
+                  = t(:sign_in_email)
+
             
         - if policy(Playlist.new).create?
           %br
@@ -44,24 +58,23 @@
       %h4.playlist_name.text-center
         = t(:other_users_playlists)
       .user_playlists
-        -if current_user
-          - @playlists.each do |playlist|
-            %a{ href: '/' + I18n.locale.to_s + '/users/' + playlist.user_id.to_s + '/playlists/' + playlist.slug, class: "playlist_all"}
-              .playlist_thumb
-                -if playlist.image?
-                  = image_tag( playlist.image.thumb )
-                -else
-                  = image_tag( 'default_album_thumb.jpg')
-              .playlist_summary
-                %h5.bold
-                  = playlist.name
-                  %br
-                  = t(:by) + " " + (playlist.user.name.presence || playlist.user.email) + ", " + playlist.songs.count.to_s + " " + t(:songs) + " / " +  playlist.length + " " + t(:minutes)
-                  %br
-                  - unless playlist.description.nil? || playlist.description.empty?
-                    = simple_format(truncate(playlist.description,length: 20))
-                  - else
-                    = t(:playlist_description_not_available)
+        - @playlists.each do |playlist|
+          %a{ href: '/' + I18n.locale.to_s + '/users/' + playlist.user_id.to_s + '/playlists/' + playlist.slug, class: "playlist_all"}
+            .playlist_thumb
+              -if playlist.image?
+                = image_tag( playlist.image.thumb )
+              -else
+                = image_tag( 'default_album_thumb.jpg')
+            .playlist_summary
+              %h5.bold
+                = playlist.name
+                %br
+                = t(:by) + " " + (playlist.user.name.presence || playlist.user.email) + ", " + playlist.songs.count.to_s + " " + t(:songs) + " / " +  playlist.length + " " + t(:minutes)
+                %br
+                - unless playlist.description.nil? || playlist.description.empty?
+                  = simple_format(truncate(playlist.description,length: 20))
+                - else
+                  = t(:playlist_description_not_available)
 
     .col-md-4
       %h4.playlist_name.text-center

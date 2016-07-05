@@ -333,12 +333,21 @@ textarea.form-control {
   border: 5px solid #202020;
 }
 
-.go-login-button {
+.go-login-button, .email-login-button {
   margin-top: 5px;
 }
 
-.go-login-button .btn-social {
+.go-login-button .btn-social, .email-login-button .btn-social {
   min-width: 182.05px;
+}
+
+.btn-horizontal {
+  margin-top: 0;
+  margin-left: 5px;
+}
+
+.logins {
+  margin-bottom: 15px
 }
 
 .popup-social, .popup-email {
@@ -2543,6 +2552,14 @@ h3.catalogue_title {
   padding: 0 2px;
 }
 
+/* Comments */
+
+.fb-login-button, .go-login-button, .email-login-button {
+  clear:both;
+  margin: 0;
+  margin-bottom:5px;
+}
+
 }
 
 @media screen and (max-width: 524px) {
@@ -2766,6 +2783,10 @@ h1.station_title {
 
 .ui-menu .ui-menu-item {
   font-size: 0.6em;
+}
+
+.artists_albums {
+  margin-top: 30px;
 }
 
 /* Floating Ads */

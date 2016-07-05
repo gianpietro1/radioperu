@@ -3,16 +3,16 @@
   .col-md-10
     %ul.mainnav.desktop
       %li.option_title
-        =link_to t(:catalogue), artists_path
-      %li.option_title
         =link_to t(:online_radios), radio_path(Radio.all.shuffle.first)
+      %li.option_title
+        =link_to t(:catalogue), artists_path
       %li.option_title.main_highlighted
         =link_to t(:playlists), playlists_path
     %ul.mainnav.mobile
       %li.option_title
-        =link_to t(:catalogue_min), artists_path
-      %li.option_title
         =link_to t(:online_radios_min), radio_path(Radio.all.shuffle.first)
+      %li.option_title
+        =link_to t(:catalogue_min), artists_path
       %li.option_title.main_highlighted
         =link_to t(:playlists_min), playlists_path
     %hr

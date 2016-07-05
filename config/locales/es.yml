@@ -184,6 +184,7 @@ es:
   in_facebook: "en Facebook"
   sign_in_facebook: "Ingresa con Facebook"
   sign_in_google: "Ingresa con Google"
+  sign_in_email: "Ingresa con correo"
   or: "o"
   or_else: "o de lo contrario"
   by: "Por"
@@ -243,6 +244,7 @@ es:
   commented: "comentó"
   delete: "borrar"
   reply: "responder"
+  you_must_sign_in_to_comment: 'Debes identificarte para comentar'
   #Musician Form
   musician_name: "Nombre de la banda o músico"
   musician_email: "Correo Electrónico"

@@ -115,8 +115,20 @@
       .new-comment
         = render partial: "comments/form", locals: { commentable: @commentable }
     - else
-      %i
-        =t(:you_must_sign_in_to_comment)
+      =t(:you_must_sign_in_to_comment)
+      .logins.text-center.clearfix
+        .fb-login-button.pull-left
+          %a{href: user_omniauth_authorize_path(:facebook), class:"btn btn-social btn-facebook"}
+            %i{class:"fa fa-facebook"}
+            = t(:sign_in_facebook)
+        .go-login-button.pull-left.btn-horizontal
+          %a{href: user_omniauth_authorize_path(:google_oauth2), class:"btn btn-social btn-google"}
+            %i{class:"fa fa-google-plus"}
+            = t(:sign_in_google)
+        .email-login-button.pull-left.btn-horizontal
+          %a{href: new_user_session_path, class:"btn btn-social btn-default"}
+            %i{class:"fa fa-envelope"}
+            = t(:sign_in_email)
     .js-comments
       = render partial: 'comments/comment', collection: @comments
 

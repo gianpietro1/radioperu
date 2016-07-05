@@ -183,6 +183,7 @@ en:
   in_facebook: "in Facebook"
   sign_in_facebook: "Sign in with Facebook"
   sign_in_google: "Sign in with Google"
+  sign_in_email: "Sign in with email"
   or: "or"
   or_else: "or else"
   by: "by"
@@ -240,6 +241,7 @@ en:
   commented: "commented"
   delete: "delete"
   reply: "reply"
+  you_must_sign_in_to_comment: 'You must login to comment'
   #Musician Form
   musician_name: "Musician/Band name"
   musician_email: "Email"
