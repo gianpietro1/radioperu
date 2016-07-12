@@ -1,5 +1,7 @@
 .stats_title
-	= t(:stats_for) + " " + @artist.name
+	.pull-left
+		= link_to t(:back), "/#{I18n.locale.to_s}/" + @artist.slug, class: 'btn btn-sm btn-info'
+		= t(:stats_for) + " " + @artist.name
 %br
 .row
 	.col-md-12.clearfix
@@ -16,8 +18,6 @@
 				.text-center
 					= t(:top_stats_radio)
 				#radio_chart
-
-
 
 %script{:type=>"text/javascript"}
 	var playlist_stats = #{@plays[:playlist].to_json.html_safe}

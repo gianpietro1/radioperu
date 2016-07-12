@@ -246,6 +246,7 @@ es:
   reply: "responder"
   you_must_sign_in_to_comment: 'Debes identificarte para comentar'
   #Stats
+  stats: 'estadísticas'
   stats_for: 'Estadísticas para'
   top_stats_catalogue: 'Reproducciones - Catálogo'
   top_stats_playlist: 'Reproducciones - Playlists'

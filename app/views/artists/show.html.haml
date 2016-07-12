@@ -18,9 +18,11 @@
         -if @artist.profile_type == 'musician'
           =link_to t(:edit_artist), edit_artist_path(@artist), class: 'btn btn-warning'
           =link_to t(:add_album), new_artist_album_path(@artist), class: 'btn btn-success'
+          =link_to t(:stats), "/#{I18n.locale.to_s}/" + @artist.slug + "/stats", class: 'btn btn-primary'
         -else
           =link_to t(:edit_dj), edit_artist_path(@artist), class: 'btn btn-warning'
           =link_to t(:add_program), new_artist_album_path(@artist), class: 'btn btn-success'
+          =link_to t(:stats), "/#{I18n.locale.to_s}/" + @artist.slug + "/stats", class: 'btn btn-primary'
       - if policy(@artist).destroy?
         =link_to t(:delete_artist), @artist, method: :delete, class: 'btn btn-danger', data: { confirm: t(:delete_artist_confirm) }
 

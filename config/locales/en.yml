@@ -243,6 +243,7 @@ en:
   reply: "reply"
   you_must_sign_in_to_comment: 'You must login to comment'
   #Stats
+  stats: 'statistics'
   stats_for: 'Stats for'
   top_stats_catalogue: 'Top Stats - Catalogue'
   top_stats_playlist: 'Top Stats - Playlist'
