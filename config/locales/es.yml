@@ -245,6 +245,10 @@ es:
   delete: "borrar"
   reply: "responder"
   you_must_sign_in_to_comment: 'Debes identificarte para comentar'
+  #Stats
+  top_stats_catalogue: 'Reproducciones - Catálogo'
+  top_stats_playlist: 'Reproducciones - Playlists'
+  top_stats_radio: 'Reproducciones - Radio'
   #Musician Form
   musician_name: "Nombre de la banda o músico"
   musician_email: "Correo Electrónico"
