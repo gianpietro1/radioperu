@@ -253,7 +253,7 @@ es:
   top_stats_radio: 'Reproducciones - Radio'
   plays_catalogue: 'veces que la canción fue escuchada en la página del álbum/canción'
   plays_playlist: 'veces que la canción fue escuchada desde algún "playlist"'
-  plays_radio: 'veces que la canción fue escuchada en alguna estación de radio'
+  plays_radio: 'veces que la canción fue escuchada mientras sonaba en radio'
   #Musician Form
   musician_name: "Nombre de la banda o músico"
   musician_email: "Correo Electrónico"
