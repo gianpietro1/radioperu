@@ -248,6 +248,9 @@ en:
   top_stats_catalogue: 'Top Stats - Catalogue'
   top_stats_playlist: 'Top Stats - Playlist'
   top_stats_radio: 'Top Stats - Radio'
+  plays_catalogue: 'times listened via album/song page'
+  plays_playlist: 'times listened via playlist'
+  plays_radio: 'times listened via radio station'
   #Musician Form
   musician_name: "Musician/Band name"
   musician_email: "Email"

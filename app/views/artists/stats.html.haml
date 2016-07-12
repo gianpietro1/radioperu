@@ -9,14 +9,20 @@
 			.catalogue_stats.stats
 				.text-center
 					= t(:top_stats_catalogue)
+					.legend
+						= t(:plays_catalogue)
 				#catalogue_chart
 			.playlist_stats.stats
 				.text-center
 					= t(:top_stats_playlist)
+					.legend
+						= t(:plays_playlist)
 				#playlist_chart
 			.radio_stats.stats
 				.text-center
 					= t(:top_stats_radio)
+					.legend
+						= t(:plays_radio)
 				#radio_chart
 
 %script{:type=>"text/javascript"}
