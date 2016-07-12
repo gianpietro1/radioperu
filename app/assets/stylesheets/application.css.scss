@@ -652,7 +652,7 @@ textarea.form-control {
   padding: 10px;
   padding-top: 10%;
   color: #333;
-  background-color: rgba(255,255,255, 0.5);
+  background-color: rgba(255,255,255, 0.7);
   border-radius: 10px;
   text-align: center;
   width: 70%;
@@ -660,10 +660,15 @@ textarea.form-control {
   font-size:1em;
 }
 
+.playlists_link {
+  height: 155px;
+  padding-top: 20%;
+}
+
 .catalogue_link:hover, .playlists_link:hover {
   text-decoration: none;
   z-index: 0;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.85);
   color: #2E2C27;
 }
 
