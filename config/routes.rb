@@ -88,6 +88,7 @@ Rails.application.routes.draw do
       get 'radios/:id/active_program' => 'programs#show'
       get 'app_version' => 'base#app_version'
       get 'time' => 'base#time'
+      post 'add_to_radio_stats/:artist_name/:song_name/:city/:country/:platform/:ip_address' => 'radios#add_to_radio_stats'
     end
   end
 
