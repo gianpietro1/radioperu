@@ -1155,9 +1155,12 @@ span.catalogue_title a {
 .album_mininfo, .artist_mininfo {
 }
 
-.album_mininfo a, .artist_mininfo a {
-  display: block;
-  word-break: break-all;
+.album_mininfo, .artist_mininfo  {
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
 }
 
 .album_nav {
