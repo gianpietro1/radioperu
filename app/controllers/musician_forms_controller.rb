@@ -2,6 +2,7 @@ class MusicianFormsController < ApplicationController
  
   def new
     @musician_form = MusicianForm.new
+    @radios = Radio.all
   end
 
   def create

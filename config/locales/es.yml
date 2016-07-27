@@ -265,7 +265,9 @@ es:
   form_error: "El formulario contiene un error, revisa los campos (correo válido, etc.)"
   email_error: "Hubo un error al enviar el correo, puedes escribir directo a contacto@radioperu.pe."
   form_send: "Enviar"
+  after_registration_benefits: "Luego del registro, recibirás instrucciones para difundir tu música en nuestro catálogo y radios:"
   musician_form_disclaimer: |-
-    Si eres músico peruano y aún no cuentas con un usuario para subir/actualizar tu música en radioperu.pe, por favor llena el siguiente formulario y nos pondremos en contacto contigo. 
-
+    Músico peruano, difunde tu música en esta plataforma llenando el siguiente formulario.
     El único requisito es contar con material de alta calidad sonora.
+
+

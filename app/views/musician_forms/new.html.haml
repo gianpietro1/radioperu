@@ -8,11 +8,14 @@
 
 = form_for @musician_form do |f|  
   .row
-    .col-md-10
-      %h4
-        %br
+    .col-md-2
+    .col-md-8
+      %br
+      .registration_text
         = simple_format(t(:musician_form_disclaimer))
+    .col-md-2
   .row
+    .col-md-2
     .col-md-4
       .form_group
         = f.label t(:musician_name)
@@ -44,4 +47,20 @@
       .form_group.pull-left
         = link_to t(:cancel), root_path, class: "btn btn-danger"
         = f.submit t(:form_send), class: 'btn btn-success'
+    .col-md-4.form_benefits
+      %p.text-center
+        = t(:after_registration_benefits)
+      .catalogue-container
+        %a{ href: artists_path, data_description: t(:catalogue_description), class: "catalogue_link" }
+          = t(:catalogue)
+      %br
+      .radios-container
+        - (1..@radios.count).each do |i|
+          %a{ href: radio_path(id: i), class: "station#{i} clear_both" }
+            .stationlink
+              .radiotitle.clear_both
+                =@radios.find_by(id:i).name.downcase
+              .radiodescription
+                =@radios.find_by(id:i).description
+    .col-md-2
 

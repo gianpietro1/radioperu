@@ -72,6 +72,14 @@ body {
   margin-bottom: 0.5em;
 }
 
+.center_div {
+  width: 100%;
+}
+
+.center_form {
+  margin: auto;
+}
+
 .margin-bottom-00 { margin-bottom: 0.0em; }
 .margin-bottom-01 { margin-bottom: 0.1em; }
 .margin-bottom-10 { margin-bottom: 1.0em; }
@@ -684,6 +692,22 @@ textarea.form-control {
 
 .catalogue-container, .catalogue-container-title {
   /* display: none; */
+}
+
+/* Registration */
+
+.form_benefits {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-left: 40px;
+  padding: 10px;
+  background-color: #f0f0f0
+}
+
+.registration_text {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
 }
 
 /* Radios */
@@ -2239,6 +2263,14 @@ h4.option_title {
 .station5 {
   border-radius: 0 10px 10px 0;
 }
+
+/* Registration */
+
+.form_benefits {
+  margin-top: 60px;
+  margin-left: 0;
+}
+
 /* Radio Stations */
 
 /*
@@ -2467,6 +2499,12 @@ hr {
   clear: both;
   width: 100%;
   margin-bottom: 10px;
+}
+
+/* Registration */
+
+.registration_text {
+  font-size: 1em
 }
 
 /* Radio Stations */
