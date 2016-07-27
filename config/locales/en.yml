@@ -262,7 +262,7 @@ en:
   form_error: "The form has an error, please check the fields (valid email, etc.)"
   email_error: "There was an error sending the email.  Please write to contacto@radioperu.pe directly."
   form_send: "Send"
+  after_registration_benefits: "After registration, you will receive instructions to promote your music through our catalogue and stations:"
   musician_form_disclaimer: |-
-    If you are a peruvian musician and don't have a user to upload/update your music, please fill the following form and we'll contact you.  
-
+    Peruvian musician, start promoting your music by filling this form.
     The only requisite is to have high sound quality recordings.
