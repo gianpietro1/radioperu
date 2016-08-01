@@ -23,6 +23,7 @@ class Song < ActiveRecord::Base
   has_many :radio_playstats, dependent: :destroy
 
   mount_uploader :filename, FilenameUploader
+  validates_presence_of :filename, :message => "Todas las canciones deben tener un archivo MP3 asociado. Por favor vuelve a especificar todos los archivos nuevos."
 
   default_scope { order('discnum ASC', 'track ASC') }
 
@@ -68,19 +69,17 @@ class Song < ActiveRecord::Base
     end
 
     def encode128
+        songpath = self.filename.file.file
 
-      songpath = self.filename.file.file
-
-      TagLib::FileRef.open(songpath) do |fileref|
-        unless fileref.null?
-          properties = fileref.audio_properties
-          if properties.bitrate != 128
-            system("avconv -i '#{songpath}' -c:a libmp3lame -y -vn -b:a 128k -vsync 2 '#{songpath[0..-5] + '-temp' + '.mp3'}'")
-            system("mv '#{songpath[0..-5] + '-temp' + '.mp3'}' '#{songpath}'")
+        TagLib::FileRef.open(songpath) do |fileref|
+          unless fileref.null?
+            properties = fileref.audio_properties
+            if properties.bitrate != 128
+              system("avconv -i '#{songpath}' -c:a libmp3lame -y -vn -b:a 128k -vsync 2 '#{songpath[0..-5] + '-temp' + '.mp3'}'")
+              system("mv '#{songpath[0..-5] + '-temp' + '.mp3'}' '#{songpath}'")
+            end
           end
         end
-      end
-
     end
 
     def inherit_genre_and_user
