@@ -257,10 +257,10 @@ es:
   #Musician Form
   musician_name: "Nombre de la banda o músico"
   musician_email: "Correo Electrónico"
-  musician_phone: "Telefóno"
-  musician_url: "Sitio web"
+  musician_phone: "Telefóno (opcional)"
+  musician_url: "Sitio web, página de Facebook u otros"
   musician_contact: "Nombre de contacto"
-  musician_comments: "Comentarios"
+  musician_comments: "Comentarios (opcional)"
   form_email_success: "Formulario enviado satisfactoriamente"
   form_error: "El formulario contiene un error, revisa los campos (correo válido, etc.)"
   email_error: "Hubo un error al enviar el correo, puedes escribir directo a contacto@radioperu.pe."

@@ -255,7 +255,7 @@ en:
   musician_name: "Musician/Band name"
   musician_email: "Email"
   musician_phone: "Phone"
-  musician_url: "Web site"
+  musician_url: "Web site or fan page"
   musician_contact: "Contact name"
   musician_comments: "Comments"
   form_email_success: "Form submitted successfully"
