@@ -37,7 +37,7 @@
       %h1.station_title
         = @radio.name.titleize + ' - ' + @radio.description.camelize
       .station_player
-        - if @radio.id == 2
+        - if @radio.id == 6
           .pull-left
             #player.new
               %audio{:autoplay => "autoplay", :controls => ""}
