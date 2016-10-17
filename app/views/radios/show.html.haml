@@ -37,14 +37,27 @@
       %h1.station_title
         = @radio.name.titleize + ' - ' + @radio.description.camelize
       .station_player
-        #player
-          %script{:type=>"text/javascript", :src=>@radio.player}
-        #songtitle
-          #artist
-          #song
-        .pull-right
-          %span#share_song
-          %a{ href: "javascript:;", id: "share_facebook" }
+        - if @radio.id == 2
+          .pull-left
+            #player.new
+              %audio{:autoplay => "autoplay", :controls => ""}
+                %source{:src => "http://radioperu.pe:8000/;stream.mp3", :type => "audio/mp3"}
+                  Your browser does not support the audio element.
+            #songtitle.new
+              #artist.new
+              #song.new
+          .pull-right
+            %span#share_song
+            %a{ href: "javascript:;", id: "share_facebook" }
+        - else
+          #player
+            %script{:type=>"text/javascript", :src=>@radio.player}
+          #songtitle
+            #artist
+            #song
+          .pull-right
+            %span#share_song
+            %a{ href: "javascript:;", id: "share_facebook" }
       .listeners
       #album_summary
       #artist_summary

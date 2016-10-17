@@ -801,9 +801,19 @@ h1.station_title {
   margin-top: 15px;
 }
 
+#player.new {
+  clear:both !important;
+  margin-top: 5px;
+}
+
 #songtitle {
   float:left;
   width: 300px;
+}
+
+#songtitle.new {
+  float: none;
+  width: auto;
 }
 
 #artist {
@@ -816,6 +826,17 @@ h1.station_title {
   font-size: 1em;
   line-height: 1.2em
 }
+
+#artist.new, #song.new {
+  float: left;
+  font-size: 1.1em;
+  margin-top:2px;
+}
+
+#artist.new:after {
+  content:" -\00a0";
+}
+
 
 .artist-info {
   height: 150px;    
@@ -2533,6 +2554,10 @@ hr {
   width: 240px;
 }
 
+#songtitle.new {
+  width: auto;
+}
+
 /* Artist catalogue */
 
 .slogan {
@@ -2816,6 +2841,10 @@ h1.station_title {
   width: 120px;
 }
 
+#songtitle.new {
+  width: auto;
+}
+
 /* Artist catalogue */
 
 .artist_thumb {
@@ -2944,6 +2973,10 @@ h1.station_title {
   word-wrap: break-word;
 }
 
+#songtitle.new {
+  width: auto;
+}
+
 .album-info, .artist-info {
   width: 68%;
 }
@@ -2967,6 +3000,10 @@ h1.station_title {
 #songtitle {
   width: 55px;
   word-wrap: break-word;
+}
+
+#songtitle.new {
+  width: auto;
 }
 
 .radionav a {

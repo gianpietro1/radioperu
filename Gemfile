@@ -117,6 +117,7 @@ gem 'ancestry'
 gem 'daemons'
 gem 'delayed_job_active_record'
 
+
 # Capistrano
 gem 'capistrano', '~> 3.1.0'
 gem 'capistrano-bundler', '~> 1.1.2'
