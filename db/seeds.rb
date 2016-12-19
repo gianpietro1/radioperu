@@ -268,7 +268,7 @@ radios =
     listenurl: "http://radioperu.pe:8000/radio5",   
     color: "93D3D7",
     name: "Estación 5",
-    description: "instrumental"
+    description: "jazz, instrumental y afines"
   }
 ]
 
@@ -280,4 +280,4 @@ Station.find_by_id(1).set_translations(:en => { :name => 'Station 1', :descripti
 Station.find_by_id(2).set_translations(:en => { :name => 'Station 2', :description => 'andean' }, :es => { :name => 'Estación 2', :description => 'andina'} )
 Station.find_by_id(3).set_translations(:en => { :name => 'Station 3', :description => 'tropical' }, :es => { :name => 'Estación 3', :description => 'tropical'} )
 Station.find_by_id(4).set_translations(:en => { :name => 'Station 4', :description => 'rock, pop & related' }, :es => { :name => 'Estación 4', :description => 'rock, pop y afines'} )
-Station.find_by_id(5).set_translations(:en => { :name => 'Station 5', :description => 'instrumental' }, :es => { :name => 'Estación 5', :description => 'instrumental'} )
+Station.find_by_id(5).set_translations(:en => { :name => 'Station 5', :description => 'jazz & instrumental & related' }, :es => { :name => 'Estación 5', :description => 'jazz, instrumental y afines'} )
