@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160601142658) do
+ActiveRecord::Schema.define(version: 20161219010753) do
 
   create_table "album_playstats", force: :cascade do |t|
     t.integer  "song_id"
@@ -103,6 +103,19 @@ ActiveRecord::Schema.define(version: 20160601142658) do
   end
 
   add_index "artists", ["slug"], name: "index_artists_on_slug"
+
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "ckeditor_assets", ["type"], name: "index_ckeditor_assets_on_type"
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
@@ -218,6 +231,23 @@ ActiveRecord::Schema.define(version: 20160601142658) do
   end
 
   add_index "playlists", ["slug"], name: "index_playlists_on_slug"
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.boolean  "featured",     default: true
+    t.boolean  "private",      default: false
+    t.integer  "topic_id"
+    t.integer  "user_id"
+    t.datetime "published_at"
+    t.string   "slug"
+    t.string   "image"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "posts", ["topic_id"], name: "index_posts_on_topic_id"
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
   create_table "program_translations", force: :cascade do |t|
     t.integer  "program_id",  null: false
@@ -342,6 +372,32 @@ ActiveRecord::Schema.define(version: 20160601142658) do
     t.string   "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "station_translations", force: :cascade do |t|
+    t.integer  "station_id",  null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "name"
+    t.string   "description"
+  end
+
+  add_index "station_translations", ["locale"], name: "index_station_translations_on_locale"
+  add_index "station_translations", ["station_id"], name: "index_station_translations_on_station_id"
+
+  create_table "stations", force: :cascade do |t|
+    t.string   "listenurl"
+    t.string   "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

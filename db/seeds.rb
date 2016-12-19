@@ -230,3 +230,54 @@ Program.find(38).update_attributes(name:"Various from Jazz & Instrumental Fusion
 Program.find(39).update_attributes(name:"Electronica", description: "Electronica music, mostly not fused.")
 Program.find(40).update_attributes(name:"Electronica", description: "Electronica music, mostly not fused.")
 Program.find(41).update_attributes(name:"Academic Music", description: "Academic & investigation works.")
+
+# NEW RADIOS
+
+radios = 
+     [
+  {
+    id: 1,
+    listenurl: "http://radioperu.pe:8000/radio1",
+    color: "ECB85B",
+    name: "Estación 1",
+    description: "costeña y canción"
+  },
+  {
+    id: 2,
+    listenurl: "http://radioperu.pe:8000/radio2",
+    color: "C05B69",
+    name: "Estación 2",
+    description: "andina"
+  },
+  {
+    id: 3,
+    listenurl: "http://radioperu.pe:8000/radio3",
+    color: "81BB7E",
+    name: "Estación 3",
+    description: "tropical"
+  },
+  {
+    id: 4,
+    listenurl: "http://radioperu.pe:8000/radio4",
+    color: "F7764D",
+    name: "Estación 4",
+    description: "rock, pop y afines"
+  },
+  {
+    id: 5,
+    listenurl: "http://radioperu.pe:8000/radio5",   
+    color: "93D3D7",
+    name: "Estación 5",
+    description: "instrumental"
+  }
+]
+
+radios.each do |radio|
+  Station.create(radio)
+end
+
+Station.find_by_id(1).set_translations(:en => { :name => 'Station 1', :description => 'coast & folk' }, :es => { :name => 'Estación 1', :description => 'costeña y canción'} )
+Station.find_by_id(2).set_translations(:en => { :name => 'Station 2', :description => 'andean' }, :es => { :name => 'Estación 2', :description => 'andina'} )
+Station.find_by_id(3).set_translations(:en => { :name => 'Station 3', :description => 'tropical' }, :es => { :name => 'Estación 3', :description => 'tropical'} )
+Station.find_by_id(4).set_translations(:en => { :name => 'Station 4', :description => 'rock, pop & related' }, :es => { :name => 'Estación 4', :description => 'rock, pop y afines'} )
+Station.find_by_id(5).set_translations(:en => { :name => 'Station 5', :description => 'instrumental' }, :es => { :name => 'Estación 5', :description => 'instrumental'} )

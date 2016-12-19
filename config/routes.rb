@@ -90,6 +90,11 @@ Rails.application.routes.draw do
       get 'time' => 'base#time'
       post 'add_to_radio_stats/:artist_name/:song_name/:city/:country/:platform/:ip_address' => 'radios#add_to_radio_stats'
     end
+
+    namespace :v2 do
+      resources :radios, only: [:index, :show]
+      post 'add_to_radio_stats/:artist_name/:song_name/:city/:country/:platform/:ip_address' => 'radios#add_to_radio_stats'
+    end
   end
 
 end
