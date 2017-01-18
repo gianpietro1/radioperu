@@ -2,54 +2,60 @@ require 'digest/sha2'
 class UpdatesMailer < ApplicationMailer
   
   default from: "postmaster@radioperu.pe" 
-      
+
+
       def new_artist_update(artist)
  
         setup_email
+        @admin_emails = ['contacto@radioperu.pe','mkt@radioperu.pe']
 
         @artist = artist
- 
-        mail(to: 'contacto@radioperu.pe', subject: "Artista #{artist.name} ha sido actualizado")
+
+        mail(to: @admin_emails, subject: "Artista #{artist.name} ha sido actualizado")
       end
 
       def new_album_update(artist,album)
  
         setup_email
+        @admin_emails = ['contacto@radioperu.pe','mkt@radioperu.pe']
 
         @album = album
         @artist = album.artist
         @songs = album.songs
  
-        mail(to: 'contacto@radioperu.pe', subject: "Álbum #{artist.name}-#{album.name} ha sido actualizado")
+        mail(to: @admin_emails, subject: "Álbum #{artist.name}-#{album.name} ha sido actualizado")
       end
 
       def new_song_update(artist,song)
 
         setup_email
+        @admin_emails = ['contacto@radioperu.pe','mkt@radioperu.pe']
 
         @song = song
         @artist = song.album.artist
  
-        mail(to: 'contacto@radioperu.pe', subject: "Canción #{artist.name}-#{song.name} ha sido actualizada")
+        mail(to: @admin_emails, subject: "Canción #{artist.name}-#{song.name} ha sido actualizada")
       end
 
       def new_playlist_update(playlist)
 
         setup_email
+        @admin_emails = ['contacto@radioperu.pe','mkt@radioperu.pe']
 
         @playlist = playlist
         @user = playlist.user
  
-        mail(to: 'contacto@radioperu.pe', subject: "Playlist #{@playlist.name}-#{@user.name} ha sido actualizado")
+        mail(to: @admin_emails, subject: "Playlist #{@playlist.name}-#{@user.name} ha sido actualizado")
       end
 
       def new_user_update(user)
 
         setup_email
+        @admin_emails = ['contacto@radioperu.pe','mkt@radioperu.pe']
  
         @user = user
 
-        mail(to: 'contacto@radioperu.pe', subject: "Nuevo usuario - #{@user.email}")
+        mail(to: @admin_emails, subject: "Nuevo usuario - #{@user.email}")
       end
 
       def new_comment_update(user,page_admin,comment)
