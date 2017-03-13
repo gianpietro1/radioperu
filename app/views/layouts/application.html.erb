@@ -30,6 +30,7 @@
 
   <div class="container-fluid">
 
+<!--
     <%= render partial: "welcome/login" %>  
 
     <div class="row container-top">
@@ -76,18 +77,20 @@
       <%= flash[:alert] %>
     </div>
     <% end %>
+-->
 
     <div class="landing">
       <p></p>
+<!--
 
       <div class="row">
-        <div class="pull-left home">
+        <div class="home">
           <%= link_to image_tag("home.png", :alt => 'home'), root_path %>
           <div class="about_link">
             <%= link_to t(:about), elproyecto_path %>
           </div>
         </div>
-          <div class="pull-left social">
+          <div class="social">
             <%= link_to image_tag("facebook.png", :alt => 'facebook'), 'https://www.facebook.com/radioperu.pe', class: "facebook", :target => "_blank" %>
             <%= link_to image_tag("twitter.png", :alt => 'twitter'), 'https://twitter.com/radioperu_pe', class: "twitter", :target => "_blank" %>
             <%= link_to image_tag("instagram.png", :alt => 'instagram'), 'https://instagram.com/radioperu.pe', class: "instagram", :target => "_blank" %>
@@ -95,10 +98,9 @@
         <div class="pull-right apps">
             <%= link_to image_tag("google-play-badge.png", :alt => 'android'), 'https://play.google.com/store/apps/details?id=pe.radioperu.radioperupe&hl=es', class: "android", :target => "_blank" %>   
             <%= link_to image_tag("app-store-badge.svg", :alt => 'iphone'), 'https://itunes.apple.com/pe/app/radioperu.pe/id1086467610?ign-mpt=uo%3D5', class: "iphone", :target => "_blank" %>            
-
+      
             <%# 
               <%= link_to image_tag("email.png", :alt => 'email'), 'mailto:contacto@radioperu.pe', class: "email" %>
-
         </div>
       </div>
       
@@ -116,17 +118,18 @@
      </script>
 
     <% end %>
-
+-->
 
     <%= yield %>
 
   </div>
+<!--
     
   <div itemscope itemtype="http://radioperu.pe" class="float-right microdata">
     <span itemprop="name">radioperu.pe - </span>
     <a itemprop="email">contacto @ radioperu . pe</a>
   </div>
-    
+-->    
   </div>
 
 </div>

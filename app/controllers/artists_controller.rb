@@ -2,6 +2,12 @@ class ArtistsController < ApplicationController
 
   respond_to :html, :js
 
+  def refresh_artists
+    respond_with() do |format|
+    format.html {render :partial => "refresh_artists" }
+    end
+  end
+
   def index
     @artists = Artist.all
     authorize @artists

@@ -1,0 +1,40 @@
+%script
+  $("#opaque-cover").remove();
+
+- if I18n.locale == :es
+  - set_meta_tags :og => {:title => 'radioperu.pe', :url => root_url, :description => 'descubre toda la música del Perú', :image => image_url('estacionesfblink.png') }
+- elsif I18n.locale == :en
+  - set_meta_tags :og => {:title => 'radioperu.pe', :url => root_url, :description => 'discover all the music from Perú', :image => image_url('estacionesfblink.png') }
+- set_meta_tags description: ("radioperu.pe - " + t(:discover))
+- set_meta_tags keywords: %W[radioperu.pe radio peru radioperu musica peruana catálogo musical demanda electrónica reggaetón pop urbano criollo trova canción de autor afroperuano andino salsa cumbia chicha tropical techno-cumbia rock pop reggae metal funk fusión balada hip hop nueva ola punk ska rap indie clásica jazz música del mundo académica fusión instrumental]
+
+.row
+  .col-md-2
+  .col-md-8.text-center
+    = link_to image_tag('rp-a.png', :alt => 'radioperu.pe'), root_path, title: 'radioperu.pe'
+    %p
+    %p
+      %h1
+        ¡Hasta pronto!
+      %p
+        En Agosto 2015 empezó la segunda etapa del proyecto ciudadano Radioperú.pe, buscando aportar en el diálogo intercultural del Perú a través de la difusión de nuestra música.
+        %br
+        %br
+        Esperamos haber aportado un granito de arena en dicha misión durante los veinte meses que logramos sostener el proyecto al aire de manera independiente, ofreciendo un surtido catálogo musical de todos los géneros y épocas, y cinco estaciones de radio en línea que no pararon de sonar.
+        %br
+        %br
+        Durante todo este periodo, aprendimos mucho de lo que nos falta como proyecto y como industria musical para que las cosas funcionen como las planteamos al inicio, por lo que decidimos poner una pausa y tomar fuerzas para una siguiente etapa, más sólida y significativa para nuestro país.
+        %br
+.row       
+  .col-md-1
+  .col-md-10.text-center
+    .artist_reel
+      .sub_artist_reel
+        = render partial: 'artists/refresh_artists'
+
+
+
+%script{:type=>"text/javascript"}
+  function refresh_artists(){
+  $.ajax({data: { }, type: 'get', url: "/refresh_artists", success: function(r) { $('.sub_artist_reel').hide().html(r).fadeIn(); } });}
+  setInterval(refresh_artists,4000);

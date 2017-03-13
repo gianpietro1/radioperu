@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'refresh_artists' => 'artists#refresh_artists'
+
+  root to: 'welcome#hastapronto'
+  get '*path' => 'welcome#hastapronto'
+
   get 'admin' => 'admin#index'
   get 'test' => 'test#index'
 
   devise_for :users, skip: [:session, :password, :registration], controllers: { omniauth_callbacks: "callbacks" }
 
   scope "(:locale)", locale: /es|en/ do
-    root to: 'welcome#index'
+    #root to: 'welcome#index'
     resources :radios, only: [:show] do
       resources :programs
     end

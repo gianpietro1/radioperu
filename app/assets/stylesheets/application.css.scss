@@ -32,6 +32,17 @@
 .btn-google.disabled,.btn-google[disabled],fieldset[disabled] .btn-google,.btn-google.disabled:hover,.btn-google[disabled]:hover,fieldset[disabled] .btn-google:hover,.btn-google.disabled:focus,.btn-google[disabled]:focus,fieldset[disabled] .btn-google:focus,.btn-google.disabled.focus,.btn-google[disabled].focus,fieldset[disabled] .btn-google.focus,.btn-google.disabled:active,.btn-google[disabled]:active,fieldset[disabled] .btn-google:active,.btn-google.disabled.active,.btn-google[disabled].active,fieldset[disabled] .btn-google.active{background-color:#dd4b39;border-color:rgba(0,0,0,0.2)}
 .btn-google .badge{color:#dd4b39;background-color:#fff}
 
+/* Fare well */
+.artist_reel {
+  width: 100%;
+  margin: auto;
+}
+
+.sub_artist_reel {
+  display: inline-block;
+  margin: auto;
+}
+
 /* General styles */
 
 .clearfix:after {
@@ -2184,6 +2195,12 @@ h4.option_title {
 }
 
 @media screen and (max-width: 991px) {
+
+/* Fare well */
+.artist_reel {
+  width: 260px;
+}
+
 
 /* General */
 

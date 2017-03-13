@@ -1,0 +1,8 @@
+- Artist.all.shuffle[0..5].each do |artist|
+  %a{ href: "javascript:;", class: "artist_thumb text-center"}
+    - if artist.image?
+      = image_tag( artist.image.midsize )
+    - else
+      = image_tag( 'default_artist_midsize.jpg' )    
+    .artist_thumb_name 
+      = artist.name
