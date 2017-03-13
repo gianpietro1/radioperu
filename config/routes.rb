@@ -2,6 +2,26 @@ Rails.application.routes.draw do
 
   get 'refresh_artists' => 'artists#refresh_artists'
 
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: [:index, :show]
+      resources :radios, only: [:index, :show]
+      resources :artists, only: [:index]
+      get 'artists/:artist_name' => 'artists#show', constraints: { artist_name: /[^\/]+/ }
+      get 'albums/:artist_name/:song_name' => 'albums#show', constraints: { artist_name: /[^\/]+/, song_name: /[^\/]+/ }
+      get 'radios/:id/programs' => 'programs#index'
+      get 'radios/:id/active_program' => 'programs#show'
+      get 'app_version' => 'base#app_version'
+      get 'time' => 'base#time'
+      post 'add_to_radio_stats/:artist_name/:song_name/:city/:country/:platform/:ip_address' => 'radios#add_to_radio_stats'
+    end
+
+    namespace :v2 do
+      resources :radios, only: [:index, :show]
+      post 'add_to_radio_stats/:artist_name/:song_name/:city/:country/:platform/:ip_address' => 'radios#add_to_radio_stats'
+    end
+  end
+  
   root to: 'welcome#hastapronto'
   get '*path' => 'welcome#hastapronto'
 
@@ -81,25 +101,5 @@ Rails.application.routes.draw do
   end
 
   get '/:locale' => 'welcome#index'
-
-  namespace :api do
-    namespace :v1 do
-      resources :users, only: [:index, :show]
-      resources :radios, only: [:index, :show]
-      resources :artists, only: [:index]
-      get 'artists/:artist_name' => 'artists#show', constraints: { artist_name: /[^\/]+/ }
-      get 'albums/:artist_name/:song_name' => 'albums#show', constraints: { artist_name: /[^\/]+/, song_name: /[^\/]+/ }
-      get 'radios/:id/programs' => 'programs#index'
-      get 'radios/:id/active_program' => 'programs#show'
-      get 'app_version' => 'base#app_version'
-      get 'time' => 'base#time'
-      post 'add_to_radio_stats/:artist_name/:song_name/:city/:country/:platform/:ip_address' => 'radios#add_to_radio_stats'
-    end
-
-    namespace :v2 do
-      resources :radios, only: [:index, :show]
-      post 'add_to_radio_stats/:artist_name/:song_name/:city/:country/:platform/:ip_address' => 'radios#add_to_radio_stats'
-    end
-  end
 
 end
